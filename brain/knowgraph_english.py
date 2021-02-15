@@ -3,7 +3,6 @@
 KnowledgeGraph
 """
 import json
-import os
 import brain.config as config
 import numpy as np
 
@@ -54,7 +53,7 @@ class KnowledgeGraph(object):
             abs_idx_src = []
             for token in split_sent:
                 entities = list(self.lookup_table.get(token, []))[:max_entities]
-                print(entities)
+                entities = [ent.split('_') for ent in entities]
                 sent_tree.append((token, entities))
 
                 if token in self.special_tags:
@@ -68,9 +67,9 @@ class KnowledgeGraph(object):
                 entities_pos_idx = []
                 entities_abs_idx = []
                 for ent in entities:
-                    ent_pos_idx = [token_pos_idx[-1] + i for i in range(1, 1+1)]
+                    ent_pos_idx = [token_pos_idx[-1] + i for i in range(1, len(ent)+1)]
                     entities_pos_idx.append(ent_pos_idx)
-                    ent_abs_idx = [abs_idx + i for i in range(1, 1+1)]
+                    ent_abs_idx = [abs_idx + i for i in range(1, len(ent)+1)]
                     abs_idx = ent_abs_idx[-1]
                     entities_abs_idx.append(ent_abs_idx)
                 print(entities_pos_idx)
@@ -96,8 +95,8 @@ class KnowledgeGraph(object):
                 pos += pos_idx_tree[i][0]
                 for j in range(len(sent_tree[i][1])):
                     add_word = sent_tree[i][1][j]
-                    know_sent += [add_word]
-                    seg += [1] * len([add_word])
+                    know_sent += add_word
+                    seg += [1] * len(add_word)
                     pos += list(pos_idx_tree[i][1][j])
 
             token_num = len(know_sent)
