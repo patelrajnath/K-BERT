@@ -113,7 +113,7 @@ class KnowledgeGraph(object):
             src_length = len(know_sent)
             if len(know_sent) < max_length:
                 pad_num = max_length - src_length
-                know_sent += [config.PAD_TOKEN] * pad_num
+                know_sent += [self.tokenizer.pad_token] * pad_num
                 seg += [0] * pad_num
                 pos += [max_length - 1] * pad_num
                 visible_matrix = np.pad(visible_matrix, ((0, pad_num), (0, pad_num)), 'constant')  # pad 0

@@ -212,17 +212,24 @@ def main():
                 vm = vm[0].astype("bool")
                 tag = tag[0]
 
+                tokens = tokenizer.convert_tokens_to_ids([tokenizer.cls_token] + tokens + [tokenizer.sep_token])
                 labels = [labels_map[l] for l in labels.split(" ")]
-                print(labels)
+
                 print(tokens)
+                print(labels)
+                print(tag)
+
                 mask = [1] * len(tokens)
                 new_labels = []
                 j = 0
-                for i in range(len(tokens)):
-                    if tag[i] == 0 and tokens[i] != PAD_ID:
+                print(len(tokens))
+                print(len(tag))
+
+                for i in range(1, len(tokens) - 2):
+                    if tag[i] == 0 and tokens[i] != tokenizer.pad_token_id and tokens[i] != tokenizer.sep_token_id:
                         new_labels.append(labels[j])
                         j += 1
-                    elif tag[i] == 1 and tokens[i] != PAD_ID:  # 是添加的实体
+                    elif tag[i] == 1 and tokens[i] != tokenizer.pad_token_id and tokens[i] != tokenizer.sep_token_id:  # 是添加的实体
                         new_labels.append(labels_map['[ENT]'])
                     else:
                         new_labels.append(labels_map[PAD_TOKEN])
