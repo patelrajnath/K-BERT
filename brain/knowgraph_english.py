@@ -12,12 +12,13 @@ class KnowledgeGraph(object):
     spo_files - list of Path of *.spo files, or default kg name. e.g., ['HowNet']
     """
 
-    def __init__(self, vocab_file, predicate=False):
+    def __init__(self, vocab_file, tokenizer, predicate=False):
         self.predicate = predicate
         self.vocab_file = vocab_file
         self.lookup_table = self._create_lookup_table()
         self.segment_vocab = list(self.lookup_table.keys()) + config.NEVER_SPLIT_TAG
         self.special_tags = set(config.NEVER_SPLIT_TAG)
+        self.tokenizer = tokenizer
 
     def _create_lookup_table(self):
         lookup_table = {}
@@ -37,13 +38,12 @@ class KnowledgeGraph(object):
                 visible_matrix_batch - list of visible matrixs
                 seg_batch - list of segment tags
         """
-        split_sent_batch = [sent.split() for sent in sent_batch]
+        split_sent_batch = [self.tokenizer.tokenize(sent) for sent in sent_batch]
         know_sent_batch = []
         position_batch = []
         visible_matrix_batch = []
         seg_batch = []
         for split_sent in split_sent_batch:
-
             # create tree
             sent_tree = []
             pos_idx_tree = []
