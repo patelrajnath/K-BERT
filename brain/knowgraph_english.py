@@ -72,8 +72,7 @@ class KnowledgeGraph(object):
                     ent_abs_idx = [abs_idx + i for i in range(1, len(ent)+1)]
                     abs_idx = ent_abs_idx[-1]
                     entities_abs_idx.append(ent_abs_idx)
-                print(entities_pos_idx)
-                print(entities_abs_idx)
+
                 pos_idx_tree.append((token_pos_idx, entities_pos_idx))
                 pos_idx = token_pos_idx[-1]
                 abs_idx_tree.append((token_abs_idx, entities_abs_idx))
@@ -84,7 +83,6 @@ class KnowledgeGraph(object):
             seg = []
             for i in range(len(sent_tree)):
                 word = sent_tree[i][0]
-                print(word)
                 if word in self.special_tags:
                     know_sent += [word]
                     seg += [0]
@@ -100,7 +98,6 @@ class KnowledgeGraph(object):
                     pos += list(pos_idx_tree[i][1][j])
 
             token_num = len(know_sent)
-            print(know_sent)
             # Calculate visible matrix
             visible_matrix = np.zeros((token_num, token_num))
             for item in abs_idx_tree:

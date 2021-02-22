@@ -213,6 +213,8 @@ def main():
                 tag = tag[0]
 
                 labels = [labels_map[l] for l in labels.split(" ")]
+                print(labels)
+                print(tokens)
                 mask = [1] * len(tokens)
                 new_labels = []
                 j = 0
