@@ -45,12 +45,10 @@ class LukeTagger(nn.Module):
         # Encoder.
         word_sequence_output, pooled_output = self.encoder(word_ids, word_segment_ids=word_segment_ids,
                                                            word_attention_mask=word_attention_mask,
-                                                           vm=None)
-
-        # exclude encodings or CLS and SEP token
-        word_sequence_output = word_sequence_output[1:-1]
+                                                           vm=vm)
         print(word_sequence_output.size())
-        exit()
+        # exclude encodings or CLS and SEP token
+        word_sequence_output = word_sequence_output
 
         # Target.
         output = self.output_layer(word_sequence_output)
@@ -233,8 +231,8 @@ def main():
                 # print(labels)
                 # print(tag)
 
-                mask = [1] * (num_tokens + 2) + [0] * num_pad
-                word_segment_ids = [0] * (len(tokens) + 2)
+                mask = [1] * (num_tokens) + [0] * num_pad
+                word_segment_ids = [0] * (len(tokens))
                 new_labels = []
                 j = 0
 
@@ -254,7 +252,8 @@ def main():
                         new_labels.append(labels_map[PAD_TOKEN])
                 # print(new_labels)
 
-                tokens = tokenizer.convert_tokens_to_ids([tokenizer.cls_token] + tokens + [tokenizer.sep_token])
+                # tokens = tokenizer.convert_tokens_to_ids([tokenizer.cls_token] + tokens + [tokenizer.sep_token])
+                tokens = tokenizer.convert_tokens_to_ids(tokens)
                 dataset.append([tokens, new_labels, mask, pos, vm, tag, word_segment_ids])
 
         return dataset
