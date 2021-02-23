@@ -43,7 +43,9 @@ class LukeTagger(nn.Module):
             label: Gold label.
         """
         # Encoder.
-        output = self.encoder(word_ids, word_segment_ids, word_attention_mask, vm=None)
+        output = self.encoder(word_ids, word_segment_ids=word_segment_ids,
+                              word_attention_mask=word_attention_mask,
+                              vm=None)
         print(output)
         exit()
         # Target.
@@ -296,8 +298,10 @@ def main():
             vm_ids_batch = vm_ids_batch.long().to(device)
             segment_ids_batch = segment_ids_batch.long().to(device)
 
-            loss, _, pred, gold = model(input_ids_batch, segment_ids_batch, label_ids_batch, mask_ids_batch,
-                                        pos_ids_batch,
+            loss, _, pred, gold = model(input_ids_batch,
+                                        segment_ids_batch,
+                                        mask_ids_batch,
+                                        label_ids_batch,
                                         vm_ids_batch)
 
             for j in range(gold.size()[0]):
@@ -406,7 +410,7 @@ def main():
             vm_ids_batch = vm_ids_batch.long().to(device)
             segment_ids_batch = segment_ids_batch.long().to(device)
 
-            loss, _, _, _ = model(input_ids_batch, mask_ids_batch, segment_ids_batch, label_ids_batch, vm_ids_batch)
+            loss, _, _, _ = model(input_ids_batch, segment_ids_batch, mask_ids_batch, label_ids_batch, vm_ids_batch)
             if torch.cuda.device_count() > 1:
                 loss = torch.mean(loss)
             total_loss += loss.item()
