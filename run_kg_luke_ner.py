@@ -11,7 +11,6 @@ from luke import ModelArchive, LukeModel
 from uer.utils.config import load_hyperparam
 from uer.utils.optimizers import BertAdam
 from uer.utils.constants import *
-from uer.utils.vocab import Vocab
 from uer.utils.seed import set_seed
 from uer.model_saver import save_model
 
@@ -30,25 +29,15 @@ class LukeTagger(nn.Module):
                 word_attention_mask,
                 label,
                 vm=None,
+                use_vm=True
                 ):
-        """
-        Args:
-            src: [batch_size x seq_length]
-            label: [batch_size x seq_length]
-            mask: [batch_size x seq_length]
-        Returns:
-            loss: Sequence labeling loss.
-            correct: Number of labels that are predicted correctly.
-            predict: Predicted label.
-            label: Gold label.
-        """
+        if not use_vm:
+            vm = None
+
         # Encoder.
         word_sequence_output, pooled_output = self.encoder(word_ids, word_segment_ids=word_segment_ids,
                                                            word_attention_mask=word_attention_mask,
                                                            vm=vm)
-        # exclude encodings or CLS and SEP token
-        word_sequence_output = word_sequence_output
-
         # Target.
         output = self.output_layer(word_sequence_output)
 
