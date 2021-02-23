@@ -9,7 +9,7 @@ import torch.nn as nn
 from brain.knowgraph_english import KnowledgeGraph
 from luke import ModelArchive, LukeModel
 from uer.utils.config import load_hyperparam
-from uer.utils.optimization import BertAdam
+from uer.utils.optimizers import BertAdam
 from uer.utils.constants import *
 from uer.utils.vocab import Vocab
 from uer.utils.seed import set_seed
