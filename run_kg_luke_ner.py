@@ -29,9 +29,9 @@ class LukeTagger(nn.Module):
                 word_attention_mask,
                 label,
                 vm=None,
-                use_vm=True
+                use_kg=True
                 ):
-        if not use_vm:
+        if not use_kg:
             vm = None
 
         # Encoder.
@@ -121,6 +121,7 @@ def main():
 
     # kg
     parser.add_argument("--kg_name", required=True, help="KG name or path")
+    parser.add_argument("--use_kg", action='store_true', help="Enable the use of KG.")
 
     args = parser.parse_args()
 
@@ -160,7 +161,7 @@ def main():
 
     # Build sequence labeling model.
     model = LukeTagger(args, encoder)
-    kg = KnowledgeGraph(vocab_file=spo_files, tokenizer=tokenizer, predicate=False)
+    kg = KnowledgeGraph(vocab_file=spo_files, tokenizer=tokenizer)
 
     # For simplicity, we use DataParallel wrapper to use multiple GPUs.
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -201,8 +202,11 @@ def main():
             for line_id, line in enumerate(f):
                 labels, tokens, cls = line.strip().split("\t")
 
-                tokens, pos, vm, tag = kg.add_knowledge_with_vm([tokens], [labels], add_pad=True,
-                                                                max_length=args.seq_length)
+                tokens, pos, vm, tag = \
+                    kg.add_knowledge_with_vm([tokens], [labels],
+                                             use_kg=args.use_kg,
+                                             max_length=args.seq_length
+                                             )
                 tokens = tokens[0]
                 pos = pos[0]
                 vm = vm[0].astype("bool")
@@ -401,7 +405,13 @@ def main():
             vm_ids_batch = vm_ids_batch.long().to(device)
             segment_ids_batch = segment_ids_batch.long().to(device)
 
-            loss, _, _, _ = model(input_ids_batch, segment_ids_batch, mask_ids_batch, label_ids_batch, vm_ids_batch)
+            loss, _, _, _ = model(input_ids_batch,
+                                  segment_ids_batch,
+                                  mask_ids_batch,
+                                  label_ids_batch,
+                                  vm_ids_batch,
+                                  use_kg=args.use_kg)
+
             if torch.cuda.device_count() > 1:
                 loss = torch.mean(loss)
             total_loss += loss.item()
