@@ -216,16 +216,16 @@ def main():
                 tokens = tokenizer.convert_tokens_to_ids(tokens)
                 labels = [labels_map[l] for l in labels.split(" ")]
 
-                print(tokens)
-                print(labels)
-                print(tag)
+                # print(tokens)
+                # print(labels)
+                # print(tag)
 
                 mask = [1] * len(tokens)
                 new_labels = []
                 j = 0
-                print(len(tokens))
-                print(len(tag))
-                print(tokenizer.pad_token_id)
+                # print(len(tokens))
+                # print(len(tag))
+                # print(tokenizer.pad_token_id)
 
                 for i in range(len(tokens)):
                     if tag[i] == 0 and tokens[i] != tokenizer.pad_token_id:
@@ -237,7 +237,7 @@ def main():
                         new_labels.append(labels_map['[X]'])
                     else:
                         new_labels.append(labels_map[PAD_TOKEN])
-                print(new_labels)
+                # print(new_labels)
                 dataset.append([tokens, new_labels, mask, pos, vm, tag])
 
         return dataset
