@@ -125,7 +125,7 @@ def main():
                         help="Dropout.")
     parser.add_argument("--epochs_num", type=int, default=5,
                         help="Number of epochs.")
-    parser.add_argument("--report_steps", type=int, default=100,
+    parser.add_argument("--report_steps", type=int, default=2,
                         help="Specific steps to print prompt.")
     parser.add_argument("--seed", type=int, default=7,
                         help="Random seed.")
