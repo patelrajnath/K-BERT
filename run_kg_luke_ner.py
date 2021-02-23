@@ -135,7 +135,7 @@ def main():
 
     set_seed(args.seed)
 
-    labels_map = {"[PAD]": 0, "[ENT]": 1}
+    labels_map = {"[PAD]": 0, "[ENT]": 1, "[X]": 2}
     begin_ids = []
 
     # Find tagging labels
@@ -205,7 +205,7 @@ def main():
             for line_id, line in enumerate(f):
                 labels, tokens, cls = line.strip().split("\t")
 
-                tokens, pos, vm, tag = kg.add_knowledge_with_vm([tokens], add_pad=True,
+                tokens, pos, vm, tag = kg.add_knowledge_with_vm([tokens], [labels], add_pad=True,
                                                                 max_length=args.seq_length)
                 tokens = tokens[0]
                 pos = pos[0]
@@ -225,16 +225,19 @@ def main():
                 j = 0
                 print(len(tokens))
                 print(len(tag))
+                print(tokenizer.pad_token_id)
 
                 for i in range(len(tokens)):
-                    if tag[i] == 0 and tokens[i] != tokenizer.pad_token_id and tokens[i] != tokenizer.sep_token_id:
+                    if tag[i] == 0 and tokens[i] != tokenizer.pad_token_id:
                         new_labels.append(labels[j])
                         j += 1
-                    elif tag[i] == 1 and tokens[i] != tokenizer.pad_token_id and tokens[i] != tokenizer.sep_token_id:  # 是添加的实体
+                    elif tag[i] == 1 and tokens[i] != tokenizer.pad_token_id:  # 是添加的实体
                         new_labels.append(labels_map['[ENT]'])
+                    elif tag[i] == 2:
+                        new_labels.append(labels_map['[X]'])
                     else:
                         new_labels.append(labels_map[PAD_TOKEN])
-
+                print(new_labels)
                 dataset.append([tokens, new_labels, mask, pos, vm, tag])
 
         return dataset
@@ -269,8 +272,9 @@ def main():
         model.eval()
 
         for i, (
-        input_ids_batch, label_ids_batch, mask_ids_batch, pos_ids_batch, vm_ids_batch, tag_ids_batch) in enumerate(
-                batch_loader(batch_size, input_ids, label_ids, mask_ids, pos_ids, vm_ids, tag_ids)):
+                input_ids_batch, label_ids_batch, mask_ids_batch, pos_ids_batch, vm_ids_batch,
+                tag_ids_batch) in enumerate(
+            batch_loader(batch_size, input_ids, label_ids, mask_ids, pos_ids, vm_ids, tag_ids)):
 
             input_ids_batch = input_ids_batch.to(device)
             label_ids_batch = label_ids_batch.to(device)
@@ -373,8 +377,9 @@ def main():
     for epoch in range(1, args.epochs_num + 1):
         model.train()
         for i, (
-        input_ids_batch, label_ids_batch, mask_ids_batch, pos_ids_batch, vm_ids_batch, tag_ids_batch) in enumerate(
-                batch_loader(batch_size, input_ids, label_ids, mask_ids, pos_ids, vm_ids, tag_ids)):
+                input_ids_batch, label_ids_batch, mask_ids_batch, pos_ids_batch, vm_ids_batch,
+                tag_ids_batch) in enumerate(
+            batch_loader(batch_size, input_ids, label_ids, mask_ids, pos_ids, vm_ids, tag_ids)):
             model.zero_grad()
 
             input_ids_batch = input_ids_batch.to(device)
