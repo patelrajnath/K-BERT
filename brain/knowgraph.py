@@ -17,6 +17,10 @@ class KnowledgeGraph(object):
         self.predicate = predicate
         self.spo_file_paths = [config.KGS.get(f, f) for f in spo_files]
         self.lookup_table = self._create_lookup_table()
+        for key in self.lookup_table:
+            if len(self.lookup_table[key]) > 1:
+                print(key, self.lookup_table[key])
+        exit()
         self.segment_vocab = list(self.lookup_table.keys()) + config.NEVER_SPLIT_TAG
         self.tokenizer = pkuseg.pkuseg(model_name="default", postag=False, user_dict=self.segment_vocab)
         self.special_tags = set(config.NEVER_SPLIT_TAG)

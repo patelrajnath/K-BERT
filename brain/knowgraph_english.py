@@ -5,6 +5,9 @@ KnowledgeGraph
 import json
 import brain.config as config
 import numpy as np
+from datautils import biluo_from_predictions, Doc
+from datautils.biluo_from_predictions import get_biluo
+from datautils.iob_utils import offset_from_biluo
 
 
 class KnowledgeGraph(object):
@@ -27,10 +30,12 @@ class KnowledgeGraph(object):
         for item in entities_json:
             for title, language in item["entities"]:
                 value = item["info_box"]
-                lookup_table[title] = value
+                if value:
+                    lookup_table[title.lower()] = value
         return lookup_table
 
-    def add_knowledge_with_vm(self, sent_batch, max_entities=config.MAX_ENTITIES, add_pad=True, max_length=128):
+    def add_knowledge_with_vm(self, sent_batch, label_batch,
+                              max_entities=config.MAX_ENTITIES, add_pad=True, max_length=128):
         """
         input: sent_batch - list of sentences, e.g., ["abcd", "efgh"]
         return: know_sent_batch - list of sentences with entites embedding
@@ -38,12 +43,41 @@ class KnowledgeGraph(object):
                 visible_matrix_batch - list of visible matrixs
                 seg_batch - list of segment tags
         """
-        split_sent_batch = [self.tokenizer.tokenize(sent) for sent in sent_batch]
+        text_ = sent_batch[0]
+        label_ = label_batch[0]
+
+        tag_labels_true = label_.strip().replace('_', '-').split()
+        biluo_tags_true = get_biluo(tag_labels_true)
+
+        doc = Doc(text_)
+        offset_true_labels = offset_from_biluo(doc, biluo_tags_true)
+
+        chunk_start = 0
+        chunks = []
+
+        # Convert text into chunks
+        for start, end, _ in offset_true_labels:
+            chunk_text = text_[chunk_start: start].strip()
+            chunk_entity = text_[start: end].strip()
+            chunk_start = end
+
+            if chunk_text:
+                chunks.append(chunk_text)
+
+            if chunk_entity:
+                chunks.append(chunk_entity)
+
+        # Append the last chunk if not empty
+        last_chunk = text_[chunk_start:].strip()
+        if last_chunk:
+            chunks.append(last_chunk)
+        chunks = [chunks]
+
         know_sent_batch = []
         position_batch = []
         visible_matrix_batch = []
         seg_batch = []
-        for split_sent in split_sent_batch:
+        for split_sent in chunks:
             # create tree
             sent_tree = []
             pos_idx_tree = []
@@ -51,17 +85,29 @@ class KnowledgeGraph(object):
             pos_idx = -1
             abs_idx = -1
             abs_idx_src = []
-            for token in split_sent:
-                entities = list(self.lookup_table.get(token, []))[:max_entities]
-                entities = [ent.split('_') for ent in entities]
-                sent_tree.append((token, entities))
+            print(split_sent)
+            for token_original in split_sent:
+                entities = list(self.lookup_table.get(token_original.lower(), []))[:max_entities]
+                entities = [ent.replace('_', ' ') for ent in entities]
 
-                if token in self.special_tags:
+                print(entities, token_original)
+
+                # Tokenize the data
+                cur_tokens = []
+                for tok in token_original.split():
+                    cur_tokens.extend(self.tokenizer.tokenize(tok))
+
+                entities = [self.tokenizer.tokenize(ent) for ent in entities]
+
+                sent_tree.append((token_original, cur_tokens, entities))
+
+                if token_original in self.special_tags:
                     token_pos_idx = [pos_idx+1]
                     token_abs_idx = [abs_idx+1]
                 else:
-                    token_pos_idx = [pos_idx+i for i in range(1, 1+1)]
-                    token_abs_idx = [abs_idx+i for i in range(1, 1+1)]
+                    token_pos_idx = [pos_idx+i for i in range(1, len(cur_tokens)+1)]
+                    token_abs_idx = [abs_idx+i for i in range(1, len(cur_tokens)+1)]
+                print(token_abs_idx)
                 abs_idx = token_abs_idx[-1]
 
                 entities_pos_idx = []
@@ -73,26 +119,48 @@ class KnowledgeGraph(object):
                     abs_idx = ent_abs_idx[-1]
                     entities_abs_idx.append(ent_abs_idx)
 
+                print(f'token_abs_idx:{token_abs_idx}')
+                print(f'token_pos_idx:{token_pos_idx}')
+                print(f'entities_abs_idx:{entities_abs_idx}')
+                print(f'entities_pos_idx:{entities_pos_idx}')
+
                 pos_idx_tree.append((token_pos_idx, entities_pos_idx))
                 pos_idx = token_pos_idx[-1]
                 abs_idx_tree.append((token_abs_idx, entities_abs_idx))
                 abs_idx_src += token_abs_idx
+
             # Get know_sent and pos
+            print(abs_idx_tree)
+            print(pos_idx_tree)
+            print(sent_tree)
+
             know_sent = []
             pos = []
             seg = []
             for i in range(len(sent_tree)):
-                word = sent_tree[i][0]
-                if word in self.special_tags:
-                    know_sent += [word]
-                    seg += [0]
+                token_original = sent_tree[i][0]
+                word = sent_tree[i][1]
+
+                for tok in token_original.split():
+                    cur_toks = self.tokenizer.tokenize(tok)
+                    num_subwords = len(cur_toks)
+                    if tok in self.special_tags:
+                        seg += [0]
+                    else:
+                        seg += [0]
+                        # Add extra tags for the added subtokens
+                        if num_subwords > 1:
+                            seg += [2] * (num_subwords - 1)
+
+                if token_original in self.special_tags:
+                    know_sent += word
                 else:
-                    add_word = [word]
+                    add_word = word
                     know_sent += add_word
-                    seg += [0] * len(add_word)
+
                 pos += pos_idx_tree[i][0]
-                for j in range(len(sent_tree[i][1])):
-                    add_word = sent_tree[i][1][j]
+                for j in range(len(sent_tree[i][2])):
+                    add_word = sent_tree[i][2][j]
                     know_sent += add_word
                     seg += [1] * len(add_word)
                     pos += list(pos_idx_tree[i][1][j])
@@ -114,7 +182,7 @@ class KnowledgeGraph(object):
             if len(know_sent) < max_length:
                 pad_num = max_length - src_length
                 know_sent += [self.tokenizer.pad_token] * pad_num
-                seg += [0] * pad_num
+                seg += [3] * pad_num
                 pos += [max_length - 1] * pad_num
                 visible_matrix = np.pad(visible_matrix, ((0, pad_num), (0, pad_num)), 'constant')  # pad 0
             else:
