@@ -5,7 +5,7 @@ KnowledgeGraph
 import json
 import brain.config as config
 import numpy as np
-from datautils import biluo_from_predictions, Doc
+from datautils import Doc
 from datautils.biluo_from_predictions import get_biluo
 from datautils.iob_utils import offset_from_biluo
 
