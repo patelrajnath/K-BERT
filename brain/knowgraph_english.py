@@ -15,8 +15,7 @@ class KnowledgeGraph(object):
     spo_files - list of Path of *.spo files, or default kg name. e.g., ['HowNet']
     """
 
-    def __init__(self, vocab_file, tokenizer, predicate=False):
-        self.predicate = predicate
+    def __init__(self, vocab_file, tokenizer):
         self.vocab_file = vocab_file
         self.lookup_table = self._create_lookup_table()
         self.segment_vocab = list(self.lookup_table.keys()) + config.NEVER_SPLIT_TAG
@@ -35,7 +34,7 @@ class KnowledgeGraph(object):
         return lookup_table
 
     def add_knowledge_with_vm(self, sent_batch, label_batch,
-                              max_entities=config.MAX_ENTITIES, add_pad=True, max_length=128):
+                              max_entities=config.MAX_ENTITIES, use_kg=True, max_length=128):
         """
         input: sent_batch - list of sentences, e.g., ["abcd", "efgh"]
         return: know_sent_batch - list of sentences with entites embedding
@@ -87,8 +86,10 @@ class KnowledgeGraph(object):
             abs_idx_src = []
             # print(split_sent)
             for token_original in split_sent:
-                entities = list(self.lookup_table.get(token_original.lower(), []))[:max_entities]
-                entities = [ent.replace('_', ' ') for ent in entities]
+                entities = []
+                if use_kg:
+                    entities = list(self.lookup_table.get(token_original.lower(), []))[:max_entities]
+                    entities = [ent.replace('_', ' ') for ent in entities]
 
                 # print(entities, token_original)
 
