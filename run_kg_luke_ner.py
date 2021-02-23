@@ -43,13 +43,17 @@ class LukeTagger(nn.Module):
             label: Gold label.
         """
         # Encoder.
-        output = self.encoder(word_ids, word_segment_ids=word_segment_ids,
-                              word_attention_mask=word_attention_mask,
-                              vm=None)
-        print(output)
+        word_sequence_output, pooled_output = self.encoder(word_ids, word_segment_ids=word_segment_ids,
+                                                           word_attention_mask=word_attention_mask,
+                                                           vm=None)
+
+        # exclude encodings or CLS and SEP token
+        word_sequence_output = word_sequence_output[1:-1]
+        print(word_sequence_output.size())
         exit()
+
         # Target.
-        output = self.output_layer(output)
+        output = self.output_layer(word_sequence_output)
 
         output = output.contiguous().view(-1, self.labels_num)
         output = self.softmax(output)
