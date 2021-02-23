@@ -103,6 +103,12 @@ class LukeModel(nn.Module):
     ):
         word_seq_size = word_ids.size(1)
 
+        print(word_seq_size)
+        print(word_ids.size())
+        print(word_segment_ids.size())
+        print(word_attention_mask.size())
+        # exit()
+
         embedding_output = self.embeddings(word_ids, word_segment_ids)
 
         attention_mask = self._compute_extended_attention_mask(word_attention_mask, entity_attention_mask, vm)

@@ -17,9 +17,9 @@ from uer.model_saver import save_model
 
 
 class LukeTagger(nn.Module):
-    def __init__(self, args, model):
+    def __init__(self, args, encoder):
         super(LukeTagger, self).__init__()
-        self.encoder = model.encoder
+        self.encoder = encoder
         self.labels_num = args.labels_num
         self.output_layer = nn.Linear(args.hidden_size, self.labels_num)
         self.softmax = nn.LogSoftmax(dim=-1)
@@ -43,7 +43,9 @@ class LukeTagger(nn.Module):
             label: Gold label.
         """
         # Encoder.
-        output = self.encoder(word_ids, word_segment_ids, word_attention_mask, vm=vm)
+        output = self.encoder(word_ids, word_segment_ids, word_attention_mask, vm=None)
+        print(output)
+        exit()
         # Target.
         output = self.output_layer(output)
 
@@ -162,10 +164,10 @@ def main():
     # Load Luke model.
     model_archive = ModelArchive.load('D:\\Downloads\\luke_base_500k.tar.gz')
     tokenizer = model_archive.tokenizer
-    model = LukeModel(model_archive.config)
+    encoder = LukeModel(model_archive.config)
 
     # Build sequence labeling model.
-    model = LukeTagger(args, model)
+    model = LukeTagger(args, encoder)
     kg = KnowledgeGraph(vocab_file=spo_files, tokenizer=tokenizer, predicate=False)
 
     # For simplicity, we use DataParallel wrapper to use multiple GPUs.
@@ -177,7 +179,7 @@ def main():
     model = model.to(device)
 
     # Datset loader.
-    def batch_loader(batch_size, input_ids, label_ids, mask_ids, pos_ids, vm_ids, tag_ids):
+    def batch_loader(batch_size, input_ids, label_ids, mask_ids, pos_ids, vm_ids, tag_ids, segment_ids):
         instances_num = input_ids.size()[0]
         for i in range(instances_num // batch_size):
             input_ids_batch = input_ids[i * batch_size: (i + 1) * batch_size, :]
@@ -186,7 +188,8 @@ def main():
             pos_ids_batch = pos_ids[i * batch_size: (i + 1) * batch_size, :]
             vm_ids_batch = vm_ids[i * batch_size: (i + 1) * batch_size, :, :]
             tag_ids_batch = tag_ids[i * batch_size: (i + 1) * batch_size, :]
-            yield input_ids_batch, label_ids_batch, mask_ids_batch, pos_ids_batch, vm_ids_batch, tag_ids_batch
+            segment_ids_batch = segment_ids[i * batch_size: (i + 1) * batch_size, :]
+            yield input_ids_batch, label_ids_batch, mask_ids_batch, pos_ids_batch, vm_ids_batch, tag_ids_batch, segment_ids_batch
         if instances_num > instances_num // batch_size * batch_size:
             input_ids_batch = input_ids[instances_num // batch_size * batch_size:, :]
             label_ids_batch = label_ids[instances_num // batch_size * batch_size:, :]
@@ -194,7 +197,8 @@ def main():
             pos_ids_batch = pos_ids[instances_num // batch_size * batch_size:, :]
             vm_ids_batch = vm_ids[instances_num // batch_size * batch_size:, :, :]
             tag_ids_batch = tag_ids[instances_num // batch_size * batch_size:, :]
-            yield input_ids_batch, label_ids_batch, mask_ids_batch, pos_ids_batch, vm_ids_batch, tag_ids_batch
+            segment_ids_batch = segment_ids[instances_num // batch_size * batch_size:, :]
+            yield input_ids_batch, label_ids_batch, mask_ids_batch, pos_ids_batch, vm_ids_batch, tag_ids_batch, segment_ids_batch
 
     # Read dataset.
     def read_dataset(path):
@@ -213,32 +217,39 @@ def main():
                 tag = tag[0]
 
                 # tokens = tokenizer.convert_tokens_to_ids([tokenizer.cls_token] + tokens + [tokenizer.sep_token])
-                tokens = tokenizer.convert_tokens_to_ids(tokens)
+                non_pad_tokens = [tok for tok in tokens if tok != tokenizer.pad_token]
+                num_tokens = len(non_pad_tokens)
+                num_pad = len(tokens) - num_tokens
+
                 labels = [labels_map[l] for l in labels.split(" ")]
 
                 # print(tokens)
                 # print(labels)
                 # print(tag)
 
-                mask = [1] * len(tokens)
+                mask = [1] * (num_tokens + 2) + [0] * num_pad
+                word_segment_ids = [0] * (len(tokens) + 2)
                 new_labels = []
                 j = 0
+
                 # print(len(tokens))
                 # print(len(tag))
                 # print(tokenizer.pad_token_id)
 
                 for i in range(len(tokens)):
-                    if tag[i] == 0 and tokens[i] != tokenizer.pad_token_id:
+                    if tag[i] == 0 and tokens[i] != tokenizer.pad_token:
                         new_labels.append(labels[j])
                         j += 1
-                    elif tag[i] == 1 and tokens[i] != tokenizer.pad_token_id:  # 是添加的实体
+                    elif tag[i] == 1 and tokens[i] != tokenizer.pad_token:  # 是添加的实体
                         new_labels.append(labels_map['[ENT]'])
                     elif tag[i] == 2:
                         new_labels.append(labels_map['[X]'])
                     else:
                         new_labels.append(labels_map[PAD_TOKEN])
                 # print(new_labels)
-                dataset.append([tokens, new_labels, mask, pos, vm, tag])
+
+                tokens = tokenizer.convert_tokens_to_ids([tokenizer.cls_token] + tokens + [tokenizer.sep_token])
+                dataset.append([tokens, new_labels, mask, pos, vm, tag, word_segment_ids])
 
         return dataset
 
@@ -255,6 +266,7 @@ def main():
         pos_ids = torch.LongTensor([sample[3] for sample in dataset])
         vm_ids = torch.BoolTensor([sample[4] for sample in dataset])
         tag_ids = torch.LongTensor([sample[5] for sample in dataset])
+        segment_ids = torch.LongTensor([sample[6] for sample in dataset])
 
         instances_num = input_ids.size(0)
         batch_size = args.batch_size
@@ -273,8 +285,8 @@ def main():
 
         for i, (
                 input_ids_batch, label_ids_batch, mask_ids_batch, pos_ids_batch, vm_ids_batch,
-                tag_ids_batch) in enumerate(
-            batch_loader(batch_size, input_ids, label_ids, mask_ids, pos_ids, vm_ids, tag_ids)):
+                tag_ids_batch, segment_ids_batch) in enumerate(
+            batch_loader(batch_size, input_ids, label_ids, mask_ids, pos_ids, vm_ids, tag_ids, segment_ids)):
 
             input_ids_batch = input_ids_batch.to(device)
             label_ids_batch = label_ids_batch.to(device)
@@ -282,8 +294,11 @@ def main():
             pos_ids_batch = pos_ids_batch.to(device)
             tag_ids_batch = tag_ids_batch.to(device)
             vm_ids_batch = vm_ids_batch.long().to(device)
+            segment_ids_batch = segment_ids_batch.long().to(device)
 
-            loss, _, pred, gold = model(input_ids_batch, label_ids_batch, mask_ids_batch, pos_ids_batch, vm_ids_batch)
+            loss, _, pred, gold = model(input_ids_batch, segment_ids_batch, label_ids_batch, mask_ids_batch,
+                                        pos_ids_batch,
+                                        vm_ids_batch)
 
             for j in range(gold.size()[0]):
                 if gold[j].item() in begin_ids:
@@ -354,6 +369,7 @@ def main():
     pos_ids = torch.LongTensor([ins[3] for ins in instances])
     vm_ids = torch.BoolTensor([ins[4] for ins in instances])
     tag_ids = torch.LongTensor([ins[5] for ins in instances])
+    segment_ids = torch.LongTensor([ins[6] for ins in instances])
 
     instances_num = input_ids.size(0)
     batch_size = args.batch_size
@@ -378,8 +394,8 @@ def main():
         model.train()
         for i, (
                 input_ids_batch, label_ids_batch, mask_ids_batch, pos_ids_batch, vm_ids_batch,
-                tag_ids_batch) in enumerate(
-            batch_loader(batch_size, input_ids, label_ids, mask_ids, pos_ids, vm_ids, tag_ids)):
+                tag_ids_batch, segment_ids_batch) in enumerate(
+            batch_loader(batch_size, input_ids, label_ids, mask_ids, pos_ids, vm_ids, tag_ids, segment_ids)):
             model.zero_grad()
 
             input_ids_batch = input_ids_batch.to(device)
@@ -388,12 +404,9 @@ def main():
             pos_ids_batch = pos_ids_batch.to(device)
             tag_ids_batch = tag_ids_batch.to(device)
             vm_ids_batch = vm_ids_batch.long().to(device)
-            print(input_ids_batch)
-            print(mask_ids_batch)
-            print(pos_ids_batch)
-            exit()
+            segment_ids_batch = segment_ids_batch.long().to(device)
 
-            loss, _, _, _ = model(input_ids_batch, label_ids_batch, mask_ids_batch, pos_ids_batch, vm_ids_batch)
+            loss, _, _, _ = model(input_ids_batch, mask_ids_batch, segment_ids_batch, label_ids_batch, vm_ids_batch)
             if torch.cuda.device_count() > 1:
                 loss = torch.mean(loss)
             total_loss += loss.item()
