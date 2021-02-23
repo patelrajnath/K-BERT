@@ -85,12 +85,12 @@ class KnowledgeGraph(object):
             pos_idx = -1
             abs_idx = -1
             abs_idx_src = []
-            print(split_sent)
+            # print(split_sent)
             for token_original in split_sent:
                 entities = list(self.lookup_table.get(token_original.lower(), []))[:max_entities]
                 entities = [ent.replace('_', ' ') for ent in entities]
 
-                print(entities, token_original)
+                # print(entities, token_original)
 
                 # Tokenize the data
                 cur_tokens = []
@@ -107,7 +107,7 @@ class KnowledgeGraph(object):
                 else:
                     token_pos_idx = [pos_idx+i for i in range(1, len(cur_tokens)+1)]
                     token_abs_idx = [abs_idx+i for i in range(1, len(cur_tokens)+1)]
-                print(token_abs_idx)
+                # print(token_abs_idx)
                 abs_idx = token_abs_idx[-1]
 
                 entities_pos_idx = []
@@ -119,10 +119,10 @@ class KnowledgeGraph(object):
                     abs_idx = ent_abs_idx[-1]
                     entities_abs_idx.append(ent_abs_idx)
 
-                print(f'token_abs_idx:{token_abs_idx}')
-                print(f'token_pos_idx:{token_pos_idx}')
-                print(f'entities_abs_idx:{entities_abs_idx}')
-                print(f'entities_pos_idx:{entities_pos_idx}')
+                # print(f'token_abs_idx:{token_abs_idx}')
+                # print(f'token_pos_idx:{token_pos_idx}')
+                # print(f'entities_abs_idx:{entities_abs_idx}')
+                # print(f'entities_pos_idx:{entities_pos_idx}')
 
                 pos_idx_tree.append((token_pos_idx, entities_pos_idx))
                 pos_idx = token_pos_idx[-1]
@@ -130,9 +130,9 @@ class KnowledgeGraph(object):
                 abs_idx_src += token_abs_idx
 
             # Get know_sent and pos
-            print(abs_idx_tree)
-            print(pos_idx_tree)
-            print(sent_tree)
+            # print(abs_idx_tree)
+            # print(pos_idx_tree)
+            # print(sent_tree)
 
             know_sent = []
             pos = []
