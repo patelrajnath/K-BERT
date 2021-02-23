@@ -9,7 +9,7 @@ import torch.nn as nn
 from brain.knowgraph_english import KnowledgeGraph
 from luke import ModelArchive, LukeModel
 from uer.utils.config import load_hyperparam
-from uer.utils.optimizers import BertAdam
+from uer.utils.optimization import BertAdam
 from uer.utils.constants import *
 from uer.utils.vocab import Vocab
 from uer.utils.seed import set_seed
@@ -46,7 +46,6 @@ class LukeTagger(nn.Module):
         word_sequence_output, pooled_output = self.encoder(word_ids, word_segment_ids=word_segment_ids,
                                                            word_attention_mask=word_attention_mask,
                                                            vm=vm)
-        print(word_sequence_output.size())
         # exclude encodings or CLS and SEP token
         word_sequence_output = word_sequence_output
 
@@ -96,7 +95,7 @@ def main():
                         help="Path of the config file.")
 
     # Model options.
-    parser.add_argument("--batch_size", type=int, default=16,
+    parser.add_argument("--batch_size", type=int, default=2,
                         help="Batch_size.")
     parser.add_argument("--seq_length", default=256, type=int,
                         help="Sequence length.")
