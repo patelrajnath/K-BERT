@@ -392,6 +392,9 @@ def main():
     f1 = 0.0
     best_f1 = 0.0
 
+    # Dry evaluate
+    # evaluate(args, True)
+
     for epoch in range(1, args.epochs_num + 1):
         model.train()
         for i, (
