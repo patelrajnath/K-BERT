@@ -369,7 +369,7 @@ def main():
                     correct += 1
 
         print("Report precision, recall, and f1:")
-        p = correct / pred_entities_num + 1  # + 1 is avoid divide by zero error
+        p = correct / (pred_entities_num + 1)  # + 1 is avoid divide by zero error
         r = correct / gold_entities_num
         f1 = 2 * p * r / (p + r)
         print("{:.3f}, {:.3f}, {:.3f}".format(p, r, f1))
