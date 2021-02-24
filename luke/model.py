@@ -99,10 +99,11 @@ class LukeModel(nn.Module):
         entity_position_ids: torch.LongTensor = None,
         entity_segment_ids: torch.LongTensor = None,
         entity_attention_mask: torch.LongTensor = None,
+        position_ids: torch.LongTensor = None,
         vm: torch.LongTensor = None,
     ):
         word_seq_size = word_ids.size(1)
-        embedding_output = self.embeddings(word_ids, word_segment_ids)
+        embedding_output = self.embeddings(word_ids, word_segment_ids, positon_ids=position_ids)
 
         attention_mask = self._compute_extended_attention_mask(word_attention_mask, entity_attention_mask, vm)
 
