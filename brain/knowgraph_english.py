@@ -179,6 +179,12 @@ class KnowledgeGraph(object):
                         visible_abs_idx = ent + src_ids
                         visible_matrix[id, visible_abs_idx] = 1
 
+            # print(know_sent)
+            # print(seg)
+            # print(pos)
+            # print(visible_matrix)
+            # exit()
+
             src_length = len(know_sent)
             if len(know_sent) < max_length:
                 pad_num = max_length - src_length
@@ -191,6 +197,12 @@ class KnowledgeGraph(object):
                 seg = seg[:max_length]
                 pos = pos[:max_length]
                 visible_matrix = visible_matrix[:max_length, :max_length]
+
+            # print(know_sent)
+            # print(seg)
+            # print(pos)
+            # print(visible_matrix)
+            # exit()
             
             know_sent_batch.append(know_sent)
             position_batch.append(pos)

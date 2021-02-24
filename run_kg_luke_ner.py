@@ -123,6 +123,7 @@ def main():
     # kg
     parser.add_argument("--kg_name", required=True, help="KG name or path")
     parser.add_argument("--use_kg", action='store_true', help="Enable the use of KG.")
+    parser.add_argument("--debug", action='store_true', help="Enable debug.")
 
     args = parser.parse_args()
 
@@ -131,7 +132,7 @@ def main():
 
     set_seed(args.seed)
 
-    labels_map = {"[PAD]": 0, "[ENT]": 1, "[X]": 2}
+    labels_map = {"[PAD]": 0, "[ENT]": 1, "[X]": 2, "[CLS]": 3, "[SEP]": 4}
     begin_ids = []
 
     # Find tagging labels
@@ -146,6 +147,7 @@ def main():
                         begin_ids.append(len(labels_map))
                     labels_map[l] = len(labels_map)
 
+    print(begin_ids)
     print("Labels: ", labels_map)
     args.labels_num = len(labels_map)
 
@@ -300,6 +302,7 @@ def main():
                                         label_ids_batch,
                                         pos_ids_batch,
                                         vm_ids_batch,
+                                        use_kg=args.use_kg
                                         )
 
             for j in range(gold.size()[0]):
