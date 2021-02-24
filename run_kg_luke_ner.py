@@ -28,6 +28,7 @@ class LukeTagger(nn.Module):
                 word_segment_ids,
                 word_attention_mask,
                 label,
+                pos=None,
                 vm=None,
                 use_kg=True
                 ):
@@ -37,7 +38,7 @@ class LukeTagger(nn.Module):
         # Encoder.
         word_sequence_output, pooled_output = self.encoder(word_ids, word_segment_ids=word_segment_ids,
                                                            word_attention_mask=word_attention_mask,
-                                                           vm=vm)
+                                                           position_ids=pos, vm=vm)
         # Target.
         output = self.output_layer(word_sequence_output)
 
@@ -297,7 +298,9 @@ def main():
                                         segment_ids_batch,
                                         mask_ids_batch,
                                         label_ids_batch,
-                                        vm_ids_batch)
+                                        vm_ids_batch,
+                                        pos_ids_batch
+                                        )
 
             for j in range(gold.size()[0]):
                 if gold[j].item() in begin_ids:
@@ -410,6 +413,7 @@ def main():
                                   mask_ids_batch,
                                   label_ids_batch,
                                   vm_ids_batch,
+                                  pos_ids_batch,
                                   use_kg=args.use_kg)
 
             if torch.cuda.device_count() > 1:
