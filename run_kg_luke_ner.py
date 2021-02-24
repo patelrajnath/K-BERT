@@ -319,7 +319,7 @@ def main():
                     start = j
                     for k in range(j + 1, gold.size()[0]):
 
-                        if gold[k].item() == labels_map['[ENT]']:
+                        if gold[k].item() == labels_map['[ENT]'] or gold[k].item() == labels_map['[X]']:
                             continue
 
                         if gold[k].item() == labels_map["[PAD]"] or gold[k].item() == labels_map["O"] or gold[
@@ -332,11 +332,11 @@ def main():
 
             for j in range(pred.size()[0]):
                 if pred[j].item() in begin_ids and gold[j].item() != labels_map["[PAD]"] and gold[j].item() != \
-                        labels_map["[ENT]"]:
+                        labels_map["[ENT]"] and gold[j].item() != labels_map["[X]"]:
                     start = j
                     for k in range(j + 1, pred.size()[0]):
 
-                        if gold[k].item() == labels_map['[ENT]']:
+                        if gold[k].item() == labels_map['[ENT]'] or gold[k].item() == labels_map['[X]']:
                             continue
 
                         if pred[k].item() == labels_map["[PAD]"] or pred[k].item() == labels_map["O"] or pred[
