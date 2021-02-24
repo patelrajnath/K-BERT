@@ -85,7 +85,8 @@ class KnowledgeGraph(object):
             abs_idx = -1
             abs_idx_src = []
             # print(split_sent)
-            for token_original in split_sent:
+            num_chunks = len(split_sent)
+            for idx, token_original in enumerate(split_sent):
                 entities = []
                 if use_kg:
                     entities = list(self.lookup_table.get(token_original.lower(), []))[:max_entities]
@@ -98,8 +99,14 @@ class KnowledgeGraph(object):
                 for tok in token_original.split():
                     cur_tokens.extend(self.tokenizer.tokenize(tok))
 
-                entities = [self.tokenizer.tokenize(ent) for ent in entities]
+                if idx == 0:
+                    cur_tokens = [config.CLS_TOKEN] + cur_tokens
+                    token_original = config.CLS_TOKEN + ' ' + token_original
+                if idx == num_chunks - 1:
+                    cur_tokens = cur_tokens + [config.SEP_TOKEN]
+                    token_original = token_original + ' ' + config.SEP_TOKEN
 
+                entities = [self.tokenizer.tokenize(ent) for ent in entities]
                 sent_tree.append((token_original, cur_tokens, entities))
 
                 if token_original in self.special_tags:
@@ -134,6 +141,7 @@ class KnowledgeGraph(object):
             # print(abs_idx_tree)
             # print(pos_idx_tree)
             # print(sent_tree)
+            # exit()
 
             know_sent = []
             pos = []
@@ -143,21 +151,19 @@ class KnowledgeGraph(object):
                 word = sent_tree[i][1]
 
                 for tok in token_original.split():
-                    cur_toks = self.tokenizer.tokenize(tok)
-                    num_subwords = len(cur_toks)
                     if tok in self.special_tags:
                         seg += [0]
                     else:
+                        cur_toks = self.tokenizer.tokenize(tok)
+                        num_subwords = len(cur_toks)
                         seg += [0]
+
                         # Add extra tags for the added subtokens
                         if num_subwords > 1:
                             seg += [2] * (num_subwords - 1)
 
-                if token_original in self.special_tags:
-                    know_sent += word
-                else:
-                    add_word = word
-                    know_sent += add_word
+                # Append the subwords in know_sent
+                know_sent += word
 
                 pos += pos_idx_tree[i][0]
                 for j in range(len(sent_tree[i][2])):

@@ -6,6 +6,7 @@ import argparse
 import torch
 import torch.nn as nn
 
+from brain import config
 from brain.knowgraph_english import KnowledgeGraph
 from luke import ModelArchive, LukeModel
 from uer.utils.config import load_hyperparam
@@ -147,6 +148,8 @@ def main():
                         begin_ids.append(len(labels_map))
                     labels_map[l] = len(labels_map)
 
+    idx_to_label = {labels_map[key]: key for key in labels_map}
+
     print(begin_ids)
     print("Labels: ", labels_map)
     args.labels_num = len(labels_map)
@@ -220,7 +223,9 @@ def main():
                 num_tokens = len(non_pad_tokens)
                 num_pad = len(tokens) - num_tokens
 
-                labels = [labels_map[l] for l in labels.split(" ")]
+                labels = [labels_map[config.CLS_TOKEN]] + \
+                         [labels_map[l] for l in labels.split(" ")] + \
+                         [labels_map[config.SEP_TOKEN]]
 
                 # print(tokens)
                 # print(labels)
@@ -304,6 +309,15 @@ def main():
                                         vm_ids_batch,
                                         use_kg=args.use_kg
                                         )
+            with open('predictions.txt', 'a+') as p:
+                predicted_labels = [idx_to_label.get(key) for key in pred.tolist()]
+                p.write(' '.join(predicted_labels) + '\n')
+
+            with open('gold.txt', 'a+') as p:
+                gold_labels = [idx_to_label.get(key) for key in gold.tolist()]
+                p.write(' '.join(gold_labels) + '\n')
+
+            exit()
 
             for j in range(gold.size()[0]):
                 if gold[j].item() in begin_ids:
@@ -396,7 +410,7 @@ def main():
     best_f1 = 0.0
 
     # Dry evaluate
-    # evaluate(args, True)
+    evaluate(args, True)
 
     for epoch in range(1, args.epochs_num + 1):
         model.train()
