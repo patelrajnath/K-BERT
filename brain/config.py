@@ -1,6 +1,5 @@
 import os
 
-
 FILE_DIR_PATH = os.path.dirname(os.path.abspath(__file__))
 
 KGS = {
@@ -21,8 +20,11 @@ ENT_TOKEN = '[ENT]'
 SUB_TOKEN = '[SUB]'
 PRE_TOKEN = '[PRE]'
 OBJ_TOKEN = '[OBJ]'
+SOS_TOKEN = '<s>'
+EOS_TOKEN = '</s>'
+PAD = '<pad>'
 
 NEVER_SPLIT_TAG = [
     PAD_TOKEN, UNK_TOKEN, CLS_TOKEN, SEP_TOKEN, MASK_TOKEN,
-    ENT_TOKEN, SUB_TOKEN, PRE_TOKEN, OBJ_TOKEN
+    ENT_TOKEN, SUB_TOKEN, PRE_TOKEN, OBJ_TOKEN, SOS_TOKEN, EOS_TOKEN, PAD
 ]

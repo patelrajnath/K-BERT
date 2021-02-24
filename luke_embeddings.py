@@ -4,7 +4,15 @@ from luke import ModelArchive, LukeModel
 
 model_archive = ModelArchive.load('D:\\Downloads\\luke_base_500k.tar.gz')
 tokenizer = model_archive.tokenizer
-target_tokens = tokenizer.tokenize("Hello Luke Model")
+print(tokenizer.cls_token)
+print(tokenizer.sep_token)
+print(tokenizer.pad_token)
+print(tokenizer.unk_token)
+print(tokenizer.unk_token_id)
+# exit()
+target_tokens = tokenizer.tokenize("Hello Luke Model .")
+print(tokenizer.convert_ids_to_tokens(479))
+print(tokenizer.convert_ids_to_tokens(4))
 # text = "SOCCER - JAPAN GET LUCKY WIN , CHINA IN SURPRISE DEFEAT ."
 # target_tokens = tokenizer.tokenize("[CLS]")
 # print(target_tokens)
@@ -12,6 +20,8 @@ target_tokens = tokenizer.tokenize("Hello Luke Model")
 # print(target_tokens)
 # exit()
 word_ids = tokenizer.convert_tokens_to_ids([tokenizer.cls_token] + target_tokens + [tokenizer.sep_token])
+print(word_ids)
+exit()
 word_attention_mask = [1] * (len(target_tokens) + 2)
 word_segment_ids = [0] * (len(target_tokens) + 2)
 

@@ -250,10 +250,17 @@ def main():
                         new_labels.append(labels_map['[X]'])
                     else:
                         new_labels.append(labels_map[PAD_TOKEN])
+                # print(labels)
                 # print(new_labels)
-
+                # print(mask)
+                # print(pos)
+                # print(word_segment_ids)
+                # print(tokens)
                 # tokens = tokenizer.convert_tokens_to_ids([tokenizer.cls_token] + tokens + [tokenizer.sep_token])
                 tokens = tokenizer.convert_tokens_to_ids(tokens)
+                # print(tokens)
+                # exit()
+
                 dataset.append([tokens, new_labels, mask, pos, vm, tag, word_segment_ids])
 
         return dataset
@@ -369,11 +376,10 @@ def main():
                     correct += 1
 
         print("Report precision, recall, and f1:")
-        p = correct / (pred_entities_num + 1)  # + 1 is avoid divide by zero error
+        p = correct / pred_entities_num
         r = correct / gold_entities_num
         f1 = 2 * p * r / (p + r)
         print("{:.3f}, {:.3f}, {:.3f}".format(p, r, f1))
-
         return f1
 
     # Training phase.
