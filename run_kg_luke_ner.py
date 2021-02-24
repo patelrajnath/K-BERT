@@ -156,7 +156,7 @@ def main():
         spo_files = args.kg_name
 
     # Load Luke model.
-    model_archive = ModelArchive.load('D:\\Downloads\\luke_base_500k.tar.gz')
+    model_archive = ModelArchive.load(args.pretrained_model_path)
     tokenizer = model_archive.tokenizer
     encoder = LukeModel(model_archive.config)
 
