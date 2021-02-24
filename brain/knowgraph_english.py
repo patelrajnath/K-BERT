@@ -100,11 +100,13 @@ class KnowledgeGraph(object):
                     cur_tokens.extend(self.tokenizer.tokenize(tok))
 
                 if idx == 0:
-                    cur_tokens = [config.CLS_TOKEN] + cur_tokens
-                    token_original = config.CLS_TOKEN + ' ' + token_original
+                    cls_token = self.tokenizer.cls_token
+                    cur_tokens = [cls_token] + cur_tokens
+                    token_original = cls_token + ' ' + token_original
                 if idx == num_chunks - 1:
-                    cur_tokens = cur_tokens + [config.SEP_TOKEN]
-                    token_original = token_original + ' ' + config.SEP_TOKEN
+                    sep_token = self.tokenizer.sep_token
+                    cur_tokens = cur_tokens + [sep_token]
+                    token_original = token_original + ' ' + sep_token
 
                 entities = [self.tokenizer.tokenize(ent) for ent in entities]
                 sent_tree.append((token_original, cur_tokens, entities))
