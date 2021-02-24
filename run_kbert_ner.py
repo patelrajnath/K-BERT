@@ -224,7 +224,6 @@ def main():
                 text = ''.join(tokens.split(" "))
                 tokens, pos, vm, tag = kg.add_knowledge_with_vm([text], add_pad=True, max_length=args.seq_length)
                 tokens = tokens[0]
-                print(tokens)
                 pos = pos[0]
                 vm = vm[0].astype("bool")
                 tag = tag[0]
