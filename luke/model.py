@@ -103,9 +103,9 @@ class LukeModel(nn.Module):
         vm: torch.LongTensor = None,
     ):
         word_seq_size = word_ids.size(1)
-        print(word_ids.size())
-        print(word_segment_ids.size())
-        print(position_ids.size())
+        # print(word_ids.size())
+        # print(word_segment_ids.size())
+        # print(position_ids.size())
 
         embedding_output = self.embeddings(word_ids, word_segment_ids, position_ids=position_ids)
 
