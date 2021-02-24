@@ -317,8 +317,6 @@ def main():
                 gold_labels = [idx_to_label.get(key) for key in gold.tolist()]
                 p.write(' '.join(gold_labels) + '\n')
 
-            exit()
-
             for j in range(gold.size()[0]):
                 if gold[j].item() in begin_ids:
                     gold_entities_num += 1
@@ -410,7 +408,7 @@ def main():
     best_f1 = 0.0
 
     # Dry evaluate
-    evaluate(args, True)
+    # evaluate(args, True)
 
     for epoch in range(1, args.epochs_num + 1):
         model.train()
