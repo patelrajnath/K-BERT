@@ -298,8 +298,8 @@ def main():
                                         segment_ids_batch,
                                         mask_ids_batch,
                                         label_ids_batch,
+                                        pos_ids_batch,
                                         vm_ids_batch,
-                                        pos_ids_batch
                                         )
 
             for j in range(gold.size()[0]):
@@ -412,8 +412,8 @@ def main():
                                   segment_ids_batch,
                                   mask_ids_batch,
                                   label_ids_batch,
-                                  vm_ids_batch,
                                   pos_ids_batch,
+                                  vm_ids_batch,
                                   use_kg=args.use_kg)
 
             if torch.cuda.device_count() > 1:
