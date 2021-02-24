@@ -221,9 +221,6 @@ def main():
             for line_id, line in enumerate(f):
                 tokens, labels = line.strip().split("\t")
 
-                print(tokens.split())
-                print(labels.split())
-
                 text = ''.join(tokens.split(" "))
                 tokens, pos, vm, tag = kg.add_knowledge_with_vm([text], add_pad=True, max_length=args.seq_length)
                 tokens = tokens[0]
@@ -247,12 +244,6 @@ def main():
                     else:
                         new_labels.append(labels_map[PAD_TOKEN])
 
-                if any(tag):
-                    print(tokens)
-                    print(labels)
-                    print(new_labels)
-                    print(vm)
-                    exit()
                 dataset.append([tokens, new_labels, mask, pos, vm, tag])
         
         return dataset
