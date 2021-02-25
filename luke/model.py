@@ -201,6 +201,27 @@ class LukeModel(nn.Module):
             mask = (1.0 - mask) * -10000.0
             return mask
 
+    def load_state_dict(self, state_dict, *args, **kwargs):
+        new_state_dict = state_dict.copy()
+
+        for num in range(self.config.num_hidden_layers):
+            for attr_name in ("weight", "bias"):
+                if f"encoder.layer.{num}.attention.self.w2e_query.{attr_name}" not in state_dict:
+                    new_state_dict[f"encoder.layer.{num}.attention.self.w2e_query.{attr_name}"] = state_dict[
+                        f"encoder.layer.{num}.attention.self.query.{attr_name}"
+                    ]
+                if f"encoder.layer.{num}.attention.self.e2w_query.{attr_name}" not in state_dict:
+                    new_state_dict[f"encoder.layer.{num}.attention.self.e2w_query.{attr_name}"] = state_dict[
+                        f"encoder.layer.{num}.attention.self.query.{attr_name}"
+                    ]
+                if f"encoder.layer.{num}.attention.self.e2e_query.{attr_name}" not in state_dict:
+                    new_state_dict[f"encoder.layer.{num}.attention.self.e2e_query.{attr_name}"] = state_dict[
+                        f"encoder.layer.{num}.attention.self.query.{attr_name}"
+                    ]
+
+        kwargs["strict"] = False
+        super(LukeModel, self).load_state_dict(new_state_dict, *args, **kwargs)
+
 
 class LukeEntityAwareAttentionModel(LukeModel):
     def __init__(self, config):
