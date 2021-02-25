@@ -238,6 +238,7 @@ def main():
 
                 # print(len(tokens))
                 # print(len(tag))
+                # exit()
                 # print(tokenizer.pad_token_id)
 
                 for i in range(len(tokens)):

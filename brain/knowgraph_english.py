@@ -3,6 +3,11 @@
 KnowledgeGraph
 """
 import json
+
+import unicodedata
+
+from transformers import RobertaTokenizer
+
 import brain.config as config
 import numpy as np
 from datautils import Doc
@@ -24,7 +29,7 @@ class KnowledgeGraph(object):
 
     def _create_lookup_table(self):
         lookup_table = {}
-        with open(self.vocab_file, "r") as f:
+        with open(self.vocab_file, "r", encoding='utf-8') as f:
             entities_json = [json.loads(line) for line in f]
         for item in entities_json:
             for title, language in item["entities"]:
@@ -32,6 +37,26 @@ class KnowledgeGraph(object):
                 if value:
                     lookup_table[title.lower()] = value
         return lookup_table
+
+    def tokenize_word(self, text):
+        if (
+                isinstance(self.tokenizer, RobertaTokenizer)
+                and (text[0] != "'")
+                and (len(text) != 1 or not self.is_punctuation(text))
+        ):
+            return self.tokenizer.tokenize(text, add_prefix_space=True)
+        return self.tokenizer.tokenize(text)
+
+    def is_punctuation(self, char):
+        # obtained from:
+        # https://github.com/huggingface/transformers/blob/5f25a5f367497278bf19c9994569db43f96d5278/transformers/tokenization_bert.py#L489
+        cp = ord(char)
+        if (cp >= 33 and cp <= 47) or (cp >= 58 and cp <= 64) or (cp >= 91 and cp <= 96) or (cp >= 123 and cp <= 126):
+            return True
+        cat = unicodedata.category(char)
+        if cat.startswith("P"):
+            return True
+        return False
 
     def add_knowledge_with_vm(self, sent_batch, label_batch,
                               max_entities=config.MAX_ENTITIES, use_kg=True, max_length=128):
@@ -87,17 +112,17 @@ class KnowledgeGraph(object):
             # print(split_sent)
             num_chunks = len(split_sent)
             for idx, token_original in enumerate(split_sent):
-                entities = []
+                know_entities = []
                 if use_kg:
-                    entities = list(self.lookup_table.get(token_original.lower(), []))[:max_entities]
-                    entities = [ent.replace('_', ' ') for ent in entities]
+                    know_entities = list(self.lookup_table.get(token_original.lower(), []))[:max_entities]
+                    know_entities = [ent.replace('_', ' ') for ent in know_entities]
 
                 # print(entities, token_original)
 
                 # Tokenize the data
                 cur_tokens = []
                 for tok in token_original.split():
-                    cur_tokens.extend(self.tokenizer.tokenize(tok))
+                    cur_tokens.extend(self.tokenize_word(tok))
 
                 if idx == 0:
                     cls_token = self.tokenizer.cls_token
@@ -108,7 +133,13 @@ class KnowledgeGraph(object):
                     cur_tokens = cur_tokens + [sep_token]
                     token_original = token_original + ' ' + sep_token
 
-                entities = [self.tokenizer.tokenize(ent) for ent in entities]
+                entities = []
+                for ent in know_entities:
+                    entity = []
+                    for word in ent.split():
+                        entity.extend(self.tokenize_word(word))
+                    entities.append(entity)
+
                 sent_tree.append((token_original, cur_tokens, entities))
 
                 if token_original in self.special_tags:
@@ -156,7 +187,7 @@ class KnowledgeGraph(object):
                     if tok in self.special_tags:
                         seg += [0]
                     else:
-                        cur_toks = self.tokenizer.tokenize(tok)
+                        cur_toks = self.tokenize_word(tok)
                         num_subwords = len(cur_toks)
                         seg += [0]
 
