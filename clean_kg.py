@@ -25,6 +25,7 @@ with open(vocab_file, "r", encoding='utf-8') as f:
     for item in entities_json:
         temp = {}
         for title, language in item["entities"]:
+            print(title)
             value = item["info_box"]
             for key in value:
                 temp[key] = lookup_table.get(key)
