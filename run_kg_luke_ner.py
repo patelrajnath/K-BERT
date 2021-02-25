@@ -317,13 +317,13 @@ def main():
                                         vm_ids_batch,
                                         use_kg=args.use_kg
                                         )
-            with open('predictions.txt', 'a+') as p:
-                predicted_labels = [idx_to_label.get(key) for key in pred.tolist()]
-                p.write(' '.join(predicted_labels) + '\n')
-
-            with open('gold.txt', 'a+') as p:
-                gold_labels = [idx_to_label.get(key) for key in gold.tolist()]
-                p.write(' '.join(gold_labels) + '\n')
+            # with open('predictions.txt', 'a+') as p:
+            #     predicted_labels = [idx_to_label.get(key) for key in pred.tolist()]
+            #     p.write(' '.join(predicted_labels) + '\n')
+            #
+            # with open('gold.txt', 'a+') as p:
+            #     gold_labels = [idx_to_label.get(key) for key in gold.tolist()]
+            #     p.write(' '.join(gold_labels) + '\n')
 
             for j in range(gold.size()[0]):
                 if gold[j].item() in begin_ids:
@@ -375,13 +375,15 @@ def main():
                     continue
                 else:
                     correct += 1
-
-        print("Report precision, recall, and f1:")
-        p = correct / pred_entities_num
-        r = correct / gold_entities_num
-        f1 = 2 * p * r / (p + r)
-        print("{:.3f}, {:.3f}, {:.3f}".format(p, r, f1))
-        return f1
+        try:
+            print("Report precision, recall, and f1:")
+            p = correct / pred_entities_num
+            r = correct / gold_entities_num
+            f1 = 2 * p * r / (p + r)
+            print("{:.3f}, {:.3f}, {:.3f}".format(p, r, f1))
+            return f1
+        except ZeroDivisionError:
+            return 0
 
     # Training phase.
     print("Start training.")
