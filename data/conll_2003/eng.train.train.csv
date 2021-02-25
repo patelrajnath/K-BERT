@@ -1,6 +1,5 @@
 labels	text	cls
-O B_ORG O B_MISC O O O B_MISC O O	EU rejects German call to boycott British lamb .	False
-B_PER I_PER B_LOC O O B_ORG I_ORG O O O O O O B_MISC O O O O O B_MISC O O O O O O O O O O O O O O	Peter Blackburn BRUSSELS 1996-08-22 The European Commission said on Thursday it disagreed with German advice to consumers to shun British lamb until scientists determine whether mad cow disease can be transmitted to sheep .	False
+B_ORG O B_MISC O O O B_MISC O O	EU rejects German call to boycott British lamb .	False
 B_LOC O O O O B_ORG I_ORG O O O B_PER I_PER O O O O O O O O O O O B_LOC O O O O O O O	Germany 's representative to the European Union 's veterinary committee Werner Zwingmann said on Wednesday consumers should buy sheepmeat from countries other than Britain until the scientific advice was clearer .	False
 O O O O O O O O O O O O O O O O O O O O B_ORG O O O B_PER I_PER I_PER I_PER O O O O O	""" We do n't support any such recommendation because we do n't see any grounds for it , "" the Commission 's chief spokesman Nikolaus van der Pas told a news briefing ."	False
 O O O O O O O O O O O O O O O O O O O O O O B_ORG I_ORG O	He said further scientific study was required and if it was found that action was needed it should be taken by the European Union .	False
