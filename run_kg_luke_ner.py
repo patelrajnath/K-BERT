@@ -52,39 +52,39 @@ class LukeTagger(nn.Module):
         word_sequence_output, pooled_output = self.encoder(word_ids, word_segment_ids=word_segment_ids,
                                                            word_attention_mask=word_attention_mask,
                                                            position_ids=pos, vm=vm)
-        print(word_sequence_output.size())
+        # print(word_sequence_output.size())
         # Target.
         outputs = self.output_layer(word_sequence_output)
-        print('After last layer:', outputs.size())
+        # print('After last layer:', outputs.size())
         outputs = outputs.contiguous().view(-1, self.labels_num)
-        print('Flat:', outputs.size())
+        # print('Flat:', outputs.size())
         outputs = F.log_softmax(outputs, dim=-1)
         predict = outputs.argmax(dim=-1)
 
-        print('After Log softmax:', outputs.size())
+        # print('After Log softmax:', outputs.size())
 
         labels = labels.contiguous().view(-1)
-        print(word_ids)
-        print(labels)
+        # print(word_ids)
+        # print(labels)
 
         mask = (labels > 0).float().to(torch.device(labels.device))
-        print('Mask:', mask)
+        # print('Mask:', mask)
         # the number of tokens is the sum of elements in mask
         num_labels = int(torch.sum(mask).item())
-        print('Num Labels:', num_labels)
+        # print('Num Labels:', num_labels)
 
         # pick the values corresponding to labels and multiply by mask
         outputs = outputs[range(outputs.shape[0]), labels] * mask
 
         # cross entropy loss for all non 'PAD' tokens
         loss = -torch.sum(outputs) / num_labels
-        print('loss:', loss)
+        # print('loss:', loss)
 
         correct = torch.sum(
             mask * (predict.eq(labels)).float()
         )
-        print('Prediction:', predict)
-        print('Correct:', correct)
+        # print('Prediction:', predict)
+        # print('Correct:', correct)
         # exit()
 
         return loss, correct, predict, labels
