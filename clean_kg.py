@@ -20,7 +20,7 @@ with open(vocab_file, "r", encoding='utf-8') as f:
 lookup_table_sorted = {k: v for k, v in sorted(lookup_table.items(), key=lambda item: item[1], reverse=True)}
 print(lookup_table_sorted)
 count = 0
-with open(vocab_file, "r", encoding='utf-8') as f:
+with open(vocab_file, "r", encoding='utf-8') as f, open('out_file', "w") as fout:
     entities_json = [json.loads(line) for line in f]
     for item in entities_json:
         temp = {}
@@ -34,7 +34,11 @@ with open(vocab_file, "r", encoding='utf-8') as f:
             info_box = {}
             for key in sorted_value:
                 info_box[key] = value[key]
-            print(info_box)
+            item["info_box"] = info_box
+            print(item)
+        json.dump(item, fout, default=str)
+        f.write('\n')
+
         if count == 100:
             break
         count += 1
