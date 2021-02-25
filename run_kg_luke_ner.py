@@ -14,6 +14,18 @@ from uer.utils.optimizers import BertAdam
 from uer.utils.constants import *
 from uer.utils.seed import set_seed
 from uer.model_saver import save_model
+from torch.nn import functional as F
+
+
+def loss_fn(outputs, labels, mask):
+    # the number of tokens is the sum of elements in mask
+    num_labels = int(torch.sum(mask).item())
+
+    # pick the values corresponding to labels and multiply by mask
+    outputs = outputs[range(outputs.shape[0]), labels] * mask
+
+    # cross entropy loss for all non 'PAD' tokens
+    return -torch.sum(outputs) / num_labels
 
 
 class LukeTagger(nn.Module):
@@ -28,7 +40,7 @@ class LukeTagger(nn.Module):
                 word_ids,
                 word_segment_ids,
                 word_attention_mask,
-                label,
+                labels,
                 pos=None,
                 vm=None,
                 use_kg=True
@@ -40,30 +52,42 @@ class LukeTagger(nn.Module):
         word_sequence_output, pooled_output = self.encoder(word_ids, word_segment_ids=word_segment_ids,
                                                            word_attention_mask=word_attention_mask,
                                                            position_ids=pos, vm=vm)
+        print(word_sequence_output.size())
         # Target.
-        output = self.output_layer(word_sequence_output)
+        outputs = self.output_layer(word_sequence_output)
+        print('After last layer:', outputs.size())
+        outputs = outputs.contiguous().view(-1, self.labels_num)
+        print('Flat:', outputs.size())
+        outputs = F.log_softmax(outputs, dim=-1)
+        predict = outputs.argmax(dim=-1)
 
-        output = output.contiguous().view(-1, self.labels_num)
-        output = self.softmax(output)
+        print('After Log softmax:', outputs.size())
 
-        label = label.contiguous().view(-1, 1)
-        label_mask = (label > 0).float().to(torch.device(label.device))
-        one_hot = torch.zeros(label_mask.size(0), self.labels_num). \
-            to(torch.device(label.device)). \
-            scatter_(1, label, 1.0)
+        labels = labels.contiguous().view(-1)
+        print(word_ids)
+        print(labels)
 
-        numerator = -torch.sum(output * one_hot, 1)
-        label_mask = label_mask.contiguous().view(-1)
-        label = label.contiguous().view(-1)
-        numerator = torch.sum(label_mask * numerator)
-        denominator = torch.sum(label_mask) + 1e-6
-        loss = numerator / denominator
-        predict = output.argmax(dim=-1)
+        mask = (labels > 0).float().to(torch.device(labels.device))
+        print('Mask:', mask)
+        # the number of tokens is the sum of elements in mask
+        num_labels = int(torch.sum(mask).item())
+        print('Num Labels:', num_labels)
+
+        # pick the values corresponding to labels and multiply by mask
+        outputs = outputs[range(outputs.shape[0]), labels] * mask
+
+        # cross entropy loss for all non 'PAD' tokens
+        loss = -torch.sum(outputs) / num_labels
+        print('loss:', loss)
+
         correct = torch.sum(
-            label_mask * (predict.eq(label)).float()
+            mask * (predict.eq(labels)).float()
         )
+        print('Prediction:', predict)
+        print('Correct:', correct)
+        # exit()
 
-        return loss, correct, predict, label
+        return loss, correct, predict, labels
 
 
 def main():
@@ -163,7 +187,10 @@ def main():
     # Load Luke model.
     model_archive = ModelArchive.load(args.pretrained_model_path)
     tokenizer = model_archive.tokenizer
+
+    # Load the pretrained model
     encoder = LukeModel(model_archive.config)
+    encoder.load_state_dict(model_archive.state_dict, strict=False)
 
     # Build sequence labeling model.
     model = LukeTagger(args, encoder)
