@@ -2,8 +2,8 @@ import json
 
 from wikipedia2vec.wikipedia2vec import tqdm
 
-vocab_file = 'D:\\Downloads\\ent_vocab_custom'
-outfile = 'D:\\Downloads\\ent_vocab_custom_filtered'
+vocab_file = 'D:\\Downloads\\ent_vocab_custom_all'
+outfile = 'D:\\Downloads\\ent_vocab_custom_all_filtered'
 lookup_table = {}
 # count = 0
 with open(vocab_file, "r", encoding='utf-8') as f:
