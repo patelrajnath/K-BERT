@@ -3,7 +3,7 @@ import json
 vocab_file = 'D:\\Downloads\\ent_vocab_custom_all'
 outfile = 'D:\\Downloads\\ent_vocab_custom_all_filtered'
 lookup_table = {}
-# count = 0
+count = 0
 with open(vocab_file, "r", encoding='utf-8') as f:
     for line in f:
         item = json.loads(line)
@@ -14,12 +14,12 @@ with open(vocab_file, "r", encoding='utf-8') as f:
                     lookup_table[key] += 1
                 except:
                     lookup_table[key] = 1
-        # if count == 100:
-        #     break
-        # count += 1
+        if count == 100000:
+            print(f'Processed: {count}')
+        count += 1
 # lookup_table_sorted = {k: v for k, v in sorted(lookup_table.items(), key=lambda item: item[1], reverse=True)}
 # print(lookup_table_sorted)
-# count = 0
+count = 0
 with open(vocab_file, "r", encoding='utf-8') as f, open(outfile, "w", encoding='utf-8') as fout:
     entities_json = [ ]  # create a generator
     for line in f:
@@ -40,6 +40,6 @@ with open(vocab_file, "r", encoding='utf-8') as f, open(outfile, "w", encoding='
                 # print(item)
                 json.dump(item, fout, default=str)
                 fout.write('\n')
-            # if count == 100:
-            #     break
-            # count += 1
+        if count == 100000:
+            print(f'Processed: {count}')
+        count += 1
