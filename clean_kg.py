@@ -37,7 +37,7 @@ with open(vocab_file, "r", encoding='utf-8') as f, open('out_file', "w") as fout
             item["info_box"] = info_box
             print(item)
         json.dump(item, fout, default=str)
-        f.write('\n')
+        fout.write('\n')
 
         if count == 100:
             break
