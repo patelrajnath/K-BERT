@@ -7,7 +7,7 @@ outfile = 'D:\\Downloads\\ent_vocab_custom_all_filtered'
 lookup_table = {}
 # count = 0
 with open(vocab_file, "r", encoding='utf-8') as f:
-    entities_json = [json.loads(line) for line in f]
+    entities_json = (json.loads(line) for line in f)  # create a generator
     for item in entities_json:
         for title, language in item["entities"]:
             value = item["info_box"]
@@ -23,7 +23,7 @@ with open(vocab_file, "r", encoding='utf-8') as f:
 # print(lookup_table_sorted)
 # count = 0
 with open(vocab_file, "r", encoding='utf-8') as f, open(outfile, "w", encoding='utf-8') as fout:
-    entities_json = [json.loads(line) for line in f]
+    entities_json = (json.loads(line) for line in f)  # create a generator
     with tqdm(total=len(entities_json), mininterval=0.5) as pbar:
         for item in entities_json:
             temp = {}
