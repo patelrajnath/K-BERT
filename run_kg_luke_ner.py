@@ -28,6 +28,38 @@ def loss_fn(outputs, labels, mask):
     return -torch.sum(outputs) / num_labels
 
 
+class Batcher(object):
+    def __init__(self, batch_size, input_ids, label_ids, mask_ids, pos_ids, vm_ids, tag_ids, segment_ids):
+        self.batch_size = batch_size
+        self.input_ids = input_ids
+        self.label_ids = label_ids
+        self.mask_ids = mask_ids
+        self.pos_ids = pos_ids
+        self.vm_ids = vm_ids
+        self.tag_ids = tag_ids
+        self.segment_ids = segment_ids
+        self.num_samples = self.input_ids.shape[0]
+        self.indices = torch.randperm(self.num_samples)
+        self.ptr = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.ptr > self.num_samples:
+            self.indices = torch.randperm(self.num_samples)
+            self.ptr = 0
+            raise StopIteration
+        else:
+            batch_indices = self.indices[self.ptr: self.ptr + self.batch_size]
+            self.ptr += self.batch_size
+
+            return self.input_ids[batch_indices], self.label_ids[batch_indices], \
+                   self.mask_ids[batch_indices], self.pos_ids[batch_indices], \
+                   self.vm_ids[batch_indices], self.tag_ids[batch_indices], \
+                   self.segment_ids[batch_indices]
+
+
 class LukeTagger(nn.Module):
     def __init__(self, args, encoder):
         super(LukeTagger, self).__init__()
@@ -149,6 +181,8 @@ def main():
     parser.add_argument("--kg_name", required=True, help="KG name or path")
     parser.add_argument("--use_kg", action='store_true', help="Enable the use of KG.")
     parser.add_argument("--debug", action='store_true', help="Enable debug.")
+    parser.add_argument("--max_entities", default=2, type=int,
+                        help="Number of KG features.")
 
     args = parser.parse_args()
 
@@ -238,8 +272,8 @@ def main():
                 tokens, pos, vm, tag = \
                     kg.add_knowledge_with_vm([tokens], [labels],
                                              use_kg=args.use_kg,
-                                             max_length=args.seq_length
-                                             )
+                                             max_length=args.seq_length,
+                                             max_entities=args.max_entities)
                 tokens = tokens[0]
                 pos = pos[0]
                 vm = vm[0].astype("bool")
@@ -428,6 +462,8 @@ def main():
     batch_size = args.batch_size
     train_steps = int(instances_num * args.epochs_num / batch_size) + 1
 
+    train_batcher = Batcher(batch_size, input_ids, label_ids, mask_ids, pos_ids, vm_ids, tag_ids, segment_ids)
+
     print("Batch size: ", batch_size)
     print("The number of training instances:", instances_num)
 
@@ -450,8 +486,7 @@ def main():
         model.train()
         for i, (
                 input_ids_batch, label_ids_batch, mask_ids_batch, pos_ids_batch, vm_ids_batch,
-                tag_ids_batch, segment_ids_batch) in enumerate(
-            batch_loader(batch_size, input_ids, label_ids, mask_ids, pos_ids, vm_ids, tag_ids, segment_ids)):
+                tag_ids_batch, segment_ids_batch) in enumerate(train_batcher):
             model.zero_grad()
 
             input_ids_batch = input_ids_batch.to(device)
