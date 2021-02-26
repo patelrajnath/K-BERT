@@ -180,6 +180,8 @@ def main():
     # kg
     parser.add_argument("--kg_name", required=True, help="KG name or path")
     parser.add_argument("--use_kg", action='store_true', help="Enable the use of KG.")
+    parser.add_argument("--use_subword_tag", action='store_true',
+                        help="Enable to use separate tag for subword splits.")
     parser.add_argument("--debug", action='store_true', help="Enable debug.")
     parser.add_argument("--max_entities", default=2, type=int,
                         help="Number of KG features.")
@@ -309,7 +311,10 @@ def main():
                     elif tag[i] == 1 and tokens[i] != tokenizer.pad_token:  # 是添加的实体
                         new_labels.append(labels_map['[ENT]'])
                     elif tag[i] == 2:
-                        new_labels.append(labels_map['[X]'])
+                        if args.use_subword_tag:
+                            new_labels.append(labels_map['[X]'])
+                        else:
+                            new_labels.append(labels_map['[ENT]'])
                     else:
                         new_labels.append(labels_map[PAD_TOKEN])
                 # print(labels)
