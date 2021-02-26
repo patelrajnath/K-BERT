@@ -14,9 +14,10 @@ with open(vocab_file, "r", encoding='utf-8') as f:
                     lookup_table[key] += 1
                 except:
                     lookup_table[key] = 1
-        if count == 100000:
-            print(f'Processed: {count}')
         count += 1
+        if count % 100000 == 0:
+            print(f'Processed: {count}')
+
 # lookup_table_sorted = {k: v for k, v in sorted(lookup_table.items(), key=lambda item: item[1], reverse=True)}
 # print(lookup_table_sorted)
 count = 0
@@ -40,6 +41,6 @@ with open(vocab_file, "r", encoding='utf-8') as f, open(outfile, "w", encoding='
                 # print(item)
                 json.dump(item, fout, default=str)
                 fout.write('\n')
-        if count == 100000:
-            print(f'Processed: {count}')
         count += 1
+        if count % 100000 == 0:
+            print(f'Processed: {count}')
