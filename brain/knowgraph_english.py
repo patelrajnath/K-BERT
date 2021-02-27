@@ -59,7 +59,10 @@ class KnowledgeGraph(object):
         return False
 
     def add_knowledge_with_vm(self, sent_batch, label_batch,
-                              max_entities=config.MAX_ENTITIES, use_kg=True, max_length=128):
+                              max_entities=config.MAX_ENTITIES,
+                              use_kg=True,
+                              max_length=128,
+                              reverse_order=False):
         """
         input: sent_batch - list of sentences, e.g., ["abcd", "efgh"]
         return: know_sent_batch - list of sentences with entites embedding
@@ -114,7 +117,15 @@ class KnowledgeGraph(object):
             for idx, token_original in enumerate(split_sent):
                 know_entities = []
                 if use_kg:
-                    know_entities = list(self.lookup_table.get(token_original.lower(), []))[:max_entities]
+                    all_entities = list(self.lookup_table.get(token_original.lower(), []))
+                    # Select entities from least frequent
+                    if reverse_order:
+                        all_entities_len = len(all_entities)
+                        start_index = all_entities_len - max_entities
+                        know_entities = all_entities[start_index: None]
+                    else:
+                        # Select entities from frequent features
+                        know_entities = all_entities[:max_entities]
                     know_entities = [ent.replace('_', ' ') for ent in know_entities]
 
                 # print(entities, token_original)
