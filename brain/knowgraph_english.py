@@ -20,8 +20,8 @@ class KnowledgeGraph(object):
     spo_files - list of Path of *.spo files, or default kg name. e.g., ['HowNet']
     """
 
-    def __init__(self, vocab_file, tokenizer):
-        self.vocab_file = vocab_file
+    def __init__(self, kg_file, tokenizer):
+        self.kg_file = kg_file
         self.lookup_table = self._create_lookup_table()
         self.segment_vocab = list(self.lookup_table.keys()) + config.NEVER_SPLIT_TAG
         self.special_tags = set(config.NEVER_SPLIT_TAG)
@@ -29,7 +29,7 @@ class KnowledgeGraph(object):
 
     def _create_lookup_table(self):
         lookup_table = {}
-        with open(self.vocab_file, "r", encoding='utf-8') as f:
+        with open(self.kg_file, "r", encoding='utf-8') as f:
             entities_json = [json.loads(line) for line in f]
         for item in entities_json:
             for title, language in item["entities"]:

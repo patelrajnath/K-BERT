@@ -217,9 +217,9 @@ def main():
 
     # Build knowledge graph.
     if args.kg_name == 'none':
-        spo_files = []
+        kg_file = []
     else:
-        spo_files = args.kg_name
+        kg_file = args.kg_name
 
     # Load Luke model.
     model_archive = ModelArchive.load(args.pretrained_model_path)
@@ -231,7 +231,7 @@ def main():
 
     # Build sequence labeling model.
     model = LukeTagger(args, encoder)
-    kg = KnowledgeGraph(vocab_file=spo_files, tokenizer=tokenizer)
+    kg = KnowledgeGraph(kg_file=kg_file, tokenizer=tokenizer)
 
     # For simplicity, we use DataParallel wrapper to use multiple GPUs.
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
