@@ -211,6 +211,7 @@ def main():
     # kg
     parser.add_argument("--kg_name", required=True, help="KG name or path")
     parser.add_argument("--use_kg", action='store_true', help="Enable the use of KG.")
+    parser.add_argument("--eval_kg_tag", action='store_true', help="Enable to include [ENT] tag in evaluation.")
     parser.add_argument("--use_subword_tag", action='store_true',
                         help="Enable to use separate tag for subword splits.")
     parser.add_argument("--debug", action='store_true', help="Enable debug.")
@@ -436,44 +437,83 @@ def main():
             gold_entities_pos = []
             start, end = 0, 0
 
-            for j in range(gold.size()[0]):
-                if gold[j].item() in begin_ids:
-                    start = j
-                    for k in range(j + 1, gold.size()[0]):
+            if args.eval_kg_tag:
+                for j in range(gold.size()[0]):
+                    if gold[j].item() in begin_ids:
+                        start = j
+                        for k in range(j + 1, gold.size()[0]):
+                            if gold[k].item() == labels_map['[ENT]'] or gold[k].item() == labels_map['[X]']:
+                                continue
 
-                        if gold[k].item() == labels_map['[ENT]'] or gold[k].item() == labels_map['[X]']:
-                            continue
+                            if gold[k].item() == labels_map["[PAD]"] or gold[k].item() == labels_map["O"] or gold[
+                                k].item() in begin_ids:
+                                end = k - 1
+                                break
+                        else:
+                            end = gold.size()[0] - 1
+                        gold_entities_pos.append((start, end))
 
-                        if gold[k].item() == labels_map["[PAD]"] or gold[k].item() == labels_map["O"] or gold[
-                            k].item() in begin_ids:
-                            end = k - 1
-                            break
+                for j in range(pred.size()[0]):
+                    if pred[j].item() in begin_ids and gold[j].item() != labels_map["[PAD]"] and gold[j].item() != \
+                            labels_map["[ENT]"] and gold[j].item() != labels_map["[X]"]:
+                        start = j
+                        for k in range(j + 1, pred.size()[0]):
+
+                            if gold[k].item() == labels_map['[ENT]'] or gold[k].item() == labels_map['[X]']:
+                                continue
+
+                            if pred[k].item() == labels_map["[PAD]"] or pred[k].item() == labels_map["O"] or pred[
+                                k].item() in begin_ids:
+                                end = k - 1
+                                break
+                        else:
+                            end = pred.size()[0] - 1
+                        pred_entities_pos.append((start, end))
+
+                for entity in pred_entities_pos:
+                    if entity not in gold_entities_pos:
+                        continue
                     else:
-                        end = gold.size()[0] - 1
-                    gold_entities_pos.append((start, end))
+                        correct += 1
+            else:
+                for j in range(gold.size()[0]):
+                    if gold[j].item() in begin_ids:
+                        start = j
+                        for k in range(j + 1, gold.size()[0]):
+                            if gold[k].item() == labels_map['[X]']:
+                                continue
 
-            for j in range(pred.size()[0]):
-                if pred[j].item() in begin_ids and gold[j].item() != labels_map["[PAD]"] and gold[j].item() != \
-                        labels_map["[ENT]"] and gold[j].item() != labels_map["[X]"]:
-                    start = j
-                    for k in range(j + 1, pred.size()[0]):
+                            if gold[k].item() == labels_map["[PAD]"] or gold[k].item() == labels_map["O"] or gold[
+                                k].item() in begin_ids and gold[k].item() == labels_map['[ENT]']:
+                                end = k - 1
+                                break
+                        else:
+                            end = gold.size()[0] - 1
+                        gold_entities_pos.append((start, end))
 
-                        if gold[k].item() == labels_map['[ENT]'] or gold[k].item() == labels_map['[X]']:
-                            continue
+                for j in range(pred.size()[0]):
+                    if pred[j].item() in begin_ids and gold[j].item() != labels_map["[PAD]"] and gold[j].item() != \
+                            labels_map["[ENT]"] and gold[j].item() != labels_map["[X]"]:
+                        start = j
+                        for k in range(j + 1, pred.size()[0]):
 
-                        if pred[k].item() == labels_map["[PAD]"] or pred[k].item() == labels_map["O"] or pred[
-                            k].item() in begin_ids:
-                            end = k - 1
-                            break
+                            if gold[k].item() == labels_map['[X]']:
+                                continue
+
+                            if pred[k].item() == labels_map["[PAD]"] or pred[k].item() == labels_map["O"] or pred[
+                                k].item() in begin_ids and gold[k].item() == labels_map['[ENT]']:
+                                end = k - 1
+                                break
+                        else:
+                            end = pred.size()[0] - 1
+                        pred_entities_pos.append((start, end))
+
+                for entity in pred_entities_pos:
+                    if entity not in gold_entities_pos:
+                        continue
                     else:
-                        end = pred.size()[0] - 1
-                    pred_entities_pos.append((start, end))
+                        correct += 1
 
-            for entity in pred_entities_pos:
-                if entity not in gold_entities_pos:
-                    continue
-                else:
-                    correct += 1
         try:
             print("Report precision, recall, and f1:")
             p = correct / pred_entities_num
