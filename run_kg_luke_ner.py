@@ -183,6 +183,7 @@ def main():
     parser.add_argument("--use_subword_tag", action='store_true',
                         help="Enable to use separate tag for subword splits.")
     parser.add_argument("--debug", action='store_true', help="Enable debug.")
+    parser.add_argument("--reverse_order", action='store_true', help="Reverse the feature selection order.")
     parser.add_argument("--max_entities", default=2, type=int,
                         help="Number of KG features.")
 
@@ -275,7 +276,8 @@ def main():
                     kg.add_knowledge_with_vm([tokens], [labels],
                                              use_kg=args.use_kg,
                                              max_length=args.seq_length,
-                                             max_entities=args.max_entities)
+                                             max_entities=args.max_entities,
+                                             reverse_order=args.reverse_order)
                 tokens = tokens[0]
                 pos = pos[0]
                 vm = vm[0].astype("bool")
