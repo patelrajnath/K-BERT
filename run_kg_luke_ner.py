@@ -484,7 +484,7 @@ def main():
                                 continue
 
                             if gold[k].item() == labels_map["[PAD]"] or gold[k].item() == labels_map["O"] or gold[
-                                k].item() in begin_ids and gold[k].item() == labels_map['[ENT]']:
+                                k].item() in begin_ids or gold[k].item() == labels_map['[ENT]']:
                                 end = k - 1
                                 break
                         else:
@@ -501,7 +501,7 @@ def main():
                                 continue
 
                             if pred[k].item() == labels_map["[PAD]"] or pred[k].item() == labels_map["O"] or pred[
-                                k].item() in begin_ids and gold[k].item() == labels_map['[ENT]']:
+                                k].item() in begin_ids or gold[k].item() == labels_map['[ENT]']:
                                 end = k - 1
                                 break
                         else:
