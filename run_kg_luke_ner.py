@@ -350,9 +350,12 @@ def main():
                         else:
                             new_labels.append(labels_map['[ENT]'])
                     else:
-                        new_labels.append(labels_map[PAD_TOKEN])
+                        pass
+                        # new_labels.append(labels_map[PAD_TOKEN])
                 # print(labels)
                 # print(new_labels)
+                # print([idx_to_label.get(key) for key in labels])
+                # print([idx_to_label.get(key) for key in labels])
                 # print(mask)
                 # print(pos)
                 # print(word_segment_ids)
