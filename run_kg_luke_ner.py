@@ -218,6 +218,7 @@ def main():
     parser.add_argument("--reverse_order", action='store_true', help="Reverse the feature selection order.")
     parser.add_argument("--max_entities", default=2, type=int,
                         help="Number of KG features.")
+    parser.add_argument("--eval_range_with_types", action='store_true', help="Enable to eval range with types.")
 
     args = parser.parse_args()
 
@@ -453,7 +454,10 @@ def main():
                             break
                     else:
                         end = gold.size()[0] - 1
-                    gold_entities_pos.append((start, end))
+                    if args.eval_range_with_types:
+                        gold_entities_pos.append((start, end, gold[start].item()))
+                    else:
+                        gold_entities_pos.append((start, end))
 
             for j in range(pred.size()[0]):
                 if pred[j].item() in begin_ids and gold[j].item() != labels_map["[PAD]"] and gold[j].item() != \
@@ -470,7 +474,10 @@ def main():
                             break
                     else:
                         end = pred.size()[0] - 1
-                    pred_entities_pos.append((start, end))
+                    if args.eval_range_with_types:
+                        pred_entities_pos.append((start, end, pred[start].item()))
+                    else:
+                        pred_entities_pos.append((start, end))
 
             for entity in pred_entities_pos:
                 if entity not in gold_entities_pos:
