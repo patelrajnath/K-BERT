@@ -61,6 +61,7 @@ def loss_fn(outputs, labels, mask):
 
 
 def voting_choicer(items):
+    # TODO: Update the code to handle [CLS] and [SEP] class
     votes = []
     for item in items:
         if item and item != '[ENT]' and item != '[X]' and item != 'O' and item != '[PAD]':
