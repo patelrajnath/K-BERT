@@ -71,7 +71,7 @@ def voting_choicer(items):
         vote_labels = {'O': 1}
     lb = sorted(list(vote_labels), key=lambda x: vote_labels[x])
     final_lb = lb[-1]
-    if final_lb == 'O':
+    if final_lb == 'O' or final_lb == '[CLS]' or final_lb == '[SEP]':
         return final_lb
     else:
         return 'B_' + final_lb
