@@ -521,7 +521,7 @@ def main():
                         # Convert back to label id and add in the tuple
                         # pred_entities_pos.append((start, end, labels_map[final_entity_type]))
                         # Use the first prediction
-                        pred_entities_pos.append((start, end, labels_map[pred[start].item()]))
+                        pred_entities_pos.append((start, end, pred[start].item()))
                     else:
                         pred_entities_pos.append((start, end))
 
