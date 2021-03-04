@@ -147,9 +147,11 @@ class KnowledgeGraph(object):
                 entities = []
                 for ent in know_entities:
                     entity = []
-                    for word in ent.split():
-                        entity.extend(self.tokenize_word(word))
-                    entities.append(entity)
+                    # Check if ent is not empty
+                    if ent:
+                        for word in ent.split():
+                            entity.extend(self.tokenize_word(word))
+                        entities.append(entity)
 
                 sent_tree.append((token_original, cur_tokens, entities))
 
@@ -165,11 +167,15 @@ class KnowledgeGraph(object):
                 entities_pos_idx = []
                 entities_abs_idx = []
                 for ent in entities:
-                    ent_pos_idx = [token_pos_idx[-1] + i for i in range(1, len(ent)+1)]
-                    entities_pos_idx.append(ent_pos_idx)
-                    ent_abs_idx = [abs_idx + i for i in range(1, len(ent)+1)]
-                    abs_idx = ent_abs_idx[-1]
-                    entities_abs_idx.append(ent_abs_idx)
+                    try:
+                        ent_pos_idx = [token_pos_idx[-1] + i for i in range(1, len(ent)+1)]
+                        entities_pos_idx.append(ent_pos_idx)
+                        ent_abs_idx = [abs_idx + i for i in range(1, len(ent)+1)]
+                        abs_idx = ent_abs_idx[-1]
+                        entities_abs_idx.append(ent_abs_idx)
+                    except IndexError:
+                        print(entities)
+                        exit()
 
                 # print(f'token_abs_idx:{token_abs_idx}')
                 # print(f'token_pos_idx:{token_pos_idx}')
