@@ -229,6 +229,8 @@ def main():
     # kg
     parser.add_argument("--kg_name", required=True, help="KG name or path")
     parser.add_argument("--use_kg", action='store_true', help="Enable the use of KG.")
+    parser.add_argument("--voting_choiser", action='store_true',
+                        help="Enable the Voting choicer to select the entity type.")
     parser.add_argument("--eval_kg_tag", action='store_true', help="Enable to include [ENT] tag in evaluation.")
     parser.add_argument("--use_subword_tag", action='store_true',
                         help="Enable to use separate tag for subword splits.")
@@ -519,10 +521,12 @@ def main():
                         entity_types = [idx_to_label.get(l.item()) for l in pred[start: end]]
                         # Run voting choicer
                         final_entity_type = voting_choicer(entity_types)
-                        # Convert back to label id and add in the tuple
-                        # pred_entities_pos.append((start, end, labels_map[final_entity_type]))
-                        # Use the first prediction
-                        pred_entities_pos.append((start, end, pred[start].item()))
+                        if args.voting_choiser:
+                            # Convert back to label id and add in the tuple
+                            pred_entities_pos.append((start, end, labels_map[final_entity_type]))
+                        else:
+                            # Use the first prediction
+                            pred_entities_pos.append((start, end, pred[start].item()))
                     else:
                         pred_entities_pos.append((start, end))
 
