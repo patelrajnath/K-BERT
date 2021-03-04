@@ -69,11 +69,11 @@ def voting_choicer(items):
     if not len(vote_labels):
         vote_labels = {"O": 1}
     lb = sorted(list(vote_labels), key=lambda x: vote_labels[x])
-
-    if lb == 'O':
-        return lb[-1]
+    final_lb = lb[-1]
+    if final_lb == 'O':
+        return final_lb
     else:
-        return 'B_' + lb[-1]
+        return 'B_' + final_lb
 
 
 class Batcher(object):
