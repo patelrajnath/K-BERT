@@ -422,7 +422,7 @@ def main():
                 # Enable dry rune
                 if args.dry_run:
                     count += 1
-                    if count == 5:
+                    if count == 100:
                         break
 
         return dataset
