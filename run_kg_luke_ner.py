@@ -422,7 +422,7 @@ def main():
                 # Enable dry rune
                 if args.dry_run:
                     count += 1
-                    if count == 20:
+                    if count == 5:
                         break
 
         return dataset
@@ -481,11 +481,10 @@ def main():
 
             if final:
                 with open('predictions.txt', 'a+') as p, open('gold.txt', 'a+') as g:
-                    predicted = pred.tolist()
+                    predicted_labels = [idx_to_label.get(key) for key in pred.tolist()]
                     gold_labels = [idx_to_label.get(key) for key in gold.tolist()]
                     masks = mask_ids.tolist()
-                    num_samples = len(predicted.tolist())
-                    predicted_labels = [idx_to_label.get(key) for key in predicted]
+                    num_samples = len(predicted_labels)
                     for start_idx in range(num_samples, args.seq_length):
                         pred_sample = predicted_labels[start_idx:args.seq_length]
                         gold_sample = gold_labels[start_idx:args.seq_length]
