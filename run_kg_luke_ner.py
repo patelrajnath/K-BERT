@@ -237,7 +237,7 @@ def main():
     parser.add_argument("--kg_name", required=True, help="KG name or path")
     parser.add_argument("--use_kg", action='store_true', help="Enable the use of KG.")
     parser.add_argument("--dry_run", action='store_true', help="Dry run to test the implementation.")
-    parser.add_argument("--voting_choiser", action='store_true',
+    parser.add_argument("--voting_choicer", action='store_true',
                         help="Enable the Voting choicer to select the entity type.")
     parser.add_argument("--eval_kg_tag", action='store_true', help="Enable to include [ENT] tag in evaluation.")
     parser.add_argument("--use_subword_tag", action='store_true',
@@ -480,16 +480,24 @@ def main():
                                         )
 
             if final:
-                with open('predictions.txt', 'w') as p, open('gold.txt', 'w') as g:
+                with open('predictions.txt', 'a') as p, open('gold.txt', 'a') as g:
                     predicted_labels = [idx_to_label.get(key) for key in pred.tolist()]
                     gold_labels = [idx_to_label.get(key) for key in gold.tolist()]
-                    masks = mask_ids.tolist()
+
                     num_samples = len(predicted_labels)
-                    for start_idx in range(num_samples, args.seq_length):
-                        pred_sample = predicted_labels[start_idx:args.seq_length]
-                        gold_sample = gold_labels[start_idx:args.seq_length]
-                        mask = masks[start_idx:args.seq_length]
+                    mask_ids_batch = mask_ids_batch.view(-1, num_samples)
+                    masks = mask_ids_batch.tolist()[0]
+                    print(masks)
+
+                    for start_idx in range(0, num_samples, args.seq_length):
+                        pred_sample = predicted_labels[start_idx:start_idx+args.seq_length]
+                        gold_sample = gold_labels[start_idx:start_idx+args.seq_length]
+                        mask = masks[start_idx:start_idx+args.seq_length]
+                        print(mask)
+                        print(pred_sample)
+                        print(gold_sample)
                         num_labels = sum(mask)
+                        print(num_labels)
                         p.write(' '.join(pred_sample[:num_labels]) + '\n')
                         g.write(' '.join(gold_sample[:num_labels]) + '\n')
 
@@ -544,7 +552,7 @@ def main():
                         entity_types = [idx_to_label.get(l.item()) for l in pred[start: end]]
                         # Run voting choicer
                         final_entity_type = voting_choicer(entity_types)
-                        if args.voting_choiser:
+                        if args.voting_choicer:
                             # Convert back to label id and add in the tuple
                             pred_entities_pos.append((start, end, labels_map[final_entity_type]))
                         else:
