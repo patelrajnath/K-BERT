@@ -63,11 +63,11 @@ def loss_fn(outputs, labels, mask):
 def voting_choicer(items):
     votes = []
     for item in items:
-        if item != '[ENT]' and item != 'O' and item != '[PAD]':
+        if item and item != '[ENT]' and item != '[X]' and item != 'O' and item != '[PAD]':
             votes.append(item[2:])
     vote_labels = Counter(votes)
     if not len(vote_labels):
-        vote_labels = {"O": 1}
+        vote_labels = {'O': 1}
     lb = sorted(list(vote_labels), key=lambda x: vote_labels[x])
     final_lb = lb[-1]
     if final_lb == 'O':
