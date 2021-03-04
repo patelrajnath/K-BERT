@@ -339,7 +339,6 @@ def main():
                 j = 0
                 for i in range(len(tokens)):
                     if tag[i] == 0 and tokens[i] != tokenizer.pad_token:
-                        print(j)
                         cur_type = labels[j]
                         new_labels.append(cur_type)
                         if cur_type != 'O':
