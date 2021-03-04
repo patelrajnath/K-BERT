@@ -64,12 +64,17 @@ def voting_choicer(items):
     # TODO: Update the code to handle [CLS] and [SEP] class
     votes = []
     for item in items:
-        if item and item != '[ENT]' and item != '[X]' and item != 'O' and item != '[PAD]':
-            votes.append(item[2:])
+        if item and item != '[ENT]' and item != '[X]' and item != '[PAD]':
+            if item == 'O' or item == '[CLS]' or item == '[SEP]':
+                votes.append(item)
+            else:
+                votes.append(item[2:])
+
     vote_labels = Counter(votes)
     if not len(vote_labels):
         vote_labels = {'O': 1}
     lb = sorted(list(vote_labels), key=lambda x: vote_labels[x])
+
     final_lb = lb[-1]
     if final_lb == 'O' or final_lb == '[CLS]' or final_lb == '[SEP]':
         return final_lb
