@@ -480,7 +480,7 @@ def main():
                                         )
 
             if final:
-                with open('predictions.txt', 'a+') as p, open('gold.txt', 'a+') as g:
+                with open('predictions.txt', 'w') as p, open('gold.txt', 'w') as g:
                     predicted_labels = [idx_to_label.get(key) for key in pred.tolist()]
                     gold_labels = [idx_to_label.get(key) for key in gold.tolist()]
                     masks = mask_ids.tolist()
