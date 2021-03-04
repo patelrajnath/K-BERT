@@ -356,7 +356,10 @@ def main():
                         if prev_label == 'O':
                             new_labels.append('O')
                         else:
-                            new_labels.append('I_' + prev_label)
+                            if args.use_subword_tag:
+                                new_labels.append('[X]')
+                            else:
+                                new_labels.append('I_' + prev_label)
                     else:
                         new_labels.append(PAD_TOKEN)
 
