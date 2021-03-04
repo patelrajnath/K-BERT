@@ -100,7 +100,7 @@ class Batcher(object):
         return self
 
     def __next__(self):
-        if self.ptr > self.num_samples:
+        if self.ptr >= self.num_samples:
             self.indices = torch.randperm(self.num_samples)
             self.ptr = 0
             raise StopIteration
@@ -135,6 +135,7 @@ class LukeTagger(nn.Module):
             vm = None
 
         # Encoder.
+        # print('word ids:', word_ids)
         word_sequence_output, pooled_output = self.encoder(word_ids, word_segment_ids=word_segment_ids,
                                                            word_attention_mask=word_attention_mask,
                                                            position_ids=pos, vm=vm)
@@ -145,6 +146,7 @@ class LukeTagger(nn.Module):
         outputs = outputs.contiguous().view(-1, self.labels_num)
         # print('Flat:', outputs.size())
         outputs = F.log_softmax(outputs, dim=-1)
+        # print(outputs.size())
         predict = outputs.argmax(dim=-1)
 
         # print('After Log softmax:', outputs.size())
@@ -234,6 +236,7 @@ def main():
     # kg
     parser.add_argument("--kg_name", required=True, help="KG name or path")
     parser.add_argument("--use_kg", action='store_true', help="Enable the use of KG.")
+    parser.add_argument("--dry_run", action='store_true', help="Dry run to test the implementation.")
     parser.add_argument("--voting_choiser", action='store_true',
                         help="Enable the Voting choicer to select the entity type.")
     parser.add_argument("--eval_kg_tag", action='store_true', help="Enable to include [ENT] tag in evaluation.")
@@ -324,6 +327,7 @@ def main():
     # Read dataset.
     def read_dataset(path):
         dataset = []
+        count = 0
         with open(path, mode="r", encoding="utf8") as f:
             f.readline()
             tokens, labels = [], []
@@ -411,13 +415,20 @@ def main():
                 tokens = tokenizer.convert_tokens_to_ids(tokens)
                 # print(tokens)
                 # exit()
+                assert len(tokens) == len(new_labels), AssertionError("The length of token and label is not matching")
 
                 dataset.append([tokens, new_labels, mask, pos, vm, tag, word_segment_ids])
+
+                # Enable dry rune
+                if args.dry_run:
+                    count += 1
+                    if count == 20:
+                        break
 
         return dataset
 
     # Evaluation function.
-    def evaluate(args, is_test):
+    def evaluate(args, is_test, final=False):
         if is_test:
             dataset = read_dataset(args.test_path)
         else:
@@ -467,13 +478,21 @@ def main():
                                         vm_ids_batch,
                                         use_kg=args.use_kg
                                         )
-            # with open('predictions.txt', 'a+') as p:
-            #     predicted_labels = [idx_to_label.get(key) for key in pred.tolist()]
-            #     p.write(' '.join(predicted_labels) + '\n')
-            #
-            # with open('gold.txt', 'a+') as p:
-            #     gold_labels = [idx_to_label.get(key) for key in gold.tolist()]
-            #     p.write(' '.join(gold_labels) + '\n')
+
+            if final:
+                with open('predictions.txt', 'a+') as p, open('gold.txt', 'a+') as g:
+                    predicted = pred.tolist()
+                    gold_labels = [idx_to_label.get(key) for key in gold.tolist()]
+                    masks = mask_ids.tolist()
+                    num_samples = len(predicted.tolist())
+                    predicted_labels = [idx_to_label.get(key) for key in predicted]
+                    for start_idx in range(num_samples, args.seq_length):
+                        pred_sample = predicted_labels[start_idx:args.seq_length]
+                        gold_sample = gold_labels[start_idx:args.seq_length]
+                        mask = masks[start_idx:args.seq_length]
+                        num_labels = sum(mask)
+                        p.write(' '.join(pred_sample[:num_labels]) + '\n')
+                        g.write(' '.join(gold_sample[:num_labels]) + '\n')
 
             for j in range(gold.size()[0]):
                 if gold[j].item() in begin_ids:
@@ -641,7 +660,7 @@ def main():
     else:
         model.load_state_dict(torch.load(args.output_model_path))
 
-    evaluate(args, True)
+    evaluate(args, True, final=True)
 
 
 if __name__ == "__main__":
