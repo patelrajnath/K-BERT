@@ -12,6 +12,7 @@ from pathlib import Path
 import torch
 import torch.nn as nn
 
+from collections import Counter
 from brain import config
 from brain.knowgraph_english import KnowledgeGraph
 from luke import ModelArchive, LukeModel
@@ -57,6 +58,18 @@ def loss_fn(outputs, labels, mask):
 
     # cross entropy loss for all non 'PAD' tokens
     return -torch.sum(outputs) / num_labels
+
+
+def voting_choicer(items):
+    votes = []
+    for item in items:
+        if item != '[ENT]' and item != 'O' and item != '[PAD]':
+            votes.append(item[2:])
+    vote_labels = Counter(votes)
+    if not len(vote_labels):
+        vote_labels = {"O": 1}
+    lb = sorted(list(vote_labels), key=lambda x: vote_labels[x])
+    return 'B_' + lb[-1]
 
 
 class Batcher(object):
@@ -321,9 +334,30 @@ def main():
                 num_tokens = len(non_pad_tokens)
                 num_pad = len(tokens) - num_tokens
 
-                labels = [labels_map[config.CLS_TOKEN]] + \
-                         [labels_map[l] for l in labels.split(" ")] + \
-                         [labels_map[config.SEP_TOKEN]]
+                labels = [config.CLS_TOKEN] + labels.split(" ") + [config.SEP_TOKEN]
+                new_labels = []
+                j = 0
+                for i in range(len(tokens)):
+                    if tag[i] == 0 and tokens[i] != tokenizer.pad_token:
+                        print(j)
+                        cur_type = labels[j]
+                        new_labels.append(cur_type)
+                        if cur_type != 'O':
+                            prev_label = cur_type[2:]
+                        else:
+                            prev_label = cur_type
+                        j += 1
+                    elif tag[i] == 1 and tokens[i] != tokenizer.pad_token:  # 是添加的实体
+                        new_labels.append('[ENT]')
+                    elif tag[i] == 2:
+                        if prev_label == 'O':
+                            new_labels.append('O')
+                        else:
+                            new_labels.append('I_' + prev_label)
+                    else:
+                        new_labels.append(PAD_TOKEN)
+
+                new_labels = [labels_map[l] for l in new_labels]
 
                 # print(tokens)
                 # print(labels)
@@ -331,27 +365,26 @@ def main():
 
                 mask = [1] * (num_tokens) + [0] * num_pad
                 word_segment_ids = [0] * (len(tokens))
-                new_labels = []
-                j = 0
 
                 # print(len(tokens))
                 # print(len(tag))
                 # exit()
                 # print(tokenizer.pad_token_id)
 
-                for i in range(len(tokens)):
-                    if tag[i] == 0 and tokens[i] != tokenizer.pad_token:
-                        new_labels.append(labels[j])
-                        j += 1
-                    elif tag[i] == 1 and tokens[i] != tokenizer.pad_token:  # 是添加的实体
-                        new_labels.append(labels_map['[ENT]'])
-                    elif tag[i] == 2:
-                        if args.use_subword_tag:
-                            new_labels.append(labels_map['[X]'])
-                        else:
-                            new_labels.append(labels_map['[ENT]'])
-                    else:
-                        new_labels.append(labels_map[PAD_TOKEN])
+                # for i in range(len(tokens)):
+                #     if tag[i] == 0 and tokens[i] != tokenizer.pad_token:
+                #         new_labels.append(labels[j])
+                #         j += 1
+                #     elif tag[i] == 1 and tokens[i] != tokenizer.pad_token:  # 是添加的实体
+                #         new_labels.append(labels_map['[ENT]'])
+                #     elif tag[i] == 2:
+                #         if args.use_subword_tag:
+                #             new_labels.append(labels_map['[X]'])
+                #         else:
+                #             new_labels.append(labels_map['[ENT]'])
+                #     else:
+                #         new_labels.append(labels_map[PAD_TOKEN])
+
                 # print(labels)
                 # print(new_labels)
                 # print([idx_to_label.get(key) for key in labels])
@@ -473,8 +506,14 @@ def main():
                             break
                     else:
                         end = pred.size()[0] - 1
+
                     if args.eval_range_with_types:
-                        pred_entities_pos.append((start, end, pred[start].item()))
+                        # Get all the labels in the range
+                        entity_types = [idx_to_label.get(l.item()) for l in pred[start: end]]
+                        # Run voting choicer
+                        final_entity_type = voting_choicer(entity_types)
+                        # Convert back to label id and add in the tuple
+                        pred_entities_pos.append((start, end, labels_map[final_entity_type]))
                     else:
                         pred_entities_pos.append((start, end))
 
