@@ -564,8 +564,8 @@ def main():
                         end = gold.size()[0] - 1
                     if args.eval_range_with_types:
                         gold_entities_pos_with_type.append((start, end, gold[start].item()))
-                    else:
-                        gold_entities_pos.append((start, end))
+
+                    gold_entities_pos.append((start, end))
 
             for j in range(pred.size()[0]):
                 if pred[j].item() in begin_ids and gold[j].item() != labels_map["[PAD]"] and gold[j].item() != \
@@ -594,8 +594,8 @@ def main():
                         else:
                             # Use the first prediction
                             pred_entities_pos_with_type.append((start, end, pred[start].item()))
-                    else:
-                        pred_entities_pos.append((start, end))
+
+                    pred_entities_pos.append((start, end))
 
             for entity in pred_entities_pos:
                 if entity not in gold_entities_pos:
