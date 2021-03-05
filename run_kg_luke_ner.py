@@ -477,6 +477,7 @@ def main():
             print("The number of test instances:", instances_num)
 
         correct = 0
+        correct_with_type = 0
         gold_entities_num = 0
         pred_entities_num = 0
 
@@ -543,7 +544,9 @@ def main():
                     pred_entities_num += 1
 
             pred_entities_pos = []
+            pred_entities_pos_with_type = []
             gold_entities_pos = []
+            gold_entities_pos_with_type = []
             start, end = 0, 0
 
             for j in range(gold.size()[0]):
@@ -560,7 +563,7 @@ def main():
                     else:
                         end = gold.size()[0] - 1
                     if args.eval_range_with_types:
-                        gold_entities_pos.append((start, end, gold[start].item()))
+                        gold_entities_pos_with_type.append((start, end, gold[start].item()))
                     else:
                         gold_entities_pos.append((start, end))
 
@@ -587,10 +590,10 @@ def main():
                         final_entity_type = voting_choicer(entity_types)
                         if args.voting_choicer:
                             # Convert back to label id and add in the tuple
-                            pred_entities_pos.append((start, end, labels_map[final_entity_type]))
+                            pred_entities_pos_with_type.append((start, end, labels_map[final_entity_type]))
                         else:
                             # Use the first prediction
-                            pred_entities_pos.append((start, end, pred[start].item()))
+                            pred_entities_pos_with_type.append((start, end, pred[start].item()))
                     else:
                         pred_entities_pos.append((start, end))
 
@@ -599,6 +602,12 @@ def main():
                     continue
                 else:
                     correct += 1
+            if pred_entities_pos_with_type:
+                for entity in pred_entities_pos_with_type:
+                    if entity not in gold_entities_pos_with_type:
+                        continue
+                    else:
+                        correct_with_type += 1
 
         try:
             print("Report precision, recall, and f1:")
@@ -606,6 +615,14 @@ def main():
             r = correct / gold_entities_num
             f1 = 2 * p * r / (p + r)
             print("{:.3f}, {:.3f}, {:.3f}".format(p, r, f1))
+
+            if correct_with_type:
+                print("Report accuracy with type, precision, recall, and f1:")
+                p_with_type = correct_with_type / pred_entities_num
+                r_with_type = correct_with_type / gold_entities_num
+                f1_with_type = 2 * p_with_type * r_with_type / (p_with_type + r_with_type)
+                print("{:.3f}, {:.3f}, {:.3f}".format(p_with_type, r_with_type, f1_with_type))
+
             return f1
         except ZeroDivisionError:
             return 0
