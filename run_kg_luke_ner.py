@@ -602,7 +602,7 @@ def main():
                     continue
                 else:
                     correct += 1
-            if pred_entities_pos_with_type:
+            if args.eval_range_with_types:
                 for entity in pred_entities_pos_with_type:
                     if entity not in gold_entities_pos_with_type:
                         continue
@@ -616,13 +616,15 @@ def main():
             f1 = 2 * p * r / (p + r)
             print("{:.3f}, {:.3f}, {:.3f}".format(p, r, f1))
 
-            if correct_with_type:
-                print("Report accuracy with type, precision, recall, and f1:")
-                p_with_type = correct_with_type / pred_entities_num
-                r_with_type = correct_with_type / gold_entities_num
-                f1_with_type = 2 * p_with_type * r_with_type / (p_with_type + r_with_type)
-                print("{:.3f}, {:.3f}, {:.3f}".format(p_with_type, r_with_type, f1_with_type))
-
+            if args.eval_range_with_types:
+                try:
+                    print("Report accuracy with type, precision, recall, and f1:")
+                    p_with_type = correct_with_type / pred_entities_num
+                    r_with_type = correct_with_type / gold_entities_num
+                    f1_with_type = 2 * p_with_type * r_with_type / (p_with_type + r_with_type)
+                    print("{:.3f}, {:.3f}, {:.3f}".format(p_with_type, r_with_type, f1_with_type))
+                except:
+                    pass
             return f1
         except ZeroDivisionError:
             return 0
