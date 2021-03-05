@@ -513,13 +513,13 @@ def main():
                     predicted_labels = [idx_to_label.get(key) for key in pred.tolist()]
                     gold_labels = [idx_to_label.get(key) for key in gold.tolist()]
 
-                    num_samples = len(predicted_labels)
-                    mask_ids_batch = mask_ids_batch.view(-1, num_samples)
+                    num_tokens = len(predicted_labels)
+                    mask_ids_batch = mask_ids_batch.view(-1, num_tokens)
                     masks = mask_ids_batch.tolist()[0]
-                    tokens = input_ids_batch.tolist()[0]
-                    print(tokens)
+                    # input_ids_batch = input_ids_batch.view(-1, num_tokens)
+                    # tokens = input_ids_batch.tolist()[0]
 
-                    for start_idx in range(0, num_samples, args.seq_length):
+                    for start_idx in range(0, num_tokens, args.seq_length):
                         pred_sample = predicted_labels[start_idx:start_idx+args.seq_length]
                         gold_sample = gold_labels[start_idx:start_idx+args.seq_length]
                         mask = masks[start_idx:start_idx+args.seq_length]
@@ -527,9 +527,10 @@ def main():
 
                         # token_sample = tokens[start_idx:start_idx+args.seq_length]
                         # token_sample = token_sample[:num_labels]
-                        # text = ' '.join(tokenizer.convert_ids_to_tokens(token_sample))
+                        # text = ''.join(tokenizer.convert_ids_to_tokens(token_sample))
                         # text = bytearray([byte_decoder[c] for c in text]).decode('utf-8')
                         # print(text)
+                        # exit()
 
                         p.write(' '.join(pred_sample[:num_labels]) + '\n')
                         g.write(' '.join(gold_sample[:num_labels]) + '\n')
