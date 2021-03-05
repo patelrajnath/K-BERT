@@ -516,8 +516,8 @@ def main():
                     num_tokens = len(predicted_labels)
                     mask_ids_batch = mask_ids_batch.view(-1, num_tokens)
                     masks = mask_ids_batch.tolist()[0]
-                    # input_ids_batch = input_ids_batch.view(-1, num_tokens)
-                    # tokens = input_ids_batch.tolist()[0]
+                    input_ids_batch = input_ids_batch.view(-1, num_tokens)
+                    tokens = input_ids_batch.tolist()[0]
 
                     for start_idx in range(0, num_tokens, args.seq_length):
                         pred_sample = predicted_labels[start_idx:start_idx+args.seq_length]
@@ -525,16 +525,14 @@ def main():
                         mask = masks[start_idx:start_idx+args.seq_length]
                         num_labels = sum(mask)
 
-                        # token_sample = tokens[start_idx:start_idx+args.seq_length]
-                        # token_sample = token_sample[:num_labels]
-                        # text = ''.join(tokenizer.convert_ids_to_tokens(token_sample))
-                        # text = bytearray([byte_decoder[c] for c in text]).decode('utf-8')
-                        # print(text)
-                        # exit()
+                        token_sample = tokens[start_idx:start_idx+args.seq_length]
+                        token_sample = token_sample[:num_labels]
+                        text = ''.join(tokenizer.convert_ids_to_tokens(token_sample))
+                        text = bytearray([byte_decoder[c] for c in text]).decode('utf-8')
 
                         p.write(' '.join(pred_sample[:num_labels]) + '\n')
                         g.write(' '.join(gold_sample[:num_labels]) + '\n')
-                        # t.write(' '.join(text) + '\n')
+                        t.write(text + '\n')
 
             for j in range(gold.size()[0]):
                 if gold[j].item() in begin_ids:
