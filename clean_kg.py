@@ -1,7 +1,7 @@
 import json
 
-vocab_file = 'D:\\Downloads\\ent_vocab_custom_all'
-outfile = 'D:\\Downloads\\ent_vocab_custom_all_filtered'
+vocab_file = 'D:\\Downloads\\ent_vocab_custom_filtered_sorted.json'
+outfile = 'D:\\Downloads\\ent_vocab_custom_cleaned_freq-sorted'
 lookup_table = {}
 count = 0
 with open(vocab_file, "r", encoding='utf-8') as f:
