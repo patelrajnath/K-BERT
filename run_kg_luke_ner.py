@@ -24,6 +24,27 @@ from uer.utils.seed import set_seed
 from uer.model_saver import save_model
 from torch.nn import functional as F
 
+def bytes_to_unicode():
+    """
+    Returns list of utf-8 byte and a corresponding list of unicode strings.
+    The reversible bpe codes work on unicode strings.
+    This means you need a large # of unicode characters in your vocab if you want to avoid UNKs.
+    When you're at something like a 10B token dataset you end up needing around 5K for decent coverage.
+    This is a signficant percentage of your normal, say, 32K bpe vocab.
+    To avoid that, we want lookup tables between utf-8 bytes and unicode strings.
+    And avoids mapping to whitespace/control characters the bpe code barfs on.
+    """
+    bs = list(range(ord("!"), ord("~")+1))+list(range(ord("¡"), ord("¬")+1))+list(range(ord("®"), ord("ÿ")+1))
+    cs = bs[:]
+    n = 0
+    for b in range(2**8):
+        if b not in bs:
+            bs.append(b)
+            cs.append(2**8+n)
+            n += 1
+    cs = [chr(n) for n in cs]
+    return dict(zip(bs, cs))
+
 
 def create_model_archive(model_file: str, out_file: str, compress: str):
     model_dir = os.path.dirname(model_file)
@@ -196,6 +217,8 @@ def main():
                         help="Path of the testset.")
     parser.add_argument("--config_path", default="./models/google_config.json", type=str,
                         help="Path of the config file.")
+    parser.add_argument("--output_file_prefix", type=str, required=True,
+                        help="Prefix for file output.")
 
     # Model options.
     parser.add_argument("--batch_size", type=int, default=2,
@@ -285,6 +308,10 @@ def main():
     # Load Luke model.
     model_archive = ModelArchive.load(args.pretrained_model_path)
     tokenizer = model_archive.tokenizer
+
+    # Handling space character in roberta tokenizer
+    byte_encoder = bytes_to_unicode()
+    byte_decoder = {v: k for k, v in byte_encoder.items()}
 
     # Load the pretrained model
     encoder = LukeModel(model_archive.config)
@@ -480,26 +507,33 @@ def main():
                                         )
 
             if final:
-                with open('predictions.txt', 'a') as p, open('gold.txt', 'a') as g:
+                with open(f'{args.output_file_prefix}_predictions.txt', 'a') as p, \
+                        open(f'{args.output_file_prefix}_gold.txt', 'a') as g, \
+                        open(f'{args.output_file_prefix}_text.txt', 'a') as t:
                     predicted_labels = [idx_to_label.get(key) for key in pred.tolist()]
                     gold_labels = [idx_to_label.get(key) for key in gold.tolist()]
 
                     num_samples = len(predicted_labels)
                     mask_ids_batch = mask_ids_batch.view(-1, num_samples)
                     masks = mask_ids_batch.tolist()[0]
-                    print(masks)
+                    tokens = input_ids_batch.tolist()[0]
+                    print(tokens)
 
                     for start_idx in range(0, num_samples, args.seq_length):
                         pred_sample = predicted_labels[start_idx:start_idx+args.seq_length]
                         gold_sample = gold_labels[start_idx:start_idx+args.seq_length]
                         mask = masks[start_idx:start_idx+args.seq_length]
-                        print(mask)
-                        print(pred_sample)
-                        print(gold_sample)
                         num_labels = sum(mask)
-                        print(num_labels)
+
+                        # token_sample = tokens[start_idx:start_idx+args.seq_length]
+                        # token_sample = token_sample[:num_labels]
+                        # text = ' '.join(tokenizer.convert_ids_to_tokens(token_sample))
+                        # text = bytearray([byte_decoder[c] for c in text]).decode('utf-8')
+                        # print(text)
+
                         p.write(' '.join(pred_sample[:num_labels]) + '\n')
                         g.write(' '.join(gold_sample[:num_labels]) + '\n')
+                        # t.write(' '.join(text) + '\n')
 
             for j in range(gold.size()[0]):
                 if gold[j].item() in begin_ids:
