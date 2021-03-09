@@ -359,7 +359,14 @@ def main():
             f.readline()
             tokens, labels = [], []
             for line_id, line in enumerate(f):
-                labels, tokens, cls = line.strip().split("\t")
+                fields = line.strip().split("\t")
+                if len(fields) == 2:
+                    labels, tokens = fields
+                elif len(fields) == 3:
+                    labels, tokens, cls = fields
+                else:
+                    print(f'The data is not in accepted format at line no:{line_id}.. Ignored')
+                    continue
 
                 tokens, pos, vm, tag = \
                     kg.add_knowledge_with_vm([tokens], [labels],
