@@ -4,6 +4,7 @@
 """
 import argparse
 import json
+import logging
 import os
 import tarfile
 import tempfile
@@ -23,6 +24,12 @@ from uer.utils.constants import *
 from uer.utils.seed import set_seed
 from uer.model_saver import save_model
 from torch.nn import functional as F
+
+logging.basicConfig(filename='app.log', filemode='w')
+logger = logging.getLogger(__name__)
+logger.addHandler(logging.StreamHandler())
+logger.setLevel(logging.DEBUG)
+
 
 def bytes_to_unicode():
     """
@@ -82,7 +89,6 @@ def loss_fn(outputs, labels, mask):
 
 
 def voting_choicer(items):
-    # TODO: Update the code to handle [CLS] and [SEP] class
     votes = []
     for item in items:
         if item and item != '[ENT]' and item != '[X]' and item != '[PAD]':
@@ -595,6 +601,7 @@ def main():
                         entity_types = [idx_to_label.get(l.item()) for l in pred[start: end]]
                         # Run voting choicer
                         final_entity_type = voting_choicer(entity_types)
+                        logger.info(f'Predicted: {" ".join(entity_types)}, Selected: {final_entity_type} \n')
                         if args.voting_choicer:
                             # Convert back to label id and add in the tuple
                             pred_entities_pos_with_type.append((start, end, labels_map[final_entity_type]))
