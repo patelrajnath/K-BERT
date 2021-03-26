@@ -598,7 +598,10 @@ def main():
 
                     if args.eval_range_with_types:
                         # Get all the labels in the range
-                        entity_types = [idx_to_label.get(l.item()) for l in pred[start: end]]
+                        if start == end:
+                            entity_types = [idx_to_label.get(l.item()) for l in [pred[start]]]
+                        else:
+                            entity_types = [idx_to_label.get(l.item()) for l in pred[start:end]]
                         # Run voting choicer
                         final_entity_type = voting_choicer(entity_types)
                         logger.info(f'Predicted: {" ".join(entity_types)}, Selected: {final_entity_type}')
