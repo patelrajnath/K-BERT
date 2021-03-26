@@ -601,7 +601,7 @@ def main():
                         entity_types = [idx_to_label.get(l.item()) for l in pred[start: end]]
                         # Run voting choicer
                         final_entity_type = voting_choicer(entity_types)
-                        logger.info(f'Predicted: {" ".join(entity_types)}, Selected: {final_entity_type} \n')
+                        logger.info(f'Predicted: {" ".join(entity_types)}, Selected: {final_entity_type}')
                         if args.voting_choicer:
                             # Convert back to label id and add in the tuple
                             pred_entities_pos_with_type.append((start, end, labels_map[final_entity_type]))
