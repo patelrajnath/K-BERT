@@ -1,3 +1,4 @@
+import numpy
 import pandas as pd
 
 # df_conll = pd.read_csv('conll_2003/eng.train.train_filtered.csv', sep='\t', index_col=None, header=0)
@@ -11,4 +12,19 @@ print(df_combined.count(axis=0))
 df_unique = df_combined.drop_duplicates()
 df_test = df_unique
 print(df_unique.count(axis=0))
-df_unique.to_csv('combined_3/train_filtered_combined_3.csv', index=False)
+
+msk = numpy.random.rand(len(df_unique)) <= 0.9
+
+train_df = df_unique[msk]
+test = df_unique[~msk]
+print(train_df.shape)
+print(test.shape)
+msk = numpy.random.rand(len(train_df)) <= 0.95
+train = train_df[msk]
+dev = train_df[~msk]
+print(train.shape)
+print(dev.shape)
+
+train.to_csv('combined_3/train_filtered_combined_3.csv', index=False)
+test.to_csv('combined_3/test_filtered_combined_3.csv', index=False)
+dev.to_csv('combined_3/dev_filtered_combined_3.csv', index=False)
