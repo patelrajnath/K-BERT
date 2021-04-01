@@ -48,7 +48,12 @@ def bytes_to_unicode():
     return dict(zip(bs, cs))
 
 
-def save_encoder(args, encoder, suffix=None):
+def save_encoder(args, encoder, suffix='encoder'):
+    try:
+        os.makedirs(args.output_encoder)
+    except:
+        pass
+
     model_file = f"model_{suffix}.bin"
     torch.save(encoder.state_dict(), os.path.join(args.output_encoder, model_file))
 
