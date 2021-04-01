@@ -49,9 +49,6 @@ def bytes_to_unicode():
 
 
 def save_encoder(args, encoder, suffix=None):
-    if args.local_rank != -1:
-        encoder = encoder.module
-
     model_file = f"model_{suffix}.bin"
     torch.save(encoder.state_dict(), os.path.join(args.output_encoder, model_file))
 
