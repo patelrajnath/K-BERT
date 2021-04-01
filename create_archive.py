@@ -1,5 +1,6 @@
 import json
 import os
+import sys
 import tarfile
 import tempfile
 from pathlib import Path
@@ -12,7 +13,8 @@ def create_model_archive(model_file: str, out_file: str, compress: str):
     json_file = os.path.join(model_dir, METADATA_FILE)
     with open(json_file) as f:
         model_data = json.load(f)
-        del model_data["arguments"]
+        if "arguments" in model_data:
+            del model_data["arguments"]
 
     file_ext = ".tar" if not compress else ".tar." + compress
     if not out_file.endswith(file_ext):
@@ -31,3 +33,6 @@ def create_model_archive(model_file: str, out_file: str, compress: str):
             archive_file.add(metadata_file.name, arcname=METADATA_FILE)
 
 
+model_file = sys.argv[1]
+output_file = sys.argv[2]
+create_model_archive(model_file, output_file, compress='gz')
