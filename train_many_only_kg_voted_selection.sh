@@ -1,12 +1,12 @@
 #!/bin/bash
 
-for kg in /RAJ/ent_vocab_custom_filtered_sorted.json /RAJ/ent_vocab_custom_cleaned_freq-sorted;
+for kg in /RAJ/ent_vocab_custom_filtered_sorted.json #/RAJ/ent_vocab_custom_cleaned_freq-sorted;
 do
-	for n in 2 5 10 15 20 30 50;
+	for n in 10 #5 10 15 20 30 50;
 	do
 		echo $kg
 		echo $n
-		prefix=max-ent-${n}
+		prefix=voting-choicer_max-ent-${n}
 		kg_filename="$(basename -- $kg)"
 		kg_filename="${kg_filename%%.*}"
 		echo $kg_filename
@@ -20,13 +20,13 @@ do
 			--batch_size 4 \
 			--report_steps 100 \
 			--epochs 30 \
-			--use_subword_tag \
+			--voting_choicer \
 			--use_kg \
 			--max_entities ${n} \
 			--eval_range_with_types \
 			--output_file_prefix outputs/evaluation/${prefix}_${kg_filename} \
 			> ./outputs/logs/kbert_conll_${prefix}_${kg_filename}.log
 			#--reverse_order \
-			#--voting_choicer \
+			#--use_subword_tag \
 	done
 done
