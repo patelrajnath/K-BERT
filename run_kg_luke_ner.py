@@ -3,12 +3,8 @@
   This script provides an K-BERT example for NER.
 """
 import argparse
-import json
 import logging
 import os
-import tarfile
-import tempfile
-from pathlib import Path
 
 import torch
 import torch.nn as nn
@@ -17,7 +13,6 @@ from collections import Counter
 from brain import config
 from brain.knowgraph_english import KnowledgeGraph
 from luke import ModelArchive, LukeModel
-from luke.utils.model_utils import METADATA_FILE, MODEL_FILE, get_entity_vocab_file_path
 from uer.utils.config import load_hyperparam
 from uer.utils.optimizers import BertAdam
 from uer.utils.constants import *
@@ -53,28 +48,12 @@ def bytes_to_unicode():
     return dict(zip(bs, cs))
 
 
-def create_model_archive(model_file: str, out_file: str, compress: str):
-    model_dir = os.path.dirname(model_file)
-    json_file = os.path.join(model_dir, METADATA_FILE)
-    with open(json_file) as f:
-        model_data = json.load(f)
-        del model_data["arguments"]
+def save_encoder(args, encoder, suffix=None):
+    if args.local_rank != -1:
+        encoder = encoder.module
 
-    file_ext = ".tar" if not compress else ".tar." + compress
-    if not out_file.endswith(file_ext):
-        out_file = out_file + file_ext
-
-    with tarfile.open(out_file, mode="w:" + compress) as archive_file:
-        archive_file.add(model_file, arcname=MODEL_FILE)
-
-        vocab_file_path = get_entity_vocab_file_path(model_dir)
-        archive_file.add(vocab_file_path, arcname=Path(vocab_file_path).name)
-
-        with tempfile.NamedTemporaryFile(mode="w") as metadata_file:
-            json.dump(model_data, metadata_file, indent=2)
-            metadata_file.flush()
-            os.fsync(metadata_file.fileno())
-            archive_file.add(metadata_file.name, arcname=METADATA_FILE)
+    model_file = f"model_{suffix}.bin"
+    torch.save(encoder.state_dict(), os.path.join(args.output_encoder, model_file))
 
 
 def loss_fn(outputs, labels, mask):
@@ -213,6 +192,8 @@ def main():
                         help="Path of the pretrained model.")
     parser.add_argument("--output_model_path", default="./models/tagger_model.bin", type=str,
                         help="Path of the output model.")
+    parser.add_argument("--output_encoder", default="./luke-models/", type=str,
+                        help="Path of the output luke model.")
     parser.add_argument("--vocab_path", default="./models/google_vocab.txt", type=str,
                         help="Path of the vocabulary file.")
     parser.add_argument("--train_path", type=str, required=True,
@@ -727,6 +708,7 @@ def main():
         if f1 > best_f1:
             best_f1 = f1
             save_model(model, args.output_model_path)
+            save_encoder(args, encoder)
         else:
             continue
 
