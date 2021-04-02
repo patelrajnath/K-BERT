@@ -1,8 +1,8 @@
 #!/bin/bash
 
-for kg in /RAJ/ent_vocab_custom_filtered_sorted.json #/RAJ/ent_vocab_custom_cleaned_freq-sorted;
+for kg in /RAJ/ent_vocab_custom_filtered_sorted.json /RAJ/ent_vocab_custom_cleaned_freq-sorted;
 do
-	for n in 10 #5 10 15 20 30 50;
+	for n in 5 10 15 20 30 50;
 	do
 		echo $kg
 		echo $n
@@ -25,7 +25,7 @@ do
 			--max_entities ${n} \
 			--eval_range_with_types \
 			--output_file_prefix outputs/evaluation/${prefix}_${kg_filename} \
-			> ./outputs/logs/kbert_conll_${prefix}_${kg_filename}.log
+			> ./outputs/logs-voting-chicer/kbert_conll_${prefix}_${kg_filename}.log
 			#--reverse_order \
 			#--use_subword_tag \
 	done
