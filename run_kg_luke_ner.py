@@ -559,7 +559,9 @@ def main():
                     else:
                         end = gold.size()[0] - 1
                     if args.eval_range_with_types:
-                        gold_entities_pos_with_type.append((start, end, gold[start].item()))
+                        ent_type_gold = idx_to_label.get(gold[start].item())
+                        ent_type_gold = ent_type_gold.replace('_NO_KG', '')
+                        gold_entities_pos_with_type.append((start, end, ent_type_gold))
 
                     gold_entities_pos.append((start, end))
 
@@ -587,15 +589,18 @@ def main():
                             entity_types = [idx_to_label.get(l.item()) for l in pred[start:end]]
                         # Run voting choicer
                         final_entity_type = voting_choicer(entity_types)
+                        final_entity_type = final_entity_type.replace('_NO_KG', '')
 
                         if final:
                             logger.info(f'Predicted: {" ".join(entity_types)}, Selected: {final_entity_type}')
                         if args.voting_choicer:
                             # Convert back to label id and add in the tuple
-                            pred_entities_pos_with_type.append((start, end, labels_map[final_entity_type]))
+                            pred_entities_pos_with_type.append((start, end, final_entity_type))
                         else:
                             # Use the first prediction
-                            pred_entities_pos_with_type.append((start, end, pred[start].item()))
+                            ent_type_pred = idx_to_label.get(pred[start].item())
+                            ent_type_pred = ent_type_pred.replace('_NO_KG', '')
+                            pred_entities_pos_with_type.append((start, end, ent_type_pred))
 
                     pred_entities_pos.append((start, end))
 
