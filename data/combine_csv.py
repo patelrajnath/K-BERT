@@ -3,11 +3,11 @@ import pandas as pd
 
 # df_conll = pd.read_csv('conll_2003/eng.train.train_filtered.csv', sep='\t', index_col=None, header=0)
 # df_conll = df_conll[['text', 'labels']]
-df_twitter = pd.read_csv('tweeter_nlp/ner.txt.train_filtered.csv', sep='\t', index_col=None, header=0)
-df_gmb = pd.read_csv('GMB/ner_filtered.csv', sep='\t', index_col=None, header=0)
-df_kaggle = pd.read_csv('kaggle-ner/ner_filtered.csv', sep='\t', index_col=None, header=0)
+df_twitter = pd.read_csv('tweeter_nlp/ner.txt.train_normalized.csv', sep='\t', index_col=None, header=0)
+df_gmb = pd.read_csv('GMB/ner_normalized.csv', sep='\t', index_col=None, header=0)
+df_kaggle = pd.read_csv('kaggle-ner/ner_normalized.csv', sep='\t', index_col=None, header=0)
 
-df_combined = pd.concat([df_gmb, df_twitter, df_kaggle], axis=0, ignore_index=True)
+df_combined = pd.concat([df_gmb, df_kaggle], axis=0, ignore_index=True)
 print(df_combined.count(axis=0))
 df_unique = df_combined.drop_duplicates()
 df_test = df_unique
@@ -25,6 +25,6 @@ dev = train_df[~msk]
 print(train.shape)
 print(dev.shape)
 
-train.to_csv('combined_3/train_filtered_combined_3.csv', index=False)
-test.to_csv('combined_3/test_filtered_combined_3.csv', index=False)
-dev.to_csv('combined_3/dev_filtered_combined_3.csv', index=False)
+train.to_csv('combined_3/train_normalized_combined_3.csv', index=False)
+test.to_csv('combined_3/test_normalized_combined_3.csv', index=False)
+dev.to_csv('combined_3/dev_normalized_combined_3.csv', index=False)
