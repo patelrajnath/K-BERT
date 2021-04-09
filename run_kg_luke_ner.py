@@ -376,11 +376,13 @@ def main():
                 labels = [config.CLS_TOKEN] + labels.split(" ") + [config.SEP_TOKEN]
                 new_labels = []
                 j = 0
+                joiner = '-'
                 for i in range(len(tokens)):
                     if tag[i] == 0 and tokens[i] != tokenizer.pad_token:
                         cur_type = labels[j]
                         new_labels.append(cur_type)
                         if cur_type != 'O':
+                            joiner = cur_type[1]
                             prev_label = cur_type[2:]
                         else:
                             prev_label = cur_type
@@ -394,7 +396,7 @@ def main():
                             if args.use_subword_tag:
                                 new_labels.append('[X]')
                             else:
-                                new_labels.append('I_' + prev_label)
+                                new_labels.append(f'I{joiner}' + prev_label)
                     else:
                         new_labels.append(PAD_TOKEN)
 
