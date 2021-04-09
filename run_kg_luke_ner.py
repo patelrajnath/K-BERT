@@ -71,11 +71,13 @@ def loss_fn(outputs, labels, mask):
 
 def voting_choicer(items):
     votes = []
+    joiner = '-'
     for item in items:
         if item and item != '[ENT]' and item != '[X]' and item != '[PAD]':
             if item == 'O' or item == '[CLS]' or item == '[SEP]':
                 votes.append(item)
             else:
+                joiner = item[1]
                 votes.append(item[2:])
 
     vote_labels = Counter(votes)
@@ -87,7 +89,7 @@ def voting_choicer(items):
     if final_lb == 'O' or final_lb == '[CLS]' or final_lb == '[SEP]':
         return final_lb
     else:
-        return 'B_' + final_lb
+        return f'B{joiner}' + final_lb
 
 
 class Batcher(object):
@@ -563,11 +565,14 @@ def main():
                     if args.eval_range_with_types:
                         ent_type_gold = idx_to_label.get(gold[start].item())
                         ent_type_gold = ent_type_gold.replace('_NOKG', '')
+                        # print(f'Gold:{ent_type_gold}')
                         gold_entities_pos_with_type.append((start, end, ent_type_gold))
+                        # exit()
 
                     gold_entities_pos.append((start, end))
 
             for j in range(pred.size()[0]):
+                # print(j)
                 if pred[j].item() in begin_ids and gold[j].item() != labels_map["[PAD]"] and gold[j].item() != \
                         labels_map["[ENT]"] and gold[j].item() != labels_map["[X]"]:
                     start = j
@@ -592,16 +597,19 @@ def main():
                         # Run voting choicer
                         final_entity_type = voting_choicer(entity_types)
                         final_entity_type = final_entity_type.replace('_NOKG', '')
+                        # print(f'Predicted: {final_entity_type}')
 
                         if final:
                             logger.info(f'Predicted: {" ".join(entity_types)}, Selected: {final_entity_type}')
                         if args.voting_choicer:
                             # Convert back to label id and add in the tuple
+                            # print(f'Predicted: {final_entity_type}')
                             pred_entities_pos_with_type.append((start, end, final_entity_type))
                         else:
                             # Use the first prediction
                             ent_type_pred = idx_to_label.get(pred[start].item())
                             ent_type_pred = ent_type_pred.replace('_NOKG', '')
+                            # print(f'Predicted: {ent_type_pred}')
                             pred_entities_pos_with_type.append((start, end, ent_type_pred))
 
                     pred_entities_pos.append((start, end))
@@ -617,7 +625,6 @@ def main():
                         continue
                     else:
                         correct_with_type += 1
-
         try:
             print("Report precision, recall, and f1:")
             p = correct / pred_entities_num
@@ -676,37 +683,37 @@ def main():
 
     for epoch in range(1, args.epochs_num + 1):
         model.train()
-        for i, (
-                input_ids_batch, label_ids_batch, mask_ids_batch, pos_ids_batch, vm_ids_batch,
-                tag_ids_batch, segment_ids_batch) in enumerate(train_batcher):
-            model.zero_grad()
-
-            input_ids_batch = input_ids_batch.to(device)
-            label_ids_batch = label_ids_batch.to(device)
-            mask_ids_batch = mask_ids_batch.to(device)
-            pos_ids_batch = pos_ids_batch.to(device)
-            tag_ids_batch = tag_ids_batch.to(device)
-            vm_ids_batch = vm_ids_batch.long().to(device)
-            segment_ids_batch = segment_ids_batch.long().to(device)
-
-            loss, _, _, _ = model(input_ids_batch,
-                                  segment_ids_batch,
-                                  mask_ids_batch,
-                                  label_ids_batch,
-                                  pos_ids_batch,
-                                  vm_ids_batch,
-                                  use_kg=args.use_kg)
-
-            if torch.cuda.device_count() > 1:
-                loss = torch.mean(loss)
-            total_loss += loss.item()
-            if (i + 1) % args.report_steps == 0:
-                print("Epoch id: {}, Training steps: {}, Avg loss: {:.3f}".format(epoch, i + 1,
-                                                                                  total_loss / args.report_steps))
-                total_loss = 0.
-
-            loss.backward()
-            optimizer.step()
+        # for i, (
+        #         input_ids_batch, label_ids_batch, mask_ids_batch, pos_ids_batch, vm_ids_batch,
+        #         tag_ids_batch, segment_ids_batch) in enumerate(train_batcher):
+        #     model.zero_grad()
+        #
+        #     input_ids_batch = input_ids_batch.to(device)
+        #     label_ids_batch = label_ids_batch.to(device)
+        #     mask_ids_batch = mask_ids_batch.to(device)
+        #     pos_ids_batch = pos_ids_batch.to(device)
+        #     tag_ids_batch = tag_ids_batch.to(device)
+        #     vm_ids_batch = vm_ids_batch.long().to(device)
+        #     segment_ids_batch = segment_ids_batch.long().to(device)
+        #
+        #     loss, _, _, _ = model(input_ids_batch,
+        #                           segment_ids_batch,
+        #                           mask_ids_batch,
+        #                           label_ids_batch,
+        #                           pos_ids_batch,
+        #                           vm_ids_batch,
+        #                           use_kg=args.use_kg)
+        #
+        #     if torch.cuda.device_count() > 1:
+        #         loss = torch.mean(loss)
+        #     total_loss += loss.item()
+        #     if (i + 1) % args.report_steps == 0:
+        #         print("Epoch id: {}, Training steps: {}, Avg loss: {:.3f}".format(epoch, i + 1,
+        #                                                                           total_loss / args.report_steps))
+        #         total_loss = 0.
+        #
+        #     loss.backward()
+        #     optimizer.step()
 
         # Evaluation phase.
         print("Start evaluate on dev dataset.")
