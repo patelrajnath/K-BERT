@@ -590,7 +590,8 @@ def main():
 
                         if args.map_kaggle2conll:
                             # Normalize kaggle to conll tags
-                            ent_type_gold = normalize_tags(ent_type_gold, mappings_kaggle2conll)
+                            ent_type_gold_list = normalize_tags([ent_type_gold], mappings_kaggle2conll)
+                            ent_type_gold = ent_type_gold_list[0]
 
                         ent_type_gold = ent_type_gold.replace('_NOKG', '')
                         gold_entities_pos_with_type.append((start, end, ent_type_gold))
