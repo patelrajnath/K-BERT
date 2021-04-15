@@ -363,7 +363,7 @@ def main():
 
     print(begin_ids)
     print("Labels: ", labels_map)
-    args.labels_num = 32
+    args.labels_num = 38
     args.labels_num_finetune = len(labels_map)
 
     # Build knowledge graph.
