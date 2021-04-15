@@ -12,6 +12,7 @@ import torch.nn as nn
 from collections import Counter
 from brain import config
 from brain.knowgraph_english import KnowledgeGraph
+from datautils.constants import mappings_kaggle2conll
 from luke import ModelArchive, LukeModel
 from uer.utils.config import load_hyperparam
 from uer.utils.optimizers import BertAdam
@@ -69,13 +70,29 @@ def loss_fn(outputs, labels, mask):
     return -torch.sum(outputs) / num_labels
 
 
+def normalize_tags(inp_labels, mappings):
+    inp_labels_normalized = []
+    for l in inp_labels:
+        flag = False
+        for map_keys in mappings:
+            if l == map_keys:
+                normalized_tag = mappings[map_keys]
+                inp_labels_normalized.append(normalized_tag)
+                flag = True
+        if not flag:
+            inp_labels_normalized.append(l)
+    return inp_labels_normalized
+
+
 def voting_choicer(items):
     votes = []
+    joiner = '-'
     for item in items:
         if item and item != '[ENT]' and item != '[X]' and item != '[PAD]':
             if item == 'O' or item == '[CLS]' or item == '[SEP]':
                 votes.append(item)
             else:
+                joiner = item[1]
                 votes.append(item[2:])
 
     vote_labels = Counter(votes)
@@ -87,7 +104,7 @@ def voting_choicer(items):
     if final_lb == 'O' or final_lb == '[CLS]' or final_lb == '[SEP]':
         return final_lb
     else:
-        return 'B_' + final_lb
+        return f'B{joiner}' + final_lb
 
 
 class Batcher(object):
@@ -248,6 +265,9 @@ def main():
     # kg
     parser.add_argument("--kg_name", required=True, help="KG name or path")
     parser.add_argument("--use_kg", action='store_true', help="Enable the use of KG.")
+    parser.add_argument("--map_kaggle2conll", action='store_true',
+                        help="Enable to map kaggle tags to conll tags.")
+
     parser.add_argument("--dry_run", action='store_true', help="Dry run to test the implementation.")
     parser.add_argument("--voting_choicer", action='store_true',
                         help="Enable the Voting choicer to select the entity type.")
@@ -376,11 +396,13 @@ def main():
                 labels = [config.CLS_TOKEN] + labels.split(" ") + [config.SEP_TOKEN]
                 new_labels = []
                 j = 0
+                joiner = '-'
                 for i in range(len(tokens)):
                     if tag[i] == 0 and tokens[i] != tokenizer.pad_token:
                         cur_type = labels[j]
                         new_labels.append(cur_type)
                         if cur_type != 'O':
+                            joiner = cur_type[1]
                             prev_label = cur_type[2:]
                         else:
                             prev_label = cur_type
@@ -394,7 +416,7 @@ def main():
                             if args.use_subword_tag:
                                 new_labels.append('[X]')
                             else:
-                                new_labels.append('I_' + prev_label)
+                                new_labels.append(f'I{joiner}' + prev_label)
                     else:
                         new_labels.append(PAD_TOKEN)
 
@@ -587,6 +609,11 @@ def main():
                             entity_types = [idx_to_label.get(l.item()) for l in [pred[start]]]
                         else:
                             entity_types = [idx_to_label.get(l.item()) for l in pred[start:end]]
+
+                        if args.map_kaggle2conll:
+                            # Normalize kaggle to conll tags
+                            entity_types = normalize_tags(entity_types, mappings_kaggle2conll)
+
                         # Run voting choicer
                         final_entity_type = voting_choicer(entity_types)
                         final_entity_type = final_entity_type.replace('_NOKG', '')
