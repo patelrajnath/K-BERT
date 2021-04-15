@@ -582,6 +582,11 @@ def main():
                         end = gold.size()[0] - 1
                     if args.eval_range_with_types:
                         ent_type_gold = idx_to_label.get(gold[start].item())
+
+                        if args.map_kaggle2conll:
+                            # Normalize kaggle to conll tags
+                            ent_type_gold = normalize_tags(ent_type_gold, mappings_kaggle2conll)
+
                         ent_type_gold = ent_type_gold.replace('_NOKG', '')
                         gold_entities_pos_with_type.append((start, end, ent_type_gold))
 
