@@ -8,3 +8,10 @@ mappings_kaggle2conll = {
     'B-eve': 'B_MISC', 'B-eve_NOKG': 'B_MISC', 'I-eve': 'I_MISC', 'I-eve_NOKG': 'I_MISC',
     'B-nat': 'B_MISC', 'B-nat_NOKG': 'B_MISC', 'I-nat': 'I_MISC', 'I-nat_NOKG': 'I_MISC',
 }
+
+mappings_conll2kaggle = {
+    'B_PER': 'B-per', 'I_PER': 'I-per',
+    'B_LOC': 'B-geo', 'I_LOC': 'I-geo',
+    'B_ORG': 'B-org', 'I_ORG': 'I-org',
+    'B_MISC': 'B-nat', 'I_MISC': 'I-nat',
+}

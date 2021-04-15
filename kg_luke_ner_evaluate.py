@@ -12,7 +12,7 @@ import torch.nn as nn
 from collections import Counter
 from brain import config
 from brain.knowgraph_english import KnowledgeGraph
-from datautils.constants import mappings_kaggle2conll
+from datautils.constants import mappings_kaggle2conll, mappings_conll2kaggle
 from luke import ModelArchive, LukeModel
 from uer.utils.config import load_hyperparam
 from uer.utils.optimizers import BertAdam
@@ -267,7 +267,8 @@ def main():
     parser.add_argument("--use_kg", action='store_true', help="Enable the use of KG.")
     parser.add_argument("--map_kaggle2conll", action='store_true',
                         help="Enable to map kaggle tags to conll tags.")
-
+    parser.add_argument("--map_conll2kaggle", action='store_true',
+                        help="Enable to map conll tags to kaggle tags.")
     parser.add_argument("--dry_run", action='store_true', help="Dry run to test the implementation.")
     parser.add_argument("--voting_choicer", action='store_true',
                         help="Enable the Voting choicer to select the entity type.")
@@ -394,6 +395,10 @@ def main():
                 num_pad = len(tokens) - num_tokens
 
                 labels = [config.CLS_TOKEN] + labels.split(" ") + [config.SEP_TOKEN]
+
+                if args.map_conll2kaggle:
+                    labels = normalize_tags(labels, mappings_conll2kaggle)
+
                 new_labels = []
                 j = 0
                 joiner = '-'
@@ -674,7 +679,10 @@ def main():
     if torch.cuda.device_count() > 1:
         model.module.load_state_dict(torch.load(args.output_model_path))
     else:
-        model.load_state_dict(torch.load(args.output_model_path))
+        if torch.cuda.is_available():
+            model.load_state_dict(torch.load(args.output_model_path))
+        else:
+            model.load_state_dict(torch.load(args.output_model_path, map_location=torch.device('cpu')))
 
     evaluate(args, True, final=True)
 

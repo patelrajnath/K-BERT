@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 prefix=normalized-combined_3_v2
 CUDA_VISIBLE_DEVICES=1 nohup python -u kg_luke_ner_evaluate.py \
-	--train_path data/combined_3/train_normalized_combined_3.csv \
+	--train_path data/combined_3/train_combined_3_normalized.csv \
 	--dev_path data/conll_2003/eng.testb.dev.csv \
 	--test_path data/conll_2003/eng.testa.dev.csv \
 	--pretrained_model_path /RAJ/luke_base_500k.tar.gz \
