@@ -307,6 +307,8 @@ def main():
 
     print(begin_ids)
     print("Labels: ", labels_map)
+    print(len(idx_to_label))
+    exit()
     args.labels_num = len(labels_map)
 
     # Build knowledge graph.
