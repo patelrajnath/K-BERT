@@ -212,7 +212,8 @@ class TaggerStage2(nn.Module):
 
         # Encoder.
         # print('word ids:', word_ids)
-        _, _, _, _, logits = self.encoder_with_logits(self,
+        _, _, _, _, logits = \
+            self.encoder_with_logits(
                 word_ids,
                 word_segment_ids,
                 word_attention_mask,
@@ -225,7 +226,7 @@ class TaggerStage2(nn.Module):
         # Target.
         logits = self.output_layer(logits)
         # print('After last layer:', outputs.size())
-        outputs = logits.contiguous().view(-1, self.labels_num)
+        outputs = logits.contiguous().view(-1, self.labels_num_finetune)
         # print('Flat:', outputs.size())
         outputs = F.log_softmax(outputs, dim=-1)
         # print(outputs.size())
