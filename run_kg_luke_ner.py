@@ -69,20 +69,6 @@ def loss_fn(outputs, labels, mask):
     return -torch.sum(outputs) / num_labels
 
 
-def normalize_tags(inp_labels, mappings):
-    inp_labels_normalized = []
-    for l in inp_labels:
-        flag = False
-        for map_keys in mappings:
-            if l == map_keys:
-                normalized_tag = mappings[map_keys]
-                inp_labels_normalized.append(normalized_tag)
-                flag = True
-        if not flag:
-            inp_labels_normalized.append(l)
-    return inp_labels_normalized
-
-
 def voting_choicer(items):
     votes = []
     joiner = '-'
@@ -607,6 +593,7 @@ def main():
                             entity_types = [idx_to_label.get(l.item()) for l in [pred[start]]]
                         else:
                             entity_types = [idx_to_label.get(l.item()) for l in pred[start:end]]
+
                         # Run voting choicer
                         final_entity_type = voting_choicer(entity_types)
                         final_entity_type = final_entity_type.replace('_NOKG', '')
