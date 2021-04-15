@@ -206,6 +206,7 @@ class TaggerStage2(nn.Module):
                 vm=None,
                 use_kg=True
                 ):
+
         if not use_kg:
             vm = None
 
@@ -216,9 +217,9 @@ class TaggerStage2(nn.Module):
                 word_segment_ids,
                 word_attention_mask,
                 labels,
-                pos=None,
-                vm=None,
-                use_kg=True)
+                pos=pos,
+                vm=vm,
+                use_kg=use_kg)
 
         # print(word_sequence_output.size())
         # Target.
