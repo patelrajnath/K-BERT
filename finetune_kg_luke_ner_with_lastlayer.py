@@ -217,9 +217,9 @@ class TaggerStage2(nn.Module):
                 word_segment_ids,
                 word_attention_mask,
                 labels,
-                pos=pos,
-                vm=vm,
-                use_kg=use_kg)
+                pos,
+                vm,
+                use_kg)
 
         # print(word_sequence_output.size())
         # Target.
