@@ -189,11 +189,12 @@ class LukeTagger(nn.Module):
 
 
 class TaggerStage2(nn.Module):
-    def __init__(self, args, encoder_with_logits, logits_size=38):
+    def __init__(self, args, encoder_with_logits):
         super(TaggerStage2, self).__init__()
         self.encoder_with_logits = encoder_with_logits
+        self.labels_num_finetune = args.labels_num_finetune
         self.labels_num = args.labels_num
-        self.output_layer = nn.Linear(logits_size, self.labels_num)
+        self.output_layer = nn.Linear(self.labels_num, self.labels_num_finetune)
         self.softmax = nn.LogSoftmax(dim=-1)
 
     def forward(self,
@@ -265,6 +266,8 @@ def main():
     parser.add_argument("--pretrained_model_path", default=None, type=str,
                         help="Path of the pretrained model.")
     parser.add_argument("--output_model_path", default="./models/tagger_model.bin", type=str,
+                        help="Path of the output model.")
+    parser.add_argument("--input_model_path", default="./models/tagger_model.bin", type=str,
                         help="Path of the output model.")
     parser.add_argument("--output_encoder", default="./luke-models/", type=str,
                         help="Path of the output luke model.")
@@ -360,7 +363,8 @@ def main():
 
     print(begin_ids)
     print("Labels: ", labels_map)
-    args.labels_num = len(labels_map)
+    args.labels_num = 32
+    args.labels_num_finetune = len(labels_map)
 
     # Build knowledge graph.
     if args.kg_name == 'none':
@@ -384,9 +388,12 @@ def main():
     model_with_logits = LukeTagger(args, encoder)
 
     if torch.cuda.device_count() > 1:
-        model_with_logits.module.load_state_dict(torch.load(args.output_model_path))
+        model_with_logits.module.load_state_dict(torch.load(args.input_model_path))
     else:
-        model_with_logits.load_state_dict(torch.load(args.output_model_path))
+        if torch.cuda.is_available():
+            model_with_logits.load_state_dict(torch.load(args.input_model_path))
+        else:
+            model_with_logits.load_state_dict(torch.load(args.input_model_path, map_location=torch.device('cpu')))
 
     # Build sequence labeling model.
     model = TaggerStage2(args, model_with_logits)
