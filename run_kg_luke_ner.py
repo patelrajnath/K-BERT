@@ -71,11 +71,13 @@ def loss_fn(outputs, labels, mask):
 
 def voting_choicer(items):
     votes = []
+    joiner = '-'
     for item in items:
         if item and item != '[ENT]' and item != '[X]' and item != '[PAD]':
             if item == 'O' or item == '[CLS]' or item == '[SEP]':
                 votes.append(item)
             else:
+                joiner = item[1]
                 votes.append(item[2:])
 
     vote_labels = Counter(votes)
@@ -87,7 +89,7 @@ def voting_choicer(items):
     if final_lb == 'O' or final_lb == '[CLS]' or final_lb == '[SEP]':
         return final_lb
     else:
-        return 'B_' + final_lb
+        return f'B{joiner}' + final_lb
 
 
 class Batcher(object):
@@ -149,9 +151,9 @@ class LukeTagger(nn.Module):
                                                            position_ids=pos, vm=vm)
         # print(word_sequence_output.size())
         # Target.
-        outputs = self.output_layer(word_sequence_output)
+        logits = self.output_layer(word_sequence_output)
         # print('After last layer:', outputs.size())
-        outputs = outputs.contiguous().view(-1, self.labels_num)
+        outputs = logits.contiguous().view(-1, self.labels_num)
         # print('Flat:', outputs.size())
         outputs = F.log_softmax(outputs, dim=-1)
         # print(outputs.size())
@@ -183,7 +185,7 @@ class LukeTagger(nn.Module):
         # print('Correct:', correct)
         # exit()
 
-        return loss, correct, predict, labels
+        return loss, correct, predict, labels, logits
 
 
 def main():
@@ -196,6 +198,8 @@ def main():
                         help="Path of the output model.")
     parser.add_argument("--output_encoder", default="./luke-models/", type=str,
                         help="Path of the output luke model.")
+    parser.add_argument("--suffix_file_encoder", default="encoder", type=str,
+                        help="output file suffix luke model.")
     parser.add_argument("--vocab_path", default="./models/google_vocab.txt", type=str,
                         help="Path of the vocabulary file.")
     parser.add_argument("--train_path", type=str, required=True,
@@ -376,11 +380,13 @@ def main():
                 labels = [config.CLS_TOKEN] + labels.split(" ") + [config.SEP_TOKEN]
                 new_labels = []
                 j = 0
+                joiner = '-'
                 for i in range(len(tokens)):
                     if tag[i] == 0 and tokens[i] != tokenizer.pad_token:
                         cur_type = labels[j]
                         new_labels.append(cur_type)
                         if cur_type != 'O':
+                            joiner = cur_type[1]
                             prev_label = cur_type[2:]
                         else:
                             prev_label = cur_type
@@ -394,7 +400,7 @@ def main():
                             if args.use_subword_tag:
                                 new_labels.append('[X]')
                             else:
-                                new_labels.append('I_' + prev_label)
+                                new_labels.append(f'I{joiner}' + prev_label)
                     else:
                         new_labels.append(PAD_TOKEN)
 
@@ -494,7 +500,7 @@ def main():
             vm_ids_batch = vm_ids_batch.long().to(device)
             segment_ids_batch = segment_ids_batch.long().to(device)
 
-            loss, _, pred, gold = model(input_ids_batch,
+            loss, _, pred, gold, _ = model(input_ids_batch,
                                         segment_ids_batch,
                                         mask_ids_batch,
                                         label_ids_batch,
@@ -587,6 +593,7 @@ def main():
                             entity_types = [idx_to_label.get(l.item()) for l in [pred[start]]]
                         else:
                             entity_types = [idx_to_label.get(l.item()) for l in pred[start:end]]
+
                         # Run voting choicer
                         final_entity_type = voting_choicer(entity_types)
                         final_entity_type = final_entity_type.replace('_NOKG', '')
@@ -687,7 +694,7 @@ def main():
             vm_ids_batch = vm_ids_batch.long().to(device)
             segment_ids_batch = segment_ids_batch.long().to(device)
 
-            loss, _, _, _ = model(input_ids_batch,
+            loss, _, _, _, _ = model(input_ids_batch,
                                   segment_ids_batch,
                                   mask_ids_batch,
                                   label_ids_batch,
@@ -715,7 +722,7 @@ def main():
         if f1 > best_f1:
             best_f1 = f1
             save_model(model, args.output_model_path)
-            save_encoder(args, encoder)
+            save_encoder(args, encoder, suffix=args.suffix_file_encoder)
         else:
             continue
 
