@@ -1,0 +1,1076 @@
+<s> what is the most current exchange rate in china</s>
+<s> if i have five dollars how many rupies is that</s>
+<s> how much is dollars american worth in yen</s>
+<s> convert euros to dollars</s>
+<s> how much is ten dollars in euros</s>
+<s> how much is b. p. in u. s. d.</s>
+<s> what's the value of the euro relative to nzd</s>
+<s> exchange rate of euro with dollar</s>
+<s> how much money in us would i need to have a thousand pesos</s>
+<s> u. s. d. to g. b. p.</s>
+<s> i have ten us dollars how many canadian dollars do i have</s>
+<s> how much is the us dollar worth in canada</s>
+<s> what is the exchange rate between the us and canada</s>
+<s> how much indian rupees per u. s. d. today</s>
+<s> how many g. b. p. can i get for one dollar</s>
+<s> give me the exchange rate for dollar in euros</s>
+<s> how much australian dollars one can buy for one pound sterling</s>
+<s> and the pound is doing how badly against the euro</s>
+<s> what is the exchange rate between money i'm the united states and switzerland</s>
+<s> set a reminder for tomorrow evening</s>
+<s> notify me when the event is going to take place</s>
+<s> add jim and jerry to event</s>
+<s> make a repeating reminder for my yoga practice every day at noon</s>
+<s> i have a meeting with sean at four pm on wednesday can you remind me</s>
+<s> create an event gym day on monday and set it to repeat</s>
+<s> blot me all the phone calls planned for the morning of twenty three march</s>
+<s> can you remind me about my meeting tomorrow</s>
+<s> repeat reminder for my schedule for christmas</s>
+<s> remind me to call my grandma this Sunday</s>
+<s> next week my uncle birthday</s>
+<s> add running to my calendar for thursday</s>
+<s> i would like to attend church every sunday at eleven am</s>
+<s> see if john is available for a meeting on Monday</s>
+<s> remind me about the meeting</s>
+<s> set the alarm in my calendar events before five mins</s>
+<s> activate a one week notification before my anniversary please</s>
+<s> could you please schedule a meeting with this person</s>
+<s> i have a meeting with al on march twenty first at ten</s>
+<s> please call china wok and order number seven</s>
+<s> place order to pizza takeout for seven pm</s>
+<s> can i order out</s>
+<s> order two large pizzas and pieces of hot wings from dominoes</s>
+<s> order me a bowl from chipotle takeout</s>
+<s> order a pizza for me</s>
+<s> place order for a chicken manchow soup from wangs kitchen restaurant</s>
+<s> hey order a pizza pie with extra cheese</s>
+<s> i want to order food</s>
+<s> call for takeout</s>
+<s> is there any good chinese takeout that's open late</s>
+<s> i would like to pickup a veggie sub with a cookie from subway</s>
+<s> pull up the menu for the closest mexican restaurant</s>
+<s> what takeout places are near me</s>
+<s> place order of one pizza</s>
+<s> find me the nearest chinese for delivery</s>
+<s> order a pizza from pizza express</s>
+<s> get me a turkey jimmy johns sub and set it to be delivered at five pm tonight</s>
+<s> order a smoked meat platter from beanos</s>
+<s> tell me time of alarm you set</s>
+<s> list all of my alarms</s>
+<s> alarm settings</s>
+<s> what alarms are set for today</s>
+<s> please see see for me the alarms that you have set sunday morning</s>
+<s> tell me when the next alarms are for</s>
+<s> please tell me what alarms are on</s>
+<s> please list all my alarms</s>
+<s> what alarms are set right now</s>
+<s> check whether i have set any alarms for tomorrow morning</s>
+<s> tell me about my alarms</s>
+<s> do i have any alarms set</s>
+<s> is there an alarm at four am</s>
+<s> show me my alarms</s>
+<s> what alarm time had you set</s>
+<s> can you tell me what alarms i have set</s>
+<s> please let me know the morning alarm time kept for weekends</s>
+<s> what time is the alarm set for tomorrow</s>
+<s> may i know the about alarm you set</s>
+<s> fantastic response.</s>
+<s> yeap you've gotten my instructions perfectly.</s>
+<s> yeah wonderful response.</s>
+<s> yeah exact response to the command.</s>
+<s> yeah perfect response to command.</s>
+<s> yeah excellent.</s>
+<s> yeah exactly.</s>
+<s> perfect response to command.</s>
+<s> yes you have got my instructions perfectly.</s>
+<s> yeah you understood command correcly.</s>
+<s> yeah wonderful response to command.</s>
+<s> strongly agree.</s>
+<s> yeap it is confirmed.</s>
+<s> you got the command right.</s>
+<s> yeah strongly agree.</s>
+<s> yeah fantastic.</s>
+<s> yes you've understood my instructions exactly.</s>
+<s> yeap your understanding was confirmed.</s>
+<s> yeah that is correct.</s>
+<s> when is the school dance junction marked</s>
+<s> what is my schedule for tomorrow</s>
+<s> am i available at five pm on sunday</s>
+<s> do i have any notifications from social media</s>
+<s> what do i have scheduled for next week</s>
+<s> tell me the meetings i have for the week</s>
+<s> do i have any openings on my schedule for tomorrow</s>
+<s> do i need to pick up the kids from anything today</s>
+<s> is there anything i need to be aware of</s>
+<s> do i have any undone tasks</s>
+<s> what is left for today</s>
+<s> list out my upcoming events</s>
+<s> one thousand two hundred and thirty pm already you will have a meeting in ten mins</s>
+<s> is the meeting scheduled for tomorrow</s>
+<s> when the birthday will be</s>
+<s> when is my next appointment and who do i contact to reschedule</s>
+<s> what is the plan for tonight</s>
+<s> what day of the week is my birthday this year</s>
+<s> what is my schedule for june fourteenth two thousand and seventeen</s>
+<s> remove the next event on my calendar</s>
+<s> format the calendar</s>
+<s> remove the board meeting and reschedule for next wednesday</s>
+<s> delete event from mine</s>
+<s> cancel the event valentine's day from the calendar</s>
+<s> remove my meeting today at one pm</s>
+<s> i no longer need to see the doctor can that event be removed</s>
+<s> please remove march nineteenth's scheduled event</s>
+<s> make sure there is no events on my calendar</s>
+<s> remove all the events on my calendar</s>
+<s> delete my meeting event for march nineteen at one pm</s>
+<s> remove upcoming task</s>
+<s> remove emma's birthday from events</s>
+<s> in my calendar delete all of my golf events for the current month</s>
+<s> erase calendar events</s>
+<s> take lunch meeting off my calendar</s>
+<s> delete all my events for tomorrow</s>
+<s> delete the party on june first from my calendar</s>
+<s> can to please clear my calendar of all events</s>
+<s> where can i book a train ticket to oregon</s>
+<s> navigation search</s>
+<s> what time does the train leave philadelphia</s>
+<s> please let me know the time of train northern rail</s>
+<s> directions please</s>
+<s> how far away is the nearest rest stop</s>
+<s> what are the train times for today</s>
+<s> how much long until northern rail arrives at kings cross station</s>
+<s> show me the train schedules to the metropolitan opera house</s>
+<s> get route for los angles from here</s>
+<s> direction to local train station</s>
+<s> what is the train schedule to denver</s>
+<s> how long does it take to get from here to chicago by train</s>
+<s> when i should leave to office</s>
+<s> when is the train coming</s>
+<s> how much time is a train to there</s>
+<s> find nearest train station</s>
+<s> train leaving</s>
+<s> get me to the nearest train station</s>
+<s> let's start over please.</s>
+<s> please say one more time again.</s>
+<s> i would like to hear that information spoken again.</s>
+<s> i would like to hear the last one spoken again.</s>
+<s> i'd like to hear the last spoke again.</s>
+<s> i need to hear what you've said again.</s>
+<s> retry please.</s>
+<s> will you try what i have just said one more time please.</s>
+<s> would you tell me one more again please.</s>
+<s> would you tell me once again.</s>
+<s> could you tell me the last one you just said again please.</s>
+<s> i want to hear that again.</s>
+<s> i want to hear it again.</s>
+<s> please could you tell me once more.</s>
+<s> can you try again please.</s>
+<s> say one more time again please.</s>
+<s> will you speak once again please.</s>
+<s> please say it once again.</s>
+<s> please tell me it once more.</s>
+<s> what year what the eiffel tower built</s>
+<s> when does the super bowl officially start</s>
+<s> how many months in a year</s>
+<s> how many pages long is harry potter</s>
+<s> where do cows come from</s>
+<s> where is italy</s>
+<s> give me the birth date of mahatma gandhi</s>
+<s> which continent has highest growth of cotton and what is average production</s>
+<s> when is shakira's birthday</s>
+<s> please tell me about the historic facts about india</s>
+<s> how old is emma watson newest boyfriend</s>
+<s> who assassinated lincoln</s>
+<s> tell me when will indians economy touch that of americas</s>
+<s> info on lisa ann please</s>
+<s> calculate distance from boston to new york</s>
+<s> what year did george clooney start acting</s>
+<s> tell me who will win the next presidential election</s>
+<s> what is the capital of new hampshire</s>
+<s> name the capital of nigeria</s>
+<s> please activate my vacuum to clean the living room</s>
+<s> can you wake the roomba for the kitchen</s>
+<s> please have vacuum go for one hour</s>
+<s> activate the vacuum</s>
+<s> clean the sofa with the vacuum cleaner</s>
+<s> have the vacuum cleaner clean the room</s>
+<s> hurriedly activates my robot vacuum cleaner</s>
+<s> begin vacuum</s>
+<s> remove dust with vacuum cleaner</s>
+<s> start vacuum bot</s>
+<s> start my robot vacuum cleaner by ten to eleven am daily</s>
+<s> activate vacuum cleaner</s>
+<s> turn on the roomba</s>
+<s> begin vacuum cleaning</s>
+<s> please turn on my vacuum cleaner</s>
+<s> how do you activate the robot vacuum cleaner</s>
+<s> are there any new emails from name</s>
+<s> give me recent emails</s>
+<s> refresh email</s>
+<s> i need to know all of the emails from contact pertaining to subject</s>
+<s> open email</s>
+<s> who has sent me an email in the past week</s>
+<s> check emails for unread emails from mom</s>
+<s> did any emails come for me in the last five hours</s>
+<s> report what is new in my email inbox please</s>
+<s> what is the subject and who is the sender of my last email</s>
+<s> what did i tell susan in my last email</s>
+<s> show me all the emails received recently</s>
+<s> do i have any emails from jessica</s>
+<s> are there any recent unread emails</s>
+<s> do i have any new email from ryan</s>
+<s> carlos linux upgrade email</s>
+<s> my mail</s>
+<s> have i gotten any mail recently</s>
+<s> check emails</s>
+<s> what events are coming up</s>
+<s> let me see cultural events for this weekend in palermo neighborhood</s>
+<s> what are the concerts happening nearby</s>
+<s> is there any type of festival going on in town this weekend</s>
+<s> show me painting exhibition in bay area</s>
+<s> are there any fun things to do in seattle this weekend</s>
+<s> what's going on</s>
+<s> recommend an event happening in my area</s>
+<s> what events are happening this weekend in my area</s>
+<s> what's happening at the library this month</s>
+<s> what is playing at the local theater right now</s>
+<s> what do they have going on for festivals downtown</s>
+<s> could you list out the information on book fairs in washington dc for next week</s>
+<s> are there any events going on downtown tonight</s>
+<s> when is the yearly cultural event coming up</s>
+<s> what's happening around town</s>
+<s> What event do you suggest for me tonight</s>
+<s> what's happening in town tonight</s>
+<s> give me the list of circus shows going on in the city right now</s>
+<s> can you remove this item from the list</s>
+<s> delete last entry</s>
+<s> remove books from list</s>
+<s> please remove my list of favorite albums</s>
+<s> please delete what i just typed</s>
+<s> take bread out from the shopping list</s>
+<s> change that off the list</s>
+<s> remove the list of apps which started with letter a</s>
+<s> remove this from the list</s>
+<s> get rid of peas</s>
+<s> remove item three from the list</s>
+<s> take grocery buying off of the list</s>
+<s> i do n't have enough money to buy the nintendo switch right now can you please remove it on my amazon wishlist</s>
+<s> i want to remove apples from list</s>
+<s> please remove this item from the list</s>
+<s> delete item</s>
+<s> remove item four</s>
+<s> get rid of mike stein from contacts list</s>
+<s> delete my grocery list in my notes</s>
+<s> create a list of monthly groceries to be bought</s>
+<s> create a list of books to be ordered</s>
+<s> create a blank list</s>
+<s> add to list</s>
+<s> add these documents to the things i need to travel with</s>
+<s> start a new list</s>
+<s> create a new to do list</s>
+<s> search the item</s>
+<s> create a new shopping list</s>
+<s> start new list</s>
+<s> i need to set up a new list</s>
+<s> remind me to buy jeans on my shopping list</s>
+<s> add cereal to my shopping list</s>
+<s> i need to make a list</s>
+<s> please add item to list</s>
+<s> make a new list of dog breeds</s>
+<s> add item</s>
+<s> make a catalogue</s>
+<s> put this on my list</s>
+<s> please tell me a shop where i can find books to buy</s>
+<s> where is the closest restaurant</s>
+<s> is there a sports bar near kansas city plaza area</s>
+<s> where should i go eat tonight</s>
+<s> i'm looking for a casual restaurant for a dinner date</s>
+<s> where is the shopping mall for shirts</s>
+<s> what shops are near me</s>
+<s> when does the closest bar close</s>
+<s> where can i find the nearest irish pub in my area</s>
+<s> give me some cafes near downtown fort lauderdale</s>
+<s> where is the best place to buy party supplies in town</s>
+<s> where can i got to grab some drinks in west chester</s>
+<s> where is the closer starbucks</s>
+<s> what is the best hardware store near me</s>
+<s> where is mcdo</s>
+<s> can you recommend any pub in mg road</s>
+<s> find grocery store with an organic section near me</s>
+<s> is there any chinese places in benton ar</s>
+<s> tell me where the local shopping district is</s>
+<s> open google keep</s>
+<s> what is the list type</s>
+<s> what list did i make today</s>
+<s> did i put toothpaste on my pick up list</s>
+<s> please show me lists</s>
+<s> groceries list</s>
+<s> tell me my lists</s>
+<s> how many items are on my list</s>
+<s> tell me the names on the list</s>
+<s> show the list that are available with numbers</s>
+<s> please tell me what lists i have made</s>
+<s> most viewed list</s>
+<s> what did i put down already on the walmart list</s>
+<s> can i see my lists for today</s>
+<s> is there anything on my list today</s>
+<s> what open lists do i have</s>
+<s> what is on my playlist</s>
+<s> what's on the list</s>
+<s> what s the schedule for today</s>
+<s> play a movie i'll like</s>
+<s> what time will a movie be shown tomorrow</s>
+<s> what new movies available today</s>
+<s> suggest a good genre movie that came out recently</s>
+<s> please recommend a movie</s>
+<s> what is the highest rated movie this week</s>
+<s> recommend a movie for me</s>
+<s> do you recommend any movies that are currently playing in me area</s>
+<s> what is the highest rated movie now out</s>
+<s> what is the best movie to watch this weekend</s>
+<s> book me a train ticket to chicago for tomorrow morning before ten</s>
+<s> find out the the train arrival time and book me</s>
+<s> google train tickets to washington dc</s>
+<s> book ticket for paris by train</s>
+<s> book me a train ticket</s>
+<s> book a train ticket to canada this evening</s>
+<s> book me on a train leaving penn station tomorrow travelling to any city more than two hundred miles away</s>
+<s> get me two train tickets from where i am now to dallas arriving before dark</s>
+<s> book and pay for a train ticket to denver for saturday</s>
+<s> please book a train ticket from london to manchester</s>
+<s> google i need one train ticket to new york can you book that for me</s>
+<s> i need to buy a train ticket</s>
+<s> book a ticket in irctc website from sbc to mdu on may two for stored passenger list</s>
+<s> google search booking train ticket</s>
+<s> please purchase a amtrak ticket from las vegas nevada to lakeland florida leaving on the first of april</s>
+<s> book the the next train ticket to chennai</s>
+<s> find me a train ticket to boston</s>
+<s> get me a ride on the commuter train from nj to ny</s>
+<s> open irctc application and go to book ticket</s>
+<s> please turn on all lights</s>
+<s> please turn on the lights</s>
+<s> it's dark in the living room</s>
+<s> please tell me the date</s>
+<s> date today</s>
+<s> what is today</s>
+<s> what is the time in geneva</s>
+<s> let me know the time</s>
+<s> new york time please</s>
+<s> what is the time difference between here and dakar</s>
+<s> let me know the time in india</s>
+<s> tell me the time in this time zone</s>
+<s> which date is on next monday</s>
+<s> tell me what time it is in dallas texas</s>
+<s> what time is it in the other time zones</s>
+<s> hey what's the current time in austin</s>
+<s> hey what is the time</s>
+<s> could you tell me what time it is</s>
+<s> what day of the week does the next holiday fall on</s>
+<s> august fifteenth is what day of the week</s>
+<s> can you tell me the date today</s>
+<s> hey what's today's date</s>
+<s> please define forensic</s>
+<s> tell about the origin of the word evolution</s>
+<s> what's the definition of diverse</s>
+<s> what is love</s>
+<s> what is a trebuchet</s>
+<s> what do you know about the statue of liberty</s>
+<s> google definition for me</s>
+<s> Define economics</s>
+<s> what does h2o stand for</s>
+<s> meaning of word</s>
+<s> please tell me the definition of home</s>
+<s> how would you define a car</s>
+<s> look up animal and give me the definition</s>
+<s> describe a rotor</s>
+<s> define the moon for me</s>
+<s> define flabbergasted</s>
+<s> find the meaning of promise</s>
+<s> define rumplestiltskin</s>
+<s> what does a grapefruit look like</s>
+<s> do i have to bring umbrella for tonight party</s>
+<s> should i wear gloves tonight</s>
+<s> will it rain in the noon</s>
+<s> how will be the weather at night</s>
+<s> will the temperature be higher than forty tomorrow</s>
+<s> ask for the weather today morning</s>
+<s> is summer going on</s>
+<s> do you think i can wear sandals or should i wear sneakers tonight at seven pm</s>
+<s> show me the weather forecast for the next three three days</s>
+<s> are you sure its going to rain tomorrow</s>
+<s> will i need my snow boots this afternoon</s>
+<s> do i need to wear sunscreen today</s>
+<s> what is the temperature today</s>
+<s> what is the weather next week</s>
+<s> what is the climate here today</s>
+<s> let me know when the next cold front is expected</s>
+<s> i am gon na need an umbrella today after sunset</s>
+<s> google what is the temperature outside</s>
+<s> are there any tornado warnings today</s>
+<s> quiet please</s>
+<s> mute sound from speakers</s>
+<s> please mute for five minutes</s>
+<s> mute my speakers for a minute here i need to make a call</s>
+<s> mute speaker</s>
+<s> silence volume on speakers</s>
+<s> turn off media volume</s>
+<s> i need you to be quiet until tomorrow</s>
+<s> go to sleep</s>
+<s> no notifications for five minutes</s>
+<s> turn off the sound</s>
+<s> mute the music</s>
+<s> pause for ten seconds</s>
+<s> set mute for twenty minutes</s>
+<s> i need to mute the speaker</s>
+<s> i would not mind, olly.</s>
+<s> would n't mind for any one.</s>
+<s> does not matter for me, olly.</s>
+<s> do n't really bother, olly.</s>
+<s> would n't really know, olly.</s>
+<s> i have no idea about what to do, olly.</s>
+<s> i do not mind for whatever.</s>
+<s> any one is good, olly.</s>
+<s> it does not matter to me, olly.</s>
+<s> i would not mind to select any one.</s>
+<s> i do not really mind for whatever.</s>
+<s> this is unimportant for me.</s>
+<s> i would not mind to select any one, olly.</s>
+<s> does not matter for me.</s>
+<s> any one is good to me.</s>
+<s> this is unimportant, olly.</s>
+<s> would n't really mind for whatever.</s>
+<s> have no idea regarding to what to select, olly.</s>
+<s> does not matter, olly.</s>
+<s> add dan's email</s>
+<s> add contacts n mail</s>
+<s> enter atdfd@yahoo dot com into my contact list</s>
+<s> get apahelp@yahoo dot com in my contacts</s>
+<s> save the email to my contact</s>
+<s> please add johndoe@yahoocom to my contact list</s>
+<s> add this new email</s>
+<s> add work email address</s>
+<s> disable the alarm which is set at nine thirty pm</s>
+<s> delete scheduled alarm</s>
+<s> turn off my first alarm</s>
+<s> please cancel all alarms for tomorrow</s>
+<s> please delete the wednesday evening alarm</s>
+<s> please delete my morning alarm</s>
+<s> remove all of my alarms</s>
+<s> cancel alarm</s>
+<s> delete the alarm i just set</s>
+<s> could you please remove the set of alarms between eight and nine</s>
+<s> please turn off the alarm</s>
+<s> switch off main light</s>
+<s> off all the lights on the right side</s>
+<s> turn off lights in bathroom</s>
+<s> bedroom lights off now</s>
+<s> turn off the lights in the bathroom</s>
+<s> please turn off the lights in the kitchen</s>
+<s> turn off the room light</s>
+<s> power off the current</s>
+<s> turn off lights of kitchen</s>
+<s> by main power off</s>
+<s> turn off the upstairs bathroom light</s>
+<s> please turn off my patio lights</s>
+<s> turn the lights off please</s>
+<s> can you make sure the kitchen light is off</s>
+<s> could you turn the light off</s>
+<s> turn the living room's light off</s>
+<s> switch off the lights</s>
+<s> can you turn off my desk lamp</s>
+<s> turn the left light off</s>
+<s> dim the lights at the living room</s>
+<s> lower the light intensity</s>
+<s> hi can you please turn lower the lights</s>
+<s> dim the lights please</s>
+<s> please turn down the lights</s>
+<s> lower the lights</s>
+<s> lower the lights in bedroom two</s>
+<s> i want the room to be less bright</s>
+<s> hey olly make the lights a little dimmer</s>
+<s> light is too much</s>
+<s> reduce brightness</s>
+<s> dim the overhead lights a tad</s>
+<s> request a driver for uber in five minutes</s>
+<s> order me an uber ride please</s>
+<s> call yellow cab</s>
+<s> find an uber that can get me to the airport now</s>
+<s> book me a taxi from castle street to airport</s>
+<s> call a taxi</s>
+<s> book a taxi</s>
+<s> book an uber to pick me up outside of long island bar right now</s>
+<s> call a taxi to pick me up at work</s>
+<s> find an uber driver available for tonight after ten pm</s>
+<s> book me an uber</s>
+<s> schedule an uber in twenty minutes to tesco on fifth street</s>
+<s> get me a taxi to the airport right now</s>
+<s> have a taxi pick me up</s>
+<s> book me a uber for tomorrow night at six pm</s>
+<s> book for me an uber taxi to carmen drive</s>
+<s> uber</s>
+<s> book a taxi to start from here</s>
+<s> thanks but i think you do n't understand this correctly.</s>
+<s> sorry but i think you've got that not right.</s>
+<s> i did n't say it.</s>
+<s> shit, not right.</s>
+<s> i think it is not correct response.</s>
+<s> thanks but you have understood this wrongly.</s>
+<s> wait, i think that's not the right answer.</s>
+<s> that was n't right.</s>
+<s> oops, you're not correct.</s>
+<s> wait, you did not interpret command right.</s>
+<s> you have done a wrong thing.</s>
+<s> wait, this is not the correct answer.</s>
+<s> thanks but i think you do not get me.</s>
+<s> no, this is not what i am looking for.</s>
+<s> uhh no, incorrect command.</s>
+<s> i think you do n't get answer right.</s>
+<s> i think you did a task all wrong.</s>
+<s> uh no, you did not understand what i am searching for.</s>
+<s> i am sorry but i think it was not the correct answer.</s>
+<s> could you speak a little more softly</s>
+<s> turn it up</s>
+<s> just increase the volume a little</s>
+<s> olly turn the volume up</s>
+<s> raise volume to level seven on music player</s>
+<s> i want the speakers turned up high</s>
+<s> rise volume</s>
+<s> please increase the volume of the music hips do n't lie</s>
+<s> raise the volume of my music player by fifty percent</s>
+<s> speak as loud as you can</s>
+<s> increase volume please</s>
+<s> make this a bit louder</s>
+<s> increase volume to fifty percent</s>
+<s> what is sarah's number</s>
+<s> can you give me details on john</s>
+<s> have you responded my phone calls</s>
+<s> what is jeff's number</s>
+<s> how many contacts are there named john</s>
+<s> tell me the contact details of my brother</s>
+<s> show mobile number of john</s>
+<s> does contact mona has an email as well</s>
+<s> show number and contact email of rehan</s>
+<s> look up for the residential address of my team leader</s>
+<s> what is my wife's email</s>
+<s> select the contact</s>
+<s> is this my sisters cellphone number</s>
+<s> how old is mary s.</s>
+<s> did mom text me</s>
+<s> please let me know where david is travelling</s>
+<s> is hayden still living on turnpike lane</s>
+<s> add rebecca green to my list of favorite contacts</s>
+<s> what is jill's home phone number</s>
+<s> turn on the wemo plug socket to connect my charger to it</s>
+<s> turn on the plug</s>
+<s> on all the button on dashboard</s>
+<s> toggle wemo plug socket on</s>
+<s> wemo on</s>
+<s> start new smart socket</s>
+<s> make the wemo go on</s>
+<s> play music i have liked</s>
+<s> i would like to hear the theme song to this is us</s>
+<s> play the list from my favorites</s>
+<s> put poker face by lady gaga next in the play queue</s>
+<s> turn on the tunes</s>
+<s> rock</s>
+<s> play jumper by third eye blind</s>
+<s> play music playlist</s>
+<s> please turn on my music</s>
+<s> play my rap playlist</s>
+<s> after this song play atmosphere</s>
+<s> play true love next</s>
+<s> play hip hop songs</s>
+<s> hey play crazy by britney spears</s>
+<s> play marvin gaye i want you</s>
+<s> play tonic</s>
+<s> play jingle bells next</s>
+<s> open jazz</s>
+<s> play all third day</s>
+<s> would you confirm the question.</s>
+<s> could you check my last question.</s>
+<s> will you check and confirm command please.</s>
+<s> please will you check it.</s>
+<s> could you check and confirm what i last said please.</s>
+<s> will you please check it.</s>
+<s> please can you confirm the question.</s>
+<s> check the details please.</s>
+<s> can you confirm it.</s>
+<s> please can you confirm it.</s>
+<s> can you check and confirm the question please.</s>
+<s> i like you check question please.</s>
+<s> did you get what just said correctly?</s>
+<s> did you get what said correctly?</s>
+<s> i like you to check and confirm what i said please.</s>
+<s> would you please confirm the instruction.</s>
+<s> check and confirm my last question please.</s>
+<s> will you check and confirm the instruction please.</s>
+<s> can you check last thing said please.</s>
+<s> i would like some coffee now</s>
+<s> please make coffee at seven am</s>
+<s> make a cup of coffee</s>
+<s> start coffee at six am</s>
+<s> i want some coffee now</s>
+<s> get me some latte please</s>
+<s> prepare my morning coffee</s>
+<s> prepare some cups of coffee for us</s>
+<s> can you see to it that the coffee maker is ready with my filter coffee in approximately ten minutes from now</s>
+<s> i'd like a coffee now</s>
+<s> can you please turn on the coffee pot to make me coffee</s>
+<s> prepare coffee now</s>
+<s> can you get me a cup of coffee</s>
+<s> make a cup of coffee for me</s>
+<s> get a cup of coffee ready now</s>
+<s> coffee please</s>
+<s> make me a capuccino</s>
+<s> make me coffee at eight am</s>
+<s> put on a pot of coffee</s>
+<s> help me make brownies</s>
+<s> crabmeat recipe</s>
+<s> it should spices</s>
+<s> tell how vegetable is cooked</s>
+<s> learn to cut potatoes correctly</s>
+<s> how to cook that meal</s>
+<s> can i get a recipe for tuna</s>
+<s> please cook me a hamburger</s>
+<s> how to cook yellow rice</s>
+<s> i need to know how to make stuffed peppers</s>
+<s> how can i cook pasta</s>
+<s> look for different recipes</s>
+<s> what ingredient can be used instead of saffron</s>
+<s> find apple pie recipe</s>
+<s> do i have enough ingredients in my refrigerator</s>
+<s> search for your favorite meal</s>
+<s> tell me the preparation method for chicken sixty five</s>
+<s> i would like it to be able to find recipes i have</s>
+<s> why do people use avocado seeds</s>
+<s> add newscast time to daily schedule</s>
+<s> what were the cities affected by the earthquake</s>
+<s> head lines today from news</s>
+<s> what is the seattle city council doing about homelessness</s>
+<s> find me any news from so clean the last six hours</s>
+<s> what is the latest headline news from this newsource</s>
+<s> could you please find me the latest news from a source that i do not usually go to</s>
+<s> please keep tabs on how the presidential debates are going</s>
+<s> what's happening around the world</s>
+<s> i want to know everything that breaks about the dam breaking in california</s>
+<s> what is the latest news about obamacare</s>
+<s> show news of migration</s>
+<s> find new trump articles but not from fox news</s>
+<s> what's the latest news from xinhua</s>
+<s> find me info on cars</s>
+<s> Show me news from cnn</s>
+<s> what is the current state of brexit negotiations</s>
+<s> fast me the news of academy awards</s>
+<s> i want the news about academy awards</s>
+<s> light up</s>
+<s> lighten the light</s>
+<s> i need the lights in here to be turned up to seven</s>
+<s> increase brightness by twenty percent</s>
+<s> increase the light in the room</s>
+<s> can you turn up the lights</s>
+<s> i would like all the lights on when i enter</s>
+<s> please arrange to make all lights to show brighter</s>
+<s> brighten living room lights</s>
+<s> raise all the lights on</s>
+<s> raise the lights</s>
+<s> brighten the light at seventy percent</s>
+<s> increase</s>
+<s> brighten the lights</s>
+<s> two by two is</s>
+<s> fifteen plus twenty</s>
+<s> divide two hundred by four</s>
+<s> what is one plus one</s>
+<s> is one divisible by three</s>
+<s> convert ten inches to centimeters</s>
+<s> what is the answer to this math question</s>
+<s> three times two equals six</s>
+<s> how many inches make one feet</s>
+<s> what is the square root of four</s>
+<s> can you add up thirteen plus five plus nine for me</s>
+<s> what is twenty percent of one hundred and twenty</s>
+<s> what is five divided by one</s>
+<s> what is the sum of 9 and 12</s>
+<s> what are the stock prices of target</s>
+<s> fill me in on stock symbol</s>
+<s> what is the price of stock for gm</s>
+<s> google i. b. m. stock prices</s>
+<s> how is shell s stock doing today</s>
+<s> stock price for gss energy</s>
+<s> list me the stock of apple right now</s>
+<s> stock price for sprint</s>
+<s> what is the value of apple</s>
+<s> compare the stock prices for nintendo and sony and tell me which ones are better</s>
+<s> how much did facebook stock increase last night</s>
+<s> what is the stock information of walmart</s>
+<s> what is now stock price of tata</s>
+<s> what is the current price of jindel stock</s>
+<s> how is coca cola stock doing today</s>
+<s> for how much is hp selling for</s>
+<s> what price are google stocks trading for</s>
+<s> is starbucks stock up or down from last quarter</s>
+<s> how much to buy stock in i. b. m.</s>
+<s> where can i order pizza for delivery</s>
+<s> does pings do takeaway</s>
+<s> i need to know if mr pizza delivers</s>
+<s> what's the exact time we get food delivered once we place an order for food</s>
+<s> how long until i receive my food</s>
+<s> check delivery options for the restaurant</s>
+<s> does louie's do take out</s>
+<s> where are my takeaway order</s>
+<s> is my order at domino's ready</s>
+<s> hi there do you offer home delivery for orders</s>
+<s> can they provide takeaway</s>
+<s> restaurant order status</s>
+<s> when is my takeaway arriving</s>
+<s> find out if kfc delivers please</s>
+<s> do they deliver home</s>
+<s> please see if chili's has delivery</s>
+<s> what is the status of my order no</s>
+<s> please see if the restaurant chili's has delivery as an option</s>
+<s> can they do delivery</s>
+<s> play for me the game temple run</s>
+<s> i want to play solitare with you</s>
+<s> can we play twenty questions</s>
+<s> give me a company for playing football</s>
+<s> my games to play in my phones</s>
+<s> let's play</s>
+<s> play tennis for me</s>
+<s> lets play poker</s>
+<s> anyone for tennis</s>
+<s> play pong against me</s>
+<s> play solitaire</s>
+<s> we should play nfs at high speed</s>
+<s> can we play a game of hangman</s>
+<s> do you want to play monopoly with me</s>
+<s> bring up papa pear saga</s>
+<s> play checkers with me</s>
+<s> fight me in street fighter</s>
+<s> paper scissors or stone</s>
+<s> start poker game with me</s>
+<s> save this song in my favorites</s>
+<s> please rate this song five stars please</s>
+<s> i like alt rock music</s>
+<s> add song to running list</s>
+<s> i like to be it</s>
+<s> add this channel to pandora</s>
+<s> this song should be on my playlist</s>
+<s> i like it</s>
+<s> add this song to favorites playlist</s>
+<s> i favorite singer is arijit singh find his voice on radio</s>
+<s> i really enjoy this song</s>
+<s> i'd like you to remember that i like this song</s>
+<s> what is in my favorites music folder</s>
+<s> please save the current song to favorites</s>
+<s> all i ever want to hear is rap</s>
+<s> the song you are playing is amazing</s>
+<s> please thumbs up this song</s>
+<s> remember that this song is good but too slow to exercise to</s>
+<s> i would like you just stop it.</s>
+<s> will you please shut down.</s>
+<s> olly that's enough, just stop it.</s>
+<s> olly can you stop it.</s>
+<s> olly please would you stop.</s>
+<s> please shut up.</s>
+<s> i like you cancel.</s>
+<s> will you just stop it please.</s>
+<s> would you cancel it please.</s>
+<s> olly can you shut down.</s>
+<s> olly that is enough, just stop it.</s>
+<s> olly will you cancel please.</s>
+<s> will you stop.</s>
+<s> that's all, cancel it.</s>
+<s> olly shut down please.</s>
+<s> olly can you just stop.</s>
+<s> will you cancel it.</s>
+<s> olly please can you shut up.</s>
+<s> olly i want you cancel.</s>
+<s> send a mail to whom to talk</s>
+<s> pull up kate's email and write that i will let her know</s>
+<s> please reply to my boss most recent email and say that the ppt will be ready in one hour maximum</s>
+<s> reply the email of charles with just thank you right now</s>
+<s> send new email to jana dot litt at gmail dot com</s>
+<s> hey please reply to last pawel's email</s>
+<s> send email to new email address</s>
+<s> send an email to my friend say birthday wishes</s>
+<s> send email to mom starting with the subject vacation</s>
+<s> jj.nzt@yahoo dot com</s>
+<s> email happy new year to john</s>
+<s> tell to joe's email that come to my house in this moment i am alone</s>
+<s> go to email and send message to</s>
+<s> email john smith</s>
+<s> start a new email to george brown</s>
+<s> send a replay email</s>
+<s> send reply to joe</s>
+<s> email tom the date and time of tomorrow's meeting</s>
+<s> add mail i d subject content</s>
+<s> who is doing facebook live right now</s>
+<s> tell me what's going on snap chat</s>
+<s> what's the most popular story on my facebook newsfeed</s>
+<s> how many notifications do i have on facebook</s>
+<s> please check the trending topics on twitter</s>
+<s> read me new post on my feed</s>
+<s> get me updates from kenny's facebook from the weekend</s>
+<s> did anyone get engaged or give birth among my online friends</s>
+<s> did anyone like my photo i just posted</s>
+<s> show me the posts of my friends in the last hour</s>
+<s> may i know what is trending in social media</s>
+<s> find updates from vicki's facebook from mardi gras day</s>
+<s> open social media account</s>
+<s> hi what is happening in twitter today</s>
+<s> did anyone message me on facebook</s>
+<s> take me to the most popular post</s>
+<s> are there any interesting stuff happened today in my twitter</s>
+<s> what the highest likes on facebook</s>
+<s> who is the song writer</s>
+<s> please give me detail of o zaalima song</s>
+<s> give me the details on elton john</s>
+<s> what movie is this song from</s>
+<s> when did pop it like it's hot come out</s>
+<s> what is the name of the singer</s>
+<s> who is singing this song</s>
+<s> i want to know what song has the phrase stairway to heaven in it</s>
+<s> where can i find this song</s>
+<s> song info</s>
+<s> what list is available for my favorite music from ed sheeran</s>
+<s> who is this</s>
+<s> list of playback of ar rahman collections</s>
+<s> what music is this</s>
+<s> what music service has some soul music i can listen to</s>
+<s> which songs do i listen to most</s>
+<s> can you locate some gospel music for me</s>
+<s> tell me the name of this music</s>
+<s> music traking</s>
+<s> shuffle this playlist</s>
+<s> repeat this song when it ends</s>
+<s> cut the songs in this musics</s>
+<s> repeat previous song</s>
+<s> please repeat that music again of akon</s>
+<s> repeat this song</s>
+<s> repeat same song for ten times</s>
+<s> please make the lights natural</s>
+<s> lights to fifty percent</s>
+<s> can you change the light colors in the house</s>
+<s> turn the lights on party mode</s>
+<s> set the mood please</s>
+<s> change the light colors</s>
+<s> could you change the lights colour to green please</s>
+<s> make curser adjustable position</s>
+<s> change light color</s>
+<s> change the light color to blue</s>
+<s> alter the color of the lights at home</s>
+<s> change lights to blue</s>
+<s> can you change the living room lights to a softer color</s>
+<s> can you set the living room lights to pink</s>
+<s> change the color of the lights to blue</s>
+<s> let's have a warm glow in the front room</s>
+<s> switch lights to red tone</s>
+<s> change my light color to blue and please turn off the kitchen light</s>
+<s> all lights colour to blue please</s>
+<s> set an alarm for nine am</s>
+<s> change alarm to start at midnight</s>
+<s> alarm ten am</s>
+<s> set an alarm for me for tomorrow</s>
+<s> set an alarm for twelve</s>
+<s> set a timer at five am seven days a week</s>
+<s> i need to set an alarm for next friday at noon</s>
+<s> please sound an alarm three hours before a scheduled event</s>
+<s> can you set an alarm for seven am</s>
+<s> alert me at ten am please</s>
+<s> set the alarm to seven am for work</s>
+<s> wake up time</s>
+<s> change my alarms to mountain time</s>
+<s> set up each day an alarm at ten time for my meal</s>
+<s> please set an alarm clock for my next meeting with the team at three pm next friday</s>
+<s> set my alarm for six am</s>
+<s> set an alarm for this eight hundred pm this evening</s>
+<s> set alarm at six thirty am</s>
+<s> make me a wake up alarm for eight forty five am</s>
+<s> is it possible to drive now in ohio</s>
+<s> how is traffic in city</s>
+<s> what is the current traffic</s>
+<s> is there any traffic</s>
+<s> are there are any delays on my commute</s>
+<s> what the traffic condition outside my office</s>
+<s> in jodhpur traffic level is very low</s>
+<s> outside traffic status please</s>
+<s> show me the current traffic nearby me</s>
+<s> give information about the traffic near my location please</s>
+<s> just how bad is traffic on my commute</s>
+<s> how much traffic does atlanta georgia usually have</s>
+<s> what is the traffic like right now on telegraph</s>
+<s> what's the traffic this morning</s>
+<s> accident or normal traffic</s>
+<s> how long will it take me to get to park avenue considering current traffic</s>
+<s> what are the traffic conditions on the one hundred and one</s>
+<s> how's the traffic downtown</s>
+<s> how is traffic on the highway</s>
+<s> play radia</s>
+<s> play nine hundred and seventy one</s>
+<s> play the radio</s>
+<s> turn on the local radio</s>
+<s> please turn on the sean hannity show on am</s>
+<s> play national public radio</s>
+<s> play one thousand and thirty seven fm</s>
+<s> show me upcoming programmes on one hundred and five point one</s>
+<s> load sirius and play a rock and roll show</s>
+<s> tune into the nearest english fm station</s>
+<s> please play some songs for kids</s>
+<s> find joel osteen's broadcast on sirius</s>
+<s> please go to the local sports talk show on the radio</s>
+<s> play alex jones in radio</s>
+<s> play radio javan</s>
+<s> press play on the radio</s>
+<s> play my rock station on pandora</s>
+<s> play music radio for me</s>
+<s> play me a radio channel for trance music</s>
+<s> send a complaint to sony about this tv that quit working</s>
+<s> write complaint to wallmart</s>
+<s> please tweet about the problem i m facing with the product of company</s>
+<s> open gallery post video name</s>
+<s> complain to amazon customer service for me</s>
+<s> tell comcast i am still on hold</s>
+<s> tweet that there was an insect in the chocolate packet</s>
+<s> post new status</s>
+<s> lets send a tweet</s>
+<s> i want to tweet a complaint on apples phone issues</s>
+<s> tweet to ikea costumer service the following i'm not happy with this new klm product</s>
+<s> tweet at quote unquote</s>
+<s> tweet customer service not good for lpg service in my twitter account</s>
+<s> comcast sucks put that on their twitter account</s>
+<s> tweet my complaint to @nsa</s>
+<s> tweet terrible service</s>
+<s> Hashtag loving this weather post to twitter</s>
+<s> send a tweet to apple that their batteries drain too fast</s>
+<s> complain to mcdonalds twitter about my burger</s>
+<s> i want to hear more audiobook</s>
+<s> pause resume</s>
+<s> resume my audio book from karl pilkington</s>
+<s> book please</s>
+<s> start playing american gods where i last stopped</s>
+<s> play from my last session of joes book</s>
+<s> open audio book history of rome</s>
+<s> start audiobook the time traveller</s>
+<s> resume animal farm</s>
+<s> can you play file</s>
+<s> audio</s>
+<s> start from my last session of joes book</s>
+<s> play from this point from this audiobook</s>
+<s> resume my audiobook where we paused last</s>
+<s> resume the last kingdom for me</s>
+<s> end pause on audio book history of rome</s>
+<s> i want to finish listening to the book one thousand nine hundred and eighty four from where i left off</s>
+<s> keep reading</s>
+<s> can you play my favorite audio book of tarzan</s>
+<s> could you please lower the tone</s>
+<s> please talk softer</s>
+<s> lower the speak volume</s>
+<s> it is too loud decrease the volume</s>
+<s> Turn down volume</s>
+<s> reduce volume</s>
+<s> lower the volume to twenty</s>
+<s> lower volume by fifty percent</s>
+<s> you are my hero, thank you very much, olly.</s>
+<s> you have done it correctly thanks, olly.</s>
+<s> ah that's nice one.</s>
+<s> you rock, thank you very much, olly.</s>
+<s> fantastic job, you did well.</s>
+<s> that's good, thanks.</s>
+<s> appreciate your answers, olly.</s>
+<s> you are my star, thank you so much, olly.</s>
+<s> that was cool, i appreciate it.</s>
+<s> fantastic job, you've done well, olly.</s>
+<s> great work, you did well, olly.</s>
+<s> that is cool, thanks, olly.</s>
+<s> thank you for the response, olly.</s>
+<s> you've done it right.</s>
+<s> well done, appreciated.</s>
+<s> excellent work, you have done well.</s>
+<s> awesome job, you did well.</s>
+<s> it's great one, thank you very much.</s>
+<s> it's helpful, appreciated.</s>
+<s> would you clarify me on your answer further please.</s>
+<s> s2, i can not understand that.</s>
+<s> your words is not so clear.</s>
+<s> s1, explain further please.</s>
+<s> s2, i am unclear about what you have just said.</s>
+<s> please will you clarify me more on that.</s>
+<s> will you rephrase me about your response once again please.</s>
+<s> again clarify me on your answers.</s>
+<s> again elaborate.</s>
+<s> could n't understand what you just said now.</s>
+<s> can you again clarify what you've said please.</s>
+<s> i did n't get your response.</s>
+<s> s1, could you please again rephrase me about what you said now.</s>
+<s> what you said now was not clear.</s>
+<s> can you explain once again.</s>
+<s> do not get this.</s>
+<s> s1, explain me on your answer further please.</s>
+<s> s2, i do not catch up with you.</s>
+<s> did n't understand what you said now.</s>
+<s> play fishing podcasts that are favorited</s>
+<s> play podcast for the philadelphia eagles content</s>
+<s> play me the new podcast from npr</s>
+<s> keep playing the episodes in order</s>
+<s> play next episode</s>
+<s> play my play list</s>
+<s> play favorites listed in podcasts starting with first one</s>
+<s> play previous episode</s>
+<s> play my favourite podcasts</s>
+<s> get the next episode</s>
+<s> please start the next podcast episode</s>
+<s> please play next episode of podcast</s>
+<s> show me podcasts</s>
+<s> can you play back to december</s>
+<s> can you please download my podcast file available in internet and play it once</s>
+<s> skip this episode</s>
+<s> skip this one</s>
+<s> what are my top played podcasts</s>
+<s> go back to previous episode of podcast</s>
+<s> if it's eight pm on the east coast what time is it in sacramento california</s>
+<s> if it is four pm in missouri what time is it in london</s>
+<s> can you please change the time zone to us</s>
+<s> which time zone are we in please change to current</s>
+<s> please change time zone to canada</s>
+<s> what time will it be locally at nine am bangalore india time</s>
+<s> it is ten am in eastern standard time what time it is now it pacific standard time</s>
+<s> change mountain standard to pacific</s>
+<s> tell me random joke</s>
+<s> find me a joke related to baseball</s>
+<s> i need to be cheered up right now can you tell me a good joke</s>
+<s> today's jokes</s>
+<s> do you have a joke</s>
+<s> what's your favorite joke</s>
+<s> look for a joke</s>
+<s> do you know what a joke is</s>
+<s> i want a nerd joke</s>
+<s> what about this joke</s>
+<s> have any jokes</s>
+<s> joke please</s>
+<s> deactive the socket</s>
+<s> turn off the rice cooker socket</s>
+<s> power off wemo plug socket</s>
+<s> please switch off on the wemo plug socket</s>
+<s> shut the smart socket down</s>
+<s> i do not want to use the socket anymore</s>
+<s> turn off my smart plug in thirty minutes</s>
+<s> turn off wifi when you leave home to save power</s>
+<s> please turn off my smart plug socket</s>
+<s> today i had a lunch with my longtime sweetheart play me a nice song to the mood</s>
+<s> what's on tv</s>
+<s> is the data prefers any problems in objects</s>
+<s> your salary</s>
+<s> overall day</s>
+<s> anything i need to know</s>
+<s> is mile marker sixty five where the hanging tree is located</s>
+<s> tell me what happens when we die</s>
+<s> what is your country</s>
+<s> do i need to spare washing my car today</s>
+<s> this brings some problems to us</s>
+<s> can you explain me the problems when the syria becomes more stronger than america</s>
+<s> you are chatbot</s>
+<s> how high is the quality of this stone</s>
+<s> can you please tell me who are you</s>
+<s> where did he was yesterday</s>
+<s> have you come across any new recipes</s>
+<s> how did your day go</s>
+<s> give me the product review from gamespot about the nintendo switch</s>
