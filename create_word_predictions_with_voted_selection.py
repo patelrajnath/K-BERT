@@ -6,7 +6,6 @@ from transformers import RobertaTokenizer
 
 from luke import ModelArchive
 
-
 model_archive = ModelArchive.load('D:\Downloads\luke_base_500k.tar.gz')
 tokenizer = model_archive.tokenizer
 
@@ -82,12 +81,47 @@ def voting_choicer(items):
 # file_out_true = 'outputs/evaluation/nlu/finetune-stage2-nlu_gold_clean_voted_selection.txt'
 # file_out_text = 'outputs/evaluation/nlu/finetune-stage2_text_clean_voted_selection.txt'
 
-file_in = 'data/nlu/nlu_test.csv'
-file_in_predictions = 'outputs/evaluation/nlu/baseline-nlu_predictions_clean.txt'
+# file_in = 'data/nlu/nlu_test.csv'
+# file_in_predictions = 'outputs/evaluation/nlu/baseline-nlu_predictions_clean.txt'
 
-file_out = 'outputs/evaluation/nlu/baseline-nlu_predictions_clean_voted_selection.txt'
-file_out_true = 'outputs/evaluation/nlu/baseline-nlu_gold_clean_voted_selection.txt'
-file_out_text = 'outputs/evaluation/nlu/baseline-nlu_text_clean_voted_selection.txt'
+# file_out = 'outputs/evaluation/nlu/baseline-nlu_predictions_clean_voted_selection.txt'
+# file_out_true = 'outputs/evaluation/nlu/baseline-nlu_gold_clean_voted_selection.txt'
+# file_out_text = 'outputs/evaluation/nlu/baseline-nlu_text_clean_voted_selection.txt'
+
+# file_in = 'data/conll_2003/eng.testa.dev.csv'
+# file_in_predictions = 'outputs/evaluation/conll/baseline-conll_predictions_clean.txt'
+
+# file_out = 'outputs/evaluation/conll/baseline-conll_predictions_clean_voted_selection.txt'
+# file_out_true = 'outputs/evaluation/conll/baseline-conll_gold_clean_voted_selection.txt'
+# file_out_text = 'outputs/evaluation/conll/baseline-conll_text_clean_voted_selection.txt'
+
+# file_in = 'data/conll_2003/eng.testa.dev.csv'
+# file_in_predictions = 'outputs/evaluation/conll/finetune-stage2-conll_from-conll_predictions_clean.txt'
+
+# file_out = 'outputs/evaluation/conll/finetune-stage2-conll_from-conll_predictions_clean_voted_selection.txt'
+# file_out_true = 'outputs/evaluation/conll/finetune-stage2-conll_from-conll_gold_clean_voted_selection.txt'
+# file_out_text = 'outputs/evaluation/conll/finetune-stage2-conll_from-conll_text_clean_voted_selection.txt'
+
+# file_in = 'data/conll_2003/eng.testa.dev.csv'
+# file_in_predictions = 'outputs/evaluation/conll/finetune-stage2-conll_from-kaggle_predictions_clean.txt'
+
+# file_out = 'outputs/evaluation/conll/finetune-stage2-conll_from-kaggle_predictions_clean_voted_selection.txt'
+# file_out_true = 'outputs/evaluation/conll/finetune-stage2-conll_from-kaggle_gold_clean_voted_selection.txt'
+# file_out_text = 'outputs/evaluation/conll/finetune-stage2-conll_from-kaggle_text_clean_voted_selection.txt'
+
+# file_in = 'data/combined_3/test_combined_3.csv'
+# file_in_predictions = 'outputs/evaluation/kaggle/finetune-stage2-kaggle_from-conll_predictions_clean.txt'
+
+# file_out = 'outputs/evaluation/kaggle/finetune-stage2-kaggle_from-conll_predictions_clean_voted_selection.txt'
+# file_out_true = 'outputs/evaluation/kaggle/finetune-stage2-kaggle_from-conll_gold_clean_voted_selection.txt'
+# file_out_text = 'outputs/evaluation/kaggle/finetune-stage2-kaggle_from-conll_text_clean_voted_selection.txt'
+
+file_in = 'data/combined_3/test_combined_3.csv'
+file_in_predictions = 'outputs/evaluation/kaggle/finetune-stage2-kaggle_from-kaggle-pretrain-with-logits_predictions_clean.txt'
+
+file_out = 'outputs/evaluation/kaggle/finetune-stage2-kaggle_from-kaggle-pretrain-with-logits_predictions_clean_voted_selection.txt'
+file_out_true = 'outputs/evaluation/kaggle/finetune-stage2-kaggle_from-kaggle-pretrain-with-logits_gold_clean_voted_selection.txt'
+file_out_text = 'outputs/evaluation/kaggle/finetune-stage2-kaggle_from-kaggle-pretrain-with-logits_text_clean_voted_selection.txt'
 
 with open(file_in, mode="r", encoding="utf8") as f, \
         open(file_in_predictions, mode="r", encoding="utf8") as fin_predict, \
@@ -113,6 +147,7 @@ with open(file_in, mode="r", encoding="utf8") as f, \
             continue
         labels_predict = predict.split()
         labels_true = labels.split()
+        words = tokens.split()
         if len(labels_predict) != len(labels_true):
             offset = 0
             final_labels_predict = []
@@ -123,6 +158,9 @@ with open(file_in, mode="r", encoding="utf8") as f, \
                 curr_final_label = voting_choicer(curr_predictions)
                 final_labels_predict.append(curr_final_label)
                 offset += num_subwords
+            if len(words) != len(final_labels_predict):
+                print('Error!')
+                exit()
             fout.write(' '.join(final_labels_predict) + '\n')
         else:
             fout.write(' '.join(labels_predict) + '\n')
