@@ -532,7 +532,10 @@ def main():
                 true_labels = gold_sample[1:num_labels-1]
 
                 pred_labels = [p.replace('_', '-') for p in pred_labels]
+                pred_labels = [p.replace('_NOKG', '') for p in pred_labels]
+
                 true_labels = [t.replace('_', '-') for t in true_labels]
+                true_labels = [t.replace('_NOKG', '') for t in true_labels]
 
                 biluo_tags_predicted = get_bio(pred_labels)
                 biluo_tags_true = get_bio(true_labels)
