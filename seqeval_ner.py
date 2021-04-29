@@ -3,6 +3,9 @@ import os
 
 from seqeval.metrics import f1_score
 
+from datautils.biluo_from_predictions import get_biluo, get_bio
+from eval.myeval import f1_score_span
+
 
 def eval_(output_dir, t_labels, p_labels, text):
     with open(os.path.join(output_dir, t_labels), 'r') as t, \
@@ -13,8 +16,13 @@ def eval_(output_dir, t_labels, p_labels, text):
         for text, true_labels, predicted_labels in zip(textf, t, p):
             true_labels = true_labels.strip().replace('_', '-').split()
             predicted_labels = predicted_labels.strip().replace('_', '-').split()
-            true_labels_all.append(true_labels)
-            predicted_labels_all.append(predicted_labels)
+            biluo_tags_true = get_bio(true_labels)
+            biluo_tags_predicted = get_bio(predicted_labels)
+            print(biluo_tags_true)
+            print(biluo_tags_predicted)
+
+            true_labels_all.append(biluo_tags_true)
+            predicted_labels_all.append(biluo_tags_predicted)
         f1 = f1_score(true_labels_all, predicted_labels_all)
         print(f1)
 
