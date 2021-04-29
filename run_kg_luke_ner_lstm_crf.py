@@ -626,14 +626,15 @@ def main():
                 print("Epoch id: {}, Training steps: {}, Avg loss: {:.3f}".format(epoch, i + 1,
                                                                                   total_loss / args.report_steps))
                 total_loss = 0.
-
             loss.backward()
             optimizer.step()
 
         # Evaluation phase.
         print("Start evaluate on dev dataset.")
-        results = evaluate(args, False, final=True)
+        results = evaluate(args, False)
         print(results)
+        logger.info(results)
+
         print("Start evaluation on test dataset.")
         evaluate(args, True)
 
