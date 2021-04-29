@@ -100,6 +100,19 @@ def voting_choicer(items):
         return f'B{joiner}' + final_lb
 
 
+def filter_kg_labels(t, p, specials=('[ENT]', '[X]')):
+    t_filtered = []
+    p_filtered = []
+    for i, labels in enumerate(zip(t, p)):
+        t_label, p_label = labels
+        if t_label in specials:
+            continue
+        else:
+            p_filtered.append(t_label)
+            t_filtered.append(p_label)
+    return t_filtered, p_filtered
+
+
 class Batcher(object):
     def __init__(self, batch_size, input_ids, label_ids, mask_ids, pos_ids, vm_ids, tag_ids, segment_ids):
         self.batch_size = batch_size
@@ -532,9 +545,11 @@ def main():
                 true_labels = gold_sample[1:num_labels-1]
 
                 pred_labels = [p.replace('_NOKG', '') for p in pred_labels]
-                pred_labels = [p.replace('_', '-') for p in pred_labels]
-
                 true_labels = [t.replace('_NOKG', '') for t in true_labels]
+
+                true_labels, pred_labels = filter_kg_labels(true_labels, pred_labels)
+
+                pred_labels = [p.replace('_', '-') for p in pred_labels]
                 true_labels = [t.replace('_', '-') for t in true_labels]
 
                 biluo_tags_predicted = get_bio(pred_labels)
