@@ -648,10 +648,10 @@ def main():
     # Evaluation phase.
     print("Final evaluation on test dataset.")
 
-    # if torch.cuda.device_count() > 1:
-    #     model.module.load_state_dict(torch.load(args.output_model_path))
-    # else:
-    #     model.load_state_dict(torch.load(args.output_model_path))
+    if torch.cuda.device_count() > 1:
+        model.module.load_state_dict(torch.load(args.output_model_path))
+    else:
+        model.load_state_dict(torch.load(args.output_model_path))
 
     evaluate(args, True, final=True)
 
