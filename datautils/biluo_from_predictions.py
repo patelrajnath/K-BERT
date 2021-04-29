@@ -57,12 +57,19 @@ def get_biluo(bio_tags):
     return biluo_tags
 
 
-def get_bio(bio_tags):
+def get_bio(bio_tags, special=('[ENT]', '[X]', '[PAD]', '[CLS]', '[SEP]')):
     biluo_tags = []
     i = 0
     last_tag = None
     while i < len(bio_tags):
         item = bio_tags[i]
+
+        # Handle Special tokens
+        if item in special:
+            biluo_tags.append(item)
+            last_tag = item
+            i += 1
+            continue
 
         if item == 'O':
             biluo_tags.append(item)

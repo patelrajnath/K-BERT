@@ -6,6 +6,7 @@ import argparse
 import logging
 import os
 
+import seqeval
 import torch
 import torch.nn as nn
 
@@ -16,6 +17,7 @@ from seqeval.metrics import f1_score
 from brain import config
 from brain.knowgraph_english import KnowledgeGraph
 from datautils.biluo_from_predictions import get_bio
+from eval.myeval import f1_score_span, precision_score_span, recall_score_span
 from luke import ModelArchive, LukeModel
 from uer.utils.config import load_hyperparam
 from uer.utils.optimizers import BertAdam
@@ -482,15 +484,10 @@ def main():
             print("Batch size: ", batch_size)
             print("The number of test instances:", instances_num)
 
-        correct = 0
-        correct_with_type = 0
-        gold_entities_num = 0
-        pred_entities_num = 0
+        total_loss = 0
         true_labels_all = []
         predicted_labels_all = []
-
         confusion = torch.zeros(len(labels_map), len(labels_map), dtype=torch.long)
-
         model.eval()
 
         for i, (
@@ -529,30 +526,40 @@ def main():
                 num_labels = sum(mask)
 
                 # Exclude the [CLS], and [SEP] tokens
-                predicted_labels = pred_sample[1:num_labels-1]
+                pred_labels = pred_sample[1:num_labels-1]
                 true_labels = gold_sample[1:num_labels-1]
 
-                predicted_labels = [p.replace('_', '-') for p in predicted_labels]
+                pred_labels = [p.replace('_', '-') for p in pred_labels]
                 true_labels = [t.replace('_', '-') for t in true_labels]
 
-                biluo_tags_predicted = get_bio(predicted_labels)
+                biluo_tags_predicted = get_bio(pred_labels)
                 biluo_tags_true = get_bio(true_labels)
 
-                print(biluo_tags_predicted)
-                print(biluo_tags_true)
+                if len(biluo_tags_predicted) != len(biluo_tags_true):
+                    print('The length of the predicted labels is not same as that of true labels..')
+                    exit()
 
                 predicted_labels_all.append(biluo_tags_predicted)
                 true_labels_all.append(biluo_tags_true)
 
-        f1 = f1_score(true_labels_all, predicted_labels_all)
-        print(f1)
-        exit()
+            total_loss += loss.item()
 
+        val_loss = total_loss / instances_num
         if final:
             with open(f'{args.output_file_prefix}_predictions.txt', 'a') as p, \
                     open(f'{args.output_file_prefix}_gold.txt', 'a') as g:
-                p.write('\n'.join([' '.join(l) for l in true_labels_all]))
                 p.write('\n'.join([' '.join(l) for l in predicted_labels_all]))
+                g.write('\n'.join([' '.join(l) for l in true_labels_all]))
+
+        return dict(
+            f1=seqeval.metrics.f1_score(true_labels_all, predicted_labels_all),
+            precision=seqeval.metrics.precision_score(true_labels_all, predicted_labels_all),
+            recall=seqeval.metrics.recall_score(true_labels_all, predicted_labels_all),
+            f1_span=f1_score_span(true_labels_all, predicted_labels_all),
+            precision_span=precision_score_span(true_labels_all, predicted_labels_all),
+            recall_span=recall_score_span(true_labels_all, predicted_labels_all),
+            val_loss=val_loss,
+        )
 
     # Training phase.
     print("Start training.")
@@ -584,7 +591,6 @@ def main():
     optimizer = BertAdam(optimizer_grouped_parameters, lr=args.learning_rate, warmup=args.warmup, t_total=train_steps)
 
     total_loss = 0.
-    f1 = 0.0
     best_f1 = 0.0
 
     # Dry evaluate
@@ -626,12 +632,13 @@ def main():
 
         # Evaluation phase.
         print("Start evaluate on dev dataset.")
-        f1 = evaluate(args, False, final=True)
+        results = evaluate(args, False, final=True)
+        print(results)
         print("Start evaluation on test dataset.")
         evaluate(args, True)
 
-        if f1 > best_f1:
-            best_f1 = f1
+        if results['f1'] > best_f1:
+            best_f1 = results['f1']
             save_model(model, args.output_model_path)
             save_encoder(args, encoder, suffix=args.suffix_file_encoder)
         else:
@@ -640,10 +647,10 @@ def main():
     # Evaluation phase.
     print("Final evaluation on test dataset.")
 
-    if torch.cuda.device_count() > 1:
-        model.module.load_state_dict(torch.load(args.output_model_path))
-    else:
-        model.load_state_dict(torch.load(args.output_model_path))
+    # if torch.cuda.device_count() > 1:
+    #     model.module.load_state_dict(torch.load(args.output_model_path))
+    # else:
+    #     model.load_state_dict(torch.load(args.output_model_path))
 
     evaluate(args, True, final=True)
 
