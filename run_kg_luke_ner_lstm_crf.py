@@ -29,7 +29,6 @@ from torch.nn import functional as F
 
 
 fmt = "[%(asctime)s] [%(levelname)s] %(message)s (%(funcName)s@%(filename)s:%(lineno)s)"
-logging.basicConfig(filename='app.log', filemode='w', format=fmt)
 logger = logging.getLogger(__name__)
 logger.addHandler(logging.StreamHandler(sys.stdout))
 logger.setLevel(logging.DEBUG)
@@ -234,6 +233,7 @@ def main():
                         help="Path of the config file.")
     parser.add_argument("--output_file_prefix", type=str, required=True,
                         help="Prefix for file output.")
+    parser.add_argument("--log_file", default='app.log')
 
     # Model options.
     parser.add_argument("--batch_size", type=int, default=2,
@@ -292,6 +292,8 @@ def main():
     args = load_hyperparam(args)
 
     set_seed(args.seed)
+
+    logging.basicConfig(filename=args.log_file, filemode='w', format=fmt)
 
     labels_map = {"[PAD]": 0, "[ENT]": 1, "[X]": 2, "[CLS]": 3, "[SEP]": 4}
     begin_ids = []
