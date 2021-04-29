@@ -26,7 +26,9 @@ from uer.utils.seed import set_seed
 from uer.model_saver import save_model
 from torch.nn import functional as F
 
-logging.basicConfig(filename='app.log', filemode='w')
+
+fmt = "[%(asctime)s] [%(levelname)s] %(message)s (%(funcName)s@%(filename)s:%(lineno)s)"
+logging.basicConfig(filename='app.log', filemode='w', format=fmt)
 logger = logging.getLogger(__name__)
 logger.addHandler(logging.StreamHandler())
 logger.setLevel(logging.DEBUG)
@@ -636,7 +638,9 @@ def main():
         logger.info(results)
 
         print("Start evaluation on test dataset.")
-        evaluate(args, True)
+        results_test = evaluate(args, True)
+        print(results_test)
+        logger.info(results_test)
 
         if results['f1'] > best_f1:
             best_f1 = results['f1']
