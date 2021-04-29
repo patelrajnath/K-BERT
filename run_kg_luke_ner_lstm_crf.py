@@ -5,6 +5,7 @@
 import argparse
 import logging
 import os
+import sys
 
 import seqeval
 import torch
@@ -30,7 +31,7 @@ from torch.nn import functional as F
 fmt = "[%(asctime)s] [%(levelname)s] %(message)s (%(funcName)s@%(filename)s:%(lineno)s)"
 logging.basicConfig(filename='app.log', filemode='w', format=fmt)
 logger = logging.getLogger(__name__)
-logger.addHandler(logging.StreamHandler())
+logger.addHandler(logging.StreamHandler(sys.stdout))
 logger.setLevel(logging.DEBUG)
 
 
@@ -582,7 +583,7 @@ def main():
         )
 
     # Training phase.
-    print("Start training.")
+    logger.info("Start training.")
     instances = read_dataset(args.train_path)
 
     input_ids = torch.LongTensor([ins[0] for ins in instances])
@@ -599,8 +600,8 @@ def main():
 
     train_batcher = Batcher(batch_size, input_ids, label_ids, mask_ids, pos_ids, vm_ids, tag_ids, segment_ids)
 
-    print("Batch size: ", batch_size)
-    print("The number of training instances:", instances_num)
+    logger.info("Batch size: ", batch_size)
+    logger.info("The number of training instances:{instances_num}")
 
     param_optimizer = list(model.named_parameters())
     no_decay = ['bias', 'gamma', 'beta']
@@ -643,19 +644,19 @@ def main():
                 loss = torch.mean(loss)
             total_loss += loss.item()
             if (i + 1) % args.report_steps == 0:
-                print("Epoch id: {}, Training steps: {}, Avg loss: {:.3f}".format(epoch, i + 1,
+                logger.info("Epoch id: {}, Training steps: {}, Avg loss: {:.3f}".format(epoch, i + 1,
                                                                                   total_loss / args.report_steps))
                 total_loss = 0.
             loss.backward()
             optimizer.step()
 
         # Evaluation phase.
-        print("Start evaluate on dev dataset.")
+        logger.info("Start evaluate on dev dataset.")
         results = evaluate(args, False)
         print(results)
         logger.info(results)
 
-        print("Start evaluation on test dataset.")
+        logger.info("Start evaluation on test dataset.")
         results_test = evaluate(args, True)
         print(results_test)
         logger.info(results_test)
@@ -668,14 +669,13 @@ def main():
             continue
 
     # Evaluation phase.
-    print("Final evaluation on test dataset.")
-
+    logger.info("Final evaluation on test dataset.")
     if torch.cuda.device_count() > 1:
         model.module.load_state_dict(torch.load(args.output_model_path))
     else:
         model.load_state_dict(torch.load(args.output_model_path))
-
-    evaluate(args, True, final=True)
+    results_final = evaluate(args, True, final=True)
+    logger.info(results_final)
 
 
 if __name__ == "__main__":
