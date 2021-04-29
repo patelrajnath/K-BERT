@@ -497,8 +497,8 @@ def main():
         batch_size = args.batch_size
 
         if is_test:
-            print("Batch size: ", batch_size)
-            print("The number of test instances:", instances_num)
+            logger.info(f"Batch size:{batch_size}")
+            print(f"The number of test instances:{instances_num}")
 
         total_loss = 0
         true_labels_all = []
@@ -557,7 +557,7 @@ def main():
                 biluo_tags_true = get_bio(true_labels)
 
                 if len(biluo_tags_predicted) != len(biluo_tags_true):
-                    print('The length of the predicted labels is not same as that of true labels..')
+                    logger.error('The length of the predicted labels is not same as that of true labels..')
                     exit()
 
                 predicted_labels_all.append(biluo_tags_predicted)
@@ -600,8 +600,8 @@ def main():
 
     train_batcher = Batcher(batch_size, input_ids, label_ids, mask_ids, pos_ids, vm_ids, tag_ids, segment_ids)
 
-    logger.info("Batch size: ", batch_size)
-    logger.info("The number of training instances:{instances_num}")
+    logger.info(f"Batch size:{batch_size}")
+    logger.info(f"The number of training instances:{instances_num}")
 
     param_optimizer = list(model.named_parameters())
     no_decay = ['bias', 'gamma', 'beta']
