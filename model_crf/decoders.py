@@ -45,8 +45,8 @@ class CRFDecoder(nn.Module):
         return -loglik.mean()
 
     @classmethod
-    def create(cls, label_size, input_dim, device, input_dropout=0.5):
-        return cls(CRF(label_size + 2, device), label_size, input_dim, input_dropout)
+    def create(cls, label_size, input_dim, device, max_len, input_dropout=0.5):
+        return cls(CRF(label_size + 2, device, max_len), label_size, input_dim, input_dropout)
 
 
 class NMTDecoder(nn.Module):

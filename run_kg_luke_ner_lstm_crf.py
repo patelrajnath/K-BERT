@@ -218,7 +218,7 @@ class LukeTaggerLSTMCRF(nn.Module):
         self.lstm = nn.LSTM(args.emb_size, args.hidden_size // 2,
                             batch_first=True, bidirectional=True)
         # CRF layer transforms the output to give the final output layer
-        self.crf = CRFDecoder.create(self.labels_num, args.hidden_size, args.device)
+        self.crf = CRFDecoder.create(self.labels_num, args.hidden_size, args.device, args.seq_length)
 
     def lstm_output(self, word_ids, word_segment_ids, word_attention_mask, pos, vm):
         # Encoder.
@@ -561,31 +561,19 @@ def main():
             vm_ids_batch = vm_ids_batch.long().to(device)
             segment_ids_batch = segment_ids_batch.long().to(device)
 
-            loss, _, pred, gold, _ = model(input_ids_batch,
-                                        segment_ids_batch,
-                                        mask_ids_batch,
-                                        label_ids_batch,
-                                        pos_ids_batch,
-                                        vm_ids_batch,
-                                        use_kg=args.use_kg
-                                        )
+            pred = model(input_ids_batch, segment_ids_batch, mask_ids_batch, label_ids_batch, pos_ids_batch,
+                         vm_ids_batch, use_kg=args.use_kg)
 
-            predicted_labels = [idx_to_label.get(key) for key in pred.tolist()]
-            gold_labels = [idx_to_label.get(key) for key in gold.tolist()]
+            for pred_sample, gold_sample, mask in zip(pred, label_ids_batch, mask_ids_batch):
 
-            num_tokens = len(predicted_labels)
-            mask_ids_batch = mask_ids_batch.view(-1, num_tokens)
-            masks = mask_ids_batch.tolist()[0]
+                pre_labels = [idx_to_label.get(key) for key in pred_sample.tolist()]
+                gold_labels = [idx_to_label.get(key) for key in gold_sample.tolist()]
 
-            for start_idx in range(0, num_tokens, args.seq_length):
-                pred_sample = predicted_labels[start_idx:start_idx+args.seq_length]
-                gold_sample = gold_labels[start_idx:start_idx+args.seq_length]
-                mask = masks[start_idx:start_idx+args.seq_length]
                 num_labels = sum(mask)
 
                 # Exclude the [CLS], and [SEP] tokens
-                pred_labels = pred_sample[1:num_labels-1]
-                true_labels = gold_sample[1:num_labels-1]
+                pred_labels = pre_labels[1:num_labels-1]
+                true_labels = gold_labels[1:num_labels-1]
 
                 pred_labels = [p.replace('_NOKG', '') for p in pred_labels]
                 true_labels = [t.replace('_NOKG', '') for t in true_labels]
@@ -713,10 +701,10 @@ def main():
 
     # Evaluation phase.
     logger.info("Final evaluation on test dataset.")
-    if torch.cuda.device_count() > 1:
-        model.module.load_state_dict(torch.load(args.output_model_path))
-    else:
-        model.load_state_dict(torch.load(args.output_model_path))
+    # if torch.cuda.device_count() > 1:
+    #     model.module.load_state_dict(torch.load(args.output_model_path))
+    # else:
+    #     model.load_state_dict(torch.load(args.output_model_path))
     results_final = evaluate(args, True, final=True)
     logger.info(results_final)
 
