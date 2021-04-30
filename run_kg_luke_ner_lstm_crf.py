@@ -305,7 +305,7 @@ def main():
                         help="Number of epochs.")
     parser.add_argument("--report_steps", type=int, default=2,
                         help="Specific steps to print prompt.")
-    parser.add_argument("--seed", type=int, default=7,
+    parser.add_argument("--seed", type=int, default=35,
                         help="Random seed.")
 
     # kg
