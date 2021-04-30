@@ -49,8 +49,7 @@ class Linears(nn.Module):
                  in_features,
                  out_features,
                  hiddens,
-                 bias=True,
-                 activation='tanh'):
+                 bias=True):
         super(Linears, self).__init__()
         assert len(hiddens) > 0
 
@@ -62,7 +61,7 @@ class Linears(nn.Module):
                                       for in_dim, out_dim
                                       in zip(in_dims, hiddens)])
         self.output_linear = Linear(hiddens[-1], out_features, bias=bias)
-        self.activation = getattr(functional, activation)
+        self.activation = nn.Tanh()
 
     def forward(self, inputs):
         linear_outputs = inputs
