@@ -35,9 +35,11 @@ def tokenize_word(text):
 # file_out = '../data/combined_3/test_combined_3_text_tokenized.txt'
 # file_in = '../data/nlu/nlu_test_bio.csv'
 # file_out = '../data/nlu/nlu_test_bio_tokenized.txt'
-file_in = '../data/nlu/nlu_test.csv'
-file_out = '../data/nlu/nlu_test_tokenized.txt'
-
+# file_in = '../data/nlu/nlu_test.csv'
+# file_out = '../data/nlu/nlu_test_tokenized.txt'
+file_in = '../data/conll_2003/eng.train.train.csv'
+file_out = '../data/conll_2003/conll_testa_tokenized.txt'
+count = 0
 with open(file_in, mode="r", encoding="utf8") as f, \
         open(file_out, mode="w", encoding="utf8") as fout:
     f.readline()
@@ -58,4 +60,8 @@ with open(file_in, mode="r", encoding="utf8") as f, \
             sub_tokens = tokenize_word(token)
             tokens_subword.extend(sub_tokens)
         tokens_subword = ['<s>'] + tokens_subword + ['</s>']
-        fout.write(' '.join(tokens_subword) + '\n')
+        if len(tokens_subword) > 256:
+            print(line_id, len(tokens_subword))
+            count += 1
+        # fout.write(' '.join(tokens_subword) + '\n')
+print(count)

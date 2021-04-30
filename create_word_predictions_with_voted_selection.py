@@ -55,114 +55,115 @@ def voting_choicer(items):
         return f'B{joiner}' + final_lb
 
 
-# file_in = 'data/nlu/nlu_test.csv'
-# file_in_predictions = 'outputs/evaluation/nlu/baseline-nlu_predictions_clean.txt'
-# file_out = 'outputs/evaluation/nlu/baseline-nlu_predictions_clean_voted_selection.txt'
-# file_out_true = 'outputs/evaluation/nlu/baseline-nlu_gold_clean_voted_selection.txt'
+if __name__ == '__main__':
+    # file_in = 'data/nlu/nlu_test.csv'
+    # file_in_predictions = 'outputs/evaluation/nlu/baseline-nlu_predictions_clean.txt'
+    # file_out = 'outputs/evaluation/nlu/baseline-nlu_predictions_clean_voted_selection.txt'
+    # file_out_true = 'outputs/evaluation/nlu/baseline-nlu_gold_clean_voted_selection.txt'
 
-# file_in = 'data/nlu/nlu_test_bio.csv'
-# file_in_predictions = 'outputs/evaluation/nlu/baseline-nlu-bio_predictions_clean.txt'
+    # file_in = 'data/nlu/nlu_test_bio.csv'
+    # file_in_predictions = 'outputs/evaluation/nlu/baseline-nlu-bio_predictions_clean.txt'
 
-# file_out = 'outputs/evaluation/nlu/baseline-nlu-bio_predictions_clean_voted_selection.txt'
-# file_out_true = 'outputs/evaluation/nlu/baseline-nlu-bio_gold_clean_voted_selection.txt'
-# file_out_text = 'outputs/evaluation/nlu/baseline-nlu-bio_text_clean_voted_selection.txt'
+    # file_out = 'outputs/evaluation/nlu/baseline-nlu-bio_predictions_clean_voted_selection.txt'
+    # file_out_true = 'outputs/evaluation/nlu/baseline-nlu-bio_gold_clean_voted_selection.txt'
+    # file_out_text = 'outputs/evaluation/nlu/baseline-nlu-bio_text_clean_voted_selection.txt'
 
-# file_in = 'data/nlu/nlu_test_bio.csv'
-# file_in_predictions = 'outputs/evaluation/nlu/finetune-stage2-nlu-bio_predictions_clean.txt'
+    # file_in = 'data/nlu/nlu_test_bio.csv'
+    # file_in_predictions = 'outputs/evaluation/nlu/finetune-stage2-nlu-bio_predictions_clean.txt'
 
-# file_out = 'outputs/evaluation/nlu/finetune-stage2-nlu-bio_predictions_clean_voted_selection.txt'
-# file_out_true = 'outputs/evaluation/nlu/finetune-stage2-nlu-bio_gold_clean_voted_selection.txt'
-# file_out_text = 'outputs/evaluation/nlu/finetune-stage2-bio_text_clean_voted_selection.txt'
+    # file_out = 'outputs/evaluation/nlu/finetune-stage2-nlu-bio_predictions_clean_voted_selection.txt'
+    # file_out_true = 'outputs/evaluation/nlu/finetune-stage2-nlu-bio_gold_clean_voted_selection.txt'
+    # file_out_text = 'outputs/evaluation/nlu/finetune-stage2-bio_text_clean_voted_selection.txt'
 
-# file_in = 'data/nlu/nlu_test.csv'
-# file_in_predictions = 'outputs/evaluation/nlu/finetune-stage2-nlu_predictions_clean.txt'
+    # file_in = 'data/nlu/nlu_test.csv'
+    # file_in_predictions = 'outputs/evaluation/nlu/finetune-stage2-nlu_predictions_clean.txt'
 
-# file_out = 'outputs/evaluation/nlu/finetune-stage2-nlu_predictions_clean_voted_selection.txt'
-# file_out_true = 'outputs/evaluation/nlu/finetune-stage2-nlu_gold_clean_voted_selection.txt'
-# file_out_text = 'outputs/evaluation/nlu/finetune-stage2_text_clean_voted_selection.txt'
+    # file_out = 'outputs/evaluation/nlu/finetune-stage2-nlu_predictions_clean_voted_selection.txt'
+    # file_out_true = 'outputs/evaluation/nlu/finetune-stage2-nlu_gold_clean_voted_selection.txt'
+    # file_out_text = 'outputs/evaluation/nlu/finetune-stage2_text_clean_voted_selection.txt'
 
-# file_in = 'data/nlu/nlu_test.csv'
-# file_in_predictions = 'outputs/evaluation/nlu/baseline-nlu_predictions_clean.txt'
+    # file_in = 'data/nlu/nlu_test.csv'
+    # file_in_predictions = 'outputs/evaluation/nlu/baseline-nlu_predictions_clean.txt'
 
-# file_out = 'outputs/evaluation/nlu/baseline-nlu_predictions_clean_voted_selection.txt'
-# file_out_true = 'outputs/evaluation/nlu/baseline-nlu_gold_clean_voted_selection.txt'
-# file_out_text = 'outputs/evaluation/nlu/baseline-nlu_text_clean_voted_selection.txt'
+    # file_out = 'outputs/evaluation/nlu/baseline-nlu_predictions_clean_voted_selection.txt'
+    # file_out_true = 'outputs/evaluation/nlu/baseline-nlu_gold_clean_voted_selection.txt'
+    # file_out_text = 'outputs/evaluation/nlu/baseline-nlu_text_clean_voted_selection.txt'
 
-# file_in = 'data/conll_2003/eng.testa.dev.csv'
-# file_in_predictions = 'outputs/evaluation/conll/baseline-conll_predictions_clean.txt'
+    # file_in = 'data/conll_2003/eng.testa.dev.csv'
+    # file_in_predictions = 'outputs/evaluation/conll/baseline-conll_predictions_clean.txt'
 
-# file_out = 'outputs/evaluation/conll/baseline-conll_predictions_clean_voted_selection.txt'
-# file_out_true = 'outputs/evaluation/conll/baseline-conll_gold_clean_voted_selection.txt'
-# file_out_text = 'outputs/evaluation/conll/baseline-conll_text_clean_voted_selection.txt'
+    # file_out = 'outputs/evaluation/conll/baseline-conll_predictions_clean_voted_selection.txt'
+    # file_out_true = 'outputs/evaluation/conll/baseline-conll_gold_clean_voted_selection.txt'
+    # file_out_text = 'outputs/evaluation/conll/baseline-conll_text_clean_voted_selection.txt'
 
-# file_in = 'data/conll_2003/eng.testa.dev.csv'
-# file_in_predictions = 'outputs/evaluation/conll/finetune-stage2-conll_from-conll_predictions_clean.txt'
+    # file_in = 'data/conll_2003/eng.testa.dev.csv'
+    # file_in_predictions = 'outputs/evaluation/conll/finetune-stage2-conll_from-conll_predictions_clean.txt'
 
-# file_out = 'outputs/evaluation/conll/finetune-stage2-conll_from-conll_predictions_clean_voted_selection.txt'
-# file_out_true = 'outputs/evaluation/conll/finetune-stage2-conll_from-conll_gold_clean_voted_selection.txt'
-# file_out_text = 'outputs/evaluation/conll/finetune-stage2-conll_from-conll_text_clean_voted_selection.txt'
+    # file_out = 'outputs/evaluation/conll/finetune-stage2-conll_from-conll_predictions_clean_voted_selection.txt'
+    # file_out_true = 'outputs/evaluation/conll/finetune-stage2-conll_from-conll_gold_clean_voted_selection.txt'
+    # file_out_text = 'outputs/evaluation/conll/finetune-stage2-conll_from-conll_text_clean_voted_selection.txt'
 
-# file_in = 'data/conll_2003/eng.testa.dev.csv'
-# file_in_predictions = 'outputs/evaluation/conll/finetune-stage2-conll_from-kaggle_predictions_clean.txt'
+    # file_in = 'data/conll_2003/eng.testa.dev.csv'
+    # file_in_predictions = 'outputs/evaluation/conll/finetune-stage2-conll_from-kaggle_predictions_clean.txt'
 
-# file_out = 'outputs/evaluation/conll/finetune-stage2-conll_from-kaggle_predictions_clean_voted_selection.txt'
-# file_out_true = 'outputs/evaluation/conll/finetune-stage2-conll_from-kaggle_gold_clean_voted_selection.txt'
-# file_out_text = 'outputs/evaluation/conll/finetune-stage2-conll_from-kaggle_text_clean_voted_selection.txt'
+    # file_out = 'outputs/evaluation/conll/finetune-stage2-conll_from-kaggle_predictions_clean_voted_selection.txt'
+    # file_out_true = 'outputs/evaluation/conll/finetune-stage2-conll_from-kaggle_gold_clean_voted_selection.txt'
+    # file_out_text = 'outputs/evaluation/conll/finetune-stage2-conll_from-kaggle_text_clean_voted_selection.txt'
 
-# file_in = 'data/combined_3/test_combined_3.csv'
-# file_in_predictions = 'outputs/evaluation/kaggle/finetune-stage2-kaggle_from-conll_predictions_clean.txt'
+    # file_in = 'data/combined_3/test_combined_3.csv'
+    # file_in_predictions = 'outputs/evaluation/kaggle/finetune-stage2-kaggle_from-conll_predictions_clean.txt'
 
-# file_out = 'outputs/evaluation/kaggle/finetune-stage2-kaggle_from-conll_predictions_clean_voted_selection.txt'
-# file_out_true = 'outputs/evaluation/kaggle/finetune-stage2-kaggle_from-conll_gold_clean_voted_selection.txt'
-# file_out_text = 'outputs/evaluation/kaggle/finetune-stage2-kaggle_from-conll_text_clean_voted_selection.txt'
+    # file_out = 'outputs/evaluation/kaggle/finetune-stage2-kaggle_from-conll_predictions_clean_voted_selection.txt'
+    # file_out_true = 'outputs/evaluation/kaggle/finetune-stage2-kaggle_from-conll_gold_clean_voted_selection.txt'
+    # file_out_text = 'outputs/evaluation/kaggle/finetune-stage2-kaggle_from-conll_text_clean_voted_selection.txt'
 
-file_in = 'data/combined_3/test_combined_3.csv'
-file_in_predictions = 'outputs/evaluation/kaggle/finetune-stage2-kaggle_from-kaggle-pretrain-with-logits_predictions_clean.txt'
+    file_in = 'data/combined_3/test_combined_3.csv'
+    file_in_predictions = 'outputs/evaluation/kaggle/finetune-stage2-kaggle_from-kaggle-pretrain-with-logits_predictions_clean.txt'
 
-file_out = 'outputs/evaluation/kaggle/finetune-stage2-kaggle_from-kaggle-pretrain-with-logits_predictions_clean_voted_selection.txt'
-file_out_true = 'outputs/evaluation/kaggle/finetune-stage2-kaggle_from-kaggle-pretrain-with-logits_gold_clean_voted_selection.txt'
-file_out_text = 'outputs/evaluation/kaggle/finetune-stage2-kaggle_from-kaggle-pretrain-with-logits_text_clean_voted_selection.txt'
+    file_out = 'outputs/evaluation/kaggle/finetune-stage2-kaggle_from-kaggle-pretrain-with-logits_predictions_clean_voted_selection.txt'
+    file_out_true = 'outputs/evaluation/kaggle/finetune-stage2-kaggle_from-kaggle-pretrain-with-logits_gold_clean_voted_selection.txt'
+    file_out_text = 'outputs/evaluation/kaggle/finetune-stage2-kaggle_from-kaggle-pretrain-with-logits_text_clean_voted_selection.txt'
 
-with open(file_in, mode="r", encoding="utf8") as f, \
-        open(file_in_predictions, mode="r", encoding="utf8") as fin_predict, \
-        open(file_out, mode="w", encoding="utf8") as fout, \
-        open(file_out_true, mode="w", encoding="utf8") as fout_gold, \
-        open(file_out_text, mode="w", encoding="utf8") as fout_text:
-    f.readline()
-    tokens, labels = [], []
-    text_tokenized = []
-    labels_predict_final = []
+    with open(file_in, mode="r", encoding="utf8") as f, \
+            open(file_in_predictions, mode="r", encoding="utf8") as fin_predict, \
+            open(file_out, mode="w", encoding="utf8") as fout, \
+            open(file_out_true, mode="w", encoding="utf8") as fout_gold, \
+            open(file_out_text, mode="w", encoding="utf8") as fout_text:
+        f.readline()
+        tokens, labels = [], []
+        text_tokenized = []
+        labels_predict_final = []
 
-    for line_id, zip_line in enumerate(zip(f, fin_predict)):
-        line, predict = zip_line
+        for line_id, zip_line in enumerate(zip(f, fin_predict)):
+            line, predict = zip_line
 
-        tokens_subword = []
-        fields = line.strip().split("\t")
-        if len(fields) == 2:
-            labels, tokens = fields
-        elif len(fields) == 3:
-            labels, tokens, cls = fields
-        else:
-            print(f'The data is not in accepted format at line no:{line_id}.. Ignored')
-            continue
-        labels_predict = predict.split()
-        labels_true = labels.split()
-        words = tokens.split()
-        if len(labels_predict) != len(labels_true):
-            offset = 0
-            final_labels_predict = []
-            for token in tokens.split():
-                sub_tokens = tokenize_word(token)
-                num_subwords = len(sub_tokens)
-                curr_predictions = labels_predict[offset: offset + num_subwords]
-                curr_final_label = voting_choicer(curr_predictions)
-                final_labels_predict.append(curr_final_label)
-                offset += num_subwords
-            if len(words) != len(final_labels_predict):
-                print('Error!')
-                exit()
-            fout.write(' '.join(final_labels_predict) + '\n')
-        else:
-            fout.write(' '.join(labels_predict) + '\n')
-        fout_gold.write(' '.join(labels_true) + '\n')
-        fout_text.write(tokens + '\n')
+            tokens_subword = []
+            fields = line.strip().split("\t")
+            if len(fields) == 2:
+                labels, tokens = fields
+            elif len(fields) == 3:
+                labels, tokens, cls = fields
+            else:
+                print(f'The data is not in accepted format at line no:{line_id}.. Ignored')
+                continue
+            labels_predict = predict.split()
+            labels_true = labels.split()
+            words = tokens.split()
+            if len(labels_predict) != len(labels_true):
+                offset = 0
+                final_labels_predict = []
+                for token in tokens.split():
+                    sub_tokens = tokenize_word(token)
+                    num_subwords = len(sub_tokens)
+                    curr_predictions = labels_predict[offset: offset + num_subwords]
+                    curr_final_label = voting_choicer(curr_predictions)
+                    final_labels_predict.append(curr_final_label)
+                    offset += num_subwords
+                if len(words) != len(final_labels_predict):
+                    print('Error!')
+                    exit()
+                fout.write(' '.join(final_labels_predict) + '\n')
+            else:
+                fout.write(' '.join(labels_predict) + '\n')
+            fout_gold.write(' '.join(labels_true) + '\n')
+            fout_text.write(tokens + '\n')
