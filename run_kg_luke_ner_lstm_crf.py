@@ -679,12 +679,10 @@ def main():
         # Evaluation phase.
         logger.info("Start evaluate on dev dataset.")
         results = evaluate(args, False)
-        print(results)
         logger.info(results)
 
         logger.info("Start evaluation on test dataset.")
         results_test = evaluate(args, True)
-        print(results_test)
         logger.info(results_test)
 
         if results['f1'] > best_f1:
