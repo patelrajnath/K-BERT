@@ -20,6 +20,7 @@ from brain.knowgraph_english import KnowledgeGraph
 from datautils.biluo_from_predictions import get_bio
 from eval.myeval import f1_score_span, precision_score_span, recall_score_span
 from luke import ModelArchive, LukeModel
+from model_crf.decoders import NCRFDecoder, CRFDecoder
 from uer.utils.config import load_hyperparam
 from uer.utils.optimizers import BertAdam
 from uer.utils.constants import *
@@ -209,6 +210,42 @@ class LukeTagger(nn.Module):
         return loss, correct, predict, labels, logits
 
 
+class LukeTaggerLSTMCRF(nn.Module):
+    def __init__(self, args, encoder):
+        super(LukeTaggerLSTMCRF, self).__init__()
+        self.encoder = encoder
+        self.labels_num = args.labels_num
+        self.lstm = nn.LSTM(args.emb_size, args.hidden_size // 2,
+                            batch_first=True, bidirectional=True)
+        # CRF layer transforms the output to give the final output layer
+        self.crf = CRFDecoder.create(self.labels_num, args.hidden_size, args.device)
+
+    def lstm_output(self, word_ids, word_segment_ids, word_attention_mask, pos, vm):
+        # Encoder.
+        # print('word ids:', word_ids)
+        word_sequence_output, pooled_output = self.encoder(word_ids, word_segment_ids=word_segment_ids,
+                                                           word_attention_mask=word_attention_mask,
+                                                           position_ids=pos, vm=vm)
+        # run the LSTM along the sentences of length batch_max_len
+        tensor, _ = self.lstm(word_sequence_output)  # dim: batch_size x batch_max_len x lstm_hidden_dim
+        return tensor
+
+    def forward(self, word_ids, word_segment_ids, word_attention_mask, labels, pos=None, vm=None, use_kg=True):
+        if not use_kg:
+            vm = None
+        labels_mask = (labels > 0).long()
+        tensor = self.lstm_output(word_ids, word_segment_ids, word_attention_mask, pos, vm)
+        return self.crf.forward(tensor, labels_mask)
+
+    def score(self, word_ids, word_segment_ids, word_attention_mask, labels, pos=None, vm=None, use_kg=True):
+        if not use_kg:
+            vm = None
+        labels_mask = (labels > 0).long()
+
+        tensor = self.lstm_output(word_ids, word_segment_ids, word_attention_mask, pos, vm)
+        return self.crf.score(tensor, labels_mask, labels)
+
+
 def main():
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
@@ -334,12 +371,15 @@ def main():
     encoder = LukeModel(model_archive.config)
     encoder.load_state_dict(model_archive.state_dict, strict=False)
 
-    # Build sequence labeling model.
-    model = LukeTagger(args, encoder)
     kg = KnowledgeGraph(kg_file=kg_file, tokenizer=tokenizer)
 
     # For simplicity, we use DataParallel wrapper to use multiple GPUs.
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    args.device = device
+
+    # Build sequence labeling model.
+    model = LukeTaggerLSTMCRF(args, encoder)
+
     if torch.cuda.device_count() > 1:
         print("{} GPUs are available. Let's use them.".format(torch.cuda.device_count()))
         model = nn.DataParallel(model)
@@ -634,17 +674,18 @@ def main():
             vm_ids_batch = vm_ids_batch.long().to(device)
             segment_ids_batch = segment_ids_batch.long().to(device)
 
-            loss, _, _, _, _ = model(input_ids_batch,
-                                  segment_ids_batch,
-                                  mask_ids_batch,
-                                  label_ids_batch,
-                                  pos_ids_batch,
-                                  vm_ids_batch,
-                                  use_kg=args.use_kg)
+            loss = model.score(input_ids_batch,
+                               segment_ids_batch,
+                               mask_ids_batch,
+                               label_ids_batch,
+                               pos_ids_batch,
+                               vm_ids_batch,
+                               use_kg=args.use_kg)
 
             if torch.cuda.device_count() > 1:
                 loss = torch.mean(loss)
             total_loss += loss.item()
+
             if (i + 1) % args.report_steps == 0:
                 logger.info("Epoch id: {}, Training steps: {}, Avg loss: {:.3f}".format(epoch, i + 1,
                                                                                   total_loss / args.report_steps))
