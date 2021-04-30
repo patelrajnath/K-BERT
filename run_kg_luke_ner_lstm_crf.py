@@ -109,8 +109,8 @@ def filter_kg_labels(t, p, specials=('[ENT]', '[X]')):
         if t_label in specials:
             continue
         else:
-            p_filtered.append(t_label)
-            t_filtered.append(p_label)
+            p_filtered.append(p_label)
+            t_filtered.append(t_label)
     return t_filtered, p_filtered
 
 
@@ -542,7 +542,6 @@ def main():
             logger.info(f"Batch size:{batch_size}")
             print(f"The number of test instances:{instances_num}")
 
-        total_loss = 0
         true_labels_all = []
         predicted_labels_all = []
         confusion = torch.zeros(len(labels_map), len(labels_map), dtype=torch.long)
@@ -566,13 +565,13 @@ def main():
 
             for pred_sample, gold_sample, mask in zip(pred, label_ids_batch, mask_ids_batch):
 
-                pre_labels = [idx_to_label.get(key) for key in pred_sample.tolist()]
+                pred_labels = [idx_to_label.get(key) for key in pred_sample.tolist()]
                 gold_labels = [idx_to_label.get(key) for key in gold_sample.tolist()]
 
                 num_labels = sum(mask)
 
                 # Exclude the [CLS], and [SEP] tokens
-                pred_labels = pre_labels[1:num_labels-1]
+                pred_labels = pred_labels[1:num_labels-1]
                 true_labels = gold_labels[1:num_labels-1]
 
                 pred_labels = [p.replace('_NOKG', '') for p in pred_labels]
@@ -593,9 +592,6 @@ def main():
                 predicted_labels_all.append(biluo_tags_predicted)
                 true_labels_all.append(biluo_tags_true)
 
-            total_loss += loss.item()
-
-        val_loss = total_loss / instances_num
         if final:
             with open(f'{args.output_file_prefix}_predictions.txt', 'a') as p, \
                     open(f'{args.output_file_prefix}_gold.txt', 'a') as g:
@@ -609,7 +605,6 @@ def main():
             f1_span=f1_score_span(true_labels_all, predicted_labels_all),
             precision_span=precision_score_span(true_labels_all, predicted_labels_all),
             recall_span=recall_score_span(true_labels_all, predicted_labels_all),
-            val_loss=val_loss,
         )
 
     # Training phase.
@@ -701,10 +696,10 @@ def main():
 
     # Evaluation phase.
     logger.info("Final evaluation on test dataset.")
-    # if torch.cuda.device_count() > 1:
-    #     model.module.load_state_dict(torch.load(args.output_model_path))
-    # else:
-    #     model.load_state_dict(torch.load(args.output_model_path))
+    if torch.cuda.device_count() > 1:
+        model.module.load_state_dict(torch.load(args.output_model_path))
+    else:
+        model.load_state_dict(torch.load(args.output_model_path))
     results_final = evaluate(args, True, final=True)
     logger.info(results_final)
 
