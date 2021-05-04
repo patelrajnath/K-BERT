@@ -70,9 +70,7 @@ def save_encoder(args, encoder, suffix='encoder'):
 def loss_fn(outputs, labels, mask):
     # the number of tokens is the sum of elements in mask
     num_labels = int(torch.sum(mask).item())
-    print(outputs.shape)
-    print(labels.shape)
-    print(mask.size())
+
     # pick the values corresponding to labels and multiply by mask
     outputs = outputs[range(outputs.shape[0]), labels] * mask
 
