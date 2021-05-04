@@ -101,7 +101,7 @@ def voting_choicer(items):
         return f'B{joiner}' + final_lb
 
 
-def filter_kg_labels(t, p, specials=('[ENT]', '[X]')):
+def filter_kg_labels(t, p, specials=('[ENT]', '[X]', '[PAD]')):
     t_filtered = []
     p_filtered = []
     for i, labels in enumerate(zip(t, p)):
@@ -149,6 +149,7 @@ class Batcher(object):
 class LukeTaggerMLP(nn.Module):
     def __init__(self, args, encoder):
         super(LukeTaggerMLP, self).__init__()
+        self.args = args
         self.encoder = encoder
         self.labels_num = args.labels_num
         # Classification layer transforms the output to give the final output layer
@@ -175,7 +176,7 @@ class LukeTaggerMLP(nn.Module):
         logits = self.get_logits(tensor)
         logits = logits.contiguous().view(-1, self.labels_num)
         outputs = F.log_softmax(logits, dim=-1)
-        predict = outputs.argmax(dim=-1)
+        predict = outputs.argmax(dim=-1).view(-1, self.args.seq_length)
         return predict
 
     def score(self, word_ids, word_segment_ids, word_attention_mask, labels, pos=None, vm=None, use_kg=True):
@@ -224,7 +225,7 @@ class LukeTaggerLSTM(nn.Module):
         logits = self.get_logits(tensor)
         logits = logits.contiguous().view(-1, self.labels_num)
         outputs = F.log_softmax(logits, dim=-1)
-        predict = outputs.argmax(dim=-1)
+        predict = outputs.argmax(dim=-1).view(-1, self.args.seq_length)
         return predict
 
     def score(self, word_ids, word_segment_ids, word_attention_mask, labels, pos=None, vm=None, use_kg=True):
