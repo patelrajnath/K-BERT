@@ -1,8 +1,7 @@
 import pandas as pd
-from models import tqdm
 import argparse
-import codecs
 import os
+from tqdm import tqdm
 
 
 def conll2003_preprocess(

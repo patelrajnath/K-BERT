@@ -448,6 +448,7 @@ def main():
                    "lstm_crf": LukeTaggerLSTMCRF,
                    "lstm_ncrf": LukeTaggerLSTMNCRF
                    }
+    logger.info(f'The selected classifier is:{classifiers[args.classifier]}')
     model = classifiers[args.classifier](args, encoder)
     if torch.cuda.device_count() > 1:
         print("{} GPUs are available. Let's use them.".format(torch.cuda.device_count()))
