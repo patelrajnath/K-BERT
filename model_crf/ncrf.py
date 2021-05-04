@@ -40,10 +40,11 @@ def log_sum_exp(vec, m_size):
 
 class NCRF(nn.Module):
 
-    def __init__(self, tagset_size, device):
+    def __init__(self, tagset_size, device, max_len=256):
         super(NCRF, self).__init__()
         print("build CRF...")
         self.device = device
+        self.max_len = max_len
         # Matrix of transition parameters.  Entry i,j is the score of transitioning *to* i *from* j.
         self.tagset_size = tagset_size
         # # We add 2 here, because of START_TAG and STOP_TAG
@@ -101,7 +102,8 @@ class NCRF(nn.Module):
             mask_idx = mask[idx, :].view(batch_size, 1).expand(batch_size, tag_size)
 
             # effective updated partition part, only keep the partition value of mask value = 1
-            mask_idx = mask_idx.byte()
+            # mask_idx = mask_idx.byte()
+            mask_idx = mask_idx.bool()
             masked_cur_partition = cur_partition.masked_select(mask_idx)
             # let mask_idx broadcastable, to disable warning
             mask_idx = mask_idx.contiguous().view(batch_size, tag_size, 1)
@@ -262,7 +264,8 @@ class NCRF(nn.Module):
                                                                                          batch_size)
         # seq_len * bat_size
         # mask transpose to (seq_len, batch_size)
-        mask = mask.byte()
+        # mask = mask.byte()
+        mask = mask.bool()
         tg_energy = tg_energy.masked_select(mask.transpose(1, 0))
 
         # # calculate the score from START_TAG to first label

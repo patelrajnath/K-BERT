@@ -364,7 +364,7 @@ class NCRFDecoder(nn.Module):
         return cls.create(**config)
 
     @classmethod
-    def create(cls, label_size, input_dim, input_dropout=0.5, nbest=8, device="cuda"):
+    def create(cls, label_size, input_dim, device,  max_len, input_dropout=0.5, nbest=8):
         return cls(NCRF(label_size, device), label_size + 2, input_dim, input_dropout, nbest)
 
 

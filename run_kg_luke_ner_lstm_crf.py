@@ -146,68 +146,89 @@ class Batcher(object):
                    self.segment_ids[batch_indices]
 
 
-class LukeTagger(nn.Module):
+class LukeTaggerMLP(nn.Module):
     def __init__(self, args, encoder):
-        super(LukeTagger, self).__init__()
+        super(LukeTaggerMLP, self).__init__()
         self.encoder = encoder
         self.labels_num = args.labels_num
+        # Classification layer transforms the output to give the final output layer
         self.output_layer = nn.Linear(args.hidden_size, self.labels_num)
         self.softmax = nn.LogSoftmax(dim=-1)
 
-    def forward(self,
-                word_ids,
-                word_segment_ids,
-                word_attention_mask,
-                labels,
-                pos=None,
-                vm=None,
-                use_kg=True
-                ):
-        if not use_kg:
-            vm = None
-
+    def luke_encode(self, word_ids, word_segment_ids, word_attention_mask, pos, vm):
         # Encoder.
         # print('word ids:', word_ids)
         word_sequence_output, pooled_output = self.encoder(word_ids, word_segment_ids=word_segment_ids,
                                                            word_attention_mask=word_attention_mask,
                                                            position_ids=pos, vm=vm)
-        # print(word_sequence_output.size())
-        # Target.
-        logits = self.output_layer(word_sequence_output)
-        # print('After last layer:', outputs.size())
-        outputs = logits.contiguous().view(-1, self.labels_num)
-        # print('Flat:', outputs.size())
-        outputs = F.log_softmax(outputs, dim=-1)
-        # print(outputs.size())
+        # run the LSTM along the sentences of length batch_max_len
+        return word_sequence_output
+
+    def get_logits(self, tensor):
+        logits = self.output_layer(tensor)
+        return logits
+
+    def forward(self, word_ids, word_segment_ids, word_attention_mask, labels, pos=None, vm=None, use_kg=True):
+        if not use_kg:
+            vm = None
+        tensor = self.luke_encode(word_ids, word_segment_ids, word_attention_mask, pos, vm)
+        logits = self.get_logits(tensor)
+        logits = logits.contiguous().view(-1, self.labels_num)
+        outputs = F.log_softmax(logits, dim=-1)
         predict = outputs.argmax(dim=-1)
+        return predict
 
-        # print('After Log softmax:', outputs.size())
+    def score(self, word_ids, word_segment_ids, word_attention_mask, labels, pos=None, vm=None, use_kg=True):
+        if not use_kg:
+            vm = None
+        labels_mask = (labels > 0).long()
+        tensor = self.luke_encode(word_ids, word_segment_ids, word_attention_mask, pos, vm)
+        logits = self.get_logits(tensor)
+        return loss_fn(logits, labels, labels_mask)
 
-        labels = labels.contiguous().view(-1)
-        # print(word_ids)
-        # print(labels)
 
-        mask = (labels > 0).float().to(torch.device(labels.device))
-        # print('Mask:', mask)
-        # the number of tokens is the sum of elements in mask
-        num_labels = int(torch.sum(mask).item())
-        # print('Num Labels:', num_labels)
+class LukeTaggerLSTM(nn.Module):
+    def __init__(self, args, encoder):
+        super(LukeTaggerLSTM, self).__init__()
+        self.encoder = encoder
+        self.labels_num = args.labels_num
+        self.lstm = nn.LSTM(args.emb_size, args.hidden_size // 2,
+                            batch_first=True, bidirectional=True)
+        # Classification layer transforms the output to give the final output layer
+        self.output_layer = nn.Linear(args.hidden_size, self.labels_num)
+        self.softmax = nn.LogSoftmax(dim=-1)
 
-        # pick the values corresponding to labels and multiply by mask
-        outputs = outputs[range(outputs.shape[0]), labels] * mask
+    def lstm_output(self, word_ids, word_segment_ids, word_attention_mask, pos, vm):
+        # Encoder.
+        # print('word ids:', word_ids)
+        word_sequence_output, pooled_output = self.encoder(word_ids, word_segment_ids=word_segment_ids,
+                                                           word_attention_mask=word_attention_mask,
+                                                           position_ids=pos, vm=vm)
+        # run the LSTM along the sentences of length batch_max_len
+        tensor, _ = self.lstm(word_sequence_output)  # dim: batch_size x batch_max_len x lstm_hidden_dim
+        return tensor
 
-        # cross entropy loss for all non 'PAD' tokens
-        loss = -torch.sum(outputs) / num_labels
-        # print('loss:', loss)
+    def get_logits(self, tensor):
+        logits = self.output_layer(tensor)
+        return logits
 
-        correct = torch.sum(
-            mask * (predict.eq(labels)).float()
-        )
-        # print('Prediction:', predict)
-        # print('Correct:', correct)
-        # exit()
+    def forward(self, word_ids, word_segment_ids, word_attention_mask, labels, pos=None, vm=None, use_kg=True):
+        if not use_kg:
+            vm = None
+        tensor = self.lstm_output(word_ids, word_segment_ids, word_attention_mask, pos, vm)
+        logits = self.get_logits(tensor)
+        logits = logits.contiguous().view(-1, self.labels_num)
+        outputs = F.log_softmax(logits, dim=-1)
+        predict = outputs.argmax(dim=-1)
+        return predict
 
-        return loss, correct, predict, labels, logits
+    def score(self, word_ids, word_segment_ids, word_attention_mask, labels, pos=None, vm=None, use_kg=True):
+        if not use_kg:
+            vm = None
+        labels_mask = (labels > 0).long()
+        tensor = self.lstm_output(word_ids, word_segment_ids, word_attention_mask, pos, vm)
+        logits = self.get_logits(tensor)
+        return loss_fn(logits, labels, labels_mask)
 
 
 class LukeTaggerLSTMCRF(nn.Module):
@@ -246,6 +267,42 @@ class LukeTaggerLSTMCRF(nn.Module):
         return self.crf.score(tensor, labels_mask, labels)
 
 
+class LukeTaggerLSTMNCRF(nn.Module):
+    def __init__(self, args, encoder):
+        super(LukeTaggerLSTMNCRF, self).__init__()
+        self.encoder = encoder
+        self.labels_num = args.labels_num
+        self.lstm = nn.LSTM(args.emb_size, args.hidden_size // 2,
+                            batch_first=True, bidirectional=True)
+        # CRF layer transforms the output to give the final output layer
+        self.ncrf = NCRFDecoder.create(self.labels_num, args.hidden_size, args.device, args.seq_length)
+
+    def lstm_output(self, word_ids, word_segment_ids, word_attention_mask, pos, vm):
+        # Encoder.
+        # print('word ids:', word_ids)
+        word_sequence_output, pooled_output = self.encoder(word_ids, word_segment_ids=word_segment_ids,
+                                                           word_attention_mask=word_attention_mask,
+                                                           position_ids=pos, vm=vm)
+        # run the LSTM along the sentences of length batch_max_len
+        tensor, _ = self.lstm(word_sequence_output)  # dim: batch_size x batch_max_len x lstm_hidden_dim
+        return tensor
+
+    def forward(self, word_ids, word_segment_ids, word_attention_mask, labels, pos=None, vm=None, use_kg=True):
+        if not use_kg:
+            vm = None
+        labels_mask = (labels > 0).long()
+        tensor = self.lstm_output(word_ids, word_segment_ids, word_attention_mask, pos, vm)
+        return self.ncrf.forward(tensor, labels_mask)
+
+    def score(self, word_ids, word_segment_ids, word_attention_mask, labels, pos=None, vm=None, use_kg=True):
+        if not use_kg:
+            vm = None
+        labels_mask = (labels > 0).long()
+
+        tensor = self.lstm_output(word_ids, word_segment_ids, word_attention_mask, pos, vm)
+        return self.ncrf.score(tensor, labels_mask, labels)
+
+
 def main():
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
@@ -277,10 +334,8 @@ def main():
                         help="Batch_size.")
     parser.add_argument("--seq_length", default=256, type=int,
                         help="Sequence length.")
-    parser.add_argument("--encoder", choices=["bert", "lstm", "gru", \
-                                              "cnn", "gatedcnn", "attn", \
-                                              "rcnn", "crnn", "gpt", "bilstm"], \
-                        default="bert", help="Encoder type.")
+    parser.add_argument("--classifier", choices=["mlp", "lstm", "lstm_crf", "lstm_ncrf"], default="mlp",
+                        help="Classifier type.")
     parser.add_argument("--bidirectional", action="store_true", help="Specific to recurrent model.")
 
     # Subword options.
@@ -378,7 +433,12 @@ def main():
     args.device = device
 
     # Build sequence labeling model.
-    model = LukeTaggerLSTMCRF(args, encoder)
+    classifiers = {"mlp": LukeTaggerMLP,
+                   "lstm": LukeTaggerLSTM,
+                   "lstm_crf": LukeTaggerLSTMCRF,
+                   "lstm_ncrf": LukeTaggerLSTMNCRF
+                   }
+    model = classifiers[args.classifier](args, encoder)
 
     if torch.cuda.device_count() > 1:
         print("{} GPUs are available. Let's use them.".format(torch.cuda.device_count()))
