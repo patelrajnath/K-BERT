@@ -70,7 +70,9 @@ def save_encoder(args, encoder, suffix='encoder'):
 def loss_fn(outputs, labels, mask):
     # the number of tokens is the sum of elements in mask
     num_labels = int(torch.sum(mask).item())
-
+    print(outputs.shape)
+    print(labels.shape)
+    print(mask.size())
     # pick the values corresponding to labels and multiply by mask
     outputs = outputs[range(outputs.shape[0]), labels] * mask
 
@@ -181,10 +183,15 @@ class LukeTaggerMLP(nn.Module):
     def score(self, word_ids, word_segment_ids, word_attention_mask, labels, pos=None, vm=None, use_kg=True):
         if not use_kg:
             vm = None
-        labels_mask = (labels > 0).long()
         tensor = self.luke_encode(word_ids, word_segment_ids, word_attention_mask, pos, vm)
+
+        labels = labels.contiguous().view(-1)
+        mask = (labels > 0).float().to(torch.device(labels.device))
+
         logits = self.get_logits(tensor)
-        return loss_fn(logits, labels, labels_mask)
+        logits = logits.contiguous().view(-1, self.labels_num)
+        outputs = F.log_softmax(logits, dim=-1)
+        return loss_fn(outputs, labels, mask)
 
 
 class LukeTaggerLSTM(nn.Module):
@@ -225,10 +232,14 @@ class LukeTaggerLSTM(nn.Module):
     def score(self, word_ids, word_segment_ids, word_attention_mask, labels, pos=None, vm=None, use_kg=True):
         if not use_kg:
             vm = None
-        labels_mask = (labels > 0).long()
+        labels = labels.contiguous().view(-1)
+        mask = (labels > 0).float().to(torch.device(labels.device))
+
         tensor = self.lstm_output(word_ids, word_segment_ids, word_attention_mask, pos, vm)
         logits = self.get_logits(tensor)
-        return loss_fn(logits, labels, labels_mask)
+        logits = logits.contiguous().view(-1, self.labels_num)
+        outputs = F.log_softmax(logits, dim=-1)
+        return loss_fn(outputs, labels, mask)
 
 
 class LukeTaggerLSTMCRF(nn.Module):
@@ -439,11 +450,9 @@ def main():
                    "lstm_ncrf": LukeTaggerLSTMNCRF
                    }
     model = classifiers[args.classifier](args, encoder)
-
     if torch.cuda.device_count() > 1:
         print("{} GPUs are available. Let's use them.".format(torch.cuda.device_count()))
         model = nn.DataParallel(model)
-
     model = model.to(device)
 
     # Datset loader.
