@@ -1,0 +1,9883 @@
+-DOCSTART- -X- -X- O
+
+remember O
+this O
+email O
+
+-DOCSTART- -X- -X- O
+
+what O
+album O
+is O
+this O
+song O
+on O
+
+-DOCSTART- -X- -X- O
+
+is O
+there O
+anything O
+special O
+going O
+on O
+nearby O
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+eastern B-time-zone
+standard O
+time O
+right O
+noe O
+
+-DOCSTART- -X- -X- O
+
+pull O
+up O
+my O
+cnn B-media-type
+app O
+and O
+read O
+it O
+to O
+me O
+
+-DOCSTART- -X- -X- O
+
+take O
+milk O
+off O
+my O
+grocery B-list-name
+list O
+
+-DOCSTART- -X- -X- O
+
+give O
+me O
+the O
+best O
+pizza B-food-type
+deals O
+offered O
+today B-date
+
+-DOCSTART- -X- -X- O
+
+i O
+would O
+like O
+to O
+listen O
+to O
+howard O
+stern O
+on O
+ninety B-radio-name
+seven I-radio-name
+point I-radio-name
+nine I-radio-name
+fm I-radio-name
+
+-DOCSTART- -X- -X- O
+
+please O
+make O
+me O
+a O
+coffee O
+using O
+the O
+coffee B-device-type
+machine I-device-type
+
+-DOCSTART- -X- -X- O
+
+alert O
+me O
+at O
+the O
+time O
+of O
+the O
+event O
+
+-DOCSTART- -X- -X- O
+
+show O
+me O
+the O
+alarms O
+i O
+set O
+
+-DOCSTART- -X- -X- O
+
+turn O
+on O
+some O
+music O
+
+-DOCSTART- -X- -X- O
+
+clear O
+off O
+the O
+vet B-event-name
+appointment I-event-name
+tomorrow B-date
+
+-DOCSTART- -X- -X- O
+
+how O
+much O
+is O
+two O
+thousand O
+yen B-currency-name
+in O
+u. B-currency-name
+s. I-currency-name
+d. I-currency-name
+
+-DOCSTART- -X- -X- O
+
+remove O
+john B-person
+'s I-person
+birthday B-event-name
+from O
+the O
+calendar O
+
+-DOCSTART- -X- -X- O
+
+put O
+the O
+lights O
+off O
+now O
+
+-DOCSTART- -X- -X- O
+
+will O
+you O
+check O
+and O
+confirm O
+that O
+please O
+. O
+
+-DOCSTART- -X- -X- O
+
+remove O
+my O
+four B-time
+am I-time
+alarm O
+
+-DOCSTART- -X- -X- O
+
+tell O
+me O
+the O
+latest O
+stock O
+of O
+pepsi B-business-name
+
+-DOCSTART- -X- -X- O
+
+please O
+start O
+fm B-radio-name
+eight I-radio-name
+hundred I-radio-name
+and I-radio-name
+ninety I-radio-name
+radio O
+channel O
+
+-DOCSTART- -X- -X- O
+
+what O
+'s O
+a O
+movie O
+in O
+theaters B-place-name
+that O
+does O
+n't O
+suck O
+
+-DOCSTART- -X- -X- O
+
+lessen O
+the O
+speaker O
+volume O
+
+-DOCSTART- -X- -X- O
+
+draft O
+an O
+email O
+to O
+kailey B-person
+about O
+work O
+later O
+
+-DOCSTART- -X- -X- O
+
+appreciate O
+your O
+helping O
+, O
+olly O
+. O
+
+-DOCSTART- -X- -X- O
+
+best O
+bar B-business-type
+in O
+local O
+area O
+
+-DOCSTART- -X- -X- O
+
+remove O
+item O
+three O
+
+-DOCSTART- -X- -X- O
+
+hey O
+today B-date
+i O
+was O
+fired O
+from O
+my O
+job O
+
+-DOCSTART- -X- -X- O
+
+what O
+movies O
+are O
+playing O
+in O
+columbia B-place-name
+
+-DOCSTART- -X- -X- O
+
+remove O
+apple O
+from O
+list O
+
+-DOCSTART- -X- -X- O
+
+how O
+long O
+does O
+it O
+take O
+to O
+get O
+there O
+
+-DOCSTART- -X- -X- O
+
+if O
+it O
+'s O
+ten B-time
+pm I-time
+in O
+california B-place-name
+what O
+time O
+is O
+it O
+in O
+alabama B-place-name
+
+-DOCSTART- -X- -X- O
+
+i O
+want O
+to O
+play O
+a O
+game O
+
+-DOCSTART- -X- -X- O
+
+the O
+command O
+is O
+not O
+correct O
+. O
+
+-DOCSTART- -X- -X- O
+
+the O
+song O
+playing O
+now O
+is O
+released O
+by O
+which O
+artist O
+
+-DOCSTART- -X- -X- O
+
+i O
+need O
+to O
+get O
+the O
+definition O
+of O
+a O
+word O
+massive B-definition-word
+
+-DOCSTART- -X- -X- O
+
+order O
+pizza B-food-type
+from O
+domino B-business-name
+'s I-business-name
+
+-DOCSTART- -X- -X- O
+
+remind O
+me O
+to O
+pick B-event-name
+up I-event-name
+john I-event-name
+from I-event-name
+the I-event-name
+airport I-event-name
+tonight B-timeofday
+at O
+eight B-time
+
+-DOCSTART- -X- -X- O
+
+confirm O
+a O
+travel O
+ticket O
+to O
+german B-place-name
+
+-DOCSTART- -X- -X- O
+
+what O
+'s O
+happened O
+in O
+the O
+news O
+recently O
+
+-DOCSTART- -X- -X- O
+
+vacuum O
+the O
+living B-house-place
+room I-house-place
+in O
+ten B-time
+minutes I-time
+
+-DOCSTART- -X- -X- O
+
+set O
+alarm O
+for O
+reminder O
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+going O
+on O
+around O
+here O
+
+-DOCSTART- -X- -X- O
+
+what O
+high O
+school O
+did O
+halley B-person
+barry I-person
+go O
+to O
+
+-DOCSTART- -X- -X- O
+
+stock O
+
+-DOCSTART- -X- -X- O
+
+i O
+want O
+to O
+know O
+more O
+about O
+this O
+person O
+
+-DOCSTART- -X- -X- O
+
+dim O
+my O
+light O
+
+-DOCSTART- -X- -X- O
+
+when O
+is O
+jacob B-person
+'s I-person
+birthday B-event-name
+
+-DOCSTART- -X- -X- O
+
+how O
+long O
+will O
+it O
+take O
+me O
+to O
+get O
+to O
+the O
+west B-place-name
+side I-place-name
+
+-DOCSTART- -X- -X- O
+
+boiled O
+
+-DOCSTART- -X- -X- O
+
+book O
+me O
+a O
+train B-transport-type
+ticket O
+at O
+earliest O
+time O
+tomorrow B-date
+
+-DOCSTART- -X- -X- O
+
+let O
+'s O
+play O
+a O
+game O
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+the O
+currency O
+conversion O
+charges O
+applicable O
+
+-DOCSTART- -X- -X- O
+
+go O
+to O
+beginning O
+of O
+previous B-podcast-descriptor
+episode I-podcast-descriptor
+
+-DOCSTART- -X- -X- O
+
+delete O
+my O
+to B-list-name
+do I-list-name
+'s I-list-name
+for O
+this B-date
+week I-date
+
+-DOCSTART- -X- -X- O
+
+i O
+love O
+this O
+music O
+can O
+you O
+please O
+save O
+this O
+to O
+my O
+dance O
+playlist O
+and O
+remember O
+that O
+i O
+like O
+it O
+
+-DOCSTART- -X- -X- O
+
+it O
+seems O
+like O
+the O
+answer O
+was O
+not O
+correct O
+. O
+
+-DOCSTART- -X- -X- O
+
+set O
+an O
+alarm O
+at O
+ten B-time
+tomorrow B-date
+to O
+remind O
+me O
+a O
+meeting B-event-name
+
+-DOCSTART- -X- -X- O
+
+olly O
+schedule O
+a O
+news O
+update O
+for O
+tomorrow B-date
+morning B-time
+at I-time
+seven I-time
+am I-time
+
+-DOCSTART- -X- -X- O
+
+tell O
+me O
+when O
+it O
+is O
+five B-time
+pm I-time
+
+-DOCSTART- -X- -X- O
+
+does O
+mary B-person
+smith I-person
+live O
+on O
+main B-place-name
+street I-place-name
+
+-DOCSTART- -X- -X- O
+
+add O
+eggs O
+to O
+the O
+list O
+
+-DOCSTART- -X- -X- O
+
+google O
+search O
+the O
+topic O
+
+-DOCSTART- -X- -X- O
+
+yes O
+that O
+'s O
+fantastic O
+. O
+
+-DOCSTART- -X- -X- O
+
+put O
+the O
+disco B-device-type
+lights I-device-type
+on O
+
+-DOCSTART- -X- -X- O
+
+how O
+cold B-weather-descriptor
+is O
+today B-date
+
+-DOCSTART- -X- -X- O
+
+thank O
+you O
+very O
+much O
+for O
+your O
+answers O
+. O
+
+-DOCSTART- -X- -X- O
+
+convert O
+one O
+pound B-currency-name
+to O
+us B-currency-name
+dollar I-currency-name
+
+-DOCSTART- -X- -X- O
+
+it O
+'s O
+good O
+one O
+, O
+appreciated O
+. O
+
+-DOCSTART- -X- -X- O
+
+What O
+'s O
+close O
+by O
+for O
+dinner B-meal-type
+
+-DOCSTART- -X- -X- O
+
+please O
+send O
+mom B-relation
+an O
+email O
+saying O
+that O
+i O
+can O
+make O
+it O
+next B-date
+week I-date
+
+-DOCSTART- -X- -X- O
+
+add O
+chives O
+to O
+my O
+shopping B-list-name
+list O
+
+-DOCSTART- -X- -X- O
+
+could O
+you O
+give O
+me O
+the O
+exact O
+rate O
+for O
+dow O
+nifty O
+futures O
+
+-DOCSTART- -X- -X- O
+
+what O
+movie O
+should O
+i O
+watch O
+today B-date
+
+-DOCSTART- -X- -X- O
+
+let O
+'s O
+go O
+through O
+all O
+pending O
+reminders O
+
+-DOCSTART- -X- -X- O
+
+what O
+kind O
+of O
+musical B-event-name
+events I-event-name
+are O
+happening O
+around O
+here O
+this B-date
+week I-date
+
+-DOCSTART- -X- -X- O
+
+get O
+the O
+duet B-game-name
+game O
+
+-DOCSTART- -X- -X- O
+
+i O
+need O
+some O
+ambiance O
+please O
+
+-DOCSTART- -X- -X- O
+
+tell O
+me O
+a O
+joke O
+about B-joke-type
+chickens I-joke-type
+
+-DOCSTART- -X- -X- O
+
+do O
+n't O
+speak O
+for O
+a O
+while O
+
+-DOCSTART- -X- -X- O
+
+play O
+me O
+the O
+latest O
+podcast O
+about O
+online O
+surveys O
+
+-DOCSTART- -X- -X- O
+
+will O
+you O
+say O
+once O
+again O
+. O
+
+-DOCSTART- -X- -X- O
+
+all O
+alarms O
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+the O
+result O
+of O
+one O
+hundred O
+minus O
+fifty O
+
+-DOCSTART- -X- -X- O
+
+tweet U-media-type
+complaint O
+to O
+sony B-business-name
+consumer I-business-name
+service I-business-name
+
+-DOCSTART- -X- -X- O
+
+would O
+you O
+confirm O
+the O
+last O
+thing O
+i O
+said O
+please O
+. O
+
+-DOCSTART- -X- -X- O
+
+i O
+need O
+a O
+taxi B-transport-type
+to O
+pick O
+me O
+up O
+at O
+the O
+house O
+and O
+take O
+me O
+downtown B-place-name
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+eighty O
+seven O
+minus O
+fourteen O
+
+-DOCSTART- -X- -X- O
+
+erase O
+item O
+please O
+from O
+my O
+list O
+
+-DOCSTART- -X- -X- O
+
+currency O
+conversion O
+of O
+u. B-currency-name
+s. I-currency-name
+d. I-currency-name
+and O
+eur B-currency-name
+
+-DOCSTART- -X- -X- O
+
+tell O
+me O
+the O
+current O
+dollar O
+ratio O
+for O
+the O
+us B-place-name
+and O
+canada B-place-name
+
+-DOCSTART- -X- -X- O
+
+how O
+do O
+i O
+book O
+a O
+train B-transport-type
+ticket O
+online O
+
+-DOCSTART- -X- -X- O
+
+is O
+there O
+anything O
+i O
+need O
+to O
+know O
+before O
+i O
+activate O
+the O
+robot B-device-type
+vacuum I-device-type
+cleaner I-device-type
+
+-DOCSTART- -X- -X- O
+
+tell O
+me O
+the O
+recipe O
+for O
+yellow B-ingredient
+rice I-ingredient
+
+-DOCSTART- -X- -X- O
+
+i O
+need O
+to O
+hear O
+again O
+. O
+
+-DOCSTART- -X- -X- O
+
+how O
+do O
+i O
+change O
+the O
+color O
+of O
+the O
+lights O
+
+-DOCSTART- -X- -X- O
+
+take O
+off O
+the O
+doctor B-event-name
+'s I-event-name
+appointment I-event-name
+on O
+march B-date
+twentieth I-date
+
+-DOCSTART- -X- -X- O
+
+this O
+is O
+unimportant O
+to O
+me O
+. O
+
+-DOCSTART- -X- -X- O
+
+tell O
+me O
+a O
+nice O
+chinese B-food-type
+restaurant B-business-type
+
+-DOCSTART- -X- -X- O
+
+lights O
+down O
+to B-change-amount
+seven I-change-amount
+
+-DOCSTART- -X- -X- O
+
+make O
+this O
+my O
+favorite O
+
+-DOCSTART- -X- -X- O
+
+are O
+there O
+any O
+events O
+going O
+on O
+close O
+by O
+
+-DOCSTART- -X- -X- O
+
+please O
+turn O
+up O
+the O
+volume O
+to B-change-amount
+twenty I-change-amount
+one I-change-amount
+
+-DOCSTART- -X- -X- O
+
+remove O
+my O
+to B-list-name
+do I-list-name
+list O
+
+-DOCSTART- -X- -X- O
+
+what O
+'s O
+the O
+pound B-currency-name
+to O
+dollar B-currency-name
+exchange O
+rate O
+
+-DOCSTART- -X- -X- O
+
+turn O
+off O
+wemo B-device-type
+plug I-device-type
+in O
+game B-house-place
+room I-house-place
+
+-DOCSTART- -X- -X- O
+
+hey O
+does O
+that O
+restaurant B-business-type
+have O
+takeout B-order-type
+
+-DOCSTART- -X- -X- O
+
+forex O
+rate O
+of O
+euro B-currency-name
+to O
+u. B-currency-name
+s. I-currency-name
+d. I-currency-name
+
+-DOCSTART- -X- -X- O
+
+logan U-movie-name
+
+-DOCSTART- -X- -X- O
+
+olly O
+please O
+cancel O
+. O
+
+-DOCSTART- -X- -X- O
+
+vacuum U-device-type
+living B-house-place
+room I-house-place
+
+-DOCSTART- -X- -X- O
+
+i O
+want O
+to O
+listen O
+to O
+the O
+bob B-radio-name
+and I-radio-name
+tom I-radio-name
+show I-radio-name
+
+-DOCSTART- -X- -X- O
+
+set O
+the O
+time O
+zone O
+to O
+g. B-time-zone
+m. I-time-zone
+t. I-time-zone
+
+-DOCSTART- -X- -X- O
+
+u. B-currency-name
+s. I-currency-name
+d. I-currency-name
+position O
+now O
+
+-DOCSTART- -X- -X- O
+
+call O
+raju B-person
+phone B-personal-info
+number I-personal-info
+
+-DOCSTART- -X- -X- O
+
+turn O
+the O
+lights O
+higher O
+
+-DOCSTART- -X- -X- O
+
+please O
+change O
+time O
+zone O
+to O
+india B-place-name
+
+-DOCSTART- -X- -X- O
+
+book O
+me O
+a O
+taxi B-transport-type
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+the O
+best O
+way O
+to O
+cook O
+pasta B-food-type
+al I-food-type
+dente I-food-type
+
+-DOCSTART- -X- -X- O
+
+well O
+done O
+, O
+. O
+
+-DOCSTART- -X- -X- O
+
+does O
+n't O
+matter O
+. O
+
+-DOCSTART- -X- -X- O
+
+search O
+for O
+pizza B-food-type
+nearby O
+
+-DOCSTART- -X- -X- O
+
+please O
+turn O
+the O
+lights O
+up O
+to O
+eight O
+
+-DOCSTART- -X- -X- O
+
+please O
+change O
+the O
+lighting O
+to O
+blue B-color-type
+
+-DOCSTART- -X- -X- O
+
+my O
+list O
+please O
+
+-DOCSTART- -X- -X- O
+
+please O
+start O
+joe B-person
+rogan I-person
+podcast O
+please O
+
+-DOCSTART- -X- -X- O
+
+keep B-player-setting
+playing I-player-setting
+secret B-audiobook-name
+garden I-audiobook-name
+
+-DOCSTART- -X- -X- O
+
+how O
+much O
+is O
+the O
+us B-currency-name
+dollar I-currency-name
+versus O
+the O
+pound B-currency-name
+
+-DOCSTART- -X- -X- O
+
+when O
+was O
+Dolly B-person
+parton I-person
+born O
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+going O
+on O
+right O
+now O
+on O
+twitter B-media-type
+
+-DOCSTART- -X- -X- O
+
+List O
+all O
+the O
+lists O
+on O
+this O
+device O
+
+-DOCSTART- -X- -X- O
+
+could O
+you O
+please O
+again O
+clarify O
+your O
+answer O
+to O
+me O
+. O
+
+-DOCSTART- -X- -X- O
+
+definition O
+of O
+velocity B-definition-word
+
+-DOCSTART- -X- -X- O
+
+add O
+wine O
+to O
+list O
+
+-DOCSTART- -X- -X- O
+
+what O
+does O
+pesto B-definition-word
+mean O
+
+-DOCSTART- -X- -X- O
+
+what O
+are O
+the O
+prices O
+to O
+get O
+to O
+chicago B-place-name
+on O
+a O
+train B-transport-type
+book O
+the O
+cheapest O
+one O
+
+-DOCSTART- -X- -X- O
+
+play O
+what O
+live O
+
+-DOCSTART- -X- -X- O
+
+olly O
+will O
+you O
+shut O
+down O
+. O
+
+-DOCSTART- -X- -X- O
+
+switch O
+off O
+the O
+power B-device-type
+
+-DOCSTART- -X- -X- O
+
+set O
+a O
+classic B-music-genre
+music O
+
+-DOCSTART- -X- -X- O
+
+set O
+a O
+calendar O
+event O
+to O
+repeat O
+yearly B-general-frequency
+on O
+this O
+date O
+
+-DOCSTART- -X- -X- O
+
+please O
+darken O
+the O
+lights O
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+find O
+my O
+lists O
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+please O
+check O
+my O
+last O
+question O
+. O
+
+-DOCSTART- -X- -X- O
+
+i O
+want O
+you O
+to O
+play O
+this O
+game O
+for O
+me O
+
+-DOCSTART- -X- -X- O
+
+make O
+me O
+a O
+new O
+checklist O
+
+-DOCSTART- -X- -X- O
+
+turn O
+off O
+the O
+office B-house-place
+lights O
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+six O
+divided O
+by O
+two O
+
+-DOCSTART- -X- -X- O
+
+how O
+have O
+megatel B-business-name
+shares O
+done O
+last B-date
+week I-date
+
+-DOCSTART- -X- -X- O
+
+i O
+would O
+like O
+to O
+hear O
+what O
+said O
+again O
+. O
+
+-DOCSTART- -X- -X- O
+
+is O
+everyone O
+on O
+my O
+facebook B-media-type
+list O
+watching O
+the O
+game O
+
+-DOCSTART- -X- -X- O
+
+i O
+need O
+everything O
+deleted O
+from O
+calendar O
+please O
+
+-DOCSTART- -X- -X- O
+
+which O
+restaurant B-business-type
+is O
+there O
+in O
+shivaji B-place-name
+nagar I-place-name
+
+-DOCSTART- -X- -X- O
+
+play O
+the O
+next B-podcast-descriptor
+episode I-podcast-descriptor
+of O
+a O
+podcast O
+
+-DOCSTART- -X- -X- O
+
+how O
+much O
+is O
+a O
+train B-transport-type
+ticket O
+to O
+san B-place-name
+fransisco I-place-name
+
+-DOCSTART- -X- -X- O
+
+my O
+party B-list-name
+list O
+
+-DOCSTART- -X- -X- O
+
+do O
+i O
+have O
+any O
+get B-event-name
+togethers I-event-name
+this B-date
+week I-date
+
+-DOCSTART- -X- -X- O
+
+please O
+turn O
+down O
+the O
+volume O
+
+-DOCSTART- -X- -X- O
+
+please O
+tell O
+me O
+that O
+message O
+spoke O
+once O
+more O
+. O
+
+-DOCSTART- -X- -X- O
+
+say O
+again O
+. O
+
+-DOCSTART- -X- -X- O
+
+tweet U-media-type
+this O
+tweet O
+coffee O
+was O
+too O
+hot O
+and O
+at O
+this O
+company O
+costa B-business-name
+coffee I-business-name
+
+-DOCSTART- -X- -X- O
+
+do O
+homework O
+for O
+me O
+please O
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+john B-person
+'s I-person
+phone B-personal-info
+number I-personal-info
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+the O
+traffic O
+like O
+this O
+morning B-timeofday
+
+-DOCSTART- -X- -X- O
+
+tell O
+me O
+the O
+answer O
+for O
+two O
+plus O
+two O
+
+-DOCSTART- -X- -X- O
+
+let O
+me O
+know O
+today B-date
+'s I-date
+date O
+in O
+american O
+format O
+
+-DOCSTART- -X- -X- O
+
+what O
+s O
+the O
+dow O
+jones O
+at O
+today B-date
+
+-DOCSTART- -X- -X- O
+
+yes O
+that O
+'s O
+amazing O
+. O
+
+-DOCSTART- -X- -X- O
+
+uhh O
+no O
+, O
+i O
+did O
+not O
+say O
+this O
+. O
+
+-DOCSTART- -X- -X- O
+
+lower O
+the O
+lights O
+please O
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+give O
+me O
+the O
+train B-transport-type
+times O
+to O
+nyc B-place-name
+
+-DOCSTART- -X- -X- O
+
+get O
+me O
+the O
+number O
+for O
+local O
+taxi B-business-type
+service I-business-type
+
+-DOCSTART- -X- -X- O
+
+find O
+game O
+
+-DOCSTART- -X- -X- O
+
+is O
+there O
+any O
+grocery B-business-type
+nearby O
+
+-DOCSTART- -X- -X- O
+
+start O
+the O
+robot B-device-type
+roomba I-device-type
+
+-DOCSTART- -X- -X- O
+
+play O
+netflix B-app-name
+on O
+my O
+ps B-device-type
+four I-device-type
+
+-DOCSTART- -X- -X- O
+
+traffic O
+
+-DOCSTART- -X- -X- O
+
+brighten O
+my O
+bedroom B-house-place
+light O
+
+-DOCSTART- -X- -X- O
+
+yes O
+that O
+'s O
+correct O
+. O
+
+-DOCSTART- -X- -X- O
+
+sum O
+of O
+five O
+and O
+two O
+
+-DOCSTART- -X- -X- O
+
+tell O
+me O
+once O
+more O
+please O
+. O
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+the O
+exchange O
+rate O
+between O
+the O
+us B-currency-name
+dollar I-currency-name
+and O
+the O
+aus B-currency-name
+dollar I-currency-name
+
+-DOCSTART- -X- -X- O
+
+is O
+there O
+any O
+new O
+vegan O
+news O
+on O
+facebook B-media-type
+
+-DOCSTART- -X- -X- O
+
+is O
+the O
+traffic O
+smooth O
+right O
+now O
+
+-DOCSTART- -X- -X- O
+
+searching O
+for O
+recent O
+happenings O
+on O
+the O
+particular O
+dates O
+
+-DOCSTART- -X- -X- O
+
+please O
+modify O
+the O
+wrong O
+command O
+. O
+
+-DOCSTART- -X- -X- O
+
+list O
+events O
+in O
+ny B-place-name
+
+-DOCSTART- -X- -X- O
+
+be O
+funny O
+for O
+me O
+
+-DOCSTART- -X- -X- O
+
+dollar U-currency-name
+rate O
+
+-DOCSTART- -X- -X- O
+
+tell O
+me O
+what O
+you O
+just O
+said O
+once O
+again O
+please O
+. O
+
+-DOCSTART- -X- -X- O
+
+have O
+i O
+received O
+any O
+emails O
+since O
+noon B-timeofday
+
+-DOCSTART- -X- -X- O
+
+open O
+the O
+radio O
+app O
+
+-DOCSTART- -X- -X- O
+
+i O
+want O
+an O
+alarm O
+for O
+six B-time
+am I-time
+everyday B-date
+
+-DOCSTART- -X- -X- O
+
+i O
+want O
+to O
+buy O
+a O
+train B-transport-type
+ticket O
+tomorrow B-date
+for O
+boston B-place-name
+to O
+new B-place-name
+york I-place-name
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+on O
+the O
+list O
+for O
+today B-date
+
+-DOCSTART- -X- -X- O
+
+could O
+you O
+order O
+sushi B-food-type
+for O
+tonight B-timeofday
+dinner B-meal-type
+
+-DOCSTART- -X- -X- O
+
+that O
+'s O
+enough O
+, O
+just O
+cancel O
+it O
+. O
+
+-DOCSTART- -X- -X- O
+
+create O
+appointment O
+to O
+list O
+
+-DOCSTART- -X- -X- O
+
+did O
+mike B-person
+send O
+me O
+an O
+email O
+
+-DOCSTART- -X- -X- O
+
+wemo B-device-type
+plug I-device-type
+socket I-device-type
+turn O
+on O
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+recommend O
+some O
+dog O
+'s O
+how O
+events O
+going O
+on O
+in O
+our O
+city O
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+check O
+my O
+last O
+question O
+. O
+
+-DOCSTART- -X- -X- O
+
+please O
+continue B-player-setting
+reading I-player-setting
+audiobook B-media-type
+
+-DOCSTART- -X- -X- O
+
+what O
+and O
+who O
+was O
+i O
+emailed O
+about O
+last B-date
+week I-date
+
+-DOCSTART- -X- -X- O
+
+add O
+paper O
+towels O
+to O
+the O
+grocery B-list-name
+list I-list-name
+
+-DOCSTART- -X- -X- O
+
+respond O
+to O
+my O
+bosses B-relation
+email O
+with O
+the O
+word O
+that O
+i O
+will O
+be O
+in O
+at O
+four O
+in O
+the O
+evening O
+
+-DOCSTART- -X- -X- O
+
+delete O
+all O
+my O
+appointments B-event-name
+for O
+today B-date
+
+-DOCSTART- -X- -X- O
+
+i O
+would O
+have O
+avoided O
+the O
+traffic O
+if O
+i O
+went O
+early O
+
+-DOCSTART- -X- -X- O
+
+tell O
+me O
+the O
+time O
+
+-DOCSTART- -X- -X- O
+
+do O
+not O
+mind O
+to O
+choose O
+any O
+one O
+. O
+
+-DOCSTART- -X- -X- O
+
+what O
+'s O
+on O
+the O
+radio O
+right O
+now O
+
+-DOCSTART- -X- -X- O
+
+what O
+time O
+does O
+the O
+train B-transport-type
+from O
+new B-place-name
+york I-place-name
+come O
+in O
+
+-DOCSTART- -X- -X- O
+
+show O
+me O
+my O
+social O
+media O
+notifications O
+
+-DOCSTART- -X- -X- O
+
+give O
+me O
+the O
+time O
+
+-DOCSTART- -X- -X- O
+
+please O
+add O
+this O
+email O
+to O
+my O
+contacts O
+
+-DOCSTART- -X- -X- O
+
+clear O
+all O
+data O
+from O
+calendar O
+
+-DOCSTART- -X- -X- O
+
+please O
+play O
+some O
+jazz B-music-genre
+music I-music-genre
+
+-DOCSTART- -X- -X- O
+
+please O
+will O
+you O
+confirm O
+the O
+last O
+thing O
+said O
+. O
+
+-DOCSTART- -X- -X- O
+
+i O
+want O
+to O
+listen O
+to O
+the O
+new O
+sam B-person
+harris I-person
+episode O
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+tell O
+me O
+what O
+twenty O
+five O
+percent O
+of O
+two O
+thousand O
+one O
+hundred O
+is O
+
+-DOCSTART- -X- -X- O
+
+did O
+you O
+change O
+the O
+wallpaper O
+
+-DOCSTART- -X- -X- O
+
+hey O
+whatsapp O
+
+-DOCSTART- -X- -X- O
+
+i O
+need O
+to O
+get O
+to O
+bristol B-place-name
+Friday B-date
+night B-time
+can O
+you O
+book O
+me O
+a O
+ticket O
+please O
+
+-DOCSTART- -X- -X- O
+
+add O
+mop O
+to O
+hardware B-list-name
+store I-list-name
+list I-list-name
+
+-DOCSTART- -X- -X- O
+
+turn O
+on O
+pdr B-radio-name
+am I-radio-name
+
+-DOCSTART- -X- -X- O
+
+tell O
+me O
+the O
+time O
+now O
+
+-DOCSTART- -X- -X- O
+
+are O
+there O
+any O
+events O
+happening O
+in O
+town B-place-name
+
+-DOCSTART- -X- -X- O
+
+whatever O
+would O
+be O
+good O
+. O
+
+-DOCSTART- -X- -X- O
+
+play O
+for O
+me O
+the O
+game O
+cricket B-game-name
+
+-DOCSTART- -X- -X- O
+
+i O
+ca O
+n't O
+hear O
+you O
+speak O
+up O
+
+-DOCSTART- -X- -X- O
+
+do O
+not O
+talk O
+
+-DOCSTART- -X- -X- O
+
+reserve O
+a O
+taxi B-transport-type
+
+-DOCSTART- -X- -X- O
+
+definition O
+for O
+object B-definition-word
+name I-definition-word
+
+-DOCSTART- -X- -X- O
+
+i O
+want O
+volume O
+on O
+my O
+speakers O
+
+-DOCSTART- -X- -X- O
+
+send O
+an O
+email O
+to O
+my O
+boss B-relation
+about O
+my O
+leave O
+
+-DOCSTART- -X- -X- O
+
+tell O
+me O
+everything O
+about O
+umf B-event-name
+
+-DOCSTART- -X- -X- O
+
+divide O
+one O
+thousand O
+five O
+hundred O
+by O
+one O
+hundred O
+and O
+sixty O
+
+-DOCSTART- -X- -X- O
+
+what O
+should O
+i O
+do O
+this B-date
+weekend I-date
+
+-DOCSTART- -X- -X- O
+
+siri O
+find O
+train B-transport-type
+tickets O
+to O
+nc B-place-name
+
+-DOCSTART- -X- -X- O
+
+list O
+things O
+on O
+my O
+list O
+
+-DOCSTART- -X- -X- O
+
+find O
+john B-person
+smith I-person
+in O
+contacts O
+
+-DOCSTART- -X- -X- O
+
+if O
+i O
+have O
+a O
+dablune B-currency-name
+how O
+many O
+dollars B-currency-name
+is O
+that O
+
+-DOCSTART- -X- -X- O
+
+change O
+this O
+time O
+to O
+ist B-time-zone
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+the O
+last O
+email O
+i O
+received O
+
+-DOCSTART- -X- -X- O
+
+mute O
+the O
+volume O
+
+-DOCSTART- -X- -X- O
+
+please O
+cancel O
+my O
+next B-event-name
+hair I-event-name
+cut I-event-name
+
+-DOCSTART- -X- -X- O
+
+start O
+game O
+temple B-game-name
+runner I-game-name
+
+-DOCSTART- -X- -X- O
+
+what O
+day O
+of O
+the O
+week O
+is O
+june B-date
+twenty I-date
+seventh I-date
+on O
+this O
+year O
+
+-DOCSTART- -X- -X- O
+
+recommend O
+a O
+blue B-event-name
+grass I-event-name
+band I-event-name
+event O
+within B-place-name
+twenty I-place-name
+miles I-place-name
+of I-place-name
+manchester I-place-name
+ma O
+this B-date
+week I-date
+
+-DOCSTART- -X- -X- O
+
+can O
+i O
+tell O
+you O
+about O
+my O
+day O
+
+-DOCSTART- -X- -X- O
+
+set O
+alarm O
+for O
+six B-time
+am I-time
+tomorrow B-date
+
+-DOCSTART- -X- -X- O
+
+i O
+like O
+you O
+just O
+cancel O
+it O
+. O
+
+-DOCSTART- -X- -X- O
+
+thank O
+you O
+. O
+
+-DOCSTART- -X- -X- O
+
+any O
+low O
+priced O
+delicacies B-food-type
+
+-DOCSTART- -X- -X- O
+
+please O
+make O
+the O
+room B-house-place
+brighter O
+
+-DOCSTART- -X- -X- O
+
+could O
+you O
+play O
+you B-song-name
+do I-song-name
+n't I-song-name
+bring I-song-name
+me I-song-name
+flowers I-song-name
+
+-DOCSTART- -X- -X- O
+
+do O
+n't O
+mind O
+for O
+whatever O
+. O
+
+-DOCSTART- -X- -X- O
+
+are O
+there O
+any O
+interesting O
+events O
+around O
+this O
+area O
+
+-DOCSTART- -X- -X- O
+
+turn O
+the O
+volume O
+up O
+
+-DOCSTART- -X- -X- O
+
+this B-date
+weekend I-date
+what O
+events O
+are O
+going O
+on O
+in O
+seattle B-place-name
+
+-DOCSTART- -X- -X- O
+
+please O
+tell O
+me O
+it O
+once O
+again O
+. O
+
+-DOCSTART- -X- -X- O
+
+what O
+new O
+movies O
+are O
+good O
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+check O
+to O
+see O
+if O
+i O
+have O
+any O
+recent O
+email O
+alerts O
+
+-DOCSTART- -X- -X- O
+
+ah O
+it O
+is O
+excellent O
+. O
+
+-DOCSTART- -X- -X- O
+
+I O
+love O
+the O
+eternal O
+voice O
+of O
+the O
+singer O
+she O
+is O
+my O
+favourite O
+
+-DOCSTART- -X- -X- O
+
+give O
+me O
+some O
+health O
+tips O
+
+-DOCSTART- -X- -X- O
+
+how O
+far O
+above O
+sea O
+level O
+is O
+denver B-place-name
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+do O
+nine O
+plus O
+two O
+
+-DOCSTART- -X- -X- O
+
+what O
+'s O
+the O
+best O
+pizza B-food-type
+shop B-business-type
+nearby O
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+the O
+current O
+exchange O
+rate O
+of O
+euro B-currency-name
+to O
+dollar B-currency-name
+
+-DOCSTART- -X- -X- O
+
+noodles U-food-type
+one O
+pack O
+make O
+it O
+as O
+takeaway B-order-type
+
+-DOCSTART- -X- -X- O
+
+yeap O
+get O
+that O
+right O
+. O
+
+-DOCSTART- -X- -X- O
+
+pink U-color-type
+is O
+all O
+we O
+need O
+
+-DOCSTART- -X- -X- O
+
+please O
+quiet O
+the O
+speaker O
+
+-DOCSTART- -X- -X- O
+
+set O
+a O
+reminder O
+alert O
+for O
+saturday B-date
+nine B-time
+am I-time
+towards O
+payment B-event-name
+of I-event-name
+electricity I-event-name
+bill I-event-name
+
+-DOCSTART- -X- -X- O
+
+let O
+national B-business-name
+grid I-business-name
+know O
+the O
+power O
+is O
+out O
+again O
+
+-DOCSTART- -X- -X- O
+
+what O
+was O
+that O
+one O
+more O
+time O
+. O
+
+-DOCSTART- -X- -X- O
+
+play O
+old B-music-descriptor
+fashioned I-music-descriptor
+christmas I-music-descriptor
+music O
+
+-DOCSTART- -X- -X- O
+
+turn O
+off O
+the O
+living B-house-place
+room I-house-place
+light O
+
+-DOCSTART- -X- -X- O
+
+turn O
+my O
+audio O
+higher O
+
+-DOCSTART- -X- -X- O
+
+get O
+me O
+tom B-person
+'s I-person
+number O
+
+-DOCSTART- -X- -X- O
+
+please O
+remove O
+the O
+alarm O
+set O
+for O
+wednesday B-date
+called O
+kickball B-event-name
+
+-DOCSTART- -X- -X- O
+
+next O
+alarm O
+
+-DOCSTART- -X- -X- O
+
+volume O
+control O
+
+-DOCSTART- -X- -X- O
+
+what O
+s O
+needed O
+to O
+make O
+pizza B-food-type
+
+-DOCSTART- -X- -X- O
+
+you O
+are O
+my O
+star O
+, O
+thank O
+you O
+so O
+much O
+. O
+
+-DOCSTART- -X- -X- O
+
+play O
+for O
+me O
+the O
+game O
+star B-game-name
+wars I-game-name
+
+-DOCSTART- -X- -X- O
+
+turn O
+off O
+my O
+alarm O
+
+-DOCSTART- -X- -X- O
+
+no O
+, O
+you O
+gave O
+me O
+incorrect O
+information O
+. O
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+play O
+hunt B-audiobook-name
+for I-audiobook-name
+red I-audiobook-name
+october I-audiobook-name
+
+-DOCSTART- -X- -X- O
+
+where O
+should O
+i O
+avoid O
+this O
+morning B-timeofday
+
+-DOCSTART- -X- -X- O
+
+Is O
+it O
+going O
+to O
+be O
+windy B-weather-descriptor
+on O
+Saturday B-date
+in O
+denver B-place-name
+
+-DOCSTART- -X- -X- O
+
+cancel O
+business B-event-name
+meeting I-event-name
+on O
+wednesday B-date
+
+-DOCSTART- -X- -X- O
+
+on O
+every B-general-frequency
+tuesday I-general-frequency
+remind O
+me O
+to O
+go O
+shopping O
+
+-DOCSTART- -X- -X- O
+
+go O
+to O
+the O
+podcast O
+and O
+play O
+the O
+next B-podcast-descriptor
+episode I-podcast-descriptor
+in O
+friends B-podcast-name
+
+-DOCSTART- -X- -X- O
+
+please O
+turn O
+on O
+roomba B-device-type
+
+-DOCSTART- -X- -X- O
+
+open U-player-setting
+book O
+
+-DOCSTART- -X- -X- O
+
+can O
+i O
+get O
+delivery B-order-type
+from O
+here O
+
+-DOCSTART- -X- -X- O
+
+delete O
+my O
+meeting B-event-name
+for O
+one B-time
+pm I-time
+on O
+march B-date
+nineteenth I-date
+
+-DOCSTART- -X- -X- O
+
+let O
+'s O
+have O
+the O
+radio O
+on O
+
+-DOCSTART- -X- -X- O
+
+what O
+music O
+do O
+i O
+usually O
+like O
+after O
+work O
+
+-DOCSTART- -X- -X- O
+
+when O
+was O
+this O
+song O
+recorded O
+
+-DOCSTART- -X- -X- O
+
+olly O
+would O
+you O
+shut O
+up O
+. O
+
+-DOCSTART- -X- -X- O
+
+incorrect O
+command O
+. O
+
+-DOCSTART- -X- -X- O
+
+how O
+long O
+until O
+my O
+order O
+is O
+ready O
+
+-DOCSTART- -X- -X- O
+
+i O
+need O
+you O
+to O
+put O
+walk O
+the O
+dog O
+on O
+my O
+list O
+to B-list-name
+do I-list-name
+
+-DOCSTART- -X- -X- O
+
+what O
+'s O
+the O
+latest O
+news O
+on O
+donald B-person
+trump I-person
+
+-DOCSTART- -X- -X- O
+
+how O
+heavy O
+is O
+traffic O
+now O
+in O
+denver B-place-name
+
+-DOCSTART- -X- -X- O
+
+what O
+johncena B-person
+do O
+
+-DOCSTART- -X- -X- O
+
+buy O
+train B-transport-type
+ticket O
+
+-DOCSTART- -X- -X- O
+
+i O
+would O
+n't O
+really O
+bother O
+, O
+olly O
+. O
+
+-DOCSTART- -X- -X- O
+
+alarms O
+
+-DOCSTART- -X- -X- O
+
+create O
+a O
+new O
+list O
+for O
+me O
+please O
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+turn O
+off O
+wemo B-device-type
+plug I-device-type
+socket I-device-type
+
+-DOCSTART- -X- -X- O
+
+is O
+there O
+any O
+new O
+email O
+
+-DOCSTART- -X- -X- O
+
+cleaning O
+is O
+good O
+dust O
+is O
+so O
+bad O
+do O
+now O
+your O
+magic O
+clean O
+my O
+carpet B-house-place
+
+-DOCSTART- -X- -X- O
+
+please O
+run O
+this O
+game O
+
+-DOCSTART- -X- -X- O
+
+increase O
+the O
+volume O
+a O
+bit O
+
+-DOCSTART- -X- -X- O
+
+access O
+latest O
+news O
+
+-DOCSTART- -X- -X- O
+
+what O
+day O
+of O
+the O
+week O
+is O
+the O
+first B-date
+of I-date
+march I-date
+
+-DOCSTART- -X- -X- O
+
+who O
+is O
+the O
+most O
+frequently O
+called O
+person O
+in O
+my O
+phone B-device-type
+book I-device-type
+
+-DOCSTART- -X- -X- O
+
+do O
+i O
+have O
+the O
+contact B-personal-info
+of O
+tara B-person
+john I-person
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+help O
+me O
+find O
+the O
+answer O
+to O
+this O
+question O
+
+-DOCSTART- -X- -X- O
+
+do O
+i O
+have O
+anything O
+scheduled O
+in O
+my O
+events O
+
+-DOCSTART- -X- -X- O
+
+would O
+you O
+replay O
+please O
+. O
+
+-DOCSTART- -X- -X- O
+
+most O
+rated O
+delivery B-order-type
+options O
+for O
+chinese B-food-type
+food O
+
+-DOCSTART- -X- -X- O
+
+should O
+i O
+watch O
+this O
+movie O
+
+-DOCSTART- -X- -X- O
+
+i O
+want O
+to O
+know O
+the O
+best O
+super B-business-type
+market I-business-type
+in O
+this O
+local O
+area O
+
+-DOCSTART- -X- -X- O
+
+ted B-podcast-name
+talks I-podcast-name
+
+-DOCSTART- -X- -X- O
+
+change O
+the O
+lighting O
+to O
+blue B-color-type
+
+-DOCSTART- -X- -X- O
+
+rewind U-player-setting
+to O
+four B-time
+twelve I-time
+
+-DOCSTART- -X- -X- O
+
+play O
+happy B-playlist-name
+playlist I-playlist-name
+next O
+
+-DOCSTART- -X- -X- O
+
+speak O
+all O
+items O
+for O
+to O
+day O
+
+-DOCSTART- -X- -X- O
+
+playback U-player-setting
+tom B-audiobook-author
+clancy I-audiobook-author
+splinter B-audiobook-name
+cell I-audiobook-name
+
+-DOCSTART- -X- -X- O
+
+store O
+opinion O
+on O
+song O
+
+-DOCSTART- -X- -X- O
+
+what O
+are O
+the O
+latest O
+photos O
+on O
+my O
+instagram B-media-type
+account O
+
+-DOCSTART- -X- -X- O
+
+send O
+message O
+via O
+email O
+
+-DOCSTART- -X- -X- O
+
+could O
+you O
+tell O
+me O
+funny B-joke-type
+things O
+
+-DOCSTART- -X- -X- O
+
+make O
+me O
+coffee O
+in O
+five B-time
+minutes I-time
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+the O
+sensex B-business-name
+and O
+nifty O
+points O
+for O
+today B-date
+
+-DOCSTART- -X- -X- O
+
+you O
+rock O
+, O
+i O
+appreciate O
+it O
+. O
+
+-DOCSTART- -X- -X- O
+
+turn O
+up O
+the O
+lights O
+please O
+
+-DOCSTART- -X- -X- O
+
+sarcastic U-joke-type
+jokes O
+
+-DOCSTART- -X- -X- O
+
+yeap O
+it O
+'s O
+good O
+. O
+
+-DOCSTART- -X- -X- O
+
+book O
+me O
+a O
+train B-transport-type
+ticket O
+to O
+newcastle B-place-name
+
+-DOCSTART- -X- -X- O
+
+play O
+music O
+by O
+taylor B-artist-name
+swift I-artist-name
+
+-DOCSTART- -X- -X- O
+
+change O
+my O
+music B-device-type
+player I-device-type
+volume O
+to B-change-amount
+eighty I-change-amount
+percent I-change-amount
+
+-DOCSTART- -X- -X- O
+
+i O
+want O
+to O
+order O
+some O
+takeout B-order-type
+food O
+
+-DOCSTART- -X- -X- O
+
+i O
+appreciate O
+it O
+, O
+it O
+is O
+great O
+one O
+, O
+olly O
+. O
+
+-DOCSTART- -X- -X- O
+
+is O
+i. B-business-name
+b. I-business-name
+m. I-business-name
+up O
+today B-date
+
+-DOCSTART- -X- -X- O
+
+how O
+do O
+i O
+make O
+meal O
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+tell O
+me O
+the O
+next O
+scheduled O
+event O
+
+-DOCSTART- -X- -X- O
+
+change O
+the O
+color O
+of O
+my O
+porch B-house-place
+lights O
+to O
+green B-color-type
+
+-DOCSTART- -X- -X- O
+
+what O
+s O
+the O
+weather O
+like O
+right O
+now O
+in O
+new B-place-name
+york I-place-name
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+the O
+difference O
+between O
+the O
+rate O
+of O
+the O
+american B-currency-name
+dollar I-currency-name
+and O
+the O
+pound B-currency-name
+
+-DOCSTART- -X- -X- O
+
+increase O
+the O
+volume O
+to B-change-amount
+max I-change-amount
+please O
+
+-DOCSTART- -X- -X- O
+
+schedule O
+me O
+a O
+taxi B-transport-type
+for O
+after O
+my O
+thursday B-date
+meeting B-event-name
+
+-DOCSTART- -X- -X- O
+
+get O
+me O
+up O
+at O
+eight B-time
+am I-time
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+adjust O
+the O
+lighting O
+for O
+me O
+to O
+be O
+brighter O
+
+-DOCSTART- -X- -X- O
+
+need O
+a O
+taxi B-transport-type
+tomorrow B-date
+at O
+eight B-time
+in O
+the O
+morning B-timeofday
+
+-DOCSTART- -X- -X- O
+
+please O
+try O
+the O
+things O
+one O
+more O
+again O
+. O
+
+-DOCSTART- -X- -X- O
+
+what O
+'s O
+the O
+song O
+title O
+
+-DOCSTART- -X- -X- O
+
+tell O
+me O
+pizza B-food-type
+restaurants B-business-type
+close O
+by O
+
+-DOCSTART- -X- -X- O
+
+any O
+funny B-joke-type
+jokes O
+
+-DOCSTART- -X- -X- O
+
+set O
+reminder O
+for O
+tomorrow B-date
+for O
+this O
+item O
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+two O
+plus O
+four O
+
+-DOCSTART- -X- -X- O
+
+are O
+you O
+aware O
+this O
+joke O
+
+-DOCSTART- -X- -X- O
+
+may O
+i O
+ask O
+you O
+to O
+dim O
+the O
+lights O
+
+-DOCSTART- -X- -X- O
+
+did O
+i O
+get O
+any O
+replies O
+from O
+jan B-person
+
+-DOCSTART- -X- -X- O
+
+lights O
+off O
+bathroom B-house-place
+
+-DOCSTART- -X- -X- O
+
+get O
+latest O
+news O
+report O
+on O
+kidnapping B-news-topic
+in O
+ny B-place-name
+
+-DOCSTART- -X- -X- O
+
+add O
+meet O
+with O
+dave B-person
+at O
+subway B-business-name
+on O
+weber B-place-name
+on O
+four B-date
+april I-date
+at O
+five B-time
+pm I-time
+
+-DOCSTART- -X- -X- O
+
+i O
+do O
+n't O
+care O
+, O
+olly O
+. O
+
+-DOCSTART- -X- -X- O
+
+please O
+turn O
+off O
+the O
+smart B-device-type
+plug I-device-type
+socket I-device-type
+
+-DOCSTART- -X- -X- O
+
+what O
+time O
+is O
+it O
+in O
+mountain B-time-zone
+time O
+zone O
+
+-DOCSTART- -X- -X- O
+
+show O
+me O
+where O
+i O
+can O
+find O
+a O
+hamburger B-business-type
+
+-DOCSTART- -X- -X- O
+
+read O
+the O
+ticket O
+for O
+tesla O
+
+-DOCSTART- -X- -X- O
+
+find O
+me O
+a O
+good O
+wine B-business-type
+shop I-business-type
+that O
+stock O
+old O
+wines O
+like O
+older O
+than O
+ten O
+years O
+navigate O
+me O
+to O
+that O
+shop O
+
+-DOCSTART- -X- -X- O
+
+power O
+down O
+the O
+plug B-device-type
+socket I-device-type
+one I-device-type
+
+-DOCSTART- -X- -X- O
+
+open O
+tic B-game-name
+tac I-game-name
+toe I-game-name
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+play O
+my O
+music O
+file O
+
+-DOCSTART- -X- -X- O
+
+tell O
+me O
+about O
+mary B-person
+s. I-person
+
+-DOCSTART- -X- -X- O
+
+turn O
+up O
+the O
+lights O
+in O
+the O
+living B-house-place
+room I-house-place
+
+-DOCSTART- -X- -X- O
+
+please O
+go O
+to O
+the O
+next B-podcast-descriptor
+episode I-podcast-descriptor
+of O
+the O
+podcast O
+
+-DOCSTART- -X- -X- O
+
+Show O
+times O
+for O
+nearest O
+theater B-business-type
+
+-DOCSTART- -X- -X- O
+
+let O
+'s O
+roll B-game-name
+the I-game-name
+dice I-game-name
+
+-DOCSTART- -X- -X- O
+
+make O
+an O
+order O
+for O
+noodles B-food-type
+one O
+pack O
+make O
+it O
+as O
+takeaway B-order-type
+order O
+
+-DOCSTART- -X- -X- O
+
+remove O
+alarm O
+of O
+seven B-time
+thirty I-time
+am I-time
+on O
+monday B-date
+
+-DOCSTART- -X- -X- O
+
+at O
+what O
+time O
+have O
+you O
+set O
+alarm O
+for O
+me O
+
+-DOCSTART- -X- -X- O
+
+disable O
+smart B-device-type
+socket I-device-type
+
+-DOCSTART- -X- -X- O
+
+unmute O
+my O
+sound O
+
+-DOCSTART- -X- -X- O
+
+appreciated O
+, O
+that O
+is O
+great O
+job O
+. O
+
+-DOCSTART- -X- -X- O
+
+i O
+am O
+so O
+hungry O
+and O
+tired O
+and O
+i O
+think O
+i O
+might O
+order O
+some O
+food O
+now O
+
+-DOCSTART- -X- -X- O
+
+send O
+an O
+email O
+to O
+juanpedro@gmail B-email-address
+dot I-email-address
+com I-email-address
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+try O
+what O
+i O
+just O
+said O
+again O
+. O
+
+-DOCSTART- -X- -X- O
+
+i O
+am O
+sorry O
+but O
+this O
+was O
+not O
+the O
+correct O
+command O
+. O
+
+-DOCSTART- -X- -X- O
+
+i O
+appreciate O
+it O
+, O
+that O
+'s O
+amazing O
+. O
+
+-DOCSTART- -X- -X- O
+
+i O
+think O
+this O
+was O
+not O
+correct O
+. O
+
+-DOCSTART- -X- -X- O
+
+check O
+my O
+social B-media-type
+networks I-media-type
+
+-DOCSTART- -X- -X- O
+
+delete O
+that O
+item O
+from O
+my O
+list O
+
+-DOCSTART- -X- -X- O
+
+no O
+, O
+you O
+do O
+n't O
+get O
+what O
+i O
+just O
+requested O
+. O
+
+-DOCSTART- -X- -X- O
+
+hey O
+i O
+like O
+music O
+by O
+sigur B-artist-name
+ros I-artist-name
+
+-DOCSTART- -X- -X- O
+
+i O
+wanna O
+laugh O
+can O
+you O
+make O
+it O
+happen O
+
+-DOCSTART- -X- -X- O
+
+please O
+turn O
+off O
+kitchen B-house-place
+light O
+for O
+me O
+
+-DOCSTART- -X- -X- O
+
+is O
+there O
+any O
+construction O
+on O
+route B-place-name
+sixty I-place-name
+six I-place-name
+
+-DOCSTART- -X- -X- O
+
+made O
+media O
+volume O
+louder O
+
+-DOCSTART- -X- -X- O
+
+which O
+alarms O
+are O
+set O
+in O
+the O
+phone B-device-type
+
+-DOCSTART- -X- -X- O
+
+what O
+lists O
+available O
+
+-DOCSTART- -X- -X- O
+
+how O
+much O
+is O
+twenty O
+argentinian B-currency-name
+pesos I-currency-name
+in O
+pounds B-currency-name
+
+-DOCSTART- -X- -X- O
+
+i O
+want O
+to O
+know O
+the O
+procedure O
+of O
+making O
+thanksgiving B-food-type
+turkey I-food-type
+in O
+five O
+sentences O
+
+-DOCSTART- -X- -X- O
+
+set O
+meeting B-event-name
+with O
+the B-relation
+ceo I-relation
+tomorrow B-date
+
+-DOCSTART- -X- -X- O
+
+did O
+angelina B-person
+jolie I-person
+leave O
+brad B-person
+pitt I-person
+
+-DOCSTART- -X- -X- O
+
+does O
+peking B-business-name
+garden I-business-name
+deliver B-order-type
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+tell O
+me O
+what O
+movie O
+has O
+the O
+best O
+reviews O
+
+-DOCSTART- -X- -X- O
+
+yo O
+order O
+take O
+out O
+from O
+jason B-business-name
+'s I-business-name
+deli I-business-name
+on O
+sixth B-business-name
+ave I-business-name
+
+-DOCSTART- -X- -X- O
+
+how O
+is O
+this B-date
+weeks I-date
+weather O
+
+-DOCSTART- -X- -X- O
+
+how O
+is O
+a O
+typhoon B-definition-word
+defined O
+
+-DOCSTART- -X- -X- O
+
+please O
+resume B-player-setting
+my O
+music B-media-type
+
+-DOCSTART- -X- -X- O
+
+do O
+i O
+have O
+new O
+likes O
+
+-DOCSTART- -X- -X- O
+
+the O
+answer O
+is O
+confirmed O
+. O
+
+-DOCSTART- -X- -X- O
+
+remove O
+the O
+fundraiser B-event-name
+for I-event-name
+dolphines I-event-name
+in O
+april B-date
+
+-DOCSTART- -X- -X- O
+
+open O
+a O
+new O
+email O
+to O
+contact O
+
+-DOCSTART- -X- -X- O
+
+send O
+me O
+notice O
+of O
+meeting B-event-name
+wednesday B-date
+nine B-time
+am I-time
+
+-DOCSTART- -X- -X- O
+
+send O
+email O
+to O
+bill O
+asking O
+to O
+reschedule O
+
+-DOCSTART- -X- -X- O
+
+load O
+a O
+fun O
+game O
+that O
+i O
+can O
+play O
+with O
+you O
+
+-DOCSTART- -X- -X- O
+
+robot O
+vacuum O
+the O
+living B-house-place
+room I-house-place
+now O
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+speak O
+louder O
+
+-DOCSTART- -X- -X- O
+
+s2 O
+, O
+i O
+can O
+not O
+quite O
+catch O
+that O
+. O
+
+-DOCSTART- -X- -X- O
+
+tell O
+me O
+the O
+email O
+address O
+for O
+aunt B-person
+ruth I-person
+
+-DOCSTART- -X- -X- O
+
+have O
+i O
+gotten O
+any O
+emails O
+lately O
+
+-DOCSTART- -X- -X- O
+
+what O
+day O
+is O
+easter B-date
+
+-DOCSTART- -X- -X- O
+
+how O
+many O
+yen B-currency-name
+for O
+each O
+dollar B-currency-name
+
+-DOCSTART- -X- -X- O
+
+i O
+am O
+sorry O
+but O
+i O
+think O
+it O
+'s O
+not O
+the O
+right O
+command O
+. O
+
+-DOCSTART- -X- -X- O
+
+thank O
+you O
+for O
+doing O
+it O
+, O
+olly O
+. O
+
+-DOCSTART- -X- -X- O
+
+make O
+list O
+
+-DOCSTART- -X- -X- O
+
+does O
+n't O
+matter O
+with O
+me O
+, O
+olly O
+. O
+
+-DOCSTART- -X- -X- O
+
+which O
+route O
+has O
+less O
+traffic O
+today B-date
+
+-DOCSTART- -X- -X- O
+
+show O
+me O
+the O
+events O
+in O
+my O
+work B-event-name
+calendar O
+for O
+next B-date
+week I-date
+
+-DOCSTART- -X- -X- O
+
+speaker O
+volume O
+decrease O
+
+-DOCSTART- -X- -X- O
+
+what O
+s O
+online O
+
+-DOCSTART- -X- -X- O
+
+please O
+start O
+vacuum B-device-type
+cleaner I-device-type
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+the O
+temperature O
+i O
+am O
+supposed O
+to O
+cook O
+this O
+lasagna B-food-type
+at O
+
+-DOCSTART- -X- -X- O
+
+it O
+is O
+great O
+one O
+, O
+thank O
+you O
+. O
+
+-DOCSTART- -X- -X- O
+
+will O
+you O
+just O
+stop O
+please O
+. O
+
+-DOCSTART- -X- -X- O
+
+please O
+increase O
+the O
+volume O
+
+-DOCSTART- -X- -X- O
+
+I O
+'d O
+like O
+to O
+play O
+UNO B-game-name
+with O
+you O
+
+-DOCSTART- -X- -X- O
+
+delete O
+lunch B-meal-type
+tomorrow B-date
+
+-DOCSTART- -X- -X- O
+
+please O
+write O
+up O
+a O
+compliant O
+
+-DOCSTART- -X- -X- O
+
+tell O
+me O
+about O
+this O
+person O
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+brighten O
+the O
+lights O
+for O
+me O
+
+-DOCSTART- -X- -X- O
+
+please O
+play O
+the O
+newest O
+podcast O
+
+-DOCSTART- -X- -X- O
+
+i O
+am O
+busy O
+tomorrow B-date
+so O
+delete O
+all O
+calendar O
+events O
+
+-DOCSTART- -X- -X- O
+
+how O
+much O
+is O
+the O
+dollar B-currency-name
+verus O
+the O
+pound B-currency-name
+
+-DOCSTART- -X- -X- O
+
+is O
+adele B-artist-name
+going O
+to O
+go O
+on O
+tour O
+
+-DOCSTART- -X- -X- O
+
+confirm O
+last O
+thing O
+said O
+please O
+. O
+
+-DOCSTART- -X- -X- O
+
+please O
+post O
+this O
+picture O
+on O
+facebook B-media-type
+
+-DOCSTART- -X- -X- O
+
+turn O
+on O
+my O
+pandora B-app-name
+radio O
+
+-DOCSTART- -X- -X- O
+
+i O
+ca O
+n't O
+get O
+that O
+. O
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+book O
+me O
+a O
+train B-transport-type
+ticket O
+to O
+boston B-place-name
+for O
+next O
+tuesday B-date
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+the O
+forecast O
+
+-DOCSTART- -X- -X- O
+
+remove O
+all O
+the O
+events O
+in O
+my O
+calendar O
+
+-DOCSTART- -X- -X- O
+
+will O
+you O
+further O
+elaborate O
+me O
+on O
+it O
+please O
+. O
+
+-DOCSTART- -X- -X- O
+
+tell O
+me O
+the O
+recipe O
+to O
+cook O
+pav B-food-type
+bhaji I-food-type
+
+-DOCSTART- -X- -X- O
+
+where O
+is O
+a O
+good O
+place O
+to O
+eat O
+cheap O
+pakistani B-food-type
+food I-food-type
+
+-DOCSTART- -X- -X- O
+
+is O
+india B-news-topic
+win I-news-topic
+today I-news-topic
+cricket I-news-topic
+match I-news-topic
+
+-DOCSTART- -X- -X- O
+
+please O
+check O
+new O
+email O
+from O
+andy B-person
+
+-DOCSTART- -X- -X- O
+
+use O
+that O
+email O
+address O
+as O
+a O
+contact O
+
+-DOCSTART- -X- -X- O
+
+you O
+gave O
+me O
+not O
+correct O
+information O
+. O
+
+-DOCSTART- -X- -X- O
+
+how O
+are O
+stocks O
+for O
+google B-business-name
+
+-DOCSTART- -X- -X- O
+
+set O
+coffee B-device-type
+maker I-device-type
+to O
+start O
+at O
+three B-time
+
+-DOCSTART- -X- -X- O
+
+please O
+turn O
+on O
+wemo B-device-type
+socket I-device-type
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+tell O
+me O
+the O
+contact O
+information O
+of O
+jo O
+
+-DOCSTART- -X- -X- O
+
+the O
+command O
+was O
+confirmed O
+. O
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+the O
+current O
+weather O
+conditions O
+in O
+chicago B-place-name
+illinois I-place-name
+
+-DOCSTART- -X- -X- O
+
+turn O
+off O
+the O
+lights O
+in O
+this O
+room B-house-place
+please O
+
+-DOCSTART- -X- -X- O
+
+pull O
+up O
+peking B-business-name
+garden I-business-name
+online O
+
+-DOCSTART- -X- -X- O
+
+book O
+an O
+outstation O
+cab B-transport-type
+for O
+tomorrow B-date
+
+-DOCSTART- -X- -X- O
+
+i O
+want O
+to O
+start B-player-setting
+war B-audiobook-name
+and I-audiobook-name
+peace I-audiobook-name
+where B-player-setting
+i I-player-setting
+left I-player-setting
+off I-player-setting
+
+-DOCSTART- -X- -X- O
+
+what O
+song O
+am O
+i O
+listening O
+to O
+
+-DOCSTART- -X- -X- O
+
+delete O
+the O
+grocery B-list-name
+list O
+
+-DOCSTART- -X- -X- O
+
+play O
+rohan B-person
+sharma I-person
+podcast O
+for O
+me O
+
+-DOCSTART- -X- -X- O
+
+will O
+you O
+send O
+the O
+email O
+to O
+greg B-person
+
+-DOCSTART- -X- -X- O
+
+system O
+please O
+dim O
+lights O
+to O
+dull B-color-type
+blue I-color-type
+
+-DOCSTART- -X- -X- O
+
+shall O
+we O
+play O
+a O
+game O
+
+-DOCSTART- -X- -X- O
+
+open O
+temple B-game-name
+run I-game-name
+game O
+
+-DOCSTART- -X- -X- O
+
+what O
+'s O
+the O
+latest O
+on O
+stock B-news-topic
+market I-news-topic
+
+-DOCSTART- -X- -X- O
+
+i O
+want O
+you O
+just O
+cancel O
+it O
+. O
+
+-DOCSTART- -X- -X- O
+
+march B-date
+fifth I-date
+is O
+john B-person
+'s I-person
+birthday B-event-name
+please O
+place O
+this O
+on O
+the O
+calendar O
+
+-DOCSTART- -X- -X- O
+
+reply O
+to O
+john B-person
+'s I-person
+email O
+today B-date
+saying O
+i O
+will O
+be O
+late O
+
+-DOCSTART- -X- -X- O
+
+is O
+there O
+any O
+event O
+around O
+
+-DOCSTART- -X- -X- O
+
+turn O
+on O
+repeat B-player-setting
+
+-DOCSTART- -X- -X- O
+
+progress U-player-setting
+from O
+the O
+last O
+paused O
+point O
+of O
+my O
+audio B-media-type
+book I-media-type
+
+-DOCSTART- -X- -X- O
+
+what O
+are O
+the O
+next O
+three O
+alarms O
+set O
+to O
+go O
+off O
+
+-DOCSTART- -X- -X- O
+
+change O
+the O
+alarm O
+weekly O
+settings O
+
+-DOCSTART- -X- -X- O
+
+please O
+change O
+the O
+volume O
+low O
+of O
+the O
+speakers O
+
+-DOCSTART- -X- -X- O
+
+tell O
+the O
+latest O
+news O
+about O
+the O
+trump B-news-topic
+
+-DOCSTART- -X- -X- O
+
+i O
+would O
+like O
+to O
+listen O
+to O
+this O
+programme O
+on O
+radio O
+
+-DOCSTART- -X- -X- O
+
+what O
+day O
+of O
+the O
+month B-date
+is O
+next O
+tuesday B-date
+
+-DOCSTART- -X- -X- O
+
+please O
+play O
+program O
+on O
+xmtune B-radio-name
+
+-DOCSTART- -X- -X- O
+
+yeap O
+it O
+was O
+correct O
+. O
+
+-DOCSTART- -X- -X- O
+
+please O
+play O
+michael B-artist-name
+jackson I-artist-name
+album B-media-type
+
+-DOCSTART- -X- -X- O
+
+any O
+one O
+will O
+be O
+ok O
+with O
+me O
+, O
+olly O
+. O
+
+-DOCSTART- -X- -X- O
+
+how O
+long O
+should O
+i O
+simmer O
+rice B-food-type
+for O
+
+-DOCSTART- -X- -X- O
+
+tell O
+me O
+a O
+joke O
+about O
+dogs B-joke-type
+
+-DOCSTART- -X- -X- O
+
+add O
+sam@gmail B-email-address
+dot I-email-address
+com I-email-address
+to O
+my O
+contacts O
+list O
+
+-DOCSTART- -X- -X- O
+
+what O
+on O
+my O
+play O
+list O
+
+-DOCSTART- -X- -X- O
+
+i O
+love O
+that O
+song O
+who O
+sings O
+it O
+
+-DOCSTART- -X- -X- O
+
+are O
+there O
+any O
+emails O
+i O
+have O
+n't O
+read O
+yet O
+
+-DOCSTART- -X- -X- O
+
+anything O
+is O
+fine O
+. O
+
+-DOCSTART- -X- -X- O
+
+has O
+anyone O
+tagged O
+me O
+in O
+a O
+photo O
+on O
+facebook B-media-type
+
+-DOCSTART- -X- -X- O
+
+open O
+the O
+books O
+and O
+play O
+brains B-audiobook-name
+book I-audiobook-name
+from O
+chap O
+nine O
+
+-DOCSTART- -X- -X- O
+
+make O
+my O
+coffee O
+
+-DOCSTART- -X- -X- O
+
+want O
+to O
+play O
+a O
+game O
+
+-DOCSTART- -X- -X- O
+
+what O
+s O
+around O
+
+-DOCSTART- -X- -X- O
+
+send O
+email O
+to O
+marissa B-person
+
+-DOCSTART- -X- -X- O
+
+cancel O
+everything O
+on O
+my O
+calendar O
+
+-DOCSTART- -X- -X- O
+
+open O
+the O
+list O
+
+-DOCSTART- -X- -X- O
+
+yes O
+wonderful O
+response O
+. O
+
+-DOCSTART- -X- -X- O
+
+how O
+smooth O
+is O
+marble O
+floor O
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+save O
+this O
+song O
+to O
+my O
+favorites O
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+change O
+my O
+time O
+zone O
+from O
+central B-time-zone
+time O
+to O
+pacific B-time-zone
+
+-DOCSTART- -X- -X- O
+
+what O
+'s O
+the O
+news O
+from O
+source B-media-type
+
+-DOCSTART- -X- -X- O
+
+have O
+you O
+heard O
+any O
+good B-joke-type
+jokes O
+lately O
+
+-DOCSTART- -X- -X- O
+
+i O
+need O
+to O
+book O
+rajdhani O
+train B-transport-type
+ticket O
+from O
+mumbai B-place-name
+to I-place-name
+ahmedabad I-place-name
+
+-DOCSTART- -X- -X- O
+
+post O
+a O
+complaint O
+via O
+twitter B-media-type
+to O
+cvs B-business-name
+pharmacy I-business-name
+
+-DOCSTART- -X- -X- O
+
+i O
+need O
+a O
+good B-joke-type
+joke O
+
+-DOCSTART- -X- -X- O
+
+olly O
+shuffle B-player-setting
+playlist O
+
+-DOCSTART- -X- -X- O
+
+raise O
+the O
+volume O
+of O
+the O
+speakers O
+to B-change-amount
+fifty I-change-amount
+five I-change-amount
+percent I-change-amount
+
+-DOCSTART- -X- -X- O
+
+buy O
+me O
+a O
+ticket O
+to O
+take O
+the O
+train B-transport-type
+to O
+atlanta B-place-name
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+the O
+stock O
+price O
+for O
+lexmark B-business-name
+
+-DOCSTART- -X- -X- O
+
+siri O
+what O
+is O
+dollars B-currency-name
+in O
+yen B-currency-name
+
+-DOCSTART- -X- -X- O
+
+up O
+the O
+brightness O
+on O
+these O
+lights O
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+happening O
+in O
+town B-place-name
+tonight B-timeofday
+
+-DOCSTART- -X- -X- O
+
+am O
+i O
+busy O
+on O
+Wednesday B-date
+evening B-timeofday
+
+-DOCSTART- -X- -X- O
+
+i O
+like O
+this O
+song O
+that O
+is O
+playing O
+
+-DOCSTART- -X- -X- O
+
+grocery U-list-name
+list O
+add O
+eggs O
+
+-DOCSTART- -X- -X- O
+
+how O
+old O
+is O
+brad B-person
+pitt I-person
+
+-DOCSTART- -X- -X- O
+
+i O
+need O
+to O
+book O
+a O
+train B-transport-type
+for O
+tomorrow B-date
+to O
+go O
+to O
+new B-place-name
+york I-place-name
+
+-DOCSTART- -X- -X- O
+
+given O
+it O
+is O
+four B-time
+thirty I-time
+five I-time
+pm I-time
+in O
+london B-place-name
+what O
+time O
+is O
+it O
+in O
+melbourne B-place-name
+
+-DOCSTART- -X- -X- O
+
+post O
+this O
+pic O
+to O
+facebook B-media-type
+
+-DOCSTART- -X- -X- O
+
+olly O
+i O
+want O
+you O
+stop O
+. O
+
+-DOCSTART- -X- -X- O
+
+pull O
+up O
+the O
+complaint O
+website O
+for O
+starbucks B-business-name
+
+-DOCSTART- -X- -X- O
+
+give O
+me O
+instructions O
+on O
+how O
+to O
+cook O
+chicken B-food-type
+
+-DOCSTART- -X- -X- O
+
+would O
+you O
+elaborate O
+your O
+words O
+once O
+again O
+to O
+me O
+please O
+. O
+
+-DOCSTART- -X- -X- O
+
+could O
+you O
+please O
+confirm O
+what O
+i O
+just O
+said O
+. O
+
+-DOCSTART- -X- -X- O
+
+alarm O
+me O
+at O
+eight B-time
+am I-time
+
+-DOCSTART- -X- -X- O
+
+play O
+music O
+from O
+where O
+you O
+left O
+off O
+
+-DOCSTART- -X- -X- O
+
+show O
+me O
+my O
+latest O
+social O
+media O
+activity O
+
+-DOCSTART- -X- -X- O
+
+please O
+check O
+and O
+repeat O
+this O
+song O
+one O
+time O
+more O
+
+-DOCSTART- -X- -X- O
+
+yeap O
+right O
+response O
+. O
+
+-DOCSTART- -X- -X- O
+
+are O
+there O
+any O
+alarms O
+
+-DOCSTART- -X- -X- O
+
+play O
+the O
+twilight B-audiobook-name
+book O
+
+-DOCSTART- -X- -X- O
+
+give O
+me O
+today B-date
+'s I-date
+calendar O
+events O
+after B-time
+six I-time
+pm I-time
+
+-DOCSTART- -X- -X- O
+
+do O
+not O
+really O
+mind O
+for O
+whatever O
+, O
+olly O
+. O
+
+-DOCSTART- -X- -X- O
+
+please O
+play O
+next B-podcast-descriptor
+episode I-podcast-descriptor
+of O
+bbc B-podcast-name
+history I-podcast-name
+podcast O
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+the O
+exchange O
+rate O
+for O
+pounds B-currency-name
+and O
+u. B-currency-name
+s. I-currency-name
+d. I-currency-name
+
+-DOCSTART- -X- -X- O
+
+say O
+a O
+joke O
+
+-DOCSTART- -X- -X- O
+
+what O
+alarm O
+do O
+i O
+have O
+set O
+for O
+today B-date
+
+-DOCSTART- -X- -X- O
+
+please O
+put O
+me O
+your O
+input O
+to O
+know O
+my O
+schedule O
+
+-DOCSTART- -X- -X- O
+
+this O
+song O
+is O
+my O
+favourite O
+
+-DOCSTART- -X- -X- O
+
+light O
+up O
+the O
+lights O
+in O
+the O
+kitchen B-house-place
+
+-DOCSTART- -X- -X- O
+
+list O
+new O
+
+-DOCSTART- -X- -X- O
+
+get O
+me O
+some O
+food O
+
+-DOCSTART- -X- -X- O
+
+please O
+add O
+an O
+email O
+for O
+john B-person
+doe I-person
+to O
+my O
+contacts O
+johndoe@yahoo B-email-address
+dot I-email-address
+com I-email-address
+
+-DOCSTART- -X- -X- O
+
+best O
+ticket O
+price O
+air O
+plane O
+to O
+chester B-place-name
+on O
+the O
+twenty B-date
+first I-date
+
+-DOCSTART- -X- -X- O
+
+i O
+would O
+like O
+a O
+coffee O
+now O
+
+-DOCSTART- -X- -X- O
+
+post O
+this O
+to O
+my O
+facebook B-media-type
+lol O
+
+-DOCSTART- -X- -X- O
+
+will O
+you O
+put O
+on O
+the O
+music O
+
+-DOCSTART- -X- -X- O
+
+what O
+'s O
+the O
+meaning O
+of O
+rumplestiltskin B-definition-word
+
+-DOCSTART- -X- -X- O
+
+is O
+the O
+exchange O
+rate O
+changed O
+from O
+yesterday B-date
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+the O
+time O
+of O
+the O
+morning B-timeofday
+train B-transport-type
+headed O
+to O
+chicago B-place-name
+
+-DOCSTART- -X- -X- O
+
+please O
+explain O
+me O
+more O
+on O
+what O
+you O
+'ve O
+just O
+said O
+. O
+
+-DOCSTART- -X- -X- O
+
+how O
+many O
+people O
+are O
+following O
+me O
+on O
+twitter B-media-type
+now O
+
+-DOCSTART- -X- -X- O
+
+cancel O
+my O
+birthday B-event-name
+party I-event-name
+
+-DOCSTART- -X- -X- O
+
+delete O
+this O
+item O
+
+-DOCSTART- -X- -X- O
+
+find O
+a O
+taxi B-transport-type
+for O
+me O
+
+-DOCSTART- -X- -X- O
+
+remove O
+all O
+upcoming O
+events O
+please O
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+book O
+me O
+a O
+train B-transport-type
+ticket O
+to O
+bombay B-place-name
+for O
+tomorrow B-date
+in O
+any O
+train O
+
+-DOCSTART- -X- -X- O
+
+what O
+day O
+today B-date
+
+-DOCSTART- -X- -X- O
+
+recommend O
+a O
+local O
+steak B-food-type
+restaurant B-business-type
+
+-DOCSTART- -X- -X- O
+
+i O
+do O
+n't O
+really O
+mind O
+for O
+whatever O
+. O
+
+-DOCSTART- -X- -X- O
+
+movies O
+with O
+good O
+rotten O
+tomato O
+ratings O
+
+-DOCSTART- -X- -X- O
+
+it O
+is O
+nine B-time
+here O
+what O
+time O
+is O
+it O
+in O
+california B-place-name
+
+-DOCSTART- -X- -X- O
+
+really O
+i O
+do O
+n't O
+mind O
+, O
+olly O
+. O
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+please O
+stop O
+speaking O
+
+-DOCSTART- -X- -X- O
+
+send O
+an O
+email O
+and O
+save O
+the O
+contact O
+information O
+for O
+samuelwaters@hotmail B-email-address
+dot I-email-address
+com I-email-address
+
+-DOCSTART- -X- -X- O
+
+what O
+'s O
+the O
+news O
+in O
+politics B-news-topic
+on O
+cnn B-media-type
+
+-DOCSTART- -X- -X- O
+
+deadpool U-movie-name
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+apple B-business-name
+'s I-business-name
+stock O
+price O
+
+-DOCSTART- -X- -X- O
+
+local O
+theater B-business-type
+screening O
+which O
+movie B-event-name
+
+-DOCSTART- -X- -X- O
+
+activate O
+coffee B-device-type
+machine I-device-type
+
+-DOCSTART- -X- -X- O
+
+switch O
+on O
+the O
+wemo B-device-type
+plug I-device-type
+
+-DOCSTART- -X- -X- O
+
+find O
+me O
+my O
+dad B-relation
+'s I-relation
+email O
+address O
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+remind O
+me O
+about O
+the O
+gym B-event-name
+class I-event-name
+in B-time
+two I-time
+hours I-time
+
+-DOCSTART- -X- -X- O
+
+erase O
+my O
+whole O
+calendar O
+
+-DOCSTART- -X- -X- O
+
+use O
+facebook B-media-type
+to O
+post O
+
+-DOCSTART- -X- -X- O
+
+did O
+you O
+get O
+it O
+correctly O
+? O
+
+-DOCSTART- -X- -X- O
+
+yeap O
+great O
+response O
+. O
+
+-DOCSTART- -X- -X- O
+
+check O
+the O
+status O
+of O
+my O
+pizza B-business-name
+hut I-business-name
+order O
+please O
+
+-DOCSTART- -X- -X- O
+
+who O
+was O
+the O
+first O
+president O
+of O
+united B-place-name
+states I-place-name
+
+-DOCSTART- -X- -X- O
+
+i O
+d O
+like O
+to O
+know O
+if O
+there O
+are O
+any O
+accidents B-event-name
+on O
+the O
+route O
+that O
+i O
+am O
+taking O
+
+-DOCSTART- -X- -X- O
+
+do O
+i O
+have O
+anything O
+lists O
+made O
+for O
+christmas B-list-name
+shopping I-list-name
+
+-DOCSTART- -X- -X- O
+
+add O
+coffee B-drink-type
+to O
+the O
+grocery B-list-name
+list O
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+remind O
+my O
+next O
+meeting B-event-name
+with O
+my O
+boss B-relation
+one B-time
+hour I-time
+before O
+it O
+will O
+happen O
+
+-DOCSTART- -X- -X- O
+
+increase O
+light O
+intensity O
+
+-DOCSTART- -X- -X- O
+
+resume U-player-setting
+mind B-audiobook-name
+reading I-audiobook-name
+book I-audiobook-name
+
+-DOCSTART- -X- -X- O
+
+create O
+a O
+new O
+list O
+for O
+school B-list-name
+supplies I-list-name
+
+-DOCSTART- -X- -X- O
+
+you O
+have O
+done O
+it O
+correcly O
+. O
+
+-DOCSTART- -X- -X- O
+
+does O
+the O
+nearby O
+chinese B-food-type
+restaurant B-business-type
+do O
+delivery B-order-type
+
+-DOCSTART- -X- -X- O
+
+yeah O
+you O
+get O
+it O
+perfectly O
+. O
+
+-DOCSTART- -X- -X- O
+
+bring O
+the O
+lights O
+down O
+a B-change-amount
+bit I-change-amount
+
+-DOCSTART- -X- -X- O
+
+turn O
+lights O
+blue B-color-type
+
+-DOCSTART- -X- -X- O
+
+how O
+many O
+dollars B-currency-name
+are O
+there O
+in O
+a O
+g. B-currency-name
+b. I-currency-name
+p. I-currency-name
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+happening O
+in O
+the O
+world B-place-name
+today B-date
+
+-DOCSTART- -X- -X- O
+
+i O
+do O
+n't O
+need O
+the O
+shopping B-list-name
+list O
+delete O
+it O
+
+-DOCSTART- -X- -X- O
+
+who O
+'s O
+emailed O
+me O
+recently O
+
+-DOCSTART- -X- -X- O
+
+add O
+erosser@hotmail B-email-address
+dot I-email-address
+com I-email-address
+as O
+a O
+new O
+contact O
+for O
+emily B-person
+rosser I-person
+
+-DOCSTART- -X- -X- O
+
+what O
+'s O
+the O
+alarm O
+situation O
+for O
+tomorrow B-date
+
+-DOCSTART- -X- -X- O
+
+it O
+'s O
+helpful O
+, O
+thank O
+you O
+. O
+
+-DOCSTART- -X- -X- O
+
+show O
+me O
+events O
+in O
+sacramento B-place-name
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+take O
+a O
+role O
+of O
+enemy O
+in O
+the O
+game O
+of O
+coc B-game-name
+
+-DOCSTART- -X- -X- O
+
+anything O
+is O
+okay O
+for O
+me O
+. O
+
+-DOCSTART- -X- -X- O
+
+please O
+go O
+to O
+settings O
+of O
+the O
+music B-device-type
+player I-device-type
+and O
+make O
+the O
+equalizer B-device-type
+in O
+the O
+flat B-player-setting
+sound I-player-setting
+mode I-player-setting
+
+-DOCSTART- -X- -X- O
+
+please O
+will O
+you O
+check O
+and O
+confirm O
+what O
+i O
+just O
+said O
+. O
+
+-DOCSTART- -X- -X- O
+
+remove O
+mike B-person
+stein I-person
+from O
+contacts O
+list O
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+google O
+
+-DOCSTART- -X- -X- O
+
+please O
+delete O
+all O
+meeting B-event-name
+after B-time
+seven I-time
+am I-time
+
+-DOCSTART- -X- -X- O
+
+how O
+do O
+you O
+like O
+being O
+my O
+assistant O
+
+-DOCSTART- -X- -X- O
+
+do O
+you O
+know O
+how O
+to O
+cook O
+risotto B-food-type
+
+-DOCSTART- -X- -X- O
+
+rowan B-person
+atkinson I-person
+info O
+
+-DOCSTART- -X- -X- O
+
+can O
+the O
+lights O
+be O
+changed O
+to O
+green B-color-type
+
+-DOCSTART- -X- -X- O
+
+get O
+the O
+cleaning O
+on O
+
+-DOCSTART- -X- -X- O
+
+how O
+many O
+pesos B-currency-name
+can O
+i O
+get O
+for O
+a O
+dollar B-currency-name
+right O
+now O
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+the O
+name O
+of O
+this O
+musical O
+group O
+
+-DOCSTART- -X- -X- O
+
+please O
+clarify O
+once O
+again O
+. O
+
+-DOCSTART- -X- -X- O
+
+what O
+does O
+i O
+seventy B-place-name
+five I-place-name
+look O
+like O
+
+-DOCSTART- -X- -X- O
+
+near O
+by O
+grocery B-business-type
+
+-DOCSTART- -X- -X- O
+
+what O
+playlist O
+is O
+on O
+shuffle B-player-setting
+
+-DOCSTART- -X- -X- O
+
+tell O
+me O
+my O
+alarms O
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+the O
+current O
+stock O
+price O
+of O
+rolls B-business-name
+royce I-business-name
+
+-DOCSTART- -X- -X- O
+
+i O
+think O
+it O
+'s O
+not O
+the O
+correct O
+answer O
+. O
+
+-DOCSTART- -X- -X- O
+
+i O
+want O
+to O
+hear O
+the O
+radio O
+
+-DOCSTART- -X- -X- O
+
+what O
+music O
+is O
+playing O
+right O
+now O
+
+-DOCSTART- -X- -X- O
+
+robot O
+do O
+the O
+whole B-house-place
+house I-house-place
+now O
+
+-DOCSTART- -X- -X- O
+
+this O
+song O
+is O
+amazing O
+is O
+not O
+it O
+
+-DOCSTART- -X- -X- O
+
+i O
+would O
+like O
+to O
+place O
+a O
+call O
+to O
+amazon B-business-name
+customer I-business-name
+service I-business-name
+
+-DOCSTART- -X- -X- O
+
+who O
+was O
+john B-person
+dillinger I-person
+
+-DOCSTART- -X- -X- O
+
+what O
+s O
+a O
+good O
+place O
+to O
+eat O
+around O
+midtown B-place-name
+new I-place-name
+york I-place-name
+
+-DOCSTART- -X- -X- O
+
+are O
+there O
+any O
+good O
+movies O
+running O
+in O
+nearby O
+theaters B-business-type
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+tom B-person
+'s I-person
+phone B-personal-info
+number I-personal-info
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+search O
+trump B-news-topic
+
+-DOCSTART- -X- -X- O
+
+make O
+a O
+coffee O
+please O
+
+-DOCSTART- -X- -X- O
+
+add O
+grocery O
+to O
+list O
+
+-DOCSTART- -X- -X- O
+
+is O
+trump B-person
+tweeting B-media-type
+today B-date
+
+-DOCSTART- -X- -X- O
+
+how O
+much O
+does O
+the O
+fb B-business-name
+stock O
+cost O
+
+-DOCSTART- -X- -X- O
+
+train U-transport-type
+times O
+to O
+new B-place-name
+york I-place-name
+
+-DOCSTART- -X- -X- O
+
+how O
+bad O
+is O
+the O
+traffic O
+on O
+sunset B-place-name
+boulevard I-place-name
+
+-DOCSTART- -X- -X- O
+
+find O
+gluten B-business-type
+free I-business-type
+bakery I-business-type
+near O
+me O
+
+-DOCSTART- -X- -X- O
+
+start O
+vacuum B-device-type
+
+-DOCSTART- -X- -X- O
+
+what O
+time O
+is O
+it O
+in O
+singapore B-place-name
+
+-DOCSTART- -X- -X- O
+
+set O
+alarm O
+for O
+eight B-time
+am I-time
+
+-DOCSTART- -X- -X- O
+
+tell O
+me O
+movies O
+playing O
+in O
+oceanside B-place-name
+tonight B-timeofday
+
+-DOCSTART- -X- -X- O
+
+remove O
+a O
+list O
+please O
+
+-DOCSTART- -X- -X- O
+
+is O
+a O
+peso B-currency-name
+worth O
+more O
+than O
+a O
+dollar B-currency-name
+
+-DOCSTART- -X- -X- O
+
+remove O
+the O
+alarm O
+set O
+for O
+ten B-time
+pm I-time
+
+-DOCSTART- -X- -X- O
+
+i O
+do O
+n't O
+think O
+that O
+s O
+right O
+. O
+
+-DOCSTART- -X- -X- O
+
+give O
+me O
+the O
+time O
+in O
+pst B-time-zone
+
+-DOCSTART- -X- -X- O
+
+please O
+play O
+only O
+sad B-music-descriptor
+song O
+in O
+music B-device-type
+player I-device-type
+
+-DOCSTART- -X- -X- O
+
+please O
+tell O
+kmart B-person
+they O
+sent O
+the O
+wrong O
+item O
+
+-DOCSTART- -X- -X- O
+
+hockey U-event-name
+
+-DOCSTART- -X- -X- O
+
+i O
+want O
+to O
+hear O
+chopin B-artist-name
+now O
+
+-DOCSTART- -X- -X- O
+
+olly O
+i O
+want O
+you O
+cancel O
+it O
+. O
+
+-DOCSTART- -X- -X- O
+
+do O
+i O
+have O
+alarms O
+set O
+for O
+today B-date
+
+-DOCSTART- -X- -X- O
+
+search O
+for O
+any O
+upcoming O
+book B-event-name
+fairs I-event-name
+during O
+next B-date
+week I-date
+in O
+washington B-place-name
+dc I-place-name
+
+-DOCSTART- -X- -X- O
+
+shut O
+up O
+
+-DOCSTART- -X- -X- O
+
+remove O
+the O
+alarm O
+set O
+for O
+four B-time
+hundred I-time
+am I-time
+
+-DOCSTART- -X- -X- O
+
+please O
+could O
+you O
+try O
+what O
+you O
+'ve O
+said O
+once O
+more O
+. O
+
+-DOCSTART- -X- -X- O
+
+latest O
+event O
+in O
+new B-place-name
+york I-place-name
+city O
+
+-DOCSTART- -X- -X- O
+
+would O
+you O
+again O
+clarify O
+me O
+on O
+it O
+. O
+
+-DOCSTART- -X- -X- O
+
+display O
+address B-personal-info
+of O
+john B-person
+
+-DOCSTART- -X- -X- O
+
+turn O
+off O
+the O
+lights O
+please O
+
+-DOCSTART- -X- -X- O
+
+i O
+would O
+like O
+you O
+to O
+check O
+and O
+confirm O
+detail O
+please O
+. O
+
+-DOCSTART- -X- -X- O
+
+this O
+is O
+too O
+bright O
+
+-DOCSTART- -X- -X- O
+
+please O
+check O
+my O
+playlists O
+for O
+jazz B-music-genre
+music O
+
+-DOCSTART- -X- -X- O
+
+turn O
+off O
+bedroom B-house-place
+lights O
+in B-time
+ten I-time
+seconds I-time
+
+-DOCSTART- -X- -X- O
+
+how O
+many O
+likes O
+did O
+i O
+get O
+today B-date
+
+-DOCSTART- -X- -X- O
+
+what O
+are O
+the O
+top O
+stories O
+on O
+cnn B-media-type
+
+-DOCSTART- -X- -X- O
+
+two B-time
+pm I-time
+set O
+
+-DOCSTART- -X- -X- O
+
+what O
+are O
+my O
+favorite O
+types O
+of O
+music O
+
+-DOCSTART- -X- -X- O
+
+do O
+i O
+have O
+any O
+alarms O
+set O
+for O
+six B-time
+am I-time
+tomorrow B-date
+
+-DOCSTART- -X- -X- O
+
+how O
+much O
+is O
+an O
+euro B-currency-name
+worth O
+
+-DOCSTART- -X- -X- O
+
+please O
+play O
+this O
+playback O
+on O
+audiobook B-media-type
+
+-DOCSTART- -X- -X- O
+
+play O
+chopin B-artist-name
+
+-DOCSTART- -X- -X- O
+
+play O
+station B-radio-name
+gx I-radio-name
+in O
+the O
+radio O
+
+-DOCSTART- -X- -X- O
+
+when O
+is O
+my O
+food O
+going O
+to O
+be O
+here O
+
+-DOCSTART- -X- -X- O
+
+did O
+paul B-person
+email O
+me O
+recently O
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+the O
+answer O
+to O
+that O
+question O
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+six O
+times O
+sixty O
+eight O
+
+-DOCSTART- -X- -X- O
+
+is O
+there O
+room O
+on O
+my O
+grocery B-list-name
+list O
+for O
+an O
+extra O
+item O
+
+-DOCSTART- -X- -X- O
+
+adjust O
+the O
+light O
+option O
+
+-DOCSTART- -X- -X- O
+
+i O
+'d O
+like O
+you O
+to O
+turn O
+turn O
+on O
+the O
+tv O
+
+-DOCSTART- -X- -X- O
+
+show O
+me O
+what O
+the O
+ingredients O
+are O
+
+-DOCSTART- -X- -X- O
+
+tell O
+me O
+a O
+joke O
+about O
+birds B-joke-type
+
+-DOCSTART- -X- -X- O
+
+play O
+the O
+song O
+for O
+me O
+
+-DOCSTART- -X- -X- O
+
+i O
+want O
+to O
+listen O
+to O
+treasure B-audiobook-name
+island I-audiobook-name
+by O
+robert B-audiobook-author
+louis I-audiobook-author
+stevenson I-audiobook-author
+
+-DOCSTART- -X- -X- O
+
+define O
+swerving B-definition-word
+
+-DOCSTART- -X- -X- O
+
+i O
+like O
+this O
+song O
+
+-DOCSTART- -X- -X- O
+
+play O
+the O
+health O
+show O
+on O
+the O
+television B-device-type
+in O
+the O
+living B-house-place
+room I-house-place
+
+-DOCSTART- -X- -X- O
+
+pull O
+up O
+all O
+emails O
+sent O
+to O
+me O
+from O
+amazon B-business-name
+
+-DOCSTART- -X- -X- O
+
+what O
+'s O
+the O
+news O
+in O
+politics B-news-topic
+
+-DOCSTART- -X- -X- O
+
+are O
+there O
+any O
+trips O
+to O
+location O
+a O
+provided O
+by O
+the O
+train B-transport-type
+
+-DOCSTART- -X- -X- O
+
+train U-transport-type
+ticket O
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+the O
+weather O
+update O
+for O
+tuesday B-date
+
+-DOCSTART- -X- -X- O
+
+olly O
+i O
+want O
+you O
+just O
+stop O
+it O
+. O
+
+-DOCSTART- -X- -X- O
+
+hey O
+tell O
+me O
+a O
+knock B-joke-type
+knock I-joke-type
+joke O
+
+-DOCSTART- -X- -X- O
+
+hey O
+check O
+emails O
+
+-DOCSTART- -X- -X- O
+
+can O
+i O
+get O
+delivery B-order-type
+from O
+this O
+restaurant B-business-type
+
+-DOCSTART- -X- -X- O
+
+yes O
+exact O
+response O
+. O
+
+-DOCSTART- -X- -X- O
+
+read O
+that O
+back O
+
+-DOCSTART- -X- -X- O
+
+please O
+find O
+a O
+contact O
+number B-personal-info
+of O
+jayesh B-person
+and O
+tell O
+me O
+
+-DOCSTART- -X- -X- O
+
+time O
+to O
+hear O
+me O
+some O
+blake B-artist-name
+shelton I-artist-name
+
+-DOCSTART- -X- -X- O
+
+what O
+are O
+the O
+big O
+news O
+stories O
+on O
+twitter B-media-type
+
+-DOCSTART- -X- -X- O
+
+this O
+was O
+not O
+correct O
+command O
+. O
+
+-DOCSTART- -X- -X- O
+
+olly O
+please O
+could O
+you O
+just O
+cancel O
+. O
+
+-DOCSTART- -X- -X- O
+
+initiate O
+vacuum B-device-type
+cleaner I-device-type
+
+-DOCSTART- -X- -X- O
+
+how O
+many O
+likes O
+i O
+have O
+got O
+on O
+my O
+eggless O
+cake O
+post O
+on O
+youtube B-media-type
+
+-DOCSTART- -X- -X- O
+
+what O
+does O
+obsessed B-definition-word
+mean O
+
+-DOCSTART- -X- -X- O
+
+pause U-player-setting
+the O
+audiobook B-media-type
+
+-DOCSTART- -X- -X- O
+
+create O
+event O
+with O
+alarm O
+for O
+meeting B-event-name
+in O
+two B-time
+hours I-time
+
+-DOCSTART- -X- -X- O
+
+switch O
+the O
+lights O
+off O
+
+-DOCSTART- -X- -X- O
+
+latest O
+news O
+update O
+
+-DOCSTART- -X- -X- O
+
+nope O
+, O
+i O
+did O
+n't O
+say O
+this O
+. O
+
+-DOCSTART- -X- -X- O
+
+what O
+'s O
+jesse B-person
+'s I-person
+number B-personal-info
+
+-DOCSTART- -X- -X- O
+
+what O
+'s O
+the O
+temperature B-weather-descriptor
+
+-DOCSTART- -X- -X- O
+
+disable U-player-setting
+shuffle B-player-setting
+
+-DOCSTART- -X- -X- O
+
+i O
+want O
+to O
+hear O
+this O
+podcast O
+
+-DOCSTART- -X- -X- O
+
+what O
+s O
+the O
+definition O
+of O
+indignation B-definition-word
+
+-DOCSTART- -X- -X- O
+
+switch O
+off O
+light O
+
+-DOCSTART- -X- -X- O
+
+review O
+set O
+alarms O
+
+-DOCSTART- -X- -X- O
+
+let O
+us O
+play O
+millionaires B-game-name
+
+-DOCSTART- -X- -X- O
+
+tell O
+me O
+the O
+date O
+when O
+this O
+song O
+was O
+recorded O
+
+-DOCSTART- -X- -X- O
+
+book O
+a O
+train B-transport-type
+ticket O
+for O
+tomorrow B-date
+going O
+to O
+new B-place-name
+york I-place-name
+
+-DOCSTART- -X- -X- O
+
+give O
+me O
+the O
+list O
+of O
+all O
+events O
+coming O
+up O
+in O
+the O
+next B-date
+month I-date
+and O
+set O
+notifications O
+for O
+all O
+of O
+them O
+
+-DOCSTART- -X- -X- O
+
+olly O
+cancel O
+yoga O
+alarms O
+
+-DOCSTART- -X- -X- O
+
+check O
+my O
+list O
+
+-DOCSTART- -X- -X- O
+
+set O
+the O
+living B-house-place
+room I-house-place
+lights O
+to O
+red B-color-type
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+photosynthesis B-definition-word
+
+-DOCSTART- -X- -X- O
+
+olly O
+stop O
+please O
+. O
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+shut O
+up O
+. O
+
+-DOCSTART- -X- -X- O
+
+check O
+my O
+email O
+messages O
+
+-DOCSTART- -X- -X- O
+
+please O
+set O
+alarm O
+for O
+
+-DOCSTART- -X- -X- O
+
+exchanges O
+rates O
+any O
+problems O
+
+-DOCSTART- -X- -X- O
+
+could O
+you O
+please O
+shut O
+down O
+. O
+
+-DOCSTART- -X- -X- O
+
+lower O
+lights O
+
+-DOCSTART- -X- -X- O
+
+power O
+up O
+the O
+vacuum B-device-type
+
+-DOCSTART- -X- -X- O
+
+please O
+find O
+all O
+name O
+start O
+with O
+alphabetic O
+of O
+a O
+and O
+create O
+a O
+list O
+
+-DOCSTART- -X- -X- O
+
+place O
+a O
+takeaway B-order-type
+order O
+for O
+a O
+cheeseburger B-food-type
+and I-food-type
+fries I-food-type
+from O
+burger B-business-name
+king I-business-name
+
+-DOCSTART- -X- -X- O
+
+that O
+does O
+not O
+really O
+matter O
+with O
+me O
+, O
+olly O
+. O
+
+-DOCSTART- -X- -X- O
+
+uhh O
+no O
+, O
+i O
+think O
+you O
+'ve O
+done O
+this O
+incorrectly O
+. O
+
+-DOCSTART- -X- -X- O
+
+please O
+play O
+my O
+cricket B-game-name
+game O
+
+-DOCSTART- -X- -X- O
+
+look O
+up O
+the O
+number O
+of O
+people O
+living O
+in O
+miami B-place-name
+florida I-place-name
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+on O
+my O
+playlist O
+of O
+movies O
+on O
+the O
+the O
+dvr O
+
+-DOCSTART- -X- -X- O
+
+top O
+news O
+
+-DOCSTART- -X- -X- O
+
+you O
+'ve O
+done O
+that O
+correctly O
+thanks O
+. O
+
+-DOCSTART- -X- -X- O
+
+please O
+check O
+my O
+last O
+question O
+. O
+
+-DOCSTART- -X- -X- O
+
+send O
+an O
+email O
+to O
+my O
+brother B-relation
+and O
+say O
+wedding B-event-name
+anniversary I-event-name
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+the O
+traffic O
+like O
+
+-DOCSTART- -X- -X- O
+
+buy O
+me O
+a O
+ticket O
+to O
+boston B-place-name
+
+-DOCSTART- -X- -X- O
+
+i O
+need O
+all O
+the O
+local O
+events O
+for O
+this B-place-name
+area I-place-name
+that O
+are O
+being O
+held O
+this B-time
+weekend I-time
+
+-DOCSTART- -X- -X- O
+
+why O
+does O
+tom B-person
+izzo I-person
+look O
+like O
+a O
+whiny O
+bitch O
+when O
+his O
+team O
+plays O
+
+-DOCSTART- -X- -X- O
+
+this O
+is O
+unimportant O
+. O
+
+-DOCSTART- -X- -X- O
+
+remove O
+birthday B-event-name
+party I-event-name
+
+-DOCSTART- -X- -X- O
+
+what O
+temperature O
+do O
+you O
+bake B-cooking-type
+a O
+potato B-ingredient
+
+-DOCSTART- -X- -X- O
+
+please O
+add O
+smurfette@gmail B-email-address
+dot I-email-address
+com I-email-address
+to O
+my O
+email O
+contacts O
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+the O
+factorial O
+of O
+x O
+
+-DOCSTART- -X- -X- O
+
+cancel O
+meeting B-event-name
+at O
+three B-time
+
+-DOCSTART- -X- -X- O
+
+turn O
+on O
+the O
+wemo B-device-type
+plug I-device-type
+
+-DOCSTART- -X- -X- O
+
+what O
+events O
+are O
+happening O
+today B-date
+
+-DOCSTART- -X- -X- O
+
+tell O
+me O
+how O
+to O
+cook O
+meatballs B-food-type
+
+-DOCSTART- -X- -X- O
+
+can O
+I O
+get O
+the O
+recipe O
+for O
+chocolate B-food-type
+brownies I-food-type
+
+-DOCSTART- -X- -X- O
+
+please O
+send O
+a O
+complaint O
+to O
+someone B-business-name
+
+-DOCSTART- -X- -X- O
+
+this O
+is O
+unimportant O
+with O
+me O
+, O
+olly O
+. O
+
+-DOCSTART- -X- -X- O
+
+turn O
+on O
+wemo B-device-type
+plug I-device-type
+in O
+game B-house-place
+room I-house-place
+
+-DOCSTART- -X- -X- O
+
+i O
+think O
+you O
+did O
+the O
+task O
+incorrectly O
+. O
+
+-DOCSTART- -X- -X- O
+
+get O
+me O
+up O
+in O
+half B-time
+an I-time
+hour I-time
+
+-DOCSTART- -X- -X- O
+
+play O
+my O
+book O
+
+-DOCSTART- -X- -X- O
+
+will O
+you O
+say O
+what O
+you O
+have O
+just O
+said O
+once O
+more O
+please O
+. O
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+recommend O
+a O
+cheap O
+restaurant B-business-type
+in O
+this O
+area O
+
+-DOCSTART- -X- -X- O
+
+would O
+you O
+repeat O
+the O
+last O
+please O
+. O
+
+-DOCSTART- -X- -X- O
+
+show O
+me O
+my O
+husbands B-relation
+facebook B-media-type
+posts O
+today B-date
+
+-DOCSTART- -X- -X- O
+
+lets O
+listen O
+to O
+hunt B-audiobook-name
+for I-audiobook-name
+read I-audiobook-name
+october I-audiobook-name
+
+-DOCSTART- -X- -X- O
+
+please O
+turn O
+off O
+the O
+plug B-device-type
+socket I-device-type
+of O
+my O
+phone B-device-type
+when O
+it O
+'ll O
+be O
+charged O
+
+-DOCSTART- -X- -X- O
+
+set O
+an O
+alarm O
+for O
+me O
+at O
+eight B-time
+am I-time
+
+-DOCSTART- -X- -X- O
+
+yeah O
+great O
+response O
+to O
+command O
+. O
+
+-DOCSTART- -X- -X- O
+
+give O
+me O
+the O
+idea O
+of O
+current O
+traffic O
+condition O
+
+-DOCSTART- -X- -X- O
+
+map O
+out O
+a O
+route O
+from O
+here O
+to O
+abita B-place-name
+brew I-place-name
+pub I-place-name
+
+-DOCSTART- -X- -X- O
+
+please O
+play O
+podcasts O
+on O
+science B-podcast-name
+
+-DOCSTART- -X- -X- O
+
+activate O
+the O
+vacuum B-device-type
+cleaner I-device-type
+and O
+use O
+it O
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+twenty O
+four O
+times O
+six O
+
+-DOCSTART- -X- -X- O
+
+turn O
+sound O
+off O
+
+-DOCSTART- -X- -X- O
+
+would O
+you O
+try O
+the O
+last O
+one O
+spoken O
+one O
+more O
+time O
+again O
+please O
+. O
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+the O
+correct O
+time O
+
+-DOCSTART- -X- -X- O
+
+would O
+you O
+go O
+check O
+my O
+emails O
+for O
+me O
+
+-DOCSTART- -X- -X- O
+
+turn O
+off O
+the O
+lamp B-device-type
+socket I-device-type
+
+-DOCSTART- -X- -X- O
+
+set O
+my O
+coffee B-device-type
+machine I-device-type
+
+-DOCSTART- -X- -X- O
+
+turn O
+off O
+the O
+six B-time
+am I-time
+alarm O
+for O
+Wednesday B-date
+
+-DOCSTART- -X- -X- O
+
+remind O
+me O
+later O
+
+-DOCSTART- -X- -X- O
+
+erase O
+my O
+next O
+calendar O
+event O
+
+-DOCSTART- -X- -X- O
+
+please O
+find O
+out O
+the O
+share O
+price O
+of O
+i. B-business-name
+b. I-business-name
+m. I-business-name
+in O
+nasdaq O
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+telekenesis B-definition-word
+
+-DOCSTART- -X- -X- O
+
+oops O
+, O
+you O
+'re O
+wrong O
+. O
+
+-DOCSTART- -X- -X- O
+
+what O
+bands O
+are O
+playing O
+close O
+by O
+
+-DOCSTART- -X- -X- O
+
+reply O
+to O
+the O
+mail O
+with O
+the O
+following O
+content O
+hello O
+you O
+
+-DOCSTART- -X- -X- O
+
+i O
+am O
+sorry O
+but O
+you O
+did O
+not O
+interpret O
+command O
+right O
+. O
+
+-DOCSTART- -X- -X- O
+
+s1 O
+, O
+would O
+you O
+please O
+further O
+clarify O
+me O
+on O
+your O
+answers O
+. O
+
+-DOCSTART- -X- -X- O
+
+brighten O
+the O
+lights O
+please O
+
+-DOCSTART- -X- -X- O
+
+play O
+billybob O
+show O
+on O
+bbc B-radio-name
+radio I-radio-name
+four I-radio-name
+
+-DOCSTART- -X- -X- O
+
+do O
+i O
+have O
+an O
+alarm O
+set O
+
+-DOCSTART- -X- -X- O
+
+the O
+meeting B-event-name
+with O
+justin B-person
+and O
+katrina B-person
+has O
+been O
+changed O
+put O
+it O
+on O
+thursday B-date
+
+-DOCSTART- -X- -X- O
+
+search O
+events O
+and O
+meetups O
+for O
+central B-place-name
+park I-place-name
+west I-place-name
+
+-DOCSTART- -X- -X- O
+
+let O
+me O
+know O
+about O
+upcoming O
+events O
+
+-DOCSTART- -X- -X- O
+
+set O
+the O
+settings O
+to O
+mute O
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+exchange O
+for O
+the O
+us B-currency-name
+and O
+euro B-currency-name
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+set O
+a O
+reminder O
+for O
+wednesday B-date
+at O
+one B-time
+pm I-time
+for O
+my O
+meeting O
+
+-DOCSTART- -X- -X- O
+
+newest O
+world B-place-name
+news O
+
+-DOCSTART- -X- -X- O
+
+show O
+me O
+today B-date
+train B-transport-type
+time O
+of O
+kalka O
+at O
+jodhpur B-place-name
+
+-DOCSTART- -X- -X- O
+
+what O
+s O
+the O
+date O
+today B-date
+
+-DOCSTART- -X- -X- O
+
+please O
+let O
+'s O
+do O
+it O
+again O
+. O
+
+-DOCSTART- -X- -X- O
+
+remind O
+me O
+clock O
+that O
+i O
+have O
+a O
+event O
+
+-DOCSTART- -X- -X- O
+
+show O
+me O
+the O
+demographic O
+growth O
+rate O
+of O
+switzerland B-place-name
+in O
+the O
+last B-time
+ten I-time
+years I-time
+
+-DOCSTART- -X- -X- O
+
+olly O
+can O
+you O
+cancel O
+please O
+. O
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+the O
+email O
+sent O
+by O
+this O
+contact O
+read O
+
+-DOCSTART- -X- -X- O
+
+hey O
+turn O
+on O
+your O
+reminders O
+for O
+tomorrow B-date
+'s I-date
+meeting O
+at O
+ten B-time
+am I-time
+
+-DOCSTART- -X- -X- O
+
+please O
+add O
+the O
+meeting B-event-name
+with O
+ms B-person
+boland I-person
+on O
+wednesday B-date
+eight B-time
+hundred I-time
+am I-time
+to O
+my O
+calendar O
+
+-DOCSTART- -X- -X- O
+
+put O
+that O
+song O
+in O
+my O
+favourite O
+list O
+
+-DOCSTART- -X- -X- O
+
+please O
+start O
+the O
+radio O
+
+-DOCSTART- -X- -X- O
+
+currency O
+converter O
+please O
+
+-DOCSTART- -X- -X- O
+
+open O
+calendar O
+and O
+erase O
+all O
+events O
+for O
+all B-time
+months I-time
+
+-DOCSTART- -X- -X- O
+
+do O
+more O
+light O
+
+-DOCSTART- -X- -X- O
+
+is O
+black B-place-name
+sea I-place-name
+real O
+
+-DOCSTART- -X- -X- O
+
+delete O
+my O
+eight B-time
+pm I-time
+alarm O
+
+-DOCSTART- -X- -X- O
+
+get O
+radio O
+
+-DOCSTART- -X- -X- O
+
+send O
+a O
+tweet B-media-type
+to O
+kroger B-business-name
+about O
+being O
+overcharged O
+for O
+groceries O
+
+-DOCSTART- -X- -X- O
+
+activate O
+radio O
+and O
+tune O
+into O
+nine B-radio-name
+hundred I-radio-name
+and I-radio-name
+eighty I-radio-name
+nine I-radio-name
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+currently O
+trending O
+on O
+twitter O
+
+-DOCSTART- -X- -X- O
+
+it O
+is O
+of O
+no O
+importance O
+, O
+olly O
+. O
+
+-DOCSTART- -X- -X- O
+
+send O
+an O
+email O
+to O
+mom B-relation
+subject O
+weather O
+body O
+what O
+is O
+the O
+weather O
+like O
+there O
+this B-date
+week I-date
+
+-DOCSTART- -X- -X- O
+
+please O
+let O
+'s O
+try O
+it O
+one O
+more O
+time O
+again O
+. O
+
+-DOCSTART- -X- -X- O
+
+on O
+twenty B-date
+third I-date
+february I-date
+rahul B-person
+will O
+come O
+with O
+me O
+on O
+india B-event-name
+cricket I-event-name
+match I-event-name
+
+-DOCSTART- -X- -X- O
+
+what O
+genre O
+is O
+this O
+song O
+in O
+
+-DOCSTART- -X- -X- O
+
+could O
+you O
+stop O
+please O
+. O
+
+-DOCSTART- -X- -X- O
+
+please O
+could O
+you O
+tell O
+me O
+if O
+george B-business-name
+'s I-business-name
+geek I-business-name
+restaurant B-business-type
+can O
+i O
+order O
+takeaway B-order-type
+from O
+there O
+
+-DOCSTART- -X- -X- O
+
+please O
+play O
+the O
+podcast O
+from O
+happypeoplecom B-podcast-name
+
+-DOCSTART- -X- -X- O
+
+how O
+old O
+is O
+rihanna B-person
+
+-DOCSTART- -X- -X- O
+
+i O
+need O
+a O
+taxi B-transport-type
+at O
+eight B-time
+tomorrow B-date
+morning B-timeofday
+to O
+take O
+me O
+to O
+work O
+
+-DOCSTART- -X- -X- O
+
+set O
+mute O
+mode O
+for O
+one B-time
+hour I-time
+
+-DOCSTART- -X- -X- O
+
+how O
+can O
+a O
+cook O
+risotto B-food-type
+
+-DOCSTART- -X- -X- O
+
+get O
+news O
+from O
+bbc B-media-type
+
+-DOCSTART- -X- -X- O
+
+that O
+'s O
+good O
+one O
+, O
+thank O
+you O
+very O
+much O
+. O
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+the O
+weather O
+going O
+to O
+be O
+like O
+on O
+march B-date
+twentieth I-date
+two I-date
+thousand I-date
+and I-date
+seventeen I-date
+
+-DOCSTART- -X- -X- O
+
+set O
+alarm O
+at O
+ten B-time
+am I-time
+
+-DOCSTART- -X- -X- O
+
+how O
+many O
+tablespoons O
+are O
+there O
+in O
+a O
+cup O
+
+-DOCSTART- -X- -X- O
+
+cut O
+wemo B-device-type
+power O
+please O
+
+-DOCSTART- -X- -X- O
+
+order O
+me O
+postmates B-food-type
+of O
+mcdonald B-business-name
+
+-DOCSTART- -X- -X- O
+
+find O
+a O
+ride O
+to O
+the O
+bar B-business-type
+
+-DOCSTART- -X- -X- O
+
+make O
+my O
+calendar O
+empty O
+
+-DOCSTART- -X- -X- O
+
+i O
+would O
+be O
+happy O
+if O
+you O
+update O
+me O
+the O
+events O
+going O
+on O
+our O
+area O
+
+-DOCSTART- -X- -X- O
+
+where O
+jackie B-person
+chan I-person
+currently O
+live O
+
+-DOCSTART- -X- -X- O
+
+please O
+make O
+me O
+wake O
+up O
+at O
+four B-time
+am I-time
+tomorrow B-date
+
+-DOCSTART- -X- -X- O
+
+please O
+do O
+n't O
+shuffle O
+songs O
+in O
+music B-device-type
+player I-device-type
+just O
+playing B-player-setting
+continuously I-player-setting
+
+-DOCSTART- -X- -X- O
+
+please O
+will O
+you O
+check O
+last O
+thing O
+said O
+. O
+
+-DOCSTART- -X- -X- O
+
+what O
+'s O
+my O
+to B-list-name
+do I-list-name
+list O
+for O
+today B-date
+
+-DOCSTART- -X- -X- O
+
+review O
+all O
+alarms O
+
+-DOCSTART- -X- -X- O
+
+change O
+the O
+colours O
+please O
+
+-DOCSTART- -X- -X- O
+
+did O
+you O
+get O
+the O
+detail O
+correctly O
+? O
+
+-DOCSTART- -X- -X- O
+
+schedule O
+pizza B-food-type
+takeout O
+for O
+seven B-time
+pm I-time
+
+-DOCSTART- -X- -X- O
+
+enter O
+this O
+to O
+a O
+list O
+
+-DOCSTART- -X- -X- O
+
+in O
+every B-general-frequency
+three I-general-frequency
+hours I-general-frequency
+give O
+me O
+my O
+facebook B-media-type
+update O
+
+-DOCSTART- -X- -X- O
+
+i O
+need O
+a O
+good O
+shop B-business-type
+
+-DOCSTART- -X- -X- O
+
+skip O
+to O
+the O
+next O
+song O
+
+-DOCSTART- -X- -X- O
+
+plan O
+a O
+meeting B-event-name
+in O
+office O
+with O
+all O
+employees O
+tomorrow B-date
+morning B-time
+at I-time
+eight I-time
+
+-DOCSTART- -X- -X- O
+
+please O
+set O
+an O
+alarm O
+at O
+six B-time
+am I-time
+
+-DOCSTART- -X- -X- O
+
+what O
+are O
+the O
+news O
+stories O
+on O
+the O
+cnn B-media-type
+website O
+
+-DOCSTART- -X- -X- O
+
+i O
+am O
+sorry O
+but O
+i O
+think O
+you O
+are O
+not O
+right O
+. O
+
+-DOCSTART- -X- -X- O
+
+show O
+directions O
+to O
+pondy B-place-name
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+the O
+latest O
+news O
+from O
+cbs B-media-type
+
+-DOCSTART- -X- -X- O
+
+will O
+it O
+be O
+raining B-weather-descriptor
+on O
+thursday B-date
+
+-DOCSTART- -X- -X- O
+
+i O
+would O
+like O
+to O
+order O
+takeaway B-order-type
+
+-DOCSTART- -X- -X- O
+
+what O
+places O
+can O
+i O
+order O
+takeout B-order-type
+from O
+near O
+by O
+
+-DOCSTART- -X- -X- O
+
+please O
+confirm O
+it O
+. O
+
+-DOCSTART- -X- -X- O
+
+do O
+you O
+have O
+a O
+traffic O
+update O
+
+-DOCSTART- -X- -X- O
+
+play O
+the O
+last B-song-name
+song I-song-name
+from O
+my O
+most O
+recent O
+playlist O
+
+-DOCSTART- -X- -X- O
+
+remove O
+my O
+event O
+at O
+one B-time
+pm I-time
+in O
+my O
+calendar O
+
+-DOCSTART- -X- -X- O
+
+that O
+is O
+n't O
+what O
+i O
+meant O
+. O
+
+-DOCSTART- -X- -X- O
+
+book O
+me O
+a O
+taxi B-transport-type
+to O
+leith B-place-name
+in O
+half B-time
+an I-time
+hour I-time
+
+-DOCSTART- -X- -X- O
+
+move O
+the O
+volume O
+up O
+a O
+little O
+
+-DOCSTART- -X- -X- O
+
+brighten O
+up O
+the O
+lighting O
+
+-DOCSTART- -X- -X- O
+
+greg U-person
+wants O
+black B-coffee-type
+coffee O
+can O
+you O
+make O
+one O
+
+-DOCSTART- -X- -X- O
+
+instruct O
+the O
+coffee B-device-type
+maker I-device-type
+to O
+make O
+a O
+filter B-coffee-type
+coffee O
+ready O
+in B-time
+ten I-time
+minutes I-time
+
+-DOCSTART- -X- -X- O
+
+give O
+me O
+the O
+most O
+recent O
+stuff O
+you O
+have O
+angelina B-person
+jolie I-person
+
+-DOCSTART- -X- -X- O
+
+display O
+trains O
+going O
+to O
+antwerp B-place-name
+after B-time
+two I-time
+pm I-time
+saturday B-date
+
+-DOCSTART- -X- -X- O
+
+delete O
+the O
+list O
+
+-DOCSTART- -X- -X- O
+
+play O
+am O
+
+-DOCSTART- -X- -X- O
+
+add O
+valia B-event-name
+'s I-event-name
+wedding I-event-name
+the O
+next O
+saturday B-date
+at O
+eight B-time
+o I-time
+clock I-time
+
+-DOCSTART- -X- -X- O
+
+i O
+could O
+not O
+quite O
+catch O
+up O
+with O
+you O
+. O
+
+-DOCSTART- -X- -X- O
+
+time O
+in O
+chicago B-place-name
+
+-DOCSTART- -X- -X- O
+
+show O
+me O
+my O
+meetings O
+this B-date
+Friday I-date
+
+-DOCSTART- -X- -X- O
+
+what O
+music O
+do O
+i O
+like O
+
+-DOCSTART- -X- -X- O
+
+are O
+there O
+any O
+takeaways B-order-type
+around O
+here O
+
+-DOCSTART- -X- -X- O
+
+play O
+npr B-radio-name
+on O
+this O
+station O
+
+-DOCSTART- -X- -X- O
+
+set O
+an O
+eight B-time
+hundred I-time
+am I-time
+alarm O
+for O
+next O
+tuesday B-date
+
+-DOCSTART- -X- -X- O
+
+play O
+favorited O
+podcasts O
+on O
+fishing O
+
+-DOCSTART- -X- -X- O
+
+find O
+a O
+recipe O
+that O
+uses O
+ground B-ingredient
+beef I-ingredient
+and O
+zucchini B-ingredient
+
+-DOCSTART- -X- -X- O
+
+abolish O
+an O
+item O
+from O
+list O
+
+-DOCSTART- -X- -X- O
+
+i O
+need O
+a O
+gold O
+class O
+ticket O
+on O
+train B-transport-type
+number B-transport-name
+five I-transport-name
+using O
+my O
+credit O
+card O
+
+-DOCSTART- -X- -X- O
+
+call O
+taxi B-transport-type
+
+-DOCSTART- -X- -X- O
+
+take O
+off O
+this O
+list O
+
+-DOCSTART- -X- -X- O
+
+show O
+me O
+theatre O
+where O
+pirates B-movie-name
+of I-movie-name
+caribbean I-movie-name
+is O
+playing O
+
+-DOCSTART- -X- -X- O
+
+hey O
+olly O
+on O
+the O
+twentieth B-date
+clear O
+my O
+calendar O
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+remove O
+remove O
+buying O
+eggs O
+item O
+from O
+my O
+to B-list-name
+do I-list-name
+list O
+
+-DOCSTART- -X- -X- O
+
+stop O
+powering O
+the O
+wemo B-device-type
+socket I-device-type
+
+-DOCSTART- -X- -X- O
+
+save O
+this O
+email O
+in O
+my O
+contact O
+for O
+future O
+use O
+
+-DOCSTART- -X- -X- O
+
+fix O
+an O
+alarm O
+
+-DOCSTART- -X- -X- O
+
+on O
+my O
+grocery B-list-name
+list O
+please O
+add O
+oranges O
+
+-DOCSTART- -X- -X- O
+
+turn O
+off O
+one B-device-type
+light I-device-type
+in O
+my O
+bedroom B-house-place
+
+-DOCSTART- -X- -X- O
+
+that O
+'s O
+not O
+what O
+i O
+just O
+said O
+. O
+
+-DOCSTART- -X- -X- O
+
+send O
+email O
+to O
+family B-relation
+and O
+tell O
+them O
+to O
+bring O
+the O
+bug O
+spray O
+before O
+coming O
+to O
+the O
+park O
+
+-DOCSTART- -X- -X- O
+
+remove O
+the O
+last O
+item O
+
+-DOCSTART- -X- -X- O
+
+book O
+a O
+ticket O
+to O
+ny B-place-name
+by O
+train B-transport-type
+
+-DOCSTART- -X- -X- O
+
+i O
+do O
+n't O
+mind O
+to O
+select O
+any O
+one O
+. O
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+pull B-player-setting
+up I-player-setting
+the O
+dave B-person
+ramsey I-person
+podcast O
+that O
+aired O
+on O
+monday B-date
+
+-DOCSTART- -X- -X- O
+
+that O
+'s O
+useful O
+, O
+musch O
+appreciated O
+, O
+olly O
+. O
+
+-DOCSTART- -X- -X- O
+
+how O
+is O
+the O
+traffic O
+
+-DOCSTART- -X- -X- O
+
+tell O
+me O
+current O
+situation O
+of O
+traffic O
+near O
+central B-place-name
+park I-place-name
+road I-place-name
+
+-DOCSTART- -X- -X- O
+
+please O
+make O
+the O
+lights O
+watching B-color-type
+friendly I-color-type
+
+-DOCSTART- -X- -X- O
+
+please O
+lower O
+the O
+lights O
+a B-change-amount
+little I-change-amount
+bit I-change-amount
+
+-DOCSTART- -X- -X- O
+
+which O
+store O
+'s O
+got O
+the O
+cheapest O
+three O
+pound O
+beef O
+rump O
+
+-DOCSTART- -X- -X- O
+
+find O
+restaurant B-business-type
+order O
+food O
+name O
+
+-DOCSTART- -X- -X- O
+
+use O
+google O
+to O
+show O
+me O
+how O
+to O
+cook O
+
+-DOCSTART- -X- -X- O
+
+please O
+update O
+list O
+with O
+new O
+item O
+
+-DOCSTART- -X- -X- O
+
+put O
+out O
+the O
+lights O
+
+-DOCSTART- -X- -X- O
+
+please O
+set O
+the O
+alarm O
+for O
+eight B-time
+pm I-time
+wednesday B-date
+evening B-timeofday
+
+-DOCSTART- -X- -X- O
+
+what O
+'s O
+still O
+on O
+the O
+list O
+
+-DOCSTART- -X- -X- O
+
+what O
+'s O
+my O
+next O
+appointment B-event-name
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+the O
+weather O
+forecast O
+for O
+chicago B-place-name
+
+-DOCSTART- -X- -X- O
+
+skip O
+to O
+next B-podcast-descriptor
+podcast I-podcast-descriptor
+
+-DOCSTART- -X- -X- O
+
+describe O
+your O
+list O
+
+-DOCSTART- -X- -X- O
+
+will O
+you O
+explain O
+me O
+about O
+what O
+you O
+have O
+said O
+once O
+again O
+please O
+. O
+
+-DOCSTART- -X- -X- O
+
+how O
+is O
+iron O
+made O
+
+-DOCSTART- -X- -X- O
+
+order O
+me O
+chinese B-food-type
+food O
+
+-DOCSTART- -X- -X- O
+
+ah O
+it O
+'s O
+awesome O
+, O
+olly O
+. O
+
+-DOCSTART- -X- -X- O
+
+latest O
+news O
+on O
+traffic O
+at O
+my O
+current O
+location O
+
+-DOCSTART- -X- -X- O
+
+open O
+contacts O
+and O
+find O
+john B-person
+smith I-person
+
+-DOCSTART- -X- -X- O
+
+could O
+you O
+confirm O
+my O
+last O
+instruction O
+please O
+. O
+
+-DOCSTART- -X- -X- O
+
+remove O
+alarm O
+if O
+any O
+
+-DOCSTART- -X- -X- O
+
+describe O
+a O
+workhouse B-definition-word
+for O
+me O
+
+-DOCSTART- -X- -X- O
+
+change O
+the O
+overhead B-device-type
+light I-device-type
+to O
+orange B-color-type
+
+-DOCSTART- -X- -X- O
+
+would O
+you O
+confirm O
+last O
+thing O
+i O
+said O
+please O
+. O
+
+-DOCSTART- -X- -X- O
+
+please O
+set O
+the O
+lights O
+to O
+green B-color-type
+
+-DOCSTART- -X- -X- O
+
+disable O
+music B-device-type
+player I-device-type
+
+-DOCSTART- -X- -X- O
+
+play O
+for O
+me O
+american O
+idol O
+show O
+
+-DOCSTART- -X- -X- O
+
+i O
+would O
+want O
+you O
+to O
+tweet B-media-type
+for O
+me O
+at O
+india B-event-name
+consumer I-event-name
+complaints I-event-name
+forum I-event-name
+regarding O
+the O
+late O
+delivery O
+of O
+gas O
+cylinder O
+
+-DOCSTART- -X- -X- O
+
+is O
+it O
+bumper O
+to O
+bumper O
+
+-DOCSTART- -X- -X- O
+
+find O
+a O
+taxi B-transport-type
+to O
+go O
+home B-place-name
+
+-DOCSTART- -X- -X- O
+
+please O
+send O
+the O
+email O
+to O
+abc@gmail B-email-address
+dot I-email-address
+com I-email-address
+instead O
+of O
+xyz@gmail B-email-address
+dot I-email-address
+com I-email-address
+
+-DOCSTART- -X- -X- O
+
+that O
+does O
+n't O
+matter O
+for O
+me O
+, O
+olly O
+. O
+
+-DOCSTART- -X- -X- O
+
+what O
+is O
+today B-date
+'s I-date
+current O
+date O
+
+-DOCSTART- -X- -X- O
+
+what O
+are O
+all O
+my O
+lists O
+please O
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+convert O
+my O
+time O
+zone O
+to O
+the O
+time O
+zone O
+i O
+'m O
+currently O
+in O
+
+-DOCSTART- -X- -X- O
+
+please O
+would O
+you O
+cancel O
+it O
+. O
+
+-DOCSTART- -X- -X- O
+
+sorry O
+but O
+i O
+think O
+you O
+have O
+messed O
+up O
+with O
+command O
+. O
+
+-DOCSTART- -X- -X- O
+
+what O
+color O
+is O
+the O
+sky O
+
+-DOCSTART- -X- -X- O
+
+google U-business-name
+stock O
+symbol O
+
+-DOCSTART- -X- -X- O
+
+send O
+an O
+email O
+to O
+john B-person
+that O
+i O
+am O
+on O
+my O
+way O
+to O
+home O
+
+-DOCSTART- -X- -X- O
+
+tune O
+in O
+some O
+radio O
+
+-DOCSTART- -X- -X- O
+
+find O
+me O
+the O
+smallest O
+coffee B-business-type
+shop I-business-type
+in O
+new B-place-name
+orleans I-place-name
+
+-DOCSTART- -X- -X- O
+
+is O
+the O
+four B-time
+hundred I-time
+and I-time
+thirty I-time
+pm I-time
+train B-transport-type
+running O
+late O
+
+-DOCSTART- -X- -X- O
+
+when O
+is O
+the O
+next O
+alarm O
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+tell O
+me O
+the O
+current O
+traffic O
+condition O
+of O
+my O
+location O
+
+-DOCSTART- -X- -X- O
+
+thanks O
+but O
+it O
+'s O
+not O
+the O
+correct O
+command O
+. O
+
+-DOCSTART- -X- -X- O
+
+bingo O
+
+-DOCSTART- -X- -X- O
+
+book O
+me O
+a O
+train B-transport-type
+ride O
+covering B-transport-descriptor
+five I-transport-descriptor
+destinations I-transport-descriptor
+to O
+see O
+in O
+new B-place-name
+york I-place-name
+
+-DOCSTART- -X- -X- O
+
+turn O
+off O
+the O
+smart B-device-type
+socket I-device-type
+
+-DOCSTART- -X- -X- O
+
+book O
+a O
+train B-transport-type
+ticket O
+to O
+new B-place-name
+york I-place-name
+
+-DOCSTART- -X- -X- O
+
+my O
+friend B-relation
+john B-person
+has O
+sent O
+me O
+a O
+invitation O
+card O
+to O
+his O
+newly O
+bought O
+home O
+say O
+thanks O
+to O
+him O
+in O
+his O
+mail O
+i O
+d O
+
+-DOCSTART- -X- -X- O
+
+my O
+set O
+alarms O
+
+-DOCSTART- -X- -X- O
+
+show O
+me O
+the O
+newest B-podcast-name
+podcasts I-podcast-name
+
+-DOCSTART- -X- -X- O
+
+where O
+is O
+the O
+hottest O
+desert O
+located O
+
+-DOCSTART- -X- -X- O
+
+can O
+you O
+play O
+rfi B-media-type
+
+-DOCSTART- -X- -X- O
+
+turn O
+the O
+lights O
+on O
+full O
+bright O
+
+-DOCSTART- -X- -X- O
+
+how O
+many O
+alarms O
+do O
+i O
+have O
+
+-DOCSTART- -X- -X- O
+
+i O
+need O
+a O
+ticket O
+on O
+the O
+train B-transport-type
+to O
+new B-place-name
+york I-place-name
+city I-place-name
+tomorrow B-date
+
+-DOCSTART- -X- -X- O
+
+please O
+unmute O
+the O
+settings O
+
+-DOCSTART- -X- -X- O
+
+what O
+'s O
+coming O
+up O
+this B-date
+week I-date
+
+-DOCSTART- -X- -X- O
+
+uhh O
+no O
+, O
+i O
+think O
+not O
+right O
+response O
+. O
+
+-DOCSTART- -X- -X- O
+
+lower B-player-setting
+battery I-player-setting
+consumption I-player-setting
+to O
+save O
+setting O
+
+-DOCSTART- -X- -X- O
+
+have O
+a O
+anyinput O
+day O
+

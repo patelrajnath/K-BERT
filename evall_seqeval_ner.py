@@ -1,18 +1,16 @@
 import argparse
 import os
 
-from seqeval.metrics import f1_score
-
+from seqeval import metrics
 from create_word_predictions_with_voted_selection import tokenize_word, voting_choicer
 from datautils.biluo_from_predictions import get_bio
-from eval.myeval import f1_score_span
+from eval.myeval import f1_score_span, precision_score_span, recall_score_span
 
-file_in = 'outputs/evaluation-lstm-crf/conll-2003/eng.testa.dev.csv'
-# file_in_predictions = 'outputs/evaluation-lstm-crf/conll-2003/test_avaluation_code_predictions.txt'
-file_in_predictions = 'outputs/evaluation-lstm-crf/conll-2003/test_avaluation_code_lstm_crf_predictions.txt'
-# file_in_predictions = 'outputs/evaluation-lstm-crf/conll-2003/' \
-#                       'test_avaluation_code_baseline_absolute_lstm_crf_predictions.txt'
-
+# file_in = 'outputs/evaluation-lstm-crf/conll-2003/eng.testa.dev.csv'
+# file_in_predictions = 'outputs/evaluation-lstm-crf/conll-2003/test_avaluation_code_lstm_crf_predictions.txt'
+file_in = 'data/combined_3/test_combined_3.csv'
+# file_in_predictions = 'outputs/evaluation-lstm-crf/kaggle/kaggle_baseline_lstm_crf_predictions.txt'
+file_in_predictions = 'outputs/evaluation-lstm-crf/kaggle/kaggle_pretrain_lstm_crf_predictions.txt'
 
 with open(file_in, mode="r", encoding="utf-8") as f_test, \
         open(file_in_predictions, mode="r", encoding="utf-8") as fin_predict:
@@ -44,7 +42,7 @@ with open(file_in, mode="r", encoding="utf-8") as f_test, \
             for w, lt in zip(words, labels_true):
                 sub_tokens = tokenize_word(w)
                 num_subwords = len(sub_tokens)
-                if offset + num_subwords < num_predictions:
+                if offset < num_predictions:
                     curr_predictions = labels_predict[offset: offset + num_subwords]
                     curr_final_label = voting_choicer(curr_predictions)
                     final_labels_predict.append(curr_final_label)
@@ -71,7 +69,7 @@ with open(file_in, mode="r", encoding="utf-8") as f_test, \
         bio_tags_true = get_bio(true_labels)
         bio_tags_predicted = get_bio(pred_labels)
 
-        if bio_tags_true != bio_tags_predicted:
+        if len(bio_tags_true) != len(bio_tags_predicted):
             # print(len(bio_tags_true))
             # print(len(bio_tags_predicted))
             print(bio_tags_true)
@@ -80,8 +78,15 @@ with open(file_in, mode="r", encoding="utf-8") as f_test, \
 
         true_labels_final.append(bio_tags_true)
         predicted_labels_final.append(bio_tags_predicted)
-    f1 = f1_score(true_labels_final, predicted_labels_final)
-    print(f1)
+    results = dict(
+        f1=metrics.f1_score(true_labels_final, predicted_labels_final),
+        precision=metrics.precision_score(true_labels_final, predicted_labels_final),
+        recall=metrics.recall_score(true_labels_final, predicted_labels_final),
+        f1_span=f1_score_span(true_labels_final, predicted_labels_final),
+        precision_span=precision_score_span(true_labels_final, predicted_labels_final),
+        recall_span=recall_score_span(true_labels_final, predicted_labels_final),
+    )
+    print(results)
 
 
 # def parse_args():
