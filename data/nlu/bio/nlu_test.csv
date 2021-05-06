@@ -149,7 +149,7 @@ O O O O O B_place_name	when i should leave to office	False
 O O O B_transport_type O	when is the train coming	False
 O O O O O B_transport_type O O	how much time is a train to there	False
 O O B_place_name I_place_name	find nearest train station	False
-U_transport_type O	train leaving	False
+B_transport_type O	train leaving	False
 O O O O O B_place_name I_place_name	get me to the nearest train station	False
 O O O O O O	let 's start over please .	True
 O O O O O O O	please say one more time again .	True
@@ -220,7 +220,7 @@ O O O O O O O	show me all the emails received recently	True
 O O O O O O B_person	do i have any emails from jessica	False
 O O O O O O	are there any recent unread emails	True
 O O O O O O O B_person	do i have any new email from ryan	False
-U_person O O O	carlos linux upgrade email	False
+B_person O O O	carlos linux upgrade email	False
 O O	my mail	True
 O O O O O O	have i gotten any mail recently	True
 O O	check emails	True
@@ -305,7 +305,7 @@ O O O O O	what is the list type	True
 O O O O O B_date	what list did i make today	False
 O O O O O O B_list_name I_list_name O	did i put toothpaste on my pick up list	False
 O O O O	please show me lists	True
-U_list_name O	groceries list	False
+B_list_name O	groceries list	False
 O O O O	tell me my lists	True
 O O O O O O O	how many items are on my list	True
 O O O O O O O	tell me the names on the list	True
@@ -464,7 +464,7 @@ O O O O O	please turn off the alarm	True
 O O B_device_type I_device_type	switch off main light	False
 O O O B_device_type I_device_type I_device_type I_device_type I_device_type	off all the lights on the right side	False
 O O O O B_house_place	turn off lights in bathroom	False
-U_house_place O O O	bedroom lights off now	False
+B_house_place O O O	bedroom lights off now	False
 O O O O O O B_house_place	turn off the lights in the bathroom	False
 O O O O O O O B_house_place	please turn off the lights in the kitchen	False
 O O O B_house_place O	turn off the room light	False
@@ -508,7 +508,7 @@ O O O B_transport_type O O B_place_name O O	get me a taxi to the airport right n
 O O B_transport_type O O O	have a taxi pick me up	False
 O O O B_transport_agency O B_date B_timeofday O B_time I_time	book me a uber for tomorrow night at six pm	False
 O O O O B_transport_agency B_transport_type O B_place_name I_place_name	book for me an uber taxi to carmen drive	False
-U_transport_agency	uber	False
+B_transport_agency	uber	False
 O O B_transport_type O O O O	book a taxi to start from here	False
 O O O O O O O O O O O	thanks but i think you do n't understand this correctly .	True
 O O O O O O O O O O O	sorry but i think you 've got that not right .	True
@@ -565,7 +565,7 @@ O O O B_device_type I_device_type I_device_type O O O O O O	turn on the wemo plu
 O O O B_device_type	turn on the plug	False
 O O O O O O	on all the button on dashboard	True
 O B_device_type I_device_type I_device_type O	toggle wemo plug socket on	False
-U_device_type O	wemo on	False
+B_device_type O	wemo on	False
 O O B_device_type I_device_type	start new smart socket	False
 O O B_device_type O O	make the wemo go on	False
 O O O O O	play music i have liked	True
@@ -573,7 +573,7 @@ O O O O O O B_music_descriptor I_music_descriptor O B_song_name I_song_name I_so
 O O O O O O	play the list from my favorites	True
 O B_song_name I_song_name O B_artist_name I_artist_name O O O O O	put poker face by lady gaga next in the play queue	False
 O O O O	turn on the tunes	True
-U_music_genre	rock	False
+B_music_genre	rock	False
 O B_song_name O B_artist_name I_artist_name I_artist_name	play jumper by third eye blind	False
 O O O	play music playlist	True
 O O O O O	please turn on my music	True
@@ -626,7 +626,7 @@ O O O B_coffee_type	make me a capuccino	False
 O O O O B_time I_time	make me coffee at eight am	False
 O O O O O O	put on a pot of coffee	True
 O O O B_food_type	help me make brownies	False
-U_food_type O	crabmeat recipe	False
+B_food_type O	crabmeat recipe	False
 O O O	it should spices	True
 O O B_ingredient O O	tell how vegetable is cooked	False
 O O O B_food_type O	learn to cut potatoes correctly	False
@@ -694,7 +694,7 @@ O O O O O O O O	what is the sum of 9 and 12	True
 O O O O O O O	what are the stock prices of target	True
 O O O O O O	fill me in on stock symbol	True
 O O O O O O O B_business_name	what is the price of stock for gm	False
-U_business_name B_business_name I_business_name I_business_name O O	google i. b. m. stock prices	False
+B_business_name B_business_name I_business_name I_business_name O O	google i. b. m. stock prices	False
 O O O O O O B_date	how is shell s stock doing today	False
 O O O B_business_name I_business_name	stock price for gss energy	False
 O O O O O B_business_name O O	list me the stock of apple right now	False
@@ -721,7 +721,7 @@ O O O B_order_type O	where are my takeaway order	False
 O O O O B_business_name I_business_name O	is my order at domino 's ready	False
 O O O O O O B_order_type O O	hi there do you offer home delivery for orders	False
 O O O B_order_type	can they provide takeaway	False
-U_business_type O O	restaurant order status	False
+B_business_type O O	restaurant order status	False
 O O O B_order_type O	when is my takeaway arriving	False
 O O O B_business_name O O	find out if kfc delivers please	False
 O O B_order_type O	do they deliver home	False
@@ -841,13 +841,13 @@ O O O O O O O	which songs do i listen to most	True
 O O O O B_music_genre O O O	can you locate some gospel music for me	False
 O O O O O O O	tell me the name of this music	True
 O O	music traking	True
-U_player_setting O O	shuffle this playlist	False
-U_player_setting O O O O O	repeat this song when it ends	False
+B_player_setting O O	shuffle this playlist	False
+B_player_setting O O O O O	repeat this song when it ends	False
 O O O O O O	cut the songs in this musics	True
-U_player_setting O O	repeat previous song	False
+B_player_setting O O	repeat previous song	False
 O B_player_setting O O O O B_artist_name	please repeat that music again of akon	False
-U_player_setting O O	repeat this song	False
-U_player_setting O B_media_type O O O	repeat same song for ten times	False
+B_player_setting O O	repeat this song	False
+B_player_setting O B_media_type O O O	repeat same song for ten times	False
 O O O O O	please make the lights natural	True
 O B_change_amount I_change_amount I_change_amount	lights to fifty percent	False
 O O O O O O O O B_house_place	can you change the light colors in the house	False
@@ -930,34 +930,34 @@ O B_media_type O O O O O O O O O O O	please tweet about the problem i m facing w
 O B_media_type O O O	open gallery post video name	False
 O O B_business_name I_business_name I_business_name O O	complain to amazon customer service for me	False
 O B_business_name O O O O O	tell comcast i am still on hold	False
-U_media_type O O O O O O O O O	tweet that there was an insect in the chocolate packet	False
+B_media_type O O O O O O O O O	tweet that there was an insect in the chocolate packet	False
 O O O	post new status	True
 O O O B_media_type	lets send a tweet	False
 O O O B_media_type O O O O O O	i want to tweet a complaint on apples phone issues	False
-U_media_type O B_business_name I_business_name I_business_name O O O O O O O O O O O	tweet to ikea costumer service the following i 'm not happy with this new klm product	False
-U_media_type O B_business_name I_business_name	tweet at quote unquote	False
-U_media_type O O O O O O O O O B_media_type O	tweet customer service not good for lpg service in my twitter account	False
+B_media_type O B_business_name I_business_name I_business_name O O O O O O O O O O O	tweet to ikea costumer service the following i 'm not happy with this new klm product	False
+B_media_type O B_business_name I_business_name	tweet at quote unquote	False
+B_media_type O O O O O O O O O B_media_type O	tweet customer service not good for lpg service in my twitter account	False
 O O O O O O B_media_type O	comcast sucks put that on their twitter account	False
-U_media_type O O O B_business_name	tweet my complaint to @nsa	False
-U_media_type O O	tweet terrible service	False
+B_media_type O O O B_business_name	tweet my complaint to @nsa	False
+B_media_type O O	tweet terrible service	False
 O O O O O O B_media_type	Hashtag loving this weather post to twitter	False
 O O B_media_type O B_business_name O O O O O O	send a tweet to apple that their batteries drain too fast	False
 O O B_business_name B_media_type O O O	complain to mcdonalds twitter about my burger	False
 O O O O O B_media_type	i want to hear more audiobook	False
-U_player_setting B_player_setting	pause resume	False
-U_player_setting O O O O B_audiobook_author I_audiobook_author	resume my audio book from karl pilkington	False
-U_media_type O	book please	False
+B_player_setting B_player_setting	pause resume	False
+B_player_setting O O O O B_audiobook_author I_audiobook_author	resume my audio book from karl pilkington	False
+B_media_type O	book please	False
 B_player_setting I_player_setting B_audiobook_name I_audiobook_name O O O O	start playing american gods where i last stopped	False
 O O O O O O B_audiobook_name I_audiobook_name	play from my last session of joes book	False
 O O O B_audiobook_name I_audiobook_name I_audiobook_name	open audio book history of rome	False
-U_player_setting B_media_type B_audiobook_name I_audiobook_name I_audiobook_name	start audiobook the time traveller	False
-U_player_setting B_audiobook_name I_audiobook_name	resume animal farm	False
+B_player_setting B_media_type B_audiobook_name I_audiobook_name I_audiobook_name	start audiobook the time traveller	False
+B_player_setting B_audiobook_name I_audiobook_name	resume animal farm	False
 O O O B_audiobook_name	can you play file	False
-U_media_type	audio	False
-U_player_setting O O O O O B_audiobook_name I_audiobook_name	start from my last session of joes book	False
+B_media_type	audio	False
+B_player_setting O O O O O B_audiobook_name I_audiobook_name	start from my last session of joes book	False
 O O O O O O B_media_type	play from this point from this audiobook	False
-U_player_setting O B_media_type O O O O	resume my audiobook where we paused last	False
-U_player_setting B_audiobook_name I_audiobook_name I_audiobook_name O O	resume the last kingdom for me	False
+B_player_setting O B_media_type O O O O	resume my audiobook where we paused last	False
+B_player_setting B_audiobook_name I_audiobook_name I_audiobook_name O O	resume the last kingdom for me	False
 B_player_setting I_player_setting O O O B_audiobook_name I_audiobook_name I_audiobook_name	end pause on audio book history of rome	False
 O O O O O O O O B_time I_time I_time I_time I_time I_time I_time O O O O O	i want to finish listening to the book one thousand nine hundred and eighty four from where i left off	False
 B_player_setting I_player_setting	keep reading	False
@@ -1024,7 +1024,7 @@ O O O	show me podcasts	True
 O O O O O B_date	can you play back to december	False
 O O O O O O O O O O O O O O	can you please download my podcast file available in internet and play it once	True
 O O O	skip this episode	True
-U_player_setting O O	skip this one	False
+B_player_setting O O	skip this one	False
 O O O O O O	what are my top played podcasts	True
 O O O B_podcast_descriptor I_podcast_descriptor O O	go back to previous episode of podcast	False
 O O O B_time I_time O O B_place_name I_place_name O O O O O B_place_name I_place_name	if it 's eight pm on the east coast what time is it in sacramento california	False

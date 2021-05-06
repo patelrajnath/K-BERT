@@ -53,7 +53,7 @@ O O O O O O O O O	that 's useful , thank you very much .
 O O O	be my clock
 O O O O O O O	would you just stop it please .
 O O O O B_transport_agency O O	can you book an uber for me
-U_media_type O O O O O O O O	tweet my complaint about my truck to consumer digest
+B_media_type O O O O O O O O	tweet my complaint about my truck to consumer digest
 O O O O O B_list_name O	what items are on my shopping list
 O O O O B_place_name I_place_name O B_transport_type	schedule a journey to las vegas by train
 O O O O O O B_business_name	what is the stock value of google
@@ -163,7 +163,7 @@ O O O B_device_type O O	turn on the roomba for me
 O O O O O B_food_type	tell me how to make tacos
 O O O O O O	save this song as a favorite
 O O O O	start playlist for podcast
-U_player_setting O O O B_audiobook_name	start chapter seven of alma
+B_player_setting O O O B_audiobook_name	start chapter seven of alma
 O O O O B_event_name	change the plan of meeting
 O O O O O O	add this song to my catalogue
 O O O O O B_list_name O	please add sugar to my grocery list
@@ -258,7 +258,7 @@ O O B_date I_date O O O B_business_name O	please find today 's stock prices for 
 O B_media_type	open audiobook
 O O O O	yeah amazing response .
 O O O O	a little brighter thanks
-U_date O O O	today some things happened
+B_date O O O	today some things happened
 O B_relation O O O O O B_date I_date	what friends were in popular places the last day
 O O O O O O O O B_transport_type	i need to get to location call a cab
 O O O O O O	i want the lights less brighter
@@ -290,7 +290,7 @@ O O B_news_topic	what is trending
 O B_weather_descriptor O	its cold outside
 O O O O O B_definition_word	what is the definition of session
 O O O O O O	can you please shut down .
-U_media_type O O O O B_business_name	tweet a disgusted face about mcdonalds
+B_media_type O O O O B_business_name	tweet a disgusted face about mcdonalds
 O O O B_radio_name O O O O	can you turn msnbc on in the car
 O O B_business_type O B_order_type	does the restaurant have carryout
 O O O O O O O	you 've got the command exactly .
@@ -334,7 +334,7 @@ O O O O O O O	olly that is enough , cancel .
 O O O	i am happy
 O O O O O B_event_name I_event_name I_event_name B_time I_time I_time	can you remind me to check my clothes in a hour
 O O O O	add this one also
-U_media_type	facebook
+B_media_type	facebook
 O B_audiobook_name I_audiobook_name I_audiobook_name I_audiobook_name O B_app_name	play fault in our stars on audible
 O B_house_place O	start house cleanup
 O B_meal_type O B_date O B_place_name I_place_name	remember dinner on thursday at bistro italia
@@ -376,7 +376,7 @@ O O B_list_name O O O	recite the schedules of the list
 O O B_device_type I_device_type	run the vacuum cleaner
 O O O O O B_place_name	what 's the capital of tanzania
 O O O O O	what list do i have
-U_definition_word O	sanctimonious definition
+B_definition_word O	sanctimonious definition
 O O O O B_date O B_time O O B_timeofday O O O O O B_event_name	wake me up on Friday at five in the morning i need to catch the train
 O O O B_person O O O	how old was elvis when he died
 O O	change lights
@@ -390,7 +390,7 @@ O O O O O O O O	please can you confirm last thing said .
 O O O O O	please could you replay .
 O O O O O O O O O	please change the color of my lights surprise me
 O O	set list
-U_player_setting B_audiobook_name I_audiobook_name I_audiobook_name I_audiobook_name	resume harry potter book four
+B_player_setting B_audiobook_name I_audiobook_name I_audiobook_name I_audiobook_name	resume harry potter book four
 O O O O O B_date	do not wake me up tomorrow
 O B_business_name O O B_media_type O O O O O O O O	tell apple in a tweet that their batteries do n't hold enough charge
 O O O B_definition_word I_definition_word I_definition_word	give description of statue of liberty
@@ -454,7 +454,7 @@ O O O O O O O O O O O O	s2 , i was unclear about what you 've just said .
 O O O O O O O O O	i need the lights raised can you do that
 O O O O O O B_date O O O B_event_name	do i have free time next tuesday to schedule a meeting
 O O O O B_food_type	what is in a curry
-U_player_setting O O O O	repeat this song three times
+B_player_setting O O O O	repeat this song three times
 O O O O O O B_time I_time I_time I_time I_time B_date	i need an alarm set for five hundred and thirty am tomorrow
 O O O O O O O O O O O O	uhh no , you have done task all in wrong manner .
 O O O O O O B_place_name I_place_name	tell me the current weather for danville il
@@ -518,7 +518,7 @@ O O O B_relation O O O O O O B_meal_type B_timeofday	send email to bro and say h
 O O O O O O	i had a long hard day
 O O O O O O O O	yeah you have got your understanding perfectly .
 O O O O O O	will you shut down please .
-U_player_setting O B_podcast_descriptor I_podcast_descriptor	jump to next podcast
+B_player_setting O B_podcast_descriptor I_podcast_descriptor	jump to next podcast
 O O O O O B_house_place	lower the lights in the room
 O O B_weather_descriptor O B_place_name O	is it sunny in gonbad now
 O O O	reduce light intensity
@@ -543,7 +543,7 @@ O O O O O O O B_business_name O	can you tell me the price of google stock
 O O O	display available lists
 O O B_transport_type O O B_date I_date I_date O B_place_name	book a train ticket for friday april fourteenth for boston
 O B_date O O O	checkout today third set alarm
-U_device_type O	outlet on
+B_device_type O	outlet on
 O B_person I_person B_personal_info	find jhonny 's address
 O O O O O O O O	that is all , just cancel it .
 O O O O O O	yes the command is confirmed .
@@ -641,7 +641,7 @@ O O O O B_transport_type O O O O B_place_name I_place_name	how often does the tr
 O O O O O O O O	give me name and type of this music
 O O O O O B_business_name O B_order_type	could you please confirm if paradise does takeaway
 O O O O O B_relation O O O O	check to see if my mom sent me any emails
-U_media_type O O B_business_name I_business_name I_business_name I_business_name	tweet complaint to american eagle customer service
+B_media_type O O B_business_name I_business_name I_business_name I_business_name	tweet complaint to american eagle customer service
 O B_personal_info O O O	add email to existing contact
 O O O O O	save this email in contact
 O B_media_type B_media_type	play album audiobook
@@ -704,7 +704,7 @@ O O O O O	what is four plus five
 O O O O O	tell me again please .
 O O O O O O	amazing response to the command .
 O O O O O O	i would like you stop .
-U_app_name O	grubhub order
+B_app_name O	grubhub order
 O O O O O O	can you turn off the lights
 O O O O O O O O O O O O	confirm that my notification is set to remind me when i leave
 O O O O O O O O B_place_name	list all the shops that are located in milan
@@ -768,7 +768,7 @@ O	nightime
 O O O O O O O	can you make the lights go out
 O O O O O O O O O	have no idea regarding to which to select .
 O O O O O O O O	olly that 's all , stop it .
-U_date O B_date O O	today is monday is it
+B_date O B_date O O	today is monday is it
 O O O O O O	answer the equation eight times seven
 O O O O O O O	i like you confirm details please .
 O O O O O O O O O O O O	i would like it if my robot could make money for me
@@ -786,7 +786,7 @@ O O O O O	please turn the lights off
 O O B_music_genre B_radio_name O	play any pop fm channel
 O O O O O O O O O B_transport_type O B_place_name O B_date	what is the most convenient hour to catch a train to york on Saturday
 O O O O B_music_genre	i am the living blues
-U_player_setting B_media_type O	resume audiobook playback
+B_player_setting B_media_type O	resume audiobook playback
 O O O O O O O	what is the traffic like right now
 O O O O O O O O O O O O O O	what is the best method to decide what the best thing to do isre
 O O B_game_name I_game_name I_game_name	lets play tic tac toe
@@ -854,14 +854,14 @@ O O O O O O O O O	who is the singer of this song right now
 O O O O	i want more light
 O O O O O O O	yes you 've done command exactly .
 O O O O O O O O	yeap you 've understood my instructions perfectly .
-U_media_type O O O O O O O O	tweet for me the complaint about drainage choke up
+B_media_type O O O O O O O O	tweet for me the complaint about drainage choke up
 O O O O O	is there anything happening nearby
 O O O O O	what 's my next events
-U_media_type O O O B_business_name I_business_name I_business_name	tweet a complaint to old navy website
+B_media_type O O O B_business_name I_business_name I_business_name	tweet a complaint to old navy website
 O O O O O O O	would you check the details please .
 O O O O O O O O O O	i want you to check what just said please .
 O O B_event_name B_date	cancel my meeting tomorrow
-U_player_setting B_audiobook_name I_audiobook_name I_audiobook_name	resume the two towers
+B_player_setting B_audiobook_name I_audiobook_name I_audiobook_name	resume the two towers
 O O O O	let 's do math
 O B_definition_word	define loquaciousness
 O O O O O B_artist_name O	do you hear songs of arrahman music
@@ -953,15 +953,15 @@ O O O O O O O O B_currency_name O O B_currency_name	please show me the exchange 
 O O B_business_type O	does that restaurant deliver
 O O O O O	what 's my stock fluctuations
 O B_podcast_name O	play heavyweight podcast
-U_media_type O O B_business_name I_business_name	tweet complaint to consumer service
+B_media_type O O B_business_name I_business_name	tweet complaint to consumer service
 O O	music change
 O O O O O O O B_transport_type O O O O B_place_name I_place_name	open uber app and book me a car for pick up at the airport
 O O O O O O O O	do not mind to select any one .
 O O O O O B_place_name	what time is it in denver
 O O O O O O B_person B_date I_date	did i get an email from jen last night
 O B_business_type O O O O	what pubs are close to me
-U_player_setting	hold
-U_media_type O O O B_business_name	tweet bad day at starbucks
+B_player_setting	hold
+B_media_type O O O B_business_name	tweet bad day at starbucks
 O O O O O O B_event_name O B_time I_time	give me an update on the election in one hour
 B_radio_name I_radio_name	vitaly channel
 O O O O O O O O O B_date	tell me who send the email about the boss yesterday
@@ -974,7 +974,7 @@ O O O O O O O O O	can you add a new email to my contacts
 O O O O O O O O O O O	who is singing the song i am listening to right now
 O O O O O O O	add my opinion to this song great
 O O O O O B_house_place I_house_place O	can you turn off the living room lights
-U_date O O O	today wore me out
+B_date O O O	today wore me out
 O O O O	what is this thing
 O O O B_media_type	anything new on insta
 O O O O O O O O O O B_place_name O B_place_name I_place_name	how do i get from where i 'm at to universal in orlando florida
@@ -1072,7 +1072,7 @@ O O O O O	clear all from my iphone
 O O O B_device_type I_device_type O O O B_time I_time O	please set my coffee machine to start at four pm time
 O O O O O O	excellent response to the command .
 O O O B_business_name I_business_name O O	can i order olive garden to go
-U_media_type B_business_name O O O O O O	tweet kohls about the cleanliness of their store
+B_media_type B_business_name O O O O O O	tweet kohls about the cleanliness of their store
 O O O O O O O O O	did you get last thing i said correctly ?
 O O O O O	that was helpful , .
 O O O O	olly brighten the lights
@@ -1106,7 +1106,7 @@ O O B_transport_type	call a cab
 O O O O O O B_business_name I_business_name O B_order_type	i want to know if the olive garden provides takeaway
 O O O O O O B_business_name O	what s the current price of mcdonalds stock
 O O O	change my alarm
-U_joke_type O	funny joke
+B_joke_type O	funny joke
 O O O O O O O O O O	what is the root of six hundred and twenty five
 O O O O O O O O	how do i duct tape a gooseto apig
 O O O O O	tell me once again .
@@ -1130,7 +1130,7 @@ O O O	play my playlist
 O O O O O O O	please remove item a from my list
 O O O B_house_place I_house_place	turn off the dining room
 O O O B_joke_type O O B_joke_type	what is a funny joke about car
-U_date O O O O O O O	today how many alarms do i have set
+B_date O O O O O O O	today how many alarms do i have set
 O O O B_transport_type O O B_place_name I_place_name O O O B_date O B_time I_time I_time O O	book me a train ticket to new york city on the third i do n't care what time
 O O O O B_player_setting O O B_media_type	i would like to start this new audiobook
 O O O O O O O O	i would n't really care , olly .
@@ -1357,7 +1357,7 @@ O O O O O B_time I_time	please set my alarm for five pm
 O O O O O O O O	yeap you have got my instructions correcly .
 O O	display date
 O O O O O	remove a list of employees
-U_player_setting O B_podcast_descriptor I_podcast_descriptor	skip to next episode
+B_player_setting O B_podcast_descriptor I_podcast_descriptor	skip to next episode
 O O O O O O O B_currency_name I_currency_name O O B_currency_name	please check the exchange rates of the us dollar vs the euro
 O O B_transport_type O O O O B_place_name I_place_name	fix the driving route from here to grant market
 O O O O O O O O	which song am i listening to right now
@@ -1575,7 +1575,7 @@ O O O B_business_type I_business_type O	are there any grocery stores nearby
 O O O O B_list_name I_list_name O	add shopping to my to do list
 O O O O B_game_name	start a match of chess
 O O O O B_weather_descriptor I_weather_descriptor B_date	do i need a rain coat today
-U_media_type O O O B_business_name O O	tweet my complaint on targets customer service
+B_media_type O O O B_business_name O O	tweet my complaint on targets customer service
 O O O O O B_transport_type O B_place_name	when is the next septa train to philadelphia
 O O O O O O O O O	it does not matter with me , olly .
 O O O B_transport_type	book a local cab
@@ -1663,7 +1663,7 @@ O B_transport_type	hail taxi
 O O O	open my notes
 O O O O O O O O	i think this is not correct command .
 O O O O O O O O O O	please can you say it one more time again .
-U_business_name O	fb stocks
+B_business_name O	fb stocks
 O O O O O O O O	what is the answer to one times two
 O O O O O O O O O O O O O O	i think i ran out of this can you add it to my list
 O O B_transport_type O O	book a taxi for me
@@ -1707,7 +1707,7 @@ O O O O O O O	yes you have gotten it exactly .
 O O O O O O O O O O B_meal_type	what would be the a perfectly nutritionally balanced meal for dinner
 O O O O B_radio_name I_radio_name I_radio_name I_radio_name I_radio_name	lets hear it from fm ninety six point five
 O O O O O O	it was a very hectic workday
-U_house_place O O	bedroom light off
+B_house_place O O	bedroom light off
 O B_time I_time B_place_name O O B_place_name I_place_name O	convert eight am manila time to new york time
 O O B_podcast_descriptor I_podcast_descriptor O O O	play the next episode of this series
 O O B_house_place	clean the floor
@@ -1716,7 +1716,7 @@ O O B_playlist_name O	play the electronic playlist
 O O O O O O	Set a alarm for the day
 O O O	by switch off
 O O O B_change_amount I_change_amount	increase the volume to fifty
-U_player_setting O O O O O	replay the required of the musics
+B_player_setting O O O O O	replay the required of the musics
 O O O O O O O	olly please would you shut down .
 O O O O O O O O O O O O O O O O O	check for all the movie theater prices and availability for a newly released movie in my location
 O O O O B_song_name I_song_name	i want to hear purple haze
@@ -1778,7 +1778,7 @@ O O O O O O O B_place_name I_place_name	what movies is out there in the local ci
 O O O O O	you are awesome , .
 O B_person	call vikki
 O O O	make me laugh
-U_news_topic O O O O O O	political news of importance for the day
+B_news_topic O O O O O O	political news of importance for the day
 O O	road traffic
 O O O O O O B_news_topic I_news_topic	set notification for news on the stock market
 O O O O O O O O O O	it is of no importance to me , olly .
@@ -1801,7 +1801,7 @@ O O O O B_food_type B_business_type O B_place_name	what 's the best italian rest
 O O O O O	bring up a complaint form
 O O O O O O O B_weather_descriptor O O O B_weather_descriptor B_date	i do nt want to carry an umbrella will we have rain today
 O O O O O O	make me a cup of coffee
-U_transport_type O	taxi now
+B_transport_type O	taxi now
 O O O O O O O O O O O	i am unable to hear you can you speak little loud
 B_player_setting I_player_setting I_player_setting B_podcast_name O	skip to next nyt podcast
 O O B_food_type B_business_type O O O	tell me chinese restaurants in the area
@@ -1809,7 +1809,7 @@ O O O O B_person O O O O O O O O O O O O O B_timeofday	send a reply to mike with
 O O O	go to setting
 O O O	turn socket off
 O O O O O B_podcast_descriptor I_podcast_descriptor I_podcast_descriptor	play that podcast i was listening to yesterday
-U_event_name O B_date	meeting this friday
+B_event_name O B_date	meeting this friday
 O O O O O O O O	i do not catch up with you .
 O O O O O O O B_date	what will the weather be like on saturday
 O O O O O O B_house_place I_house_place	turn off the light in the living room
@@ -1883,7 +1883,7 @@ O O O O O O O	yeah you got your understanding perfectly .
 O O O B_change_amount I_change_amount	decrease the volume to ten
 O O O O O O O O O O O O	how many mega pixel is listed in the description of the canon
 O O B_order_type	free home delivery
-U_business_name O O	google stock price
+B_business_name O O	google stock price
 O O O	turn off light
 O O O O O O O O O O O O	what does the traffic look like on my usual route to work
 O O O O B_order_type	how long until my takeaway
@@ -1925,7 +1925,7 @@ O O O O O O O O O O	did you get the last thing i said correctly ?
 O O O O O O O O O	no , you gave me not correct information .
 O O O B_artist_name	play songs by adele
 O B_person B_personal_info O B_place_name	does bob live in france
-U_media_type B_business_name I_business_name	tweet consumer service
+B_media_type B_business_name I_business_name	tweet consumer service
 O O B_time I_time O	cancel my three pm alarm
 O O O O O O O O O	is there any traffic on my way to work
 O O B_device_type I_device_type I_device_type	hey start vacuum cleaner robot
@@ -1979,7 +1979,7 @@ O O O O B_ingredient I_ingredient O	what is a good vegan egg substitute
 O O O O O O O	show me how to cook a recipe
 O O O B_definition_word I_definition_word O O	what does a beech tree look like
 O O O O O B_date	what is the weather this friday
-U_player_setting O B_media_type O O O O O O O O O	resume my audiobook from the beginning of the last chapter i started
+B_player_setting O B_media_type O O O O O O O O O	resume my audiobook from the beginning of the last chapter i started
 O O B_person I_person	read about mary s.
 O O O B_food_type O B_business_name I_business_name I_business_name I_business_name I_business_name	find and order rasgulla of janta sweet home pvt ltd
 O O O O O O O O	i need to hear that sentence again .
@@ -2041,13 +2041,13 @@ O O O B_game_name I_game_name I_game_name I_game_name	let 's play never have i e
 O O O B_radio_name I_radio_name O O O O O O O	find the best rock station near my location and turn it on
 O O O	on the plug
 O O O O O O B_definition_word	hey what is the definition of recipe
-U_business_name O O	honda stock price
+B_business_name O O	honda stock price
 O O B_food_type O O O	show me thai food near me
 O O O O	who sings this song
 O O O O O O O O O O	can you try the last one spoken once again .
 O O O O O O O O O O O	i am sorry but i think that 's not correct .
 O O O O B_device_type I_device_type	please turn on the smart socket
-U_player_setting O	resume audiobook
+B_player_setting O	resume audiobook
 O O O O O O O	who is the artist of this song
 O B_business_name I_business_name O O	have bing 's stocks dropped
 O O O O O	yeah that 's confirmed .
@@ -2171,7 +2171,7 @@ O O O B_definition_word	tell me about rock
 O O B_event_name I_event_name B_date I_date	is the balloon festival this weekend
 O O O O O O O O O O	could you again elaborate me on your answers please .
 O O B_person I_person O	play me john 's podcast
-U_transport_agency O O O B_place_name	uber me to the airport
+B_transport_agency O O O B_place_name	uber me to the airport
 O O O B_list_name O	please delete the shopping list
 O B_business_type O O O B_timeofday O O O O O B_place_name	what movie can i watch tonight on the theater here in boston
 O O B_podcast_name I_podcast_name	start podcast mlb daily
@@ -2249,15 +2249,15 @@ O O O O O O B_place_name I_place_name O B_place_name I_place_name O O	is there h
 O O O O O O O O O	i can not quite catch up with you .
 O O O B_time I_time I_time I_time	remind me at one thousand three hundred
 O O O O B_time I_time O O B_timeofday B_date	set my alarm for six thirty in the morning tomorrow
-U_player_setting B_audiobook_name	resume story
-U_player_setting O O O	move to next section
+B_player_setting B_audiobook_name	resume story
+B_player_setting O O O	move to next section
 O O B_date O	what is tomorrows events
 O O O O O O O	what is the current date time group
 O O O O O O O O O	how many work contacts are in my phone book
 O O O O O B_place_name	what time is it in england
 O O O O O O O B_time I_time O O B_person	what is on the agenda for the four pm meeting with joe
 O B_media_type	play tunes
-U_player_setting O B_song_name I_song_name	repeat the last song
+B_player_setting O B_song_name I_song_name	repeat the last song
 O O O O O O O	that is enough , stop it .
 O O O	please be silent
 B_place_name I_place_name O	new york time
@@ -2299,7 +2299,7 @@ O O O	are you human
 O O O O O O O O O	i like you to confirm the details please .
 O B_music_genre	play foke
 O O O B_alarm_type I_alarm_type O O O O O O O O O O B_date I_date	what is the wake up time for my alarm i have set for the flight this weekend
-U_business_type O O O	theaters near to me
+B_business_type O O O	theaters near to me
 B_song_name I_song_name I_song_name I_song_name O O O O O O O O O O O O	hips do nt lie that s the song i would like you to play for me
 O O O O O O	i do not really care .
 O O O O O O O O B_currency_name O B_currency_name I_currency_name I_currency_name	what 's the current exchange rate for the euro against u. s. d.
@@ -2310,7 +2310,7 @@ O O O O O O O O O O O	could you try what you just said one more again .
 O O O O O O O O B_event_name	please add list of things to buy for party
 O O O O O O O O B_business_name	what is the fastest way to get to starbucks
 O O O O O O O	do i have any new friend requests
-U_business_name O O	amazon stock price
+B_business_name O O	amazon stock price
 O O	be quiet
 O O O	make some coffee
 O O O O O O B_event_name O O B_date O O O O O O	i am no longer attending the wedding on the tenth so remove it from my calendar
@@ -2326,7 +2326,7 @@ O O O O B_relation O O O O O O O O O O	send an email to grandma saying we are dr
 O O O O O O	where can i go shopping here
 O O O O	tell me weather forecast
 O O O O O O O B_food_type I_food_type I_food_type	can you tell me how to cook chocolate chip cookies
-U_business_name O O	tvs stock price
+B_business_name O O	tvs stock price
 O O O O B_list_name I_list_name I_list_name O	add eggs to my grocery 's shopping list
 O O B_media_type O	check my facebook notification
 O O O O O O O O O O O	i need you to find a good channels to listen to
@@ -2387,7 +2387,7 @@ O O B_color_type O O O B_house_place O O	i like red colour for my home change it
 O O O O O O O O O O O O O	will you tell me what you have said one more time please .
 O O O O O O	read me new messages from name
 O O B_person	please email celine
-U_player_setting O	shuffle song
+B_player_setting O	shuffle song
 O O O O O O O O O O O O O O	i would like it if my robot could engage in deep conversation with me
 O O O O O O	turn the vibrate off from speaker
 O O O O B_place_name I_place_name I_place_name	what 's going on around the neighborhood
@@ -2523,8 +2523,8 @@ O O O O O B_place_name	what is the time in ajmer
 O O O O O	is this program is scheduled
 O O O O O O O O O	shit , you 've done a task wrong .
 O O	louder please
-U_player_setting B_audiobook_name I_audiobook_name O O O O O O O O O O	resume harry potter from the place i have stopped listening to last time
-U_media_type O B_business_name O O O O O O O O O	tweet to mcdonalds saying that i found a hair in their burger
+B_player_setting B_audiobook_name I_audiobook_name O O O O O O O O O O	resume harry potter from the place i have stopped listening to last time
+B_media_type O B_business_name O O O O O O O O O	tweet to mcdonalds saying that i found a hair in their burger
 O O O O O O O B_place_name O B_place_name I_place_name	how many hours difference is there between london and new york
 O O O O O O O O O O	what 's the famous monty python joke about the bird
 O O O O	yes strongly agree .
@@ -2535,7 +2535,7 @@ O O O O	remove my early alarms
 O O O O O B_transport_type O	could you please cancel my train ticket
 O O O O O O O	show me the available colours of lights
 O B_game_name I_game_name I_game_name O	play real racing three game
-U_media_type B_business_name O O O O O O O O	tweet starbucks and say that the customer service is awful
+B_media_type B_business_name O O O O O O O O	tweet starbucks and say that the customer service is awful
 O B_music_descriptor I_music_descriptor	play party songs
 O O O O O O	really i would not mind .
 O O O O O O O	what day of the week is it
@@ -2600,8 +2600,8 @@ O O O O O O	dim the lights down a bit
 O O O O O B_relation	send an email to my boss
 O O O O O O	speak one more time please .
 O O B_person I_person O O O	what is clint eastwood doing these days
-U_color_type O O O	rotate the light colors
-U_media_type O B_business_name O O O O O O	tweet to amazon about late delivery of my tv
+B_color_type O O O	rotate the light colors
+B_media_type O B_business_name O O O O O O	tweet to amazon about late delivery of my tv
 O O O O O O O	delete the item two from the list
 O O O O O O B_place_name	where is the hottest place on earth
 O O O O O O O O O O O	can you speak the command spoke one more again please .
@@ -2661,11 +2661,11 @@ O O O O O O O B_time I_time I_time	is there any events planned for the next thre
 O O O O O B_game_type O O	i wish i could play video games together
 O O O	no speaking please
 O O O	lower lights now
-U_player_setting B_audiobook_name I_audiobook_name O O O O O O O	resume joes book from where i left off last time
+B_player_setting B_audiobook_name I_audiobook_name O O O O O O O	resume joes book from where i left off last time
 O O B_definition_word I_definition_word	describe a romantic love
 O B_date I_date	weather this week
 O O B_house_place I_house_place O	turn on living room radio
-U_media_type O O B_business_name I_business_name I_business_name I_business_name I_business_name	tweet to the customer service account of starbucks
+B_media_type O O B_business_name I_business_name I_business_name I_business_name I_business_name	tweet to the customer service account of starbucks
 O O O O B_joke_type O O O	do you have a funny joke for me
 O O O B_timeofday O B_date I_date	turn off any morning alarms after Friday
 O O B_person I_person B_personal_info	where does joe joe live
@@ -2737,7 +2737,7 @@ O O O O O B_date O	give some of delete in today events
 O O O O O O O O O	this was not what i am searching for .
 O O O O O O B_list_name O	do i have banana in my shopping list
 O O O O O O B_business_name	how much does stock cost in walmart
-U_player_setting O	repeat album
+B_player_setting O	repeat album
 O O O O O O	it 's fantastic , thanks .
 O O O O O O O	play the miami heat and warriors game
 O O O O O O O O O O O	shit , you made a mistake , please correct this .
@@ -2763,7 +2763,7 @@ O O B_media_type O B_business_name I_business_name O O O O O O O O O	write a twe
 O O O O O O O O	olly that 's enough , stop it .
 O O O O B_color_type O	turn the lights to red color
 O O O O O B_event_name O O B_date	let me know when my meetings are on monday
-U_player_setting O O O O B_music_descriptor I_music_descriptor	shuffle the songs in the music library
+B_player_setting O O O O B_music_descriptor I_music_descriptor	shuffle the songs in the music library
 O O B_app_name O O O O O O	go to sirius and play the hip hop channel
 O O O O O O O O O	s2 , i was not clear about that .
 O O O O O	please delete this calendar event
@@ -2782,7 +2782,7 @@ O B_game_name I_game_name O O	play subway surfers with me
 O B_audiobook_name I_audiobook_name	play little women
 O O O O O O	what 's next on the list
 O O O O O B_definition_word O	please tell me what a crankshaft is
-U_media_type O O B_business_name	tweet complaint to dominoes
+B_media_type O O B_business_name	tweet complaint to dominoes
 O O O O B_transport_agency B_date	can you book an uber tomorrow
 O O O B_time I_time I_time I_time O B_time I_time	set alarm for twelve weeks from today at eight am
 O O O O O O O O	what 's my favorite music at the moment
@@ -2813,8 +2813,8 @@ O O O O O O O	please remove this event from my calendar
 O O O O O O O	could you please check what said .
 O O O O B_definition_word I_definition_word	define and describe an ultraviolet ray
 O O O O	what can you do
-U_joke_type O	funny story
-U_change_amount O O O	slightly raise the light
+B_joke_type O	funny story
+B_change_amount O O O	slightly raise the light
 O O O O O B_person I_person B_email_address I_email_address I_email_address	add a new contact for daniel bell dbell@aol dot com
 O O O B_food_type O O O B_food_type I_food_type O B_business_name	order two medium cheese and one medium pepperoni pizza from dominoes
 O O O O O O O O B_place_name	what street do i take to get to downtown
@@ -2883,8 +2883,8 @@ O O O O O O O O	i want to hear what said again .
 O O O O O O O O B_coffee_type O	can you please make me a cup of black coffee
 O O O O O O O O O	i appreciate it , that 's great job .
 O O O O O B_house_place O B_color_type	change the lights in the kitchen to blue
-U_date O O O O O O	today i had a record breaking sale
-U_email_folder O B_relation	inbox my family
+B_date O O O O O O	today i had a record breaking sale
+B_email_folder O B_relation	inbox my family
 O O	light off
 O O O B_device_type O O O O O	put on the screen the lists i have available
 O O O O O O O O O O	how much of the earth is made up of water
@@ -2897,14 +2897,14 @@ O O O O O O B_list_name O	take out the milk from the shopping list
 O O O O O O O	please open a reply to the email
 O O O O O O O O O O B_media_type O O B_food_type O	annie could you please search the internet and play the videos for cooking italian food
 O O O O O O O B_time I_time B_general_frequency I_general_frequency B_date I_date	put working out on my calendar for eight am every day this week
-U_player_setting B_audiobook_name I_audiobook_name I_audiobook_name I_audiobook_name	resume lord of the rings
+B_player_setting B_audiobook_name I_audiobook_name I_audiobook_name I_audiobook_name	resume lord of the rings
 O O O	foreign exchange rates
 O O O O	just cancel please .
 O O O O B_house_place O	control lights turn off room lights
 O O O O O O O O O	that does n't matter to me , olly .
 O O O O O O B_currency_name O B_currency_name	what 's the exchange rate between czk and euro
 O O O O O	turn off the closet light
-U_business_type O O	restaurant delivery update
+B_business_type O O	restaurant delivery update
 B_business_type I_business_type	mobile shop
 O O O O O O O O O B_business_name	let me know about the stock rate of a microsoft
 O O O O O O B_game_name	could you harvest the crops in farmvile
@@ -2919,7 +2919,7 @@ O O B_transport_type O O B_place_name O B_date	book a train ticket to mumbai for
 O O O O B_list_name O	help me start my kitchen list
 O	quiet
 O O B_music_genre I_music_genre	i love zydeco jams
-U_player_setting B_audiobook_name I_audiobook_name I_audiobook_name I_audiobook_name	resume the art of war
+B_player_setting B_audiobook_name I_audiobook_name I_audiobook_name I_audiobook_name	resume the art of war
 O B_media_type B_audiobook_name I_audiobook_name	play audiobook snow white
 O O O O O O O O B_date	olly find any alarms i have set for today
 O O B_date O B_transport_type O O B_time I_time I_time O B_place_name O B_place_name	show me today all train times of next two hours at jodhpur to pali
@@ -2971,10 +2971,10 @@ O O O O B_list_name O B_date	delete my list of appointments for tomorrow
 O O O O B_list_name I_list_name O B_date	what is on my to do list today
 O O B_house_place O	turn off kitchen light
 O O O O O B_date B_timeofday	is the alarm set for tomorrow morning
-U_player_setting B_audiobook_name O O O O O	start dune from where i left off
+B_player_setting B_audiobook_name O O O O O	start dune from where i left off
 O O B_food_type O B_ingredient O B_business_name I_business_name	order a pizza with sausage from domino 's
 O O B_personal_info I_personal_info O B_person I_person	what is job title of jan medvesek
-U_player_setting O O O O B_playlist_name I_playlist_name	repeat song number ten from main list
+B_player_setting O O O O B_playlist_name I_playlist_name	repeat song number ten from main list
 O O O O O O B_place_name	which shops can i find in milan
 O B_list_name O	remove cart list
 O O O O B_media_type	what 's trending on twitter
@@ -2997,7 +2997,7 @@ O O O O B_game_name	let 's play some pong
 O O O O O	give me all my lists
 O O O O O O O	let us do it again please .
 O O O O B_food_type I_food_type	find a recipe for homemade bread
-U_media_type O O O B_business_name I_business_name	tweet my complaint to @consumer service
+B_media_type O O O B_business_name I_business_name	tweet my complaint to @consumer service
 O O O O O O B_time I_time B_date O	i want to wake up at six am tomorrow please
 O O O O	read me new emails
 O O O O O O B_device_type I_device_type I_device_type	please help me turn on the robot vacuum cleaner
@@ -3007,7 +3007,7 @@ O O B_transport_type O O	find a taxi to book
 O O O O O B_house_place I_house_place	dim the lighting in my living room
 O O O O B_house_place	turn lights off in kitchen
 O O B_definition_word	describe a tomatillo
-U_media_type B_business_name I_business_name I_business_name	tweet verizon customer service
+B_media_type B_business_name I_business_name I_business_name	tweet verizon customer service
 O O B_podcast_descriptor I_podcast_descriptor O B_podcast_name I_podcast_name I_podcast_name O	play the next episode of drunks and dragons please
 O O O O O O O	it 's not the correct command .
 O O B_game_name I_game_name I_game_name	load up ghost recon wildlands
@@ -3096,7 +3096,7 @@ O O O	please shut off
 O O O O O O	what is the track information currently
 O O O O O O O B_game_name I_game_name I_game_name	let 's play a game how about tic tac toe
 O O O O O O O O O O	what 's a good movie that 's out right now
-U_color_type O O	blue lights please
+B_color_type O O	blue lights please
 O O O O B_food_type I_food_type	how do i make mashed potatoes
 O O O O O O	hmm , not correct response .
 O O O B_time I_time	set alarm at five am
@@ -3123,7 +3123,7 @@ O B_radio_name O	start bbc radio
 O O B_definition_word I_definition_word	description of iphone seven
 O O O O O O O O O	can you please further explain me about that .
 O O B_transport_type O O	book a train for me
-U_media_type B_business_name O O O O O O O	tweet @wendys that i do n't like their product
+B_media_type B_business_name O O O O O O O	tweet @wendys that i do n't like their product
 O O O B_place_name I_place_name	how tall is roraima mount
 O O O O O B_date	make a repeating reminder for tomorrow
 O O B_business_type O B_order_type I_order_type O	does that restaurant allow take out orders
@@ -3179,8 +3179,8 @@ O O B_currency_name O O O O O B_currency_name	how many euro will i get for ten d
 O O O O	do n't care .
 O O O O O O O	that was not what i meant .
 O O B_transport_name B_transport_type O O B_date	buy an acela train ticket on thursday
-U_player_setting B_audiobook_name I_audiobook_name I_audiobook_name	resume pride and prejudice
-U_player_setting O O O O O	start podcast from my favorites list
+B_player_setting B_audiobook_name I_audiobook_name I_audiobook_name	resume pride and prejudice
+B_player_setting O O O O O	start podcast from my favorites list
 O O O O O O O O O O	i 'd like you check my last question please .
 O O O O O O	say it once again please .
 B_device_type I_device_type O	vacuum cleaner start
@@ -3232,12 +3232,12 @@ O O O B_food_type O B_business_name	order me a byron from deliveroo
 O O O O O O O	please turn up the light a little
 O O O O O	Hey turn the volume high
 O O O O O O O O O	what did you say in the last conversation .
-U_player_setting O O O B_audiobook_name	resume audio playback of twilight
+B_player_setting O O O B_audiobook_name	resume audio playback of twilight
 O O O O B_event_name O B_person I_person B_date I_date	delete all of my appointments with dr smith this week
 O O O O O O O O	you 've done that right , olly .
 O O O O O O	tell me about the alarm timings
 O O O O O O B_place_name I_place_name	what is the current time in lagos nigeria
-U_player_setting O O O B_audiobook_name O	start audio playback of twilight again
+B_player_setting O O O B_audiobook_name O	start audio playback of twilight again
 O O O O	what 's that .
 O B_event_name I_event_name B_date	no lunch date tomorrow
 O O O O O B_game_name I_game_name	play for me the game candy crush
@@ -3364,7 +3364,7 @@ O O O O O	you understood command perfectly .
 O O O O B_artist_name I_artist_name	i love anything by elton john
 O O O	traffic status please
 O B_personal_info O B_person	how old is joanne
-U_order_type B_food_type O O	takeaway noodles one pack
+B_order_type B_food_type O O	takeaway noodles one pack
 O O O O O	what is the song name
 O O O O O O O O	i 'd like you check details please .
 O O O	please make coffee
@@ -3496,7 +3496,7 @@ O O O O O B_music_genre O O B_artist_name O B_artist_name	i'dl like to hear any 
 O O O O B_date I_date B_event_name	shall we meet for today 's party
 O O O O O O O	i would n't bother , olly .
 O O O O O	how many alarms are set
-U_media_type B_business_name I_business_name I_business_name I_business_name O O O	tweet freedom pop customer service i am dissatisfied
+B_media_type B_business_name I_business_name I_business_name I_business_name O O O	tweet freedom pop customer service i am dissatisfied
 O O O B_news_topic I_news_topic O O B_date	send me the stock market updates for today
 O O O O O O O	yeah you 've got that perfectly .
 O O O B_definition_word	what is a shoal
@@ -3561,7 +3561,7 @@ O O O O O O	tell me what lists i have
 O O O O O	play my most played songs
 O O O O O B_transport_type B_place_name	can you get me a taxi home
 O O B_person O B_person I_person O O	when did beyonce and jay z get married
-U_event_name	badminton
+B_event_name	badminton
 O O O O O O	let 's suck out the dust
 O O O	events in city
 O O O O O O O	olly would you shut off please .
@@ -3572,7 +3572,7 @@ O O O O B_podcast_descriptor I_podcast_descriptor	move forward to the next episo
 O O O O O O O O O	please give me the road forecast for i95 sb
 O O O B_food_type O	please explain the rice recipe
 O O O B_date B_time I_time	set alarm for tomorrow six am
-U_media_type O O	tweet consumer complaint
+B_media_type O O	tweet consumer complaint
 B_player_setting I_player_setting	stop play
 O O O O O O	where do most celebrities hang out
 O O B_transport_type O O B_place_name I_place_name O B_place_name I_place_name	book my train ticket from las vegas to los angeles
@@ -3597,7 +3597,7 @@ O O O	make me happy
 O B_date O O B_place_name	show todays events in ny
 O O O O	whatever is good .
 O O O O O O O O O	please find me the pe most recent news on
-U_date O O O O O O	todays a lovely day what the date
+B_date O O O O O O	todays a lovely day what the date
 O O O O B_time I_time I_time I_time	wake me up at five hundred and thirty
 O O O O	that is good .
 O O O O O O O	you have done task all wrong .
@@ -3677,7 +3677,7 @@ O B_person	email mahmoud
 O O O O O O	tell me who wrote this song
 O O O O O O O	olly i like you just cancel .
 O O O O O O O B_person	i need to send an email to michael
-U_news_topic O	entertainment news
+B_news_topic O	entertainment news
 O O O O O O O B_food_type O O O O B_food_type O	where can i get a shot of tequila and some to go mexican food
 O B_person I_person B_event_name I_event_name B_timeofday	is mary 's birthday party tonight
 O O O O O O O O O O O O	you are the best , thank you so much , olly .
@@ -3799,7 +3799,7 @@ O O O O O O	i did not say it .
 O O O O O B_time B_date	i want an alarm for three today
 O	plants
 O O O O O O B_place_name I_place_name	search cost for amtrak luxury to los angeles
-U_currency_name B_currency_name O O	canadian us exchange rate
+B_currency_name B_currency_name O O	canadian us exchange rate
 O O B_game_name O	start the poker game
 O O O O O O	what country has the most population
 O O O O O O O	email me the lyrics to this song
@@ -3814,7 +3814,7 @@ O O O O O B_meal_type	what should i make for dinner
 O O B_device_type	shut down sps
 O O O O B_artist_name I_artist_name O	save my opinion on adele 's song
 O O O O O O B_email_folder	check all new emails in my inbox
-U_date O O O O O O	today i could n't find my phone
+B_date O O O O O O	today i could n't find my phone
 O O O O	please remove my alarm
 O B_media_type O B_media_type O O O O O O O O	check facebook and twitter and tell me if anything interesting is happening
 O B_event_name O O O B_date	what meetings are available in march
@@ -3836,7 +3836,7 @@ O O O B_relation O O O O O O B_date I_date	send mail to mom i am planning vacati
 O O O O O O	give a hand to this game
 O O O	attenuate the lights
 O O O O O O O	change the lights to a different hue
-U_business_type O O	markets near by
+B_business_type O O	markets near by
 O O O O O O	is there is a high traffic
 O B_game_name I_game_name I_game_name	start words with friends
 O O O O O	please archive my read messages
@@ -3851,7 +3851,7 @@ O O O O O O O	olly could you please shut up .
 O O O O O O O O O B_place_name I_place_name	what traffic is there on the route to the pittsburgh airport
 O O O B_event_name	what day is christmas
 O O O O O O O O O O O O	please tell me the name of this song that is currently playing
-U_media_type B_business_name I_business_name O O O O O O O	tweet consumer service that the goods are of low quality
+B_media_type B_business_name I_business_name O O O O O O O	tweet consumer service that the goods are of low quality
 O O O O O O O B_media_type O	have i got new content in my twitter feed
 O O O O O O	who recently posted on social media
 O O	nice music
@@ -3873,7 +3873,7 @@ O O O O O O O	what is the status of my order
 O O O O O O O O O B_house_place I_house_place	can you please turn off the light of my bed room
 O O B_game_name I_game_name	start play road rash
 O O O O O O O O O O O	do you know the name of the song that is playing
-U_player_setting B_audiobook_name I_audiobook_name I_audiobook_name I_audiobook_name	resume harry potter book five
+B_player_setting B_audiobook_name I_audiobook_name I_audiobook_name I_audiobook_name	resume harry potter book five
 O O O O B_personal_info I_personal_info O B_person	do i have a work number for susan
 O O O O O O O	remind me that i like that song
 O B_transport_agency	google uber
@@ -3934,7 +3934,7 @@ O O O B_place_name O B_place_name	time difference between uk and us
 O O O O O O O O	olly will you just stop it please .
 O O O O	what genre is this
 O O O O O O O O	tell me that words spoke again please .
-U_media_type O O B_business_name I_business_name	tweet complaint to amazon products
+B_media_type O O B_business_name I_business_name	tweet complaint to amazon products
 O O O O O O O O O O B_business_type I_business_type O	i wish to go for cheap shopping is there any dollars shop nearby
 O O O O O O	would you please confirm details .
 O O O	brew some coffee
@@ -3969,7 +3969,7 @@ O O O B_person O B_date B_time I_time	set meeting with joanna on Saturday four p
 O O O O	turn off the speakers
 O B_date I_date I_date O B_event_name O B_time	on january twenty five set meeting for twelve
 O O O O O O O O	yeah you 've got my instructions right .
-U_player_setting O	skip forward
+B_player_setting O	skip forward
 O O O O O B_house_place I_house_place	dim the lights in the living room
 O O O O O O O O O B_business_name O	can you find and tell me the prices of facebook stock
 O O O O B_weather_descriptor B_date	do i need a sweater today
@@ -3994,12 +3994,12 @@ O O O O O O O O O	will you tell me that once more please .
 O O O O B_place_name I_place_name O B_place_name O B_transport_descriptor I_transport_descriptor I_transport_descriptor I_transport_descriptor	book a ride from new york to orlando covering ten places to see
 O O O O O O O	can you please switch off the lights
 O B_person O	was einstein married
-U_media_type B_business_name I_business_name I_business_name O O O O O O O O O	tweet real donald trump that angela merkel will not shake his hand anymore
+B_media_type B_business_name I_business_name I_business_name O O O O O O O O O	tweet real donald trump that angela merkel will not shake his hand anymore
 O O B_house_place	vacuum the kitchen
-U_player_setting O O B_audiobook_name I_audiobook_name	resume play of american gods
+B_player_setting O O B_audiobook_name I_audiobook_name	resume play of american gods
 O O O	who sung this
 O O O O O O O O	yeap you 've got my instructions correcly .
-U_cooking_type	freezing
+B_cooking_type	freezing
 O O B_place_name O O	please provide world hot news
 O O O O O O O O O O B_food_type I_food_type	in five sentences let me know the procedure of making thanksgiving turkey
 O O O O O	read my lists to me
@@ -4043,7 +4043,7 @@ O O O O O O O O O O O	i have to done it on the post important music file
 O O O O O O O O O B_place_name I_place_name I_place_name	tell me how to get from here to the chimes in covington
 O O O B_transport_type O O B_place_name I_place_name I_place_name O	book me a taxi to the mall of america please
 O O O O O O O B_media_type	show me the latest news from the un
-U_player_setting B_audiobook_name I_audiobook_name I_audiobook_name	resume war and peace
+B_player_setting B_audiobook_name I_audiobook_name I_audiobook_name	resume war and peace
 O O O B_music_genre I_music_genre I_music_genre	i really enjoy rock and roll
 O B_meal_type O O	is dinner ready yet
 O B_person I_person O O O O	add dr rosenstock as an email contact
@@ -4059,7 +4059,7 @@ O O O O B_media_type	what 's new in facebook
 O O	mute speakers
 O O O O O O O O	awesome work , you 've done well .
 O O O O O B_timeofday I_timeofday O B_time I_time	please set the alarm for next morning to seven am
-U_event_name O B_time I_time I_time I_time I_time	meetings from twenty to twenty five june
+B_event_name O B_time I_time I_time I_time I_time	meetings from twenty to twenty five june
 O O	my alarms
 O B_audiobook_name I_audiobook_name I_audiobook_name I_audiobook_name	play biography of jackie kennedy
 O O O O O O O	save that email as a new contact
@@ -4087,7 +4087,7 @@ O O O	yes agree .
 O O O O O B_food_type O O O O O	i want to find some chinese food what is near me
 O O O O	delete the list please
 O O B_event_name O B_app_name I_app_name	remove sample meeting from calendar app
-U_media_type B_place_name O	cnn world news
+B_media_type B_place_name O	cnn world news
 O B_time_zone I_time_zone I_time_zone O B_time_zone	convert g. m. t. to ist
 O O O O O O B_media_type O B_media_type O	are there any status updates on cnn news facebook page
 O O O B_transport_type O O O O	get me a train ticket to go to
@@ -4108,7 +4108,7 @@ O O O O O O O O O O	tell me about the events going on around my location
 O O O O B_device_type I_device_type	show current track in music player
 O O B_media_type O B_business_name O O O	send a tweet to tmobile for rude employees
 O O O O O B_place_name	i want to go to mcdo
-U_player_setting O B_media_type I_media_type O O O O O	start my audio book from where i left off
+B_player_setting O B_media_type I_media_type O O O O O	start my audio book from where i left off
 O O O O O O O O B_person O	what time am i supposed to pick up john again
 O O O O O O B_business_name	give me the stock price of apple
 O O O O O O	please raise the volume of speaker
@@ -4127,7 +4127,7 @@ O O O O O O O O	tell me what is next on my query
 O O O O	give me the reminders
 O O O O O B_media_type B_audiobook_name I_audiobook_name	i want to play the audiobook good grief
 O O B_device_type I_device_type	start cleaning robot cleaner
-U_media_type O O O O O O O	tweet for me the complaint about drainage work
+B_media_type O O O O O O O	tweet for me the complaint about drainage work
 O O O O O O O B_email_address I_email_address I_email_address	Update my contacts with the new contact sam@gmail dot com
 O O O O B_radio_name I_radio_name I_radio_name I_radio_name I_radio_name I_radio_name	play the radio station one hundred and one point nine
 O O O O O	turn on all upstairs lights
@@ -4145,7 +4145,7 @@ O O O O B_definition_word O	tell me what a freeway is
 O B_definition_word O O O O O	define love without invoking the term love
 O O O O O O O O O	dammit , it is n't what i asked .
 O O O B_list_name O O O O O O O O	please update my grocery list with one gallon of two percent milk
-U_business_name O O O O O O O O O O O	@nikesupport i need some assistance regarding some shoes i bought last week
+B_business_name O O O O O O O O O O O	@nikesupport i need some assistance regarding some shoes i bought last week
 O O O O O O B_business_name	give the stock price details of motorolla
 O B_radio_name I_radio_name	play radio one
 O O O O O O O B_media_type I_media_type	read me the last tweet from the washington post
@@ -4177,7 +4177,7 @@ O O O O	unmute the speaker now
 O O O O B_place_name I_place_name I_place_name I_place_name I_place_name	i need directions to lowes in mount h nj
 O O O O O O O B_time I_time O	what week of the year does the summer season start
 O O O O	cut down the volume
-U_player_setting O	resume playback
+B_player_setting O	resume playback
 O O O O O O O B_date	do i have an alarm set for today
 O O O O O O B_list_name O	do i have coffee on the grocery list
 O O O O	take item off list
@@ -4192,7 +4192,7 @@ O O O O O O	create a list for the following
 O O O O B_news_topic B_date O O O O B_person O O	what is new in politics today can you filter out trump news though
 O O B_transport_type O O B_place_name I_place_name O B_place_name O B_transport_descriptor I_transport_descriptor I_transport_descriptor	book a train ticket from los angeles to chicago that goes via miami
 O O	stock please
-U_media_type	myspace
+B_media_type	myspace
 O O O O O B_podcast_descriptor I_podcast_descriptor O B_podcast_name I_podcast_name	can you please play the next episode of food stuff
 O O O O B_transport_type O O B_place_name	what time does the train arrive in sacremento
 O B_artist_name I_artist_name	play neil sedaka
@@ -4217,7 +4217,7 @@ O O O O O O O	could you please confirm the instruction .
 O O O O O O	send response i will be there
 O O B_device_type I_device_type O	turn the security light off
 O O O O O B_house_place	lower the lights in the bedroom
-U_order_type O	takeaway status
+B_order_type O	takeaway status
 O O O O O B_time I_time B_list_name O	i want to make this week 's shopping list
 O O O O O B_date I_date O O O	remove all the events of last month from the calendar
 O O O O O O	is there any traffic right now
@@ -4259,7 +4259,7 @@ O O O O B_list_name O B_date	what is on my shopping list today
 O B_color_type O O O O O O O B_house_place	put dark colours instead of light ones in the house
 O O O O O O O B_date	a new list to be created by tomorrow
 O O O B_transport_type O B_place_name I_place_name I_place_name I_place_name O	when does the train from kansas city to iowa leave
-U_media_type B_business_name O O O O O O O O	tweet walmart and tell them their customer service is horrible
+B_media_type B_business_name O O O O O O O O	tweet walmart and tell them their customer service is horrible
 O O O O O O	i would like to crack jokes
 O O O O O O O O O	hey share me some joke to make me happy
 O O O O O O O O O	can you get me a cup of coffee please
@@ -4270,7 +4270,7 @@ O O O O O O O	confirm the last thing said please .
 O O O O O B_place_name	what 's the time in dubai
 O O O O O	i do n't bother .
 O O B_color_type	house lights blue
-U_house_place O O	office lights off
+B_house_place O O	office lights off
 O O O O O O B_house_place I_house_place O	turn off the light of my bed room please
 O O O	what going on
 O O O O	mute all responses now
@@ -4295,9 +4295,9 @@ O O O B_cooking_type O B_food_type	how do i cook a pasta
 O O O O	tell me about alarms
 O O O O O B_radio_name I_radio_name I_radio_name I_radio_name I_radio_name	rj raunak programme play on ninety two point seven fm
 B_list_name I_list_name I_list_name O O	buying of groceries new list
-U_currency_name O B_currency_name I_currency_name I_currency_name	euro to u. s. d.
+B_currency_name O B_currency_name I_currency_name I_currency_name	euro to u. s. d.
 O O O B_place_name O	the time in cairo please
-U_player_setting B_audiobook_name	resume inkheart
+B_player_setting B_audiobook_name	resume inkheart
 O O O B_person I_person	how old is kim kardashian
 O O O O O O	ah it 's great work .
 O O O O B_artist_name	play all by the beatles
@@ -4312,7 +4312,7 @@ O O O O O O B_date I_date	do i have any calendar events this month
 O O O O O B_time I_time	is my alarm set for seven am
 O O O	answer the email
 O O O O O O O O O O O O O O O O O	can you turn down the volume please and tell me what is the title of this song
-U_definition_word O	pontificate definition
+B_definition_word O	pontificate definition
 O O	song next
 O O O O O O B_place_name	how is traffic from work to home
 O O O O B_date I_date O B_event_name	set a reminder on fifteenth march as meeting
@@ -4359,7 +4359,7 @@ O O B_radio_name I_radio_name I_radio_name	play a news radio station
 O O O O O O B_food_type I_food_type	what ingredients do i need for tomato soup
 O O O	show my alarms
 O B_business_name I_business_name O O O O	let wendy 's know i hate them
-U_media_type O O O B_business_name	tweet error log to samsung
+B_media_type O O O B_business_name	tweet error log to samsung
 O O O O O O O O	s1 , rephrase me more on it .
 O O O O O O B_place_name O B_place_name	what 's the traffic situation from kamycka to dejvicka
 O O O O O O O B_transport_type O O O B_place_name B_date O O O	book a ticket for me on a train to get to boston tomorrow what is available
@@ -4390,7 +4390,7 @@ O O B_person I_person O O	what are john 's contact details
 O O O O O	get the coffee started please
 O O B_device_type I_device_type O B_house_place	turn off smart lamp in den
 O O O O O B_definition_word I_definition_word I_definition_word O	can you tell me what the white house is
-U_player_setting O O O O	rewind the episode of podcast
+B_player_setting O O O O	rewind the episode of podcast
 O B_artist_name I_artist_name B_song_name I_song_name O O O O	get sia 's cheap thrills ready to play next
 O O O	mute for volume
 O O B_game_name I_game_name I_game_name	please play clash of clans
@@ -4398,7 +4398,7 @@ O O O O O O O O	clarify further on that to me please .
 O O O O O O O	was this song in the top twenty
 O O O O O O	please check and confirm command .
 O O O	where is stonehenge
-U_player_setting O B_time I_time	forward to four twenty
+B_player_setting O B_time I_time	forward to four twenty
 O O O O O O O O O O O	would you please once again explain me about your words .
 O O O O O B_house_place	increase the brightness of lights bedroom
 O B_audiobook_name I_audiobook_name I_audiobook_name O B_audiobook_author I_audiobook_author I_audiobook_author	play the time machine by h g wells
@@ -4407,7 +4407,7 @@ O O O O O O O O	what is the square root of thirty six
 O O O B_podcast_descriptor I_podcast_descriptor O O O	please play the next episode in the podcast
 O O	fresh list
 O O O O O O	mark this song as a favorite
-U_device_type O	vacuum start
+B_device_type O	vacuum start
 O O O O O O O B_general_frequency I_general_frequency I_general_frequency I_general_frequency I_general_frequency	set the event to recur on the first monday of the month
 O O O B_email_address I_email_address I_email_address O O O O O	send email to joanne@aol dot com and add as new contact
 O O B_media_type	current news cnn
@@ -4435,7 +4435,7 @@ O O O O	would not know .
 O O O O O O O O O O O	what you have said was not so clear to me .
 O O O O O	what movies are playing nearby
 O O O O O O	can you make me coffee now
-U_business_name O O O	facebook current stock rate
+B_business_name O O O	facebook current stock rate
 O O O O O B_date I_date B_timeofday	show me my calendar event this Friday afternoon
 O O O O O O O O	what is the answer to dollars minus dollars
 O O O O O O O O	what 's the latest in my social media
@@ -4460,14 +4460,14 @@ O O O O O O O O	how far does my dollar go in japan
 O O O O	make me coffee now
 O O O O O O O O	excellent job , you have done well .
 O B_currency_name I_currency_name I_currency_name O B_currency_name I_currency_name I_currency_name	exchange u. s. d. to g. b. p.
-U_player_setting O O B_media_type O	continue with my audiobook please
+B_player_setting O O B_media_type O	continue with my audiobook please
 O O O O B_person I_person	send an email to george brown
 O O O O O O B_podcast_descriptor I_podcast_descriptor I_podcast_descriptor	start the podcast over that i started last night
 O O B_order_type O	order some takeaway food
 O B_app_name	start pandora
 O O O O O	yeap that 's right .
 O O O O O	will you stop please .
-U_player_setting B_media_type O	continue audiobook playback
+B_player_setting B_media_type O	continue audiobook playback
 O O O B_color_type	make light color red
 O O O O B_transport_type O O B_place_name O B_place_name O B_date B_timeofday	get a me a train ticket to milwaukee from chicago on sunday morning
 O O O O O O B_place_name	what s the traffic like near ypsilanti
@@ -4497,7 +4497,7 @@ O O O O B_song_name I_song_name I_song_name I_song_name I_song_name I_song_name	
 O B_music_descriptor I_music_descriptor O O	add new songs to playlist
 O O B_food_type	recipe for crabmeat
 O O O O	show me my reminders
-U_currency_name O O B_currency_name I_currency_name	dollar rate of philippiness peso
+B_currency_name O O B_currency_name I_currency_name	dollar rate of philippiness peso
 O O O O O	when is my order arriving
 O O O O B_news_topic I_news_topic I_news_topic I_news_topic	Show me articles about the new iphone eight
 O O O O O O O O O B_list_name	what 's the next thing on my list of appointments
@@ -4514,8 +4514,8 @@ O O O O O B_date	what is new news for today
 O O B_event_name O B_date O B_media_type	who 's birthdays are today on facebook
 O O O O O	how about the latest news
 O O O O O B_business_name	show me share price of tata
-U_media_type O	tweet complaint
-U_player_setting O O B_audiobook_name I_audiobook_name I_audiobook_name	resume audio book history of rome
+B_media_type O	tweet complaint
+B_player_setting O O B_audiobook_name I_audiobook_name I_audiobook_name	resume audio book history of rome
 O O O O O B_time I_time	how is the traffic at the moment
 O O O O	please remove a list
 O O B_definition_word	what is laptop
@@ -4526,10 +4526,10 @@ O O O O O O O O O O O O O O O O	i 've heard this riff before what song stole thi
 O O O B_person	show contact of john
 O O O O	yes right response .
 O O O O O O O O	what is the square root of thirty four
-U_player_setting O O B_artist_name I_artist_name	shuffle music by aaron carter
+B_player_setting O O B_artist_name I_artist_name	shuffle music by aaron carter
 O O O O O O O O O	give a last minute update on incoming emails please
 O O O O O	please make me some coffee
-U_media_type O O O B_business_name I_business_name I_business_name I_business_name	tweet a complaint to kohl 's customer service
+B_media_type O O O B_business_name I_business_name I_business_name I_business_name	tweet a complaint to kohl 's customer service
 O O O O O O O	show me all of my active alarms
 O O B_podcast_descriptor I_podcast_descriptor	please play next episode
 O B_person B_personal_info I_personal_info O O O	is bills pager number in my contacts
@@ -4539,7 +4539,7 @@ O O O O B_currency_name I_currency_name O B_currency_name I_currency_name	siri w
 O O O O O O O B_date I_date	what do you suggest that i watch this weekend
 O O O B_person I_person O O O O	could you get john 's email address for me
 O O O O O O B_transport_descriptor I_transport_descriptor B_transport_type O B_place_name I_place_name	i need the times for the south bound train on allison rd
-U_player_setting B_audiobook_name I_audiobook_name	restart american gods
+B_player_setting B_audiobook_name I_audiobook_name	restart american gods
 O O O O O O O O B_place_name I_place_name	can you tell me the current time in dallas texas
 O O B_date I_date O B_place_name	any events this weekend in pondichery
 O O O O O O O	show me the places where i was
@@ -4547,7 +4547,7 @@ O O O O O O B_change_amount O	please turn the volume to the loudest setting
 O B_person O B_place_name O O	will trump visit russia anytime soon
 O O O	current forex rates
 O O O O	what music is it
-U_player_setting O O O	reshuffle and play music
+B_player_setting O O O	reshuffle and play music
 O O O B_joke_type O O O B_person	i need a funny joke to tell sam
 O O B_news_topic I_news_topic I_news_topic O	The latest climate and weather news
 O O O O O O O O B_list_name I_list_name B_date	add car service to my list of things to do today
@@ -4632,7 +4632,7 @@ O O O B_list_name	remove pencil from stationary
 O O O B_color_type	make my lights blue
 O O	speakers off
 O O O O O O O	you have got my instructions right .
-U_player_setting O O	forward this one
+B_player_setting O O	forward this one
 O O O O O O O O	is there anything important happening on social media
 O O O B_podcast_descriptor I_podcast_descriptor	please play the next episode
 O O O O O O O	olly please could you shut down .
@@ -4659,7 +4659,7 @@ O O O O O B_definition_word	how would you describe a ball
 O O O O O O O O O O	check all the new them emails and mark them star
 O O O O O O B_currency_name O B_currency_name I_currency_name	what is the current rate of euro to us dollars
 O O O O	yeah exact response .
-U_media_type O O O O O B_business_name I_business_name	tweet my complaint and mention this costumer service
+B_media_type O O O O O B_business_name I_business_name	tweet my complaint and mention this costumer service
 O O O O O O O	olly that is all , cancel .
 O O O O	switch off the light
 O O B_order_type O B_business_name I_business_name	can it takeaway from ammi biryani
@@ -4705,7 +4705,7 @@ O O O O B_list_name I_list_name	start a list of dog names
 O O O O O O O O O	can you replay your phrase you just said .
 O O O O O O	do nt do that again .
 O O O O B_house_place	turn off lights in bedroom
-U_date O O O	today is which date
+B_date O O O	today is which date
 O O O	cheer me up
 O O O O	turn the music lower
 O O O O O O B_place_name I_place_name	find me the oldest hotel in washington dc
@@ -4721,7 +4721,7 @@ O O O O O O	could you check that please .
 O O O	what is this
 O O O O O B_food_type I_food_type	what are the steps for biriyani meal
 O O O B_food_type I_food_type	get recipe for apple pie
-U_player_setting B_media_type	resume audio
+B_player_setting B_media_type	resume audio
 O O O O O O O O O	would you check and confirm the details please .
 O O B_song_name I_song_name O B_artist_name I_artist_name	play what i am by edie brickel
 O O O B_order_type I_order_type O B_business_name O O	order a large pepperoni pizza from dominos to go
@@ -4792,7 +4792,7 @@ O O O O B_business_type I_business_type I_business_type O B_place_name	where is 
 O O O O O O	what home alarms have been set
 O O O O O O O O	what 's happening on social media right now
 O O O O O B_media_type O	what 's new on my facebook account
-U_transport_agency O	uber please
+B_transport_agency O	uber please
 O O O O O O O O B_date I_date I_date I_date I_date I_date	does my calendar say i 'm free on april one two thousand and seventeen
 O O B_food_type O B_business_name I_business_name	get us spaghetti from pizza hut
 O O O O O B_place_name I_place_name	what 's the time in new york
@@ -4816,7 +4816,7 @@ O O O O B_list_name I_list_name	begin new list of lottery numbers
 O O O O O O O O	perfect job , you have done well .
 O O O O O O O B_email_folder	are there any unread messages in my inbox
 O O O B_currency_name O B_currency_name I_currency_name	exchange rate between dollar and mexican peso
-U_player_setting O O B_podcast_descriptor I_podcast_descriptor O O O	skip to the next episode of this podcast
+B_player_setting O O B_podcast_descriptor I_podcast_descriptor O O O	skip to the next episode of this podcast
 O O B_food_type I_food_type O O	order general t'so eggroll to go
 O O B_meal_type B_date	delete my dinner tomorrow
 O O O O B_song_name I_song_name I_song_name I_song_name I_song_name	who covered the song one more cup of coffee
@@ -4895,7 +4895,7 @@ O O O O O O O B_radio_name I_radio_name I_radio_name I_radio_name I_radio_name	s
 O O O O O O O O B_time I_time	olly set my alarm to go off in an hour
 O O O O	olly shut up .
 O O O O B_definition_word O	tell me what a workhouse is
-U_weather_descriptor B_time I_time	temperature this hour
+B_weather_descriptor B_time I_time	temperature this hour
 O O O O O	please mute the volume control
 O O O B_definition_word	what is a chair
 O O B_transport_type O O O O O O B_place_name I_place_name	call a taxi for me to where i am currently located
@@ -4928,12 +4928,12 @@ O O B_transport_type O O O B_transport_descriptor I_transport_descriptor O B_pla
 O O	friend updates
 O O O O B_business_type O B_place_name I_place_name	where can i go shopping in this area
 O O B_player_setting I_player_setting B_audiobook_name I_audiobook_name	can you put on the giver
-U_player_setting O O O O O O O	resume the playback of a child called it
+B_player_setting O O O O O O O	resume the playback of a child called it
 O O O B_media_type O O O O O	list me the audiobooks i have already listened to
 O O O O O B_place_name I_place_name	how is the traffic around city center
 O O O O O	decrease volume to very soft
 O O B_time I_time	mute for fifteen minutes
-U_media_type B_business_name I_business_name O O O O O O O O O	tweet consumer service that i am very disappointed with my recent interaction
+B_media_type B_business_name I_business_name O O O O O O O O O	tweet consumer service that i am very disappointed with my recent interaction
 O O O O O O O O O O O	thanks but i think you have messed up my request .
 O O O	remove the alarm
 O O B_event_name I_event_name O B_date I_date	set a neighbor party for next week
@@ -4996,7 +4996,7 @@ O O O O O O O	i am unclear about your response .
 O O B_time I_time O O O O O B_time I_time O	add a five am alarm in place of my nine pm alarm
 O O O O O O O	check last thing i said please .
 O O O O B_event_name O	please erase the next birthday event
-U_media_type B_business_name I_business_name O O O O O	tweet consumer service that the quantity is wrong
+B_media_type B_business_name I_business_name O O O O O	tweet consumer service that the quantity is wrong
 O B_game_name	play chess
 O O B_person I_person B_event_name O O O	please clear jeff 's birthday from the calendar
 O O	Silence speakers
@@ -5137,7 +5137,7 @@ O O O O O O B_event_name I_event_name I_event_name I_event_name	set alarm for th
 O O O O O O O O	can i know what i on the list
 O O O O O O O O O	down the speaker volume at the end of level
 O O O O O O O O O O O	give me the average five year stock price of home depot
-U_media_type O O	tweet a complaint
+B_media_type O O	tweet a complaint
 O O O O O O O O O	what you have said was not so clear .
 O O B_person I_person O	where was marlon brando born
 O O O B_device_type I_device_type O O O O	please turn on coffee maker and start brew cycle
@@ -5190,7 +5190,7 @@ O O	traffic please
 O O O O O O	delete my next scheduled event please
 O O O O O B_place_name	what is time now in california
 O O O O O O O	olly please can you shut off .
-U_media_type B_business_name O O O O O O	tweet @phohouse your server was rude # badpho
+B_media_type B_business_name O O O O O O	tweet @phohouse your server was rude # badpho
 O O O O O O O O O O	it was good one , thank you very much .
 O O O O O O O B_place_name I_place_name	give me the update on traffic at new york
 O O O O O O	i do n't really care .
@@ -5235,7 +5235,7 @@ O O O B_joke_type O	what is a good joke
 O O O O O B_place_name I_place_name	how warm is it in columbus ohio
 O O O O O	i do nt want sound
 O O O O O	would you stop it .
-U_media_type O O O O O B_business_name I_business_name	tweet I 'm complaining about to consumer service
+B_media_type O O O O O B_business_name I_business_name	tweet I 'm complaining about to consumer service
 B_player_setting I_player_setting B_audiobook_name I_audiobook_name I_audiobook_name I_audiobook_name I_audiobook_name	resume playing you are joking mr feynman
 O O O O O B_timeofday	make an alarm for the morning
 O O O O O O	how long to get to work
@@ -5287,7 +5287,7 @@ O O O B_transport_type O O B_place_name I_place_name	please order one train tick
 O O O O B_event_name I_event_name O O O	tell me when the hockey game tickets are for
 O O B_personal_info	provide contact location
 O O O O B_food_type I_food_type	find a recipe for chicken alfredo
-U_player_setting O O O O O	shuffle the current album of songs
+B_player_setting O O O O O	shuffle the current album of songs
 O O O B_place_name	please clean the floor
 O O O O O O O O O	i want to change the color of the lights
 O O O O O B_media_type	check my last post on facebook
@@ -5320,7 +5320,7 @@ O O O O O O B_color_type	can you change the colour to red
 O B_business_name O O B_order_type O	does dominos has a delivery option
 O O O O O O O	let 's do it again please .
 O O O O O O O O	show me what i can do with fitness
-U_transport_type O	train schedule
+B_transport_type O	train schedule
 O O O O O O O O O	i would like to have a cup of coffee
 O O O O B_event_name	what date is my anniversary
 O O O O	prepare a new list
@@ -5350,7 +5350,7 @@ O O O O O O O	save new email addresses to my contacts
 O O O O O O O O	what is the answer to two plus two
 O	unmute
 O O	mute volume
-U_media_type O	facebook info
+B_media_type O	facebook info
 O	goodnight
 O O O O O O	can you turn up your volume
 O O O B_time I_time	check emails for last hour
@@ -5368,11 +5368,11 @@ O O O O O O O O	would you please check and confirm detail .
 O O O O O O B_house_place O	it is time to lower the kitchen lights
 O O	do coffee
 O O O O	play that podcast please
-U_player_setting O B_audiobook_name O	continue the smurfs book
+B_player_setting O B_audiobook_name O	continue the smurfs book
 O O O B_color_type O O B_house_place	switch on the green light in playroom
 O O B_business_type I_business_type	near by super market
 O O O	remember this music
-U_player_setting B_podcast_descriptor I_podcast_descriptor O	start next episode playing
+B_player_setting B_podcast_descriptor I_podcast_descriptor O	start next episode playing
 O O O O O O O O O O O	please tell me who is going to win the nba championship
 O O O O O O O	thanks for reminding me , olly .
 O O O O O B_date O B_time I_time I_time I_time I_time	is my schedule full for tomorrow from eight am to two pm
@@ -5461,7 +5461,7 @@ O O O O	thanks for asssistance .
 O O O O	would n't bother .
 O O O B_event_name O B_time I_time I_time	remind me to eat when i get home
 O O O O O O O O O O	it would be nice if you post status for me
-U_weather_descriptor O B_place_name	sunny in oslo
+B_weather_descriptor O B_place_name	sunny in oslo
 O O B_place_name I_place_name I_place_name O O	give me new york 's current time
 O O B_player_setting I_player_setting I_player_setting O B_media_type O B_player_setting	can you pause and rewind the audio then resume
 O O O O B_transport_type O O O B_place_name	get me the local train timing to destination cstm
@@ -5532,7 +5532,7 @@ O O O O O O	raise the volume of the speakers
 O O O O O O	i would n't really mind .
 O O O O O B_game_name I_game_name I_game_name I_game_name	i 'm thinking of a number one to ten
 O O O O O	remove event from my list
-U_currency_name O O O	dollar rate at present
+B_currency_name O O O	dollar rate at present
 O O O B_device_type O	turn on the vacuum now
 O O O O	what is your name
 O O O B_transport_type O O B_date I_date B_date	set up a train ticket for next week Friday
@@ -5542,7 +5542,7 @@ O O O B_date I_date	search schedules for this week
 O O O O O O B_list_name O	how many eggs are on my grocery list
 O O	silence please
 O O O O O O	save that song and my opinion
-U_player_setting O B_audiobook_name I_audiobook_name O O	start my bible study book again
+B_player_setting O B_audiobook_name I_audiobook_name O O	start my bible study book again
 O O O O O O O O O O	you 've done that right thank you very much .
 O O O O B_transport_agency B_place_name O O B_place_name I_place_name O O O O	can i get an uber home from the fox downtown as soon as possible
 O B_audiobook_name I_audiobook_name O O O O O	play wuthering heights from where i left off
@@ -5552,7 +5552,7 @@ O O O O	what food is good
 O O O B_definition_word	please describe a car
 O O O	mute the settings
 O O O O O O O O B_media_type O O O O	hi olly post my last clicked photo on facebook with title marry christmas
-U_media_type O O O B_business_name I_business_name	tweet a complaint to local municipality
+B_media_type O O O B_business_name I_business_name	tweet a complaint to local municipality
 O O O O O	that was n't it .
 O O O	all new mail
 O O O O O O	from which movie is the song
@@ -5587,9 +5587,9 @@ O O O O O B_date	how hot is it outside today
 O O O O O	when is president 's day
 O B_device_type I_device_type	on vacuum cleaner
 O O B_event_name O B_person B_date O B_time I_time	set a meeting with tom tomorrow at seven pm
-U_media_type	hackernews
+B_media_type	hackernews
 O O O O O	take out event from calendar
-U_transport_type O O	train ticket please
+B_transport_type O O	train ticket please
 O O	add light
 O O O O O	play back the last message
 O O O O O B_date O O	has the weather changed for wednesday at all
@@ -5716,7 +5716,7 @@ O O O B_transport_type O O B_place_name I_place_name I_place_name	get me a train
 O O O O O B_drink_type	find a shop that sells beer
 O O O O O B_place_name	what is the time in beijing
 O O O O	set the volume higher
-U_media_type O B_business_name O O O O	tweet at koc your waiting time sucks
+B_media_type O B_business_name O O O O	tweet at koc your waiting time sucks
 O O O O O O	were the stocks rising or declining
 O O O O O O O O O O	you 've done that correctly thank you very much .
 O O B_currency_name O B_currency_name I_currency_name	convert one euros to us dollars
@@ -5740,7 +5740,7 @@ O B_device_type	enable wemo
 B_event_name I_event_name O O B_date	fun things to do today
 O O O O O O O	could you speak once more please .
 O O O O O	play the radio for me
-U_device_type O	vacuum on
+B_device_type O	vacuum on
 O O O B_definition_word I_definition_word O O	what does a sea lion look like
 O O O O O O O O O	read to me the last messages in my feed
 O B_person O O B_media_type B_date	has derek logged into facebook today
@@ -5772,7 +5772,7 @@ O O O O O O	i need to submit a complaint
 O O O O O O O O	s2 , last sentence was not clear .
 O O O O O O O	i do not know , olly .
 O O O O O O O O O	you 've done it correctly thanks , olly .
-U_person B_personal_info	rahul contact
+B_person B_personal_info	rahul contact
 O O O O O O O O O O O	i want to know the result of twenty is to two
 O O O O O O O O	drive the car and bring my friends over
 O O O O O O O O	what is the current day month and year
@@ -5809,7 +5809,7 @@ O O O B_date O B_date I_date I_date I_date I_date	take note of today as my first
 O O O O O	great song for the commute
 O O O O	slow the volume speaker
 O O O O B_time I_time	wake me up at six am
-U_player_setting O O O B_media_type I_media_type	resuming playing my current audio book
+B_player_setting O O O B_media_type I_media_type	resuming playing my current audio book
 O O O O O O	remind me to order more soap
 O B_device_type I_device_type O O O B_time O B_time I_time B_general_frequency	my vacuum cleaner should start between ten to eleven am everyday
 O O O O O B_order_type	what s up with my takeaway
@@ -5827,7 +5827,7 @@ O B_media_type O O O O O O B_business_name I_business_name	please tweet a compla
 O O O O O O O	you did good job , thanks .
 O O O O B_business_name O O B_date	what is the lowest microsoft stock price today
 O O O O O O O B_transport_type B_date I_date	reserve a seat for me on the train march twentieth
-U_media_type O O O B_business_name	tweet a complaint to comcast
+B_media_type O O O B_business_name	tweet a complaint to comcast
 O O O O O O O O O	i like you confirm my last command please .
 O O O O O O B_currency_name I_currency_name O B_currency_name	what is the exchange rate between us dollars and bitcoin
 O O O O	turn up media volume
@@ -5843,7 +5843,7 @@ O O O O O B_person O O O O O O O	send will do thanks to john as a reply to his l
 O O O B_player_setting O O O O O O O B_media_type I_media_type	i want to resume where i last left off in my audio book
 O O O O O O B_media_type	Has @realdonaldtrump posted anything new on twitter
 O O O B_device_type I_device_type O	i want the wemo socket off
-U_player_setting O O O B_media_type	resume the last played audiobook
+B_player_setting O O O B_media_type	resume the last played audiobook
 O O O O B_time I_time	set the alarm for five am
 O O O B_transport_agency	find me an uber
 O O O O O O O	do you know what day it is
@@ -5966,7 +5966,7 @@ O O O O O	yeah it 's good .
 O O O B_transport_type O O	please book a taxi for me
 O O O O B_event_name I_event_name O O O B_person	what time is the evening meeting i have with john
 O O O O O B_place_name I_place_name	how slow is traffic on the five
-U_music_genre O O O O O	jazz could be choice for me
+B_music_genre O O O O O	jazz could be choice for me
 O O O O O	i am exhausted from work
 O O B_definition_word I_definition_word I_definition_word I_definition_word	describe a fifty inch smart tv
 O O O O O O	adjust light when i get home
@@ -5997,7 +5997,7 @@ O O O B_order_type O B_business_name	can i get takeaway from pings
 O O O O O O	are the streets congested right now
 O O O O O O B_time I_time	set a wake up call for ten am
 O O O O O B_currency_name I_currency_name I_currency_name O B_currency_name I_currency_name I_currency_name	what is the rate for g. b. p. to u. s. d.
-U_player_setting B_music_descriptor I_music_descriptor I_music_descriptor O	repeat the last song again
+B_player_setting B_music_descriptor I_music_descriptor I_music_descriptor O	repeat the last song again
 O O B_currency_name I_currency_name O O O O O O B_currency_name	how much philippine peso do i need to make fifty dollars
 O O O O O O O O O O	i want you to remove the item from the list
 O O O O O	remove vegetables from the list
@@ -6033,7 +6033,7 @@ O O B_business_name I_business_name I_business_name B_personal_info I_personal_i
 O O O O O B_list_name I_list_name	please remove dallas from my travel itinerary
 O O B_playlist_name I_playlist_name	play from smashing pumpkins
 O O O B_person	reply email to charlotte
-U_media_type O O O O	tweet on the bad service
+B_media_type O O O O	tweet on the bad service
 O O O O O O O O O O O	would you please once again rephrase me on your answers .
 O O O O O O O O	this is of no importance to me .
 O B_person O O O O	has tom emailed me about ammunition
@@ -6063,7 +6063,7 @@ O O O B_order_type I_order_type O	current status of take out order
 O O O O O O O O O	i am not so clear about your answers .
 O O O O B_transport_type O O O O	i 'd like a train ticket to this location
 O O O O B_date	how is it outside today
-U_media_type	snapchat
+B_media_type	snapchat
 O O O O O B_relation	can you be my best friend
 O O O O O	what is two plus two
 O O O O O O O O O O	you told me the incorrect date please correct this .
@@ -6082,7 +6082,7 @@ O O O O O O B_date B_timeofday	what are the pending reminder for today evening
 O O O O O B_place_name B_date	what 's the weather in toronto today
 O O O O O O B_place_name O B_place_name	give me the driving directions from faripir to gurpur
 O O O O O O O O O O O O O O O O O O O O O O O O O	if a pencil cost four dollars and a book ten dollars cost how much i should pay if i buy two pencil and three book
-U_transport_type B_transport_agency	taxi uber
+B_transport_type B_transport_agency	taxi uber
 O O O O O O O	solution for eighty one divided by nine
 O O	quick meals
 O O O O O B_food_type I_food_type	what 's the recipe for fried chicken
@@ -6154,7 +6154,7 @@ O O O O O O	what cd is this song on
 O O O O O O O O O O O O O	will you once again rephrase me about what you just said now .
 O O O O O O	please confirm my last question .
 O O O O O O B_relation O B_media_type B_date	are there any news regarding our president on facebook today
-U_player_setting O O B_media_type	resume last played audiobook
+B_player_setting O O B_media_type	resume last played audiobook
 O O O O O O O O O O	please can you check and confirm what just said .
 O O O O B_definition_word I_definition_word	how would you describe the sun
 O O O O O O B_transport_type O O B_place_name O B_place_name	give me the list of available train tickets from edinburgh to leeds
@@ -6225,7 +6225,7 @@ O O O O O O O O	tell me what time it is right now
 O O O	look up word
 O O O O	please dim the lights
 O O O O O	please further rephrase it .
-U_player_setting O O O O O	equalize the bass of this music
+B_player_setting O O O O O	equalize the bass of this music
 O O O O B_music_genre I_music_genre O	let 's hear some indie rock okay
 O O O O B_device_type I_device_type I_device_type	please turn on my wemo plug socket
 O O O O	open lists remove list
@@ -6250,7 +6250,7 @@ O B_music_genre O	play melody songs
 O O O O O B_list_name O	add a tab to the shopping list
 O O O O O O O O B_business_name I_business_name	can i pick up my large order at pizza hut
 O B_device_type	begin vacuuming
-U_game_name	mario
+B_game_name	mario
 O O O O O B_joke_type O	can you tell me a nice joke
 O O O O O	remove that from my list
 O O O O B_time I_time I_time I_time I_time I_time I_time	what 's going on between three hundred and thirty and four
@@ -6340,7 +6340,7 @@ O O O	find my food
 O B_media_type O O B_radio_name I_radio_name	play music now from radio plus
 O B_player_setting O O	please skip two songs
 O O O O O O	what is fifty five minus two
-U_player_setting O O O O B_music_genre	change the music mode to rock
+B_player_setting O O O O B_music_genre	change the music mode to rock
 O O O B_podcast_descriptor I_podcast_descriptor O O O	go to the next episode in this podcast
 O O O O O O B_time B_date	i need to get up at ten tomorrow
 O O O O O	its too bright in here
@@ -6366,15 +6366,15 @@ O O O O	play my favourite podcast
 O O O O O O O O	how is weather on such and such day
 O O O O O B_relation O O O O	send this message to the family group starts with a
 O B_app_name O B_music_genre O	open pandora play rock station
-U_player_setting B_audiobook_name I_audiobook_name I_audiobook_name I_audiobook_name	resume harry potter book one
+B_player_setting B_audiobook_name I_audiobook_name I_audiobook_name I_audiobook_name	resume harry potter book one
 O O O B_place_name	show traffic in ohio
 O O O O O	could you check instruction .
 O O O O O O B_time I_time I_time I_time	delete everything on my calendar for the next two weeks
-U_player_setting O O O O O O O	move to the next song in the list
+B_player_setting O O O O O O O	move to the next song in the list
 O O O B_color_type O B_house_place	make the lights blue in here
 O O O O O O O O O	would you try that instruction said again please .
 O B_game_name I_game_name	play flappy bird
-U_player_setting O O O O	replay my last played podcast
+B_player_setting O O O O	replay my last played podcast
 O O O O O O B_date O B_time I_time	set an alarm for me for tomorrow at seven pm
 O O O O O O O O O O	can you please clarify me more on your answer .
 O O B_color_type O O	switch to red colored lights
@@ -6395,7 +6395,7 @@ O O O O O B_place_name I_place_name	how many people live in los angeles
 O O O O O	do have any new email
 O O O O B_house_place O	please turn on my balcony lights
 O O O O O O O O O O	can you tell me what happened to my social media
-U_person B_event_name O	rahul marriage reminder
+B_person B_event_name O	rahul marriage reminder
 O O O O O O B_house_place	what alarms are set in the house
 O O O O O B_place_name	is the road clear in florida
 O O O B_artist_name	give me some bowie
@@ -6415,7 +6415,7 @@ O O O O O O O O O O O	is there a way to pull up information about a contact
 O O O O O O O O	let me get a cup of coffee please
 O O O O O O O	that was cool , , olly .
 O O O O O O O B_media_type I_media_type I_media_type	what are the latest tweets from the new york times
-U_color_type	White
+B_color_type	White
 O O	identify song
 O O O	next one please
 O O O O O O O B_list_name O	tell me items that are on my shopping list
@@ -6494,7 +6494,7 @@ O O O B_event_name O O O B_person B_timeofday	please delete the meeting i have w
 O O O O O B_date	create a new list by tomorrow
 O O O O O O	this event needs to be deleted
 O O O O O O O O O	i ca n't see let 's make it brighter
-U_player_setting O O O O B_audiobook_name I_audiobook_name	resume the reading of the french lesson
+B_player_setting O O O O B_audiobook_name I_audiobook_name	resume the reading of the french lesson
 O O O O	please check detail .
 O O O B_podcast_name I_podcast_name O	what is my most played podcast
 O O O B_order_type O B_food_type O	can i order takeaway from spanish place
@@ -6511,13 +6511,13 @@ O O O O O O O	can you explain string theory to me
 O O O B_device_type O	please dim the overhead lights
 O O O O O	what is nine time ten
 O O O O O O O O O O O O O	will you rephrase me on what you 've just said again please .
-U_date O B_place_name I_place_name	date in new york
+B_date O B_place_name I_place_name	date in new york
 O O B_time I_time I_time	mute yourself until five pm
 O O O B_movie_name O	what time does thor start
 O O O O O O B_email_address I_email_address I_email_address	add new email to my contacts macs@gmail dot com
 O O O O O O O O O B_place_name	could you please tell me what time is in singapore
 O O O O O	what is three times seven
-U_media_type O	cnn headlines
+B_media_type O	cnn headlines
 O B_player_setting O B_device_type I_device_type O	turn shuffle on music player on
 O O O O	tell me your answer
 O O O O B_date	pick up dry cleaning tomorrow
@@ -6606,13 +6606,13 @@ O O O O B_order_type	can you order me takeout
 O O O O O O	show me music by that artist
 O O B_place_name I_place_name	go to agha station
 O O O B_date O B_news_topic	is anything different today about blank
-U_player_setting O O	loop this track
+B_player_setting O O	loop this track
 O O O O O O O O B_weather_descriptor B_date	will i be able to get away with shorts today
 O O O O O O O O O O O O	send an email to with the subject as test and no content
 O O O B_food_type I_food_type I_food_type O O B_business_name I_business_name	how much does general tsos chicken cost at peking garden
 O O O O B_device_type I_device_type I_device_type O O B_house_place O O O O	please olly put on multi colored lightning in my apartment set for festival diwali
 O O O	start the laundry
-U_player_setting O O O O O O O O O B_audiobook_name I_audiobook_name I_audiobook_name I_audiobook_name I_audiobook_name	start the audiobook file for where i left off in a tale of two cities
+B_player_setting O O O O O O O O O B_audiobook_name I_audiobook_name I_audiobook_name I_audiobook_name I_audiobook_name	start the audiobook file for where i left off in a tale of two cities
 O O O O B_person	send the email to john
 O O O B_media_type	play recently added audiobook
 O O O O O B_media_type	is there anything new on snapchat
@@ -6737,7 +6737,7 @@ O O O O B_movie_type B_media_type O O B_place_name	what is the latest action mov
 O B_business_type O B_order_type	does restaurant have takeaway
 O O O B_joke_type O	tell me a clean joke
 O O B_list_name O	erase my grocery list
-U_media_type O O O B_business_name O O O O	tweet a complaint to apple about my iphone seven
+B_media_type O O O B_business_name O O O O	tweet a complaint to apple about my iphone seven
 O O O O B_food_type B_order_type O O	can you look up chinese takeout near here
 O O O O O	can you mute my speaker
 O O O O O	do you know any joke
@@ -6769,20 +6769,20 @@ O O B_person I_person I_person O O	how is jennifer garner 's career doing
 O O O O O O O O O O O O O O O	i did not want you to send that text yet wait until i say send
 O O O O O B_food_type O	i want to eat some spicy thing
 O O O O O B_house_place O O O B_color_type	i need to change my house lights colour to blue
-U_player_setting O O	replay the musics
+B_player_setting O O	replay the musics
 O O O O O O O O O	please turn off any lights that are still on
 O O O O O B_date	i have a deadline on tuesday
 O O O	current currency rate
 O O O O O	longest river in the world
 O O B_transport_type O O B_place_name I_place_name	order a train ticket to los angeles
-U_player_setting B_media_type O	resume audiobook please
+B_player_setting B_media_type O	resume audiobook please
 O O O O O	what music do i prefer
 O O O O O B_food_type I_food_type I_food_type	can you order me some buffalo chicken pizza
 O O B_place_name O B_place_name	time between us and canada
 O O O B_definition_word I_definition_word I_definition_word I_definition_word O O	what does this stitch long sleeved shirt look like
 O O	increase lighting
 O O O O	remove the first alarm
-U_definition_word O	blanket definition
+B_definition_word O	blanket definition
 O O O O O O B_place_name	what is the current time in chennai
 O O O O	turn up the sound
 O O O O O O B_date	show up the events for me today
@@ -6811,17 +6811,17 @@ O O O O O O O	you 've gotten your understanding correcly .
 O O O	delete this list
 O O O O O O O	anything will be ok with me .
 O O O O O	hey olly mute the speakers
-U_player_setting O	repeat song
+B_player_setting O	repeat song
 O O O O O O	can you shut off please .
 O O O O	you are smart .
 O O B_podcast_descriptor I_podcast_descriptor O O	play the next show on podcast
 O O O	status of weather
-U_media_type O O O	tweet my current location
+B_media_type O O O	tweet my current location
 O O B_person I_person O	please answer jean 's email
 O O O B_house_place I_house_place	increase brightness in the room
 O O O O O B_food_type I_food_type O B_business_name I_business_name	place an order for a pepperoni pizza at papa johns
 O O O O O O O O O O O	i want to eat something will you order food for me
-U_transport_type O O O O O B_place_name O B_place_name	train tickets for two people from delhi to mumbai
+B_transport_type O O O O O B_place_name O B_place_name	train tickets for two people from delhi to mumbai
 O O O O O O B_currency_name I_currency_name I_currency_name O B_currency_name	given me the exchange rates between u. s. d. and cad
 O O O O	ten percentages of hundred
 O O O O	set the alarm off
@@ -6857,7 +6857,7 @@ O O B_business_name O O O	complaint to dept for food quality
 O B_business_type O O O	find hotel order food name
 O O B_currency_name O O O B_currency_name	how many dollars are in a pound
 O O O O O O O O O	explain further on last sentence to me please .
-U_player_setting O	rewind button
+B_player_setting O	rewind button
 O O O O O O O O O O O B_time I_time	what is my eta to the office if i leave in thirty minutes
 O O O	power off please
 O O O O O B_relation O O O O B_event_name	send an email to my family wishing them a happy holiday
@@ -6872,7 +6872,7 @@ O O O O O O	check and confirm that please .
 O O O O O O O O B_news_topic I_news_topic	what does the analysts say about the new immigration policies
 O O O O O O	what artist is singing that song
 O O B_game_name O O	please play football with me
-U_player_setting O O O O O O O	resume play on my most recent audiobook selection
+B_player_setting O O O O O O O	resume play on my most recent audiobook selection
 O O O O O O O	bring me the title of current music
 O O O O O O O O O	hmm , it is not what i wanted .
 O O O O	remove item from list
@@ -6888,7 +6888,7 @@ O O B_house_place O	clean the floor please
 O O O O B_business_name I_business_name O B_order_type	look to see if luigi 's has takeaway
 O O O O O O O O	i 'd like to hear that again .
 O O O O B_date	what should i watch today
-U_media_type O O O O O B_business_name	tweet your waiting time sucks tag koc
+B_media_type O O O O O B_business_name	tweet your waiting time sucks tag koc
 O O O O O	four plus five equals nine
 O O O B_business_name I_business_name O	tell me if taco bell delivers
 O O O	ask if deliver
@@ -6899,7 +6899,7 @@ O O O B_color_type I_color_type	make the lights shine blue
 O O B_media_type O B_player_setting	please put radio in shuffle
 O O O O O O O O O O O O	would you tell me what i said one more time again .
 O O O O O O O O O	olly i 'd like you just cancel it .
-U_player_setting B_music_genre	repeat jazz
+B_player_setting B_music_genre	repeat jazz
 O O O B_date I_date O O B_date I_date	do we have thirty first day on this month
 O O O O O	please turn the lights down
 O O O O B_time I_time O	get rid of my eight am alarm
@@ -6965,7 +6965,7 @@ O O O O O O B_date B_timeofday	do i have any alarms for tomorrow morning
 O O O O B_date	is it colder than yesterday
 O O B_time I_time O	cancel my seven am alarm
 O O B_weather_descriptor	it seems cold
-U_player_setting O B_media_type B_audiobook_name I_audiobook_name I_audiobook_name I_audiobook_name	restart the audiobook heaven is for real
+B_player_setting O B_media_type B_audiobook_name I_audiobook_name I_audiobook_name I_audiobook_name	restart the audiobook heaven is for real
 O O O B_music_genre O O	give me a classical radio station
 O O O O O O O O O	let me know if anything happens on that subject
 O B_person O O O O O B_event_name B_date	text sarah if she is free for brunch today
@@ -7002,7 +7002,7 @@ O O O O O O O B_person	do i have a new email from eric
 O O O B_coffee_type O	make me a cooled coffee
 O O O O O O	what is the customer service feedback
 O O B_house_place O O B_color_type	make the bedroom lights light blue
-U_media_type	cnn
+B_media_type	cnn
 O O O O B_food_type	how can i cook pizza
 O O O O O B_relation O B_date I_date O	send an email to my wife about next week weather
 O O O O B_date O B_time O O B_timeofday	set an alarm for tomorrow at six in the morning
@@ -7010,7 +7010,7 @@ O O O O O O O B_date I_date	what new movies are played in cinemas this week
 O O B_time I_time I_time	play it after five minutes
 O O O O O O O O O O	can you please clarify me more on your answers .
 O O O O O O	how long until my order arrives
-U_player_setting O O O O	repeat the song playing now
+B_player_setting O O O O	repeat the song playing now
 O O O O O O O O O O O O O	i would like you to check and confirm my last command please .
 O O O O O B_media_type	please retweet this post on twitter
 O O O	set the time
@@ -7032,9 +7032,9 @@ O O O O O O O O	name stores within ten mile radius with music
 O O O	save to contacts
 O O O O O O O B_date	do i have any alarms set for tomorrow
 O O O O B_person O O O O O	send an email to rohit saying i am busy tomorrow
-U_player_setting O O O O B_audiobook_author I_audiobook_author B_media_type O O	read some more of the daisy goodwin book for me
+B_player_setting O O O O B_audiobook_author I_audiobook_author B_media_type O O	read some more of the daisy goodwin book for me
 O O O O O O	how is the current traffic between
-U_event_name O B_relation O B_relation O B_date	church with mom and dad on sunday
+B_event_name O B_relation O B_relation O B_date	church with mom and dad on sunday
 O O O O O	could you shut up .
 O O O O O B_artist_name O	play only songs by the beatles please
 O B_device_type I_device_type O B_time I_time I_time	turn all lights off during the day
@@ -7056,10 +7056,10 @@ O O	volume down
 O B_game_name	start spider
 O O O O O O B_media_type I_media_type	tell me the latest news from bbc sports
 O O O O B_date I_date	please set alarm for all days
-U_date O B_time I_time O O O B_event_name I_event_name O O O O O O	thursday at three pm there is a teachers meeting i need to be reminded of
+B_date O B_time I_time O O O B_event_name I_event_name O O O O O O	thursday at three pm there is a teachers meeting i need to be reminded of
 O O O	trash file one
 O O O B_person I_person	how tall is frank goggins
-U_person O O	jlo fan updates
+B_person O O	jlo fan updates
 O O B_radio_name O O	play me news radio channel
 O O O O O O O B_coffee_type I_coffee_type	please help serve me coffee with a no sugar
 O O O B_transport_type	find the nearest taxi
@@ -7165,7 +7165,7 @@ O O O O O O	please confirm my last instruction .
 O O	open games
 O O O O O	what 's the exchange rates
 O O O B_media_type I_media_type O O	what is the bbc 's latest news
-U_player_setting O	repeat all
+B_player_setting O	repeat all
 O O O O O O O O B_house_place	please turn off all the lights in the house
 O O O O O O O B_food_type	what is the best tasting cut of beef
 O O O O O O O O O	hmm , you gave me not correct information .
@@ -7197,7 +7197,7 @@ O O O B_house_place B_device_type	turn off the bedroom lamp
 O O O B_media_type O O B_food_type I_food_type	show me a video on cooking fried chicken
 O O O O O B_transport_type O O B_place_name	what time is the last train headed to chicago
 O O O O O	dolores how was your day
-U_media_type O B_business_name I_business_name O O O O O O O O	tweet to consumer service that they should strive to be more accommodating
+B_media_type O B_business_name I_business_name O O O O O O O O	tweet to consumer service that they should strive to be more accommodating
 O O O O B_time_zone O B_time_zone	convert current time from ist to est
 O O O B_business_name I_business_name O O O O	tell me when taco bell can deliver my dinner
 O O O O O O	remove all the events and schedules
@@ -7230,7 +7230,7 @@ O O O O B_transport_agency	where is the closest uber
 O O B_place_name	ticket for delhi
 O O O O O O B_game_name I_game_name I_game_name	let 's play a game of truth or dare
 O O O O O B_place_name O B_place_name I_place_name O B_transport_type	how can i go from boston to new york by train
-U_email_folder O O	inbox this mail
+B_email_folder O O	inbox this mail
 O O O O O O O	tell me sum of five and six
 O O O O O O O O	did you get last thing said correctly ?
 O B_song_name I_song_name O B_artist_name	Play best friends by yelawolf
@@ -7285,7 +7285,7 @@ O O O	replay please .
 O B_device_type I_device_type I_device_type	off mobile charger plug
 O O B_list_name O	read my grocery list
 O O O O O O O O O O O O	you are so helpful , thank you so much , olly .
-U_player_setting B_audiobook_name I_audiobook_name I_audiobook_name B_media_type	resume the two towers audiobook
+B_player_setting B_audiobook_name I_audiobook_name I_audiobook_name B_media_type	resume the two towers audiobook
 O O O O O O	would you please shut down .
 O O O B_weather_descriptor B_date I_date	will there be snow this week
 O O O O	search for local shops
@@ -7301,13 +7301,13 @@ O O O O O B_definition_word I_definition_word	find me a description of morel mus
 O O O O O O O	make a new contact with this email
 O O	largest animal
 O O O O B_transport_type O O B_date B_timeofday O B_place_name	find me the earliest train ticket departing friday morning to miami
-U_player_setting O B_podcast_descriptor I_podcast_descriptor	move to next episode
+B_player_setting O B_podcast_descriptor I_podcast_descriptor	move to next episode
 O O B_order_type	order a takeaway
 O O	clap on
 O O B_time I_time	silence for two hours
-U_media_type O B_business_name I_business_name O O O O O O O	tweet at united airlines i 'm angry you lost my bags
+B_media_type O B_business_name I_business_name O O O O O O O	tweet at united airlines i 'm angry you lost my bags
 O O B_person B_event_name O	is it joes birthday soon
-U_player_setting O	shuffle music
+B_player_setting O	shuffle music
 O O O O	it 's coffee time
 O O O	say some jokes
 O O O O O B_time I_time I_time I_time I_time B_date	please set an alarm for seven hundred and thirty am tomorrow
@@ -7347,7 +7347,7 @@ O O O O O O O O O O O O	can you send an email for me to a new email address
 O O O O O O	it was amazing , olly .
 O O O O O O O O O O O	who has written to me or mentioned me in social media
 O O O O O O	please explain again to me .
-U_media_type B_business_name O O O O O O O O O O O O O	tweet @bobburgers they screwed up my order and i had to wait an extra hour
+B_media_type B_business_name O O O O O O O O O O O O O	tweet @bobburgers they screwed up my order and i had to wait an extra hour
 O O O O O B_business_name I_business_name I_business_name O O O	i want to go to bank of america give me directions
 O O O O	delete the following list
 O O O O B_business_type I_business_type O O	are there any good pizza places around here
@@ -7456,7 +7456,7 @@ O O O B_color_type O B_color_type	change lights from red to blue
 O O O O O O O O O O O O	i think you have made a mistake , please rectify this .
 O O O B_person O O	reply wishes to john by email
 O O B_order_type O O O O O B_order_type B_meal_type	schedule a delivery from food at the nearby takeaway diner
-U_event_name B_date O	meeting july calendar
+B_event_name B_date O	meeting july calendar
 O O O O O O O B_currency_name O O B_currency_name O	what is the exchange rate between the dollar and the euro currently
 O O O O O O O O B_date	tell me what is on my calendar for tomorrow
 O O O O O B_event_name I_event_name	meeting update my calendar to reflect meeting
@@ -7497,7 +7497,7 @@ O O B_weather_descriptor O O O B_date	will the temperature be in the today
 O O O	please set reminder
 O O O O O O O	yeah correct response to the command .
 O O O B_definition_word O	describe what a poltergeist is
-U_media_type O	audio start
+B_media_type O	audio start
 O O O	update on email
 O O O B_music_genre O O B_music_descriptor I_music_descriptor I_music_descriptor I_music_descriptor I_music_descriptor I_music_descriptor O O O B_player_setting I_player_setting	download the latest folk songs having rating of four star or above and play all without shuffle
 O	automobiles
@@ -7684,11 +7684,11 @@ O B_media_type	latest tweets
 O O O O	that 's confirmed .
 O O O O O O O O	i do not think that was correct .
 O O O O O O O	it is useful , thank you .
-U_media_type	instagram
+B_media_type	instagram
 O O O B_time I_time O B_date I_date	set alarm at nine am on next sunday
 O O B_house_place O B_change_amount I_change_amount	dim the garden light by half
 O O O O B_business_type O B_place_name I_place_name	where is the best mechanic in eagle point
-U_player_setting B_audiobook_author I_audiobook_author B_media_type	restart bill nye book
+B_player_setting B_audiobook_author I_audiobook_author B_media_type	restart bill nye book
 O O O O	i have a complaint
 O O O O O B_player_setting	put the current song on repeat
 O O O	cease operating lights
@@ -7702,7 +7702,7 @@ O O O O O O O O O B_date	what 's the weather supposed to be like on wednesday
 O O O B_house_place O	please turn off kitchen light
 O O O O O B_place_name I_place_name I_place_name	what time is it in new york city
 O O O O B_time I_time	please set alarm at five pm
-U_media_type O O O	tweet something for me
+B_media_type O O O	tweet something for me
 O O O O O O B_music_genre I_music_genre I_music_genre O	make a note please i like modern alternative rock music
 O O B_house_place I_house_place O	turn off living room lights
 O O O	vacuum the floor
@@ -7775,7 +7775,7 @@ O O O	play podcast one
 O O O O O O	make the lights a different color
 O O O B_weather_descriptor O B_date I_date	will it get warmer here next week
 O O B_event_name O O B_relation I_relation O O O B_date O B_time I_time	schedule my meeting with my girlfriend lisa in the night today at nine pm
-U_player_setting O O O B_audiobook_name I_audiobook_name I_audiobook_name	resume the playback of zanes se chronicles
+B_player_setting O O O B_audiobook_name I_audiobook_name I_audiobook_name	resume the playback of zanes se chronicles
 O O O O O O	what movies are going around me
 O O O O O O O O O O	can you save this what a nice song for me
 O O O O O O O O O O O O	i have no idea regarding to what to do , olly .
@@ -7832,9 +7832,9 @@ O O O	play current episode
 O O B_change_amount I_change_amount	lower volume to half
 O O O	top ten movies
 O O O O O O O O O	what is a good movie to see right now
-U_media_type B_business_name I_business_name O O O O O O O O O	tweet the president and tell him he 's doing a horrible job
-U_news_topic	iphone
-U_player_setting O O O O O O	resume the audiobook i listened to last
+B_media_type B_business_name I_business_name O O O O O O O O O	tweet the president and tell him he 's doing a horrible job
+B_news_topic	iphone
+B_player_setting O O O O O O	resume the audiobook i listened to last
 O O O O O O O B_date O B_time I_time	cancel the alarm that is set for tomorrow at eight am
 O O O O O	what alarms are currently set
 O O O O O O	hey olly tell me a joke
@@ -7849,7 +7849,7 @@ O O O O O O B_place_name	what is level of traffic at washington
 O O O O O O O O O O O	would you please check and confirm what i last said .
 O O O O O O O	your words was not so clear .
 O O O O O O B_currency_name I_currency_name I_currency_name O B_currency_name I_currency_name	give me the exchange rate between united states dollar and indian rupee
-U_media_type B_business_name I_business_name I_business_name I_business_name I_business_name O O O O O O O O O O O O	tweet insight cable 's customer service and tell them i have been waiting on hold for thirty minutes
+B_media_type B_business_name I_business_name I_business_name I_business_name I_business_name O O O O O O O O O O O O	tweet insight cable 's customer service and tell them i have been waiting on hold for thirty minutes
 O O O O O O O O O	can you further explain me on it please .
 O O O O O B_person	show me the email of jack
 O O	create list
@@ -7869,7 +7869,7 @@ O O O O O	find jokes on the web
 O O O O O O	what is happening in me area
 O O O O O O O O B_business_type O O O O	i would like to know the best rating pubs in the local area
 O O O O O O O	directions to the target on I forty
-U_player_setting B_media_type	stop audiobook
+B_player_setting B_media_type	stop audiobook
 O O O O O O B_joke_type I_joke_type O	i would like to hear some good funny jokes
 O O B_music_genre	i like vocals
 O O O O B_transport_type O O O	are there any available train tickets to reserve
@@ -7882,7 +7882,7 @@ O O O O O O O O O O O	i am sorry but it 's not the right answer .
 O O B_definition_word O	what does joke mean
 O O O O O O B_news_topic I_news_topic I_news_topic I_news_topic	tell me about current status of sunderland vs liverpool match
 O O O O O O O	start a game and play with me
-U_media_type O O O B_business_name O O O	tweet a complaint to amazon about late shipment
+B_media_type O O O B_business_name O O O	tweet a complaint to amazon about late shipment
 O O O O O O O	add this email to my contact list
 O O B_transport_type O O B_place_name O B_place_name	price of train ticket from delhi to mumbai
 O O O O O O O O B_definition_word	please tell me what is the definition of cylinder
@@ -7966,14 +7966,14 @@ O O O O B_change_amount I_change_amount	set the music volume to ninety
 O O O O B_game_name	i need to play sims
 O O O O O B_definition_word	what is the definition of god
 O O O O O B_business_name	what is the price for marvel
-U_media_type B_business_name I_business_name I_business_name I_business_name O O O O O O O	tweet paula deen 's restaurant that the line is always too long
+B_media_type B_business_name I_business_name I_business_name I_business_name O O O O O O O	tweet paula deen 's restaurant that the line is always too long
 O O B_person I_person I_person I_person B_relation O O	what does jon bon jovi 's wife look like
 O O O O O O B_time	let me know when it is ten
-U_media_type O O O O O O	tweet long wait time and unprofessional employees
+B_media_type O O O O O O	tweet long wait time and unprofessional employees
 O O O O O O O O B_house_place I_house_place O B_color_type	hi olly change the color of lights in my room to red
 O O B_person I_person I_person O	when is stassi schroedder 's birthday
 O O O O O O B_date	have i set any alarm for today
-U_player_setting B_audiobook_name I_audiobook_name I_audiobook_name	continue pride and prejudice
+B_player_setting B_audiobook_name I_audiobook_name I_audiobook_name	continue pride and prejudice
 O O B_house_place I_house_place O B_change_amount I_change_amount I_change_amount	set the living room lights to fifty percent
 O O O O O O	remove number three alarm of list
 O O O O O B_date I_date O B_date I_date O O O B_business_name	what is the difference between yesterday 's and today 's stock prices for walmart
@@ -8029,7 +8029,7 @@ O O O O O O O	read that list back to me please
 O O O O B_list_name I_list_name O O	delete from playlist my old english songs list
 O O O B_podcast_descriptor I_podcast_descriptor	continue onto the next podcast
 O O O O O	i ca n't see anything
-U_player_setting O O	repeat the music
+B_player_setting O O	repeat the music
 O O O O O	what 's thirteen plus fourteen
 O O O O O	do n't get this .
 O B_person I_person O	open terry 's email
@@ -8186,7 +8186,7 @@ O O O O O O O O O O O O	is it possible for you to provide the likes of my music
 O O O O O B_place_name I_place_name I_place_name	show me the time in new york city
 O O O O O O O O O B_time I_time B_general_frequency I_general_frequency	set a reminder i need to wake up at five am every morning
 O B_podcast_name I_podcast_name O	play last reason podcast
-U_cooking_type	evaporated
+B_cooking_type	evaporated
 O O	stock market
 O O O O O O O O O	count the number of food items on the list
 O O B_event_name B_date O	was my meeting today rescheduled
@@ -8238,7 +8238,7 @@ O O O O O B_news_topic O	let me know the latest weather news
 O O O O B_news_topic I_news_topic I_news_topic	update me on the standing rock protest
 O O	brighten lights
 B_email_address I_email_address I_email_address	mahaboobsayyad@gmail dot com
-U_player_setting O O	shazam this music
+B_player_setting O O	shazam this music
 O O O O O	yes answer was confirmed .
 O O O	brighten more light
 O O O O O O O O B_person I_person	tell me when i get new emails from principal lowry
@@ -8270,7 +8270,7 @@ O O O O O O O O O	rate this song five stars and save the rating
 B_game_name I_game_name	angry bird
 O O B_color_type O B_color_type O	switch from blue to yellow lights
 O O O O O	make the light more brighter
-U_date O O O O	today was a hard day
+B_date O O O O	today was a hard day
 O B_game_name O O O	play chess with me please
 O O O O O O O	is it ok to lower the lights
 O O O B_transport_type	get me a taxi
@@ -8282,7 +8282,7 @@ O O O B_transport_agency O B_time I_time B_timeofday	flag me an uber for ten pm 
 O O O O O B_business_name	refer the stock price of hdfc
 O O O O O O O	you do n't understand it right .
 O O O B_color_type	change lights to pink
-U_media_type B_business_name I_business_name O O O O O O O O O O	tweet british airways that my last flight from chicago to london was delayed
+B_media_type B_business_name I_business_name O O O O O O O O O O	tweet british airways that my last flight from chicago to london was delayed
 O O B_radio_name I_radio_name	switch on radio mango
 O O O O B_date I_date	cancel my event on june nineteenth
 O O O B_house_place O	turn off the kitchen lights
@@ -8414,12 +8414,12 @@ O O O O O B_place_name O O	how do i go to athens by train
 O O O O O O B_house_place I_house_place	turn the light off in the living room
 O O O O O O B_media_type B_date	has anyone follow me today on twitter today
 O O O B_business_name O O O O	can you tweet lif about their app crashing
-U_media_type O O O	tweet the current temperature
+B_media_type O O O	tweet the current temperature
 O O O O B_podcast_name	play the podcast named ringcast
 O O O O O O O O O O O O	will you please check and confirm the last thing i said .
 O O O O O O O	can you please turn up the lights
 O O O O O O O	could you tell me again please .
-U_player_setting O O	skip to next
+B_player_setting O O	skip to next
 O O O O O	where to buy cannon cameras
 O O O O O O O	an graphical images effects to be required
 O O O O O O O O	what is the answer to four plus four
@@ -8443,7 +8443,7 @@ O O B_transport_type O O B_timeofday O O	book a cab in the evening for me
 O O O O O O B_business_name	what is the stock price of hdfc
 O B_artist_name I_artist_name O O	play jack johnson playlist music
 O O O	find me someone
-U_player_setting B_media_type	repeat music
+B_player_setting B_media_type	repeat music
 O O O O O O O B_date	what is going on in me area today
 O O O O O	delete all my calendar events
 O O O O O O B_date	what do i have to do today
@@ -8489,7 +8489,7 @@ O O O O O O O	please provide the contents of the list
 O O O O O O O	recommend a movie playing in me area
 O O O O	add a new list
 O O O B_news_topic I_news_topic I_news_topic I_news_topic I_news_topic I_news_topic	give me the winning numbers to the powerball lottery
-U_player_setting O B_media_type O B_audiobook_name I_audiobook_name I_audiobook_name I_audiobook_name	read the audiobook of war of the roses
+B_player_setting O B_media_type O B_audiobook_name I_audiobook_name I_audiobook_name I_audiobook_name	read the audiobook of war of the roses
 O O O	just cancel .
 O O O	strongly agreed .
 O O O O O O O B_media_type O	what are the latest tweets on my twitter account
@@ -8500,7 +8500,7 @@ O O O O O	what music is currently playing
 O O O O O	yeap that was wonderful .
 O O O B_place_name I_place_name	what time in las vegas
 O O O O O O	would n't mind for anything .
-U_player_setting O O O B_audiobook_name I_audiobook_name I_audiobook_name	read me some more deadly death killers
+B_player_setting O O O B_audiobook_name I_audiobook_name I_audiobook_name	read me some more deadly death killers
 O O O O O O O O	how is traffic over the donner summit now
 O O O B_food_type I_food_type O B_business_name I_business_name O O	order a large plain pizza from mimo 's for me
 O O O O O O	how s the food order going
@@ -8553,7 +8553,7 @@ O O O O	why are whales big
 O O O O B_time I_time O	get rid of the five pm alarm
 O O O B_transport_type O O B_place_name O	book me a train ticket to atlanta please
 O O O O O O O	can you set an alarm for me
-U_player_setting O O O O O O	replay this song i really like it
+B_player_setting O O O O O O	replay this song i really like it
 O O	list alarms
 O O O O O O O O	that is unimportant to me , olly .
 O O O O O O B_event_name O O B_date I_date	what day of the week does christmas fall on this year
@@ -8561,7 +8561,7 @@ O O	start email
 O O O O B_date	what is the weather today
 O O O O O O	what 's my next scheduled alarm
 O O B_device_type I_device_type I_device_type O	turn my smart plug socket on
-U_player_setting O O O	repeat the current song
+B_player_setting O O O	repeat the current song
 O O O B_business_type I_business_type O O B_food_type I_food_type	call the nearest pizza place that offers buffalo pizza
 O O O O O O O O B_date	hi olly please cancel all the programs for friday
 O O O O O O O O O	how many kilograms is two hundred and ten pounds
@@ -8659,7 +8659,7 @@ O B_event_name O O B_date	make appointment for next friday
 O O O O O O O O O O O	i was not so clear about what you 've said .
 O O O O O O	give me the details of friend
 O O O O O	let me see my alarms
-U_device_type O	outlet off
+B_device_type O	outlet off
 O O O O	read me my alarms
 O O B_event_name O B_relation	make a meeting with friend
 O O O B_time_zone B_date	what is the day today
@@ -8753,20 +8753,20 @@ O O O O O O	what are the traffic conditions currently
 O O O	any important notifications
 O O O O B_time_zone I_time_zone I_time_zone O B_time_zone	convert current time from g. m. t. to est
 O O B_business_name O O B_date	what is motorola going for today
-U_artist_name O O O O	kfi is my favorite rapper
+B_artist_name O O O O	kfi is my favorite rapper
 O O O O O B_list_name I_list_name B_date	what do i need to get done today
 O O O O O	please read me my alarms
 O O O O O B_list_name I_list_name	make a new list for school supplies
 O O O O B_time I_time B_time I_time	cancel the alarm at four am ten pm
 O O O O O	please go to next date
-U_player_setting O O	pause the book
+B_player_setting O O	pause the book
 O O O O O O	what is ten divided by five
 O O O O O	tell me about new emails
 O O O O O O O	that 's enough , stop it .
 O O O O O O B_date	i need you to mark next monday
 O O O O	who is the singer
 O O O O O O O	what to do lists do i have
-U_color_type O O O	romantic light setting please
+B_color_type O O O	romantic light setting please
 O O O O O	rearrange that off the list
 O O O B_house_place O	turn off the garage light
 O O O O	Please lower the volume
@@ -8881,7 +8881,7 @@ O B_currency_name O B_currency_name	exchange euro to dollar
 O O	get contact
 O O B_device_type	power on wemo
 O O O O O	could you shut down .
-U_media_type B_business_name O O O O O O O O O	tweet comcast and tell them that their service is down again
+B_media_type B_business_name O O O O O O O O O	tweet comcast and tell them that their service is down again
 O O B_media_type O B_business_name O O	send a tweet about sonys volume issues
 O O O O O	calculate two multiplied by two
 O O O O O O O O O O	uhh no , you gave me not correct information .
@@ -8928,7 +8928,7 @@ O O B_audiobook_name I_audiobook_name	play the davinci code
 O O O O O O B_timeofday B_time I_time O O O O O B_time I_time	i 've got a meeting by tonight seven pm please mute the music for an hour
 O O O B_definition_word I_definition_word	please search for dining tables
 O O O O O O O O O O O	i 'd like to hear what you have said again .
-U_transport_type O	train departure
+B_transport_type O	train departure
 O O O O O O O O	tell me the details of the music playing
 O O B_device_type O O O B_house_place	activate the robot and vacuum the floor
 O O B_transport_type O B_place_name O O	book a cab to office for me
@@ -8938,7 +8938,7 @@ O O B_event_name O O O O	create a meeting event in my calendar
 O O O	further explain .
 O O O	display nearby places
 O O O O O	what are my newest emails
-U_player_setting O O O	stop after current song
+B_player_setting O O O	stop after current song
 O O O O O O	re add eggs to the list
 O O O O O O O O O	will you rephrase this again to me please .
 O B_business_name O O O O O	tell comcast their customer service is slow

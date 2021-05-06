@@ -834,7 +834,7 @@ fifty O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 complaint O
 to O
 sony B-business-name
@@ -1091,7 +1091,7 @@ d. I-currency-name
 
 -DOCSTART- -X- -X- O
 
-logan U-movie-name
+logan B-movie-name
 
 -DOCSTART- -X- -X- O
 
@@ -1102,7 +1102,7 @@ cancel O
 
 -DOCSTART- -X- -X- O
 
-vacuum U-device-type
+vacuum B-device-type
 living B-house-place
 room I-house-place
 
@@ -1561,7 +1561,7 @@ again O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 this O
 tweet O
 coffee O
@@ -1822,7 +1822,7 @@ me O
 
 -DOCSTART- -X- -X- O
 
-dollar U-currency-name
+dollar B-currency-name
 rate O
 
 -DOCSTART- -X- -X- O
@@ -2641,7 +2641,7 @@ dollar B-currency-name
 
 -DOCSTART- -X- -X- O
 
-noodles U-food-type
+noodles B-food-type
 one O
 pack O
 make O
@@ -2659,7 +2659,7 @@ right O
 
 -DOCSTART- -X- -X- O
 
-pink U-color-type
+pink B-color-type
 is O
 all O
 we O
@@ -2888,7 +2888,7 @@ roomba B-device-type
 
 -DOCSTART- -X- -X- O
 
-open U-player-setting
+open B-player-setting
 book O
 
 -DOCSTART- -X- -X- O
@@ -3213,7 +3213,7 @@ blue B-color-type
 
 -DOCSTART- -X- -X- O
 
-rewind U-player-setting
+rewind B-player-setting
 to O
 four B-time
 twelve I-time
@@ -3236,7 +3236,7 @@ day O
 
 -DOCSTART- -X- -X- O
 
-playback U-player-setting
+playback B-player-setting
 tom B-audiobook-author
 clancy I-audiobook-author
 splinter B-audiobook-name
@@ -3318,7 +3318,7 @@ please O
 
 -DOCSTART- -X- -X- O
 
-sarcastic U-joke-type
+sarcastic B-joke-type
 jokes O
 
 -DOCSTART- -X- -X- O
@@ -4809,7 +4809,7 @@ repeat B-player-setting
 
 -DOCSTART- -X- -X- O
 
-progress U-player-setting
+progress B-player-setting
 from O
 the O
 last O
@@ -5238,7 +5238,7 @@ playing O
 
 -DOCSTART- -X- -X- O
 
-grocery U-list-name
+grocery B-list-name
 list O
 add O
 eggs O
@@ -5774,7 +5774,7 @@ cnn B-media-type
 
 -DOCSTART- -X- -X- O
 
-deadpool U-movie-name
+deadpool B-movie-name
 
 -DOCSTART- -X- -X- O
 
@@ -5951,7 +5951,7 @@ intensity O
 
 -DOCSTART- -X- -X- O
 
-resume U-player-setting
+resume B-player-setting
 mind B-audiobook-name
 reading I-audiobook-name
 book I-audiobook-name
@@ -6441,7 +6441,7 @@ cost O
 
 -DOCSTART- -X- -X- O
 
-train U-transport-type
+train B-transport-type
 times O
 to O
 new B-place-name
@@ -6571,7 +6571,7 @@ item O
 
 -DOCSTART- -X- -X- O
 
-hockey U-event-name
+hockey B-event-name
 
 -DOCSTART- -X- -X- O
 
@@ -6979,7 +6979,7 @@ train B-transport-type
 
 -DOCSTART- -X- -X- O
 
-train U-transport-type
+train B-transport-type
 ticket O
 
 -DOCSTART- -X- -X- O
@@ -7126,7 +7126,7 @@ mean O
 
 -DOCSTART- -X- -X- O
 
-pause U-player-setting
+pause B-player-setting
 the O
 audiobook B-media-type
 
@@ -7183,7 +7183,7 @@ temperature B-weather-descriptor
 
 -DOCSTART- -X- -X- O
 
-disable U-player-setting
+disable B-player-setting
 shuffle B-player-setting
 
 -DOCSTART- -X- -X- O
@@ -8851,7 +8851,7 @@ lighting O
 
 -DOCSTART- -X- -X- O
 
-greg U-person
+greg B-person
 wants O
 black B-coffee-type
 coffee O
@@ -9624,7 +9624,7 @@ sky O
 
 -DOCSTART- -X- -X- O
 
-google U-business-name
+google B-business-name
 stock O
 symbol O
 

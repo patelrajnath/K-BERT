@@ -557,7 +557,7 @@ me O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 my O
 complaint O
 about O
@@ -1648,7 +1648,7 @@ podcast O
 
 -DOCSTART- -X- -X- O
 
-start U-player-setting
+start B-player-setting
 chapter O
 seven O
 of O
@@ -2610,7 +2610,7 @@ thanks O
 
 -DOCSTART- -X- -X- O
 
-today U-date
+today B-date
 some O
 things O
 happened O
@@ -2900,7 +2900,7 @@ down O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 a O
 disgusted O
 face O
@@ -3319,7 +3319,7 @@ also O
 
 -DOCSTART- -X- -X- O
 
-facebook U-media-type
+facebook B-media-type
 
 -DOCSTART- -X- -X- O
 
@@ -3710,7 +3710,7 @@ have O
 
 -DOCSTART- -X- -X- O
 
-sanctimonious U-definition-word
+sanctimonious B-definition-word
 definition O
 
 -DOCSTART- -X- -X- O
@@ -3844,7 +3844,7 @@ list O
 
 -DOCSTART- -X- -X- O
 
-resume U-player-setting
+resume B-player-setting
 harry B-audiobook-name
 potter I-audiobook-name
 book I-audiobook-name
@@ -4473,7 +4473,7 @@ curry B-food-type
 
 -DOCSTART- -X- -X- O
 
-repeat U-player-setting
+repeat B-player-setting
 this O
 song O
 three O
@@ -5150,7 +5150,7 @@ please O
 
 -DOCSTART- -X- -X- O
 
-jump U-player-setting
+jump B-player-setting
 to O
 next B-podcast-descriptor
 podcast I-podcast-descriptor
@@ -5387,7 +5387,7 @@ alarm O
 
 -DOCSTART- -X- -X- O
 
-outlet U-device-type
+outlet B-device-type
 on O
 
 -DOCSTART- -X- -X- O
@@ -6369,7 +6369,7 @@ emails O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 complaint O
 to O
 american B-business-name
@@ -7008,7 +7008,7 @@ stop O
 
 -DOCSTART- -X- -X- O
 
-grubhub U-app-name
+grubhub B-app-name
 order O
 
 -DOCSTART- -X- -X- O
@@ -7629,7 +7629,7 @@ it O
 
 -DOCSTART- -X- -X- O
 
-today U-date
+today B-date
 is O
 monday B-date
 is O
@@ -7812,7 +7812,7 @@ blues B-music-genre
 
 -DOCSTART- -X- -X- O
 
-resume U-player-setting
+resume B-player-setting
 audiobook B-media-type
 playback O
 
@@ -8523,7 +8523,7 @@ perfectly O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 for O
 me O
 the O
@@ -8551,7 +8551,7 @@ events O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 a O
 complaint O
 to O
@@ -8591,7 +8591,7 @@ tomorrow B-date
 
 -DOCSTART- -X- -X- O
 
-resume U-player-setting
+resume B-player-setting
 the B-audiobook-name
 two I-audiobook-name
 towers I-audiobook-name
@@ -9488,7 +9488,7 @@ podcast O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 complaint O
 to O
 consumer B-business-name
@@ -9559,11 +9559,11 @@ me O
 
 -DOCSTART- -X- -X- O
 
-hold U-player-setting
+hold B-player-setting
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 bad O
 day O
 at O
@@ -9693,7 +9693,7 @@ lights O
 
 -DOCSTART- -X- -X- O
 
-today U-date
+today B-date
 wore O
 me O
 out O
@@ -10646,7 +10646,7 @@ go O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 kohls B-business-name
 about O
 the O
@@ -10994,7 +10994,7 @@ alarm O
 
 -DOCSTART- -X- -X- O
 
-funny U-joke-type
+funny B-joke-type
 joke O
 
 -DOCSTART- -X- -X- O
@@ -11226,7 +11226,7 @@ car B-joke-type
 
 -DOCSTART- -X- -X- O
 
-today U-date
+today B-date
 how O
 many O
 alarms O
@@ -13529,7 +13529,7 @@ employees O
 
 -DOCSTART- -X- -X- O
 
-skip U-player-setting
+skip B-player-setting
 to O
 next B-podcast-descriptor
 episode I-podcast-descriptor
@@ -15693,7 +15693,7 @@ today B-date
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 my O
 complaint O
 on O
@@ -16546,7 +16546,7 @@ again O
 
 -DOCSTART- -X- -X- O
 
-fb U-business-name
+fb B-business-name
 stocks O
 
 -DOCSTART- -X- -X- O
@@ -17017,7 +17017,7 @@ workday O
 
 -DOCSTART- -X- -X- O
 
-bedroom U-house-place
+bedroom B-house-place
 light O
 off O
 
@@ -17098,7 +17098,7 @@ fifty I-change-amount
 
 -DOCSTART- -X- -X- O
 
-replay U-player-setting
+replay B-player-setting
 the O
 required O
 of O
@@ -17751,7 +17751,7 @@ laugh O
 
 -DOCSTART- -X- -X- O
 
-political U-news-topic
+political B-news-topic
 news O
 of O
 importance O
@@ -17991,7 +17991,7 @@ coffee O
 
 -DOCSTART- -X- -X- O
 
-taxi U-transport-type
+taxi B-transport-type
 now O
 
 -DOCSTART- -X- -X- O
@@ -18073,7 +18073,7 @@ yesterday I-podcast-descriptor
 
 -DOCSTART- -X- -X- O
 
-meeting U-event-name
+meeting B-event-name
 this O
 friday B-date
 
@@ -18833,7 +18833,7 @@ delivery B-order-type
 
 -DOCSTART- -X- -X- O
 
-google U-business-name
+google B-business-name
 stock O
 price O
 
@@ -19256,7 +19256,7 @@ france B-place-name
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 consumer B-business-name
 service I-business-name
 
@@ -19750,7 +19750,7 @@ friday B-date
 
 -DOCSTART- -X- -X- O
 
-resume U-player-setting
+resume B-player-setting
 my O
 audiobook B-media-type
 from O
@@ -20355,7 +20355,7 @@ recipe B-definition-word
 
 -DOCSTART- -X- -X- O
 
-honda U-business-name
+honda B-business-name
 stock O
 price O
 
@@ -20413,7 +20413,7 @@ socket I-device-type
 
 -DOCSTART- -X- -X- O
 
-resume U-player-setting
+resume B-player-setting
 audiobook O
 
 -DOCSTART- -X- -X- O
@@ -21599,7 +21599,7 @@ podcast O
 
 -DOCSTART- -X- -X- O
 
-uber U-transport-agency
+uber B-transport-agency
 me O
 to O
 the O
@@ -22340,12 +22340,12 @@ tomorrow B-date
 
 -DOCSTART- -X- -X- O
 
-resume U-player-setting
+resume B-player-setting
 story B-audiobook-name
 
 -DOCSTART- -X- -X- O
 
-move U-player-setting
+move B-player-setting
 to O
 next O
 section O
@@ -22410,7 +22410,7 @@ tunes B-media-type
 
 -DOCSTART- -X- -X- O
 
-repeat U-player-setting
+repeat B-player-setting
 the O
 last B-song-name
 song I-song-name
@@ -22817,7 +22817,7 @@ weekend I-date
 
 -DOCSTART- -X- -X- O
 
-theaters U-business-type
+theaters B-business-type
 near O
 to O
 me O
@@ -22946,7 +22946,7 @@ requests O
 
 -DOCSTART- -X- -X- O
 
-amazon U-business-name
+amazon B-business-name
 stock O
 price O
 
@@ -23099,7 +23099,7 @@ cookies I-food-type
 
 -DOCSTART- -X- -X- O
 
-tvs U-business-name
+tvs B-business-name
 stock O
 price O
 
@@ -23714,7 +23714,7 @@ celine B-person
 
 -DOCSTART- -X- -X- O
 
-shuffle U-player-setting
+shuffle B-player-setting
 song O
 
 -DOCSTART- -X- -X- O
@@ -25051,7 +25051,7 @@ please O
 
 -DOCSTART- -X- -X- O
 
-resume U-player-setting
+resume B-player-setting
 harry B-audiobook-name
 potter I-audiobook-name
 from O
@@ -25067,7 +25067,7 @@ time O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 to O
 mcdonalds B-business-name
 saying O
@@ -25178,7 +25178,7 @@ game O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 starbucks B-business-name
 and O
 say O
@@ -25799,14 +25799,14 @@ days O
 
 -DOCSTART- -X- -X- O
 
-rotate U-color-type
+rotate B-color-type
 the O
 light O
 colors O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 to O
 amazon B-business-name
 about O
@@ -26426,7 +26426,7 @@ now O
 
 -DOCSTART- -X- -X- O
 
-resume U-player-setting
+resume B-player-setting
 joes B-audiobook-name
 book I-audiobook-name
 from O
@@ -26460,7 +26460,7 @@ radio O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 to O
 the O
 customer B-business-name
@@ -27190,7 +27190,7 @@ walmart B-business-name
 
 -DOCSTART- -X- -X- O
 
-repeat U-player-setting
+repeat B-player-setting
 album O
 
 -DOCSTART- -X- -X- O
@@ -27458,7 +27458,7 @@ monday B-date
 
 -DOCSTART- -X- -X- O
 
-shuffle U-player-setting
+shuffle B-player-setting
 the O
 songs O
 in O
@@ -27640,7 +27640,7 @@ is O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 complaint O
 to O
 dominoes B-business-name
@@ -27924,12 +27924,12 @@ do O
 
 -DOCSTART- -X- -X- O
 
-funny U-joke-type
+funny B-joke-type
 story O
 
 -DOCSTART- -X- -X- O
 
-slightly U-change-amount
+slightly B-change-amount
 raise O
 the O
 light O
@@ -28599,7 +28599,7 @@ blue B-color-type
 
 -DOCSTART- -X- -X- O
 
-today U-date
+today B-date
 i O
 had O
 a O
@@ -28609,7 +28609,7 @@ sale O
 
 -DOCSTART- -X- -X- O
 
-inbox U-email-folder
+inbox B-email-folder
 my O
 family B-relation
 
@@ -28738,7 +28738,7 @@ week I-date
 
 -DOCSTART- -X- -X- O
 
-resume U-player-setting
+resume B-player-setting
 lord B-audiobook-name
 of I-audiobook-name
 the I-audiobook-name
@@ -28800,7 +28800,7 @@ light O
 
 -DOCSTART- -X- -X- O
 
-restaurant U-business-type
+restaurant B-business-type
 delivery O
 update O
 
@@ -28925,7 +28925,7 @@ jams I-music-genre
 
 -DOCSTART- -X- -X- O
 
-resume U-player-setting
+resume B-player-setting
 the B-audiobook-name
 art I-audiobook-name
 of I-audiobook-name
@@ -29451,7 +29451,7 @@ morning B-timeofday
 
 -DOCSTART- -X- -X- O
 
-start U-player-setting
+start B-player-setting
 dune B-audiobook-name
 from O
 where O
@@ -29482,7 +29482,7 @@ medvesek I-person
 
 -DOCSTART- -X- -X- O
 
-repeat U-player-setting
+repeat B-player-setting
 song O
 number O
 ten O
@@ -29705,7 +29705,7 @@ bread I-food-type
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 my O
 complaint O
 to O
@@ -29800,7 +29800,7 @@ tomatillo B-definition-word
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 verizon B-business-name
 customer I-business-name
 service I-business-name
@@ -30708,7 +30708,7 @@ now O
 
 -DOCSTART- -X- -X- O
 
-blue U-color-type
+blue B-color-type
 lights O
 please O
 
@@ -30960,7 +30960,7 @@ me O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 @wendys B-business-name
 that O
 i O
@@ -31505,14 +31505,14 @@ thursday B-date
 
 -DOCSTART- -X- -X- O
 
-resume U-player-setting
+resume B-player-setting
 pride B-audiobook-name
 and I-audiobook-name
 prejudice I-audiobook-name
 
 -DOCSTART- -X- -X- O
 
-start U-player-setting
+start B-player-setting
 podcast O
 from O
 my O
@@ -31993,7 +31993,7 @@ conversation O
 
 -DOCSTART- -X- -X- O
 
-resume U-player-setting
+resume B-player-setting
 audio O
 playback O
 of O
@@ -32045,7 +32045,7 @@ nigeria I-place-name
 
 -DOCSTART- -X- -X- O
 
-start U-player-setting
+start B-player-setting
 audio O
 playback O
 of O
@@ -33258,7 +33258,7 @@ joanne B-person
 
 -DOCSTART- -X- -X- O
 
-takeaway U-order-type
+takeaway B-order-type
 noodles B-food-type
 one O
 pack O
@@ -34547,7 +34547,7 @@ set O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 freedom B-business-name
 pop I-business-name
 customer I-business-name
@@ -35188,7 +35188,7 @@ married O
 
 -DOCSTART- -X- -X- O
 
-badminton U-event-name
+badminton B-event-name
 
 -DOCSTART- -X- -X- O
 
@@ -35280,7 +35280,7 @@ am I-time
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 consumer O
 complaint O
 
@@ -35509,7 +35509,7 @@ on O
 
 -DOCSTART- -X- -X- O
 
-todays U-date
+todays B-date
 a O
 lovely O
 day O
@@ -36252,7 +36252,7 @@ michael B-person
 
 -DOCSTART- -X- -X- O
 
-entertainment U-news-topic
+entertainment B-news-topic
 news O
 
 -DOCSTART- -X- -X- O
@@ -37495,7 +37495,7 @@ angeles I-place-name
 
 -DOCSTART- -X- -X- O
 
-canadian U-currency-name
+canadian B-currency-name
 us B-currency-name
 exchange O
 rate O
@@ -37624,7 +37624,7 @@ inbox B-email-folder
 
 -DOCSTART- -X- -X- O
 
-today U-date
+today B-date
 i O
 could O
 n't O
@@ -37849,7 +37849,7 @@ hue O
 
 -DOCSTART- -X- -X- O
 
-markets U-business-type
+markets B-business-type
 near O
 by O
 
@@ -37995,7 +37995,7 @@ playing O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 consumer B-business-name
 service I-business-name
 that O
@@ -38222,7 +38222,7 @@ playing O
 
 -DOCSTART- -X- -X- O
 
-resume U-player-setting
+resume B-player-setting
 harry B-audiobook-name
 potter I-audiobook-name
 book I-audiobook-name
@@ -38773,7 +38773,7 @@ please O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 complaint O
 to O
 amazon B-business-name
@@ -39136,7 +39136,7 @@ right O
 
 -DOCSTART- -X- -X- O
 
-skip U-player-setting
+skip B-player-setting
 forward O
 
 -DOCSTART- -X- -X- O
@@ -39375,7 +39375,7 @@ married O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 real B-business-name
 donald I-business-name
 trump I-business-name
@@ -39397,7 +39397,7 @@ kitchen B-house-place
 
 -DOCSTART- -X- -X- O
 
-resume U-player-setting
+resume B-player-setting
 play O
 of O
 american B-audiobook-name
@@ -39422,7 +39422,7 @@ correcly O
 
 -DOCSTART- -X- -X- O
 
-freezing U-cooking-type
+freezing B-cooking-type
 
 -DOCSTART- -X- -X- O
 
@@ -39869,7 +39869,7 @@ un B-media-type
 
 -DOCSTART- -X- -X- O
 
-resume U-player-setting
+resume B-player-setting
 war B-audiobook-name
 and I-audiobook-name
 peace I-audiobook-name
@@ -40029,7 +40029,7 @@ am I-time
 
 -DOCSTART- -X- -X- O
 
-meetings U-event-name
+meetings B-event-name
 from O
 twenty B-time
 to I-time
@@ -40285,7 +40285,7 @@ app I-app-name
 
 -DOCSTART- -X- -X- O
 
-cnn U-media-type
+cnn B-media-type
 world B-place-name
 news O
 
@@ -40480,7 +40480,7 @@ mcdo B-place-name
 
 -DOCSTART- -X- -X- O
 
-start U-player-setting
+start B-player-setting
 my O
 audio B-media-type
 book I-media-type
@@ -40648,7 +40648,7 @@ cleaner I-device-type
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 for O
 me O
 the O
@@ -40840,7 +40840,7 @@ milk O
 
 -DOCSTART- -X- -X- O
 
-@nikesupport U-business-name
+@nikesupport B-business-name
 i O
 need O
 some O
@@ -41143,7 +41143,7 @@ volume O
 
 -DOCSTART- -X- -X- O
 
-resume U-player-setting
+resume B-player-setting
 playback O
 
 -DOCSTART- -X- -X- O
@@ -41272,7 +41272,7 @@ please O
 
 -DOCSTART- -X- -X- O
 
-myspace U-media-type
+myspace B-media-type
 
 -DOCSTART- -X- -X- O
 
@@ -41513,7 +41513,7 @@ bedroom B-house-place
 
 -DOCSTART- -X- -X- O
 
-takeaway U-order-type
+takeaway B-order-type
 status O
 
 -DOCSTART- -X- -X- O
@@ -41913,7 +41913,7 @@ leave O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 walmart B-business-name
 and O
 tell O
@@ -42022,7 +42022,7 @@ blue B-color-type
 
 -DOCSTART- -X- -X- O
 
-office U-house-place
+office B-house-place
 lights O
 off O
 
@@ -42246,7 +42246,7 @@ list O
 
 -DOCSTART- -X- -X- O
 
-euro U-currency-name
+euro B-currency-name
 to O
 u. B-currency-name
 s. I-currency-name
@@ -42262,7 +42262,7 @@ please O
 
 -DOCSTART- -X- -X- O
 
-resume U-player-setting
+resume B-player-setting
 inkheart B-audiobook-name
 
 -DOCSTART- -X- -X- O
@@ -42402,7 +42402,7 @@ song O
 
 -DOCSTART- -X- -X- O
 
-pontificate U-definition-word
+pontificate B-definition-word
 definition O
 
 -DOCSTART- -X- -X- O
@@ -42840,7 +42840,7 @@ them O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 error O
 log O
 to O
@@ -43138,7 +43138,7 @@ is O
 
 -DOCSTART- -X- -X- O
 
-rewind U-player-setting
+rewind B-player-setting
 the O
 episode O
 of O
@@ -43208,7 +43208,7 @@ stonehenge O
 
 -DOCSTART- -X- -X- O
 
-forward U-player-setting
+forward B-player-setting
 to O
 four B-time
 twenty I-time
@@ -43295,7 +43295,7 @@ favorite O
 
 -DOCSTART- -X- -X- O
 
-vacuum U-device-type
+vacuum B-device-type
 start O
 
 -DOCSTART- -X- -X- O
@@ -43602,7 +43602,7 @@ now O
 
 -DOCSTART- -X- -X- O
 
-facebook U-business-name
+facebook B-business-name
 current O
 stock O
 rate O
@@ -43849,7 +43849,7 @@ p. I-currency-name
 
 -DOCSTART- -X- -X- O
 
-continue U-player-setting
+continue B-player-setting
 with O
 my O
 audiobook B-media-type
@@ -43906,7 +43906,7 @@ please O
 
 -DOCSTART- -X- -X- O
 
-continue U-player-setting
+continue B-player-setting
 audiobook B-media-type
 playback O
 
@@ -44199,7 +44199,7 @@ reminders O
 
 -DOCSTART- -X- -X- O
 
-dollar U-currency-name
+dollar B-currency-name
 rate O
 of O
 philippiness B-currency-name
@@ -44355,12 +44355,12 @@ tata B-business-name
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 complaint O
 
 -DOCSTART- -X- -X- O
 
-resume U-player-setting
+resume B-player-setting
 audio O
 book O
 history B-audiobook-name
@@ -44457,7 +44457,7 @@ four O
 
 -DOCSTART- -X- -X- O
 
-shuffle U-player-setting
+shuffle B-player-setting
 music O
 by O
 aaron B-artist-name
@@ -44485,7 +44485,7 @@ coffee O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 a O
 complaint O
 to O
@@ -44600,7 +44600,7 @@ rd I-place-name
 
 -DOCSTART- -X- -X- O
 
-restart U-player-setting
+restart B-player-setting
 american B-audiobook-name
 gods I-audiobook-name
 
@@ -44671,7 +44671,7 @@ it O
 
 -DOCSTART- -X- -X- O
 
-reshuffle U-player-setting
+reshuffle B-player-setting
 and O
 play O
 music O
@@ -45561,7 +45561,7 @@ right O
 
 -DOCSTART- -X- -X- O
 
-forward U-player-setting
+forward B-player-setting
 this O
 one O
 
@@ -45851,7 +45851,7 @@ response O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 my O
 complaint O
 and O
@@ -46328,7 +46328,7 @@ bedroom B-house-place
 
 -DOCSTART- -X- -X- O
 
-today U-date
+today B-date
 is O
 which O
 date O
@@ -46468,7 +46468,7 @@ pie I-food-type
 
 -DOCSTART- -X- -X- O
 
-resume U-player-setting
+resume B-player-setting
 audio B-media-type
 
 -DOCSTART- -X- -X- O
@@ -47177,7 +47177,7 @@ account O
 
 -DOCSTART- -X- -X- O
 
-uber U-transport-agency
+uber B-transport-agency
 please O
 
 -DOCSTART- -X- -X- O
@@ -47437,7 +47437,7 @@ peso I-currency-name
 
 -DOCSTART- -X- -X- O
 
-skip U-player-setting
+skip B-player-setting
 to O
 the O
 next B-podcast-descriptor
@@ -48214,7 +48214,7 @@ is O
 
 -DOCSTART- -X- -X- O
 
-temperature U-weather-descriptor
+temperature B-weather-descriptor
 this B-time
 hour I-time
 
@@ -48533,7 +48533,7 @@ giver I-audiobook-name
 
 -DOCSTART- -X- -X- O
 
-resume U-player-setting
+resume B-player-setting
 the O
 playback O
 of O
@@ -48581,7 +48581,7 @@ minutes I-time
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 consumer B-business-name
 service I-business-name
 that O
@@ -49300,7 +49300,7 @@ event O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 consumer B-business-name
 service I-business-name
 that O
@@ -50692,7 +50692,7 @@ depot O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 a O
 complaint O
 
@@ -51212,7 +51212,7 @@ off O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 @phohouse B-business-name
 your O
 server O
@@ -51657,7 +51657,7 @@ it O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 I O
 'm O
 complaining O
@@ -52162,7 +52162,7 @@ alfredo I-food-type
 
 -DOCSTART- -X- -X- O
 
-shuffle U-player-setting
+shuffle B-player-setting
 the O
 current O
 album O
@@ -52485,7 +52485,7 @@ fitness O
 
 -DOCSTART- -X- -X- O
 
-train U-transport-type
+train B-transport-type
 schedule O
 
 -DOCSTART- -X- -X- O
@@ -52760,7 +52760,7 @@ volume O
 
 -DOCSTART- -X- -X- O
 
-facebook U-media-type
+facebook B-media-type
 info O
 
 -DOCSTART- -X- -X- O
@@ -52907,7 +52907,7 @@ please O
 
 -DOCSTART- -X- -X- O
 
-continue U-player-setting
+continue B-player-setting
 the O
 smurfs B-audiobook-name
 book O
@@ -52937,7 +52937,7 @@ music O
 
 -DOCSTART- -X- -X- O
 
-start U-player-setting
+start B-player-setting
 next B-podcast-descriptor
 episode I-podcast-descriptor
 playing O
@@ -53818,7 +53818,7 @@ me O
 
 -DOCSTART- -X- -X- O
 
-sunny U-weather-descriptor
+sunny B-weather-descriptor
 in O
 oslo B-place-name
 
@@ -54551,7 +54551,7 @@ list O
 
 -DOCSTART- -X- -X- O
 
-dollar U-currency-name
+dollar B-currency-name
 rate O
 at O
 present O
@@ -54637,7 +54637,7 @@ opinion O
 
 -DOCSTART- -X- -X- O
 
-start U-player-setting
+start B-player-setting
 my O
 bible B-audiobook-name
 study I-audiobook-name
@@ -54745,7 +54745,7 @@ christmas O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 a O
 complaint O
 to O
@@ -55078,7 +55078,7 @@ pm I-time
 
 -DOCSTART- -X- -X- O
 
-hackernews U-media-type
+hackernews B-media-type
 
 -DOCSTART- -X- -X- O
 
@@ -55090,7 +55090,7 @@ calendar O
 
 -DOCSTART- -X- -X- O
 
-train U-transport-type
+train B-transport-type
 ticket O
 please O
 
@@ -56293,7 +56293,7 @@ higher O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 at O
 koc B-business-name
 your O
@@ -56521,7 +56521,7 @@ me O
 
 -DOCSTART- -X- -X- O
 
-vacuum U-device-type
+vacuum B-device-type
 on O
 
 -DOCSTART- -X- -X- O
@@ -56861,7 +56861,7 @@ olly O
 
 -DOCSTART- -X- -X- O
 
-rahul U-person
+rahul B-person
 contact B-personal-info
 
 -DOCSTART- -X- -X- O
@@ -57229,7 +57229,7 @@ am I-time
 
 -DOCSTART- -X- -X- O
 
-resuming U-player-setting
+resuming B-player-setting
 playing O
 my O
 current O
@@ -57407,7 +57407,7 @@ twentieth I-date
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 a O
 complaint O
 to O
@@ -57566,7 +57566,7 @@ off O
 
 -DOCSTART- -X- -X- O
 
-resume U-player-setting
+resume B-player-setting
 the O
 last O
 played O
@@ -58776,7 +58776,7 @@ five I-place-name
 
 -DOCSTART- -X- -X- O
 
-jazz U-music-genre
+jazz B-music-genre
 could O
 be O
 choice O
@@ -59071,7 +59071,7 @@ d. I-currency-name
 
 -DOCSTART- -X- -X- O
 
-repeat U-player-setting
+repeat B-player-setting
 the B-music-descriptor
 last I-music-descriptor
 song I-music-descriptor
@@ -59424,7 +59424,7 @@ charlotte B-person
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 on O
 the O
 bad O
@@ -59704,7 +59704,7 @@ today B-date
 
 -DOCSTART- -X- -X- O
 
-snapchat U-media-type
+snapchat B-media-type
 
 -DOCSTART- -X- -X- O
 
@@ -59899,7 +59899,7 @@ book O
 
 -DOCSTART- -X- -X- O
 
-taxi U-transport-type
+taxi B-transport-type
 uber B-transport-agency
 
 -DOCSTART- -X- -X- O
@@ -60620,7 +60620,7 @@ today B-date
 
 -DOCSTART- -X- -X- O
 
-resume U-player-setting
+resume B-player-setting
 last O
 played O
 audiobook B-media-type
@@ -61317,7 +61317,7 @@ it O
 
 -DOCSTART- -X- -X- O
 
-equalize U-player-setting
+equalize B-player-setting
 the O
 bass O
 of O
@@ -61572,7 +61572,7 @@ vacuuming B-device-type
 
 -DOCSTART- -X- -X- O
 
-mario U-game-name
+mario B-game-name
 
 -DOCSTART- -X- -X- O
 
@@ -62476,7 +62476,7 @@ two O
 
 -DOCSTART- -X- -X- O
 
-change U-player-setting
+change B-player-setting
 the O
 music O
 mode O
@@ -62747,7 +62747,7 @@ station O
 
 -DOCSTART- -X- -X- O
 
-resume U-player-setting
+resume B-player-setting
 harry B-audiobook-name
 potter I-audiobook-name
 book I-audiobook-name
@@ -62783,7 +62783,7 @@ weeks I-time
 
 -DOCSTART- -X- -X- O
 
-move U-player-setting
+move B-player-setting
 to O
 the O
 next O
@@ -62821,7 +62821,7 @@ bird I-game-name
 
 -DOCSTART- -X- -X- O
 
-replay U-player-setting
+replay B-player-setting
 my O
 last O
 played O
@@ -63025,7 +63025,7 @@ media O
 
 -DOCSTART- -X- -X- O
 
-rahul U-person
+rahul B-person
 marriage B-event-name
 reminder O
 
@@ -63229,7 +63229,7 @@ times I-media-type
 
 -DOCSTART- -X- -X- O
 
-White U-color-type
+White B-color-type
 
 -DOCSTART- -X- -X- O
 
@@ -63977,7 +63977,7 @@ brighter O
 
 -DOCSTART- -X- -X- O
 
-resume U-player-setting
+resume B-player-setting
 the O
 reading O
 of O
@@ -64147,7 +64147,7 @@ please O
 
 -DOCSTART- -X- -X- O
 
-date U-date
+date B-date
 in O
 new B-place-name
 york I-place-name
@@ -64203,7 +64203,7 @@ seven O
 
 -DOCSTART- -X- -X- O
 
-cnn U-media-type
+cnn B-media-type
 headlines O
 
 -DOCSTART- -X- -X- O
@@ -65023,7 +65023,7 @@ blank B-news-topic
 
 -DOCSTART- -X- -X- O
 
-loop U-player-setting
+loop B-player-setting
 this O
 track O
 
@@ -65093,7 +65093,7 @@ laundry O
 
 -DOCSTART- -X- -X- O
 
-start U-player-setting
+start B-player-setting
 the O
 audiobook O
 file O
@@ -66361,7 +66361,7 @@ list O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 a O
 complaint O
 to O
@@ -66688,7 +66688,7 @@ blue B-color-type
 
 -DOCSTART- -X- -X- O
 
-replay U-player-setting
+replay B-player-setting
 the O
 musics O
 
@@ -66739,7 +66739,7 @@ angeles I-place-name
 
 -DOCSTART- -X- -X- O
 
-resume U-player-setting
+resume B-player-setting
 audiobook B-media-type
 please O
 
@@ -66796,7 +66796,7 @@ alarm O
 
 -DOCSTART- -X- -X- O
 
-blanket U-definition-word
+blanket B-definition-word
 definition O
 
 -DOCSTART- -X- -X- O
@@ -67075,7 +67075,7 @@ speakers O
 
 -DOCSTART- -X- -X- O
 
-repeat U-player-setting
+repeat B-player-setting
 song O
 
 -DOCSTART- -X- -X- O
@@ -67111,7 +67111,7 @@ weather O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 my O
 current O
 location O
@@ -67161,7 +67161,7 @@ me O
 
 -DOCSTART- -X- -X- O
 
-train U-transport-type
+train B-transport-type
 tickets O
 for O
 two O
@@ -67517,7 +67517,7 @@ please O
 
 -DOCSTART- -X- -X- O
 
-rewind U-player-setting
+rewind B-player-setting
 button O
 
 -DOCSTART- -X- -X- O
@@ -67672,7 +67672,7 @@ me O
 
 -DOCSTART- -X- -X- O
 
-resume U-player-setting
+resume B-player-setting
 play O
 on O
 my O
@@ -67824,7 +67824,7 @@ today B-date
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 your O
 waiting O
 time O
@@ -67933,7 +67933,7 @@ it O
 
 -DOCSTART- -X- -X- O
 
-repeat U-player-setting
+repeat B-player-setting
 jazz B-music-genre
 
 -DOCSTART- -X- -X- O
@@ -68541,7 +68541,7 @@ cold B-weather-descriptor
 
 -DOCSTART- -X- -X- O
 
-restart U-player-setting
+restart B-player-setting
 the O
 audiobook B-media-type
 heaven B-audiobook-name
@@ -68921,7 +68921,7 @@ blue B-color-type
 
 -DOCSTART- -X- -X- O
 
-cnn U-media-type
+cnn B-media-type
 
 -DOCSTART- -X- -X- O
 
@@ -69001,7 +69001,7 @@ arrives O
 
 -DOCSTART- -X- -X- O
 
-repeat U-player-setting
+repeat B-player-setting
 the O
 song O
 playing O
@@ -69215,7 +69215,7 @@ tomorrow O
 
 -DOCSTART- -X- -X- O
 
-read U-player-setting
+read B-player-setting
 some O
 more O
 of O
@@ -69237,7 +69237,7 @@ between O
 
 -DOCSTART- -X- -X- O
 
-church U-event-name
+church B-event-name
 with O
 mom B-relation
 and O
@@ -69440,7 +69440,7 @@ days I-date
 
 -DOCSTART- -X- -X- O
 
-thursday U-date
+thursday B-date
 at O
 three B-time
 pm I-time
@@ -69472,7 +69472,7 @@ goggins I-person
 
 -DOCSTART- -X- -X- O
 
-jlo U-person
+jlo B-person
 fan O
 updates O
 
@@ -70475,7 +70475,7 @@ news O
 
 -DOCSTART- -X- -X- O
 
-repeat U-player-setting
+repeat B-player-setting
 all O
 
 -DOCSTART- -X- -X- O
@@ -70785,7 +70785,7 @@ day O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 to O
 consumer B-business-name
 service I-business-name
@@ -71106,7 +71106,7 @@ train B-transport-type
 
 -DOCSTART- -X- -X- O
 
-inbox U-email-folder
+inbox B-email-folder
 this O
 mail O
 
@@ -71632,7 +71632,7 @@ olly O
 
 -DOCSTART- -X- -X- O
 
-resume U-player-setting
+resume B-player-setting
 the B-audiobook-name
 two I-audiobook-name
 towers I-audiobook-name
@@ -71788,7 +71788,7 @@ miami B-place-name
 
 -DOCSTART- -X- -X- O
 
-move U-player-setting
+move B-player-setting
 to O
 next B-podcast-descriptor
 episode I-podcast-descriptor
@@ -71813,7 +71813,7 @@ hours I-time
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 at O
 united B-business-name
 airlines I-business-name
@@ -71835,7 +71835,7 @@ soon O
 
 -DOCSTART- -X- -X- O
 
-shuffle U-player-setting
+shuffle B-player-setting
 music O
 
 -DOCSTART- -X- -X- O
@@ -72218,7 +72218,7 @@ me O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 @bobburgers B-business-name
 they O
 screwed O
@@ -73290,7 +73290,7 @@ diner B-meal-type
 
 -DOCSTART- -X- -X- O
 
-meeting U-event-name
+meeting B-event-name
 july B-date
 calendar O
 
@@ -73703,7 +73703,7 @@ is O
 
 -DOCSTART- -X- -X- O
 
-audio U-media-type
+audio B-media-type
 start O
 
 -DOCSTART- -X- -X- O
@@ -75518,7 +75518,7 @@ you O
 
 -DOCSTART- -X- -X- O
 
-instagram U-media-type
+instagram B-media-type
 
 -DOCSTART- -X- -X- O
 
@@ -75553,7 +75553,7 @@ point I-place-name
 
 -DOCSTART- -X- -X- O
 
-restart U-player-setting
+restart B-player-setting
 bill B-audiobook-author
 nye I-audiobook-author
 book B-media-type
@@ -75688,7 +75688,7 @@ pm I-time
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 something O
 for O
 me O
@@ -76404,7 +76404,7 @@ pm I-time
 
 -DOCSTART- -X- -X- O
 
-resume U-player-setting
+resume B-player-setting
 the O
 playback O
 of O
@@ -76990,7 +76990,7 @@ now O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 the B-business-name
 president I-business-name
 and O
@@ -77005,11 +77005,11 @@ job O
 
 -DOCSTART- -X- -X- O
 
-iphone U-news-topic
+iphone B-news-topic
 
 -DOCSTART- -X- -X- O
 
-resume U-player-setting
+resume B-player-setting
 the O
 audiobook O
 i O
@@ -77173,7 +77173,7 @@ rupee I-currency-name
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 insight B-business-name
 cable I-business-name
 's I-business-name
@@ -77390,7 +77390,7 @@ forty O
 
 -DOCSTART- -X- -X- O
 
-stop U-player-setting
+stop B-player-setting
 audiobook B-media-type
 
 -DOCSTART- -X- -X- O
@@ -77516,7 +77516,7 @@ me O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 a O
 complaint O
 to O
@@ -78346,7 +78346,7 @@ marvel B-business-name
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 paula B-business-name
 deen I-business-name
 's I-business-name
@@ -78383,7 +78383,7 @@ ten B-time
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 long O
 wait O
 time O
@@ -78427,7 +78427,7 @@ today B-date
 
 -DOCSTART- -X- -X- O
 
-continue U-player-setting
+continue B-player-setting
 pride B-audiobook-name
 and I-audiobook-name
 prejudice I-audiobook-name
@@ -78946,7 +78946,7 @@ anything O
 
 -DOCSTART- -X- -X- O
 
-repeat U-player-setting
+repeat B-player-setting
 the O
 music O
 
@@ -80565,7 +80565,7 @@ podcast O
 
 -DOCSTART- -X- -X- O
 
-evaporated U-cooking-type
+evaporated B-cooking-type
 
 -DOCSTART- -X- -X- O
 
@@ -81090,7 +81090,7 @@ com I-email-address
 
 -DOCSTART- -X- -X- O
 
-shazam U-player-setting
+shazam B-player-setting
 this O
 music O
 
@@ -81384,7 +81384,7 @@ brighter O
 
 -DOCSTART- -X- -X- O
 
-today U-date
+today B-date
 was O
 a O
 hard O
@@ -81509,7 +81509,7 @@ pink B-color-type
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 british B-business-name
 airways I-business-name
 that O
@@ -82815,7 +82815,7 @@ crashing O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 the O
 current O
 temperature O
@@ -82865,7 +82865,7 @@ please O
 
 -DOCSTART- -X- -X- O
 
-skip U-player-setting
+skip B-player-setting
 to O
 next O
 
@@ -83079,7 +83079,7 @@ someone O
 
 -DOCSTART- -X- -X- O
 
-repeat U-player-setting
+repeat B-player-setting
 music B-media-type
 
 -DOCSTART- -X- -X- O
@@ -83519,7 +83519,7 @@ lottery I-news-topic
 
 -DOCSTART- -X- -X- O
 
-read U-player-setting
+read B-player-setting
 the O
 audiobook B-media-type
 of O
@@ -83610,7 +83610,7 @@ anything O
 
 -DOCSTART- -X- -X- O
 
-read U-player-setting
+read B-player-setting
 me O
 some O
 more O
@@ -84141,7 +84141,7 @@ me O
 
 -DOCSTART- -X- -X- O
 
-replay U-player-setting
+replay B-player-setting
 this O
 song O
 i O
@@ -84212,7 +84212,7 @@ on O
 
 -DOCSTART- -X- -X- O
 
-repeat U-player-setting
+repeat B-player-setting
 the O
 current O
 song O
@@ -85152,7 +85152,7 @@ alarms O
 
 -DOCSTART- -X- -X- O
 
-outlet U-device-type
+outlet B-device-type
 off O
 
 -DOCSTART- -X- -X- O
@@ -86074,7 +86074,7 @@ today B-date
 
 -DOCSTART- -X- -X- O
 
-kfi U-artist-name
+kfi B-artist-name
 is O
 my O
 favorite O
@@ -86130,7 +86130,7 @@ date O
 
 -DOCSTART- -X- -X- O
 
-pause U-player-setting
+pause B-player-setting
 the O
 book O
 
@@ -86190,7 +86190,7 @@ have O
 
 -DOCSTART- -X- -X- O
 
-romantic U-color-type
+romantic B-color-type
 light O
 setting O
 please O
@@ -87268,7 +87268,7 @@ down O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 comcast B-business-name
 and O
 tell O
@@ -87743,7 +87743,7 @@ again O
 
 -DOCSTART- -X- -X- O
 
-train U-transport-type
+train B-transport-type
 departure O
 
 -DOCSTART- -X- -X- O
@@ -87831,7 +87831,7 @@ emails O
 
 -DOCSTART- -X- -X- O
 
-stop U-player-setting
+stop B-player-setting
 after O
 current O
 song O

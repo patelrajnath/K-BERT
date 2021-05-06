@@ -1605,7 +1605,7 @@ station I-place-name
 
 -DOCSTART- -X- -X- O
 
-train U-transport-type
+train B-transport-type
 leaving O
 
 -DOCSTART- -X- -X- O
@@ -2317,7 +2317,7 @@ ryan B-person
 
 -DOCSTART- -X- -X- O
 
-carlos U-person
+carlos B-person
 linux O
 upgrade O
 email O
@@ -3162,7 +3162,7 @@ lists O
 
 -DOCSTART- -X- -X- O
 
-groceries U-list-name
+groceries B-list-name
 list O
 
 -DOCSTART- -X- -X- O
@@ -4719,7 +4719,7 @@ bathroom B-house-place
 
 -DOCSTART- -X- -X- O
 
-bedroom U-house-place
+bedroom B-house-place
 lights O
 off O
 now O
@@ -5133,7 +5133,7 @@ drive I-place-name
 
 -DOCSTART- -X- -X- O
 
-uber U-transport-agency
+uber B-transport-agency
 
 -DOCSTART- -X- -X- O
 
@@ -5708,7 +5708,7 @@ on O
 
 -DOCSTART- -X- -X- O
 
-wemo U-device-type
+wemo B-device-type
 on O
 
 -DOCSTART- -X- -X- O
@@ -5781,7 +5781,7 @@ tunes O
 
 -DOCSTART- -X- -X- O
 
-rock U-music-genre
+rock B-music-genre
 
 -DOCSTART- -X- -X- O
 
@@ -6267,7 +6267,7 @@ brownies B-food-type
 
 -DOCSTART- -X- -X- O
 
-crabmeat U-food-type
+crabmeat B-food-type
 recipe O
 
 -DOCSTART- -X- -X- O
@@ -6915,7 +6915,7 @@ gm B-business-name
 
 -DOCSTART- -X- -X- O
 
-google U-business-name
+google B-business-name
 i. B-business-name
 b. I-business-name
 m. I-business-name
@@ -7195,7 +7195,7 @@ takeaway B-order-type
 
 -DOCSTART- -X- -X- O
 
-restaurant U-business-type
+restaurant B-business-type
 order O
 status O
 
@@ -8377,13 +8377,13 @@ traking O
 
 -DOCSTART- -X- -X- O
 
-shuffle U-player-setting
+shuffle B-player-setting
 this O
 playlist O
 
 -DOCSTART- -X- -X- O
 
-repeat U-player-setting
+repeat B-player-setting
 this O
 song O
 when O
@@ -8401,7 +8401,7 @@ musics O
 
 -DOCSTART- -X- -X- O
 
-repeat U-player-setting
+repeat B-player-setting
 previous O
 song O
 
@@ -8417,13 +8417,13 @@ akon B-artist-name
 
 -DOCSTART- -X- -X- O
 
-repeat U-player-setting
+repeat B-player-setting
 this O
 song O
 
 -DOCSTART- -X- -X- O
 
-repeat U-player-setting
+repeat B-player-setting
 same O
 song B-media-type
 for O
@@ -9258,7 +9258,7 @@ hold O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 that O
 there O
 was O
@@ -9297,7 +9297,7 @@ issues O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 to O
 ikea B-business-name
 costumer I-business-name
@@ -9316,14 +9316,14 @@ product O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 at O
 quote B-business-name
 unquote I-business-name
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 customer O
 service O
 not O
@@ -9349,7 +9349,7 @@ account O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 my O
 complaint O
 to O
@@ -9357,7 +9357,7 @@ to O
 
 -DOCSTART- -X- -X- O
 
-tweet U-media-type
+tweet B-media-type
 terrible O
 service O
 
@@ -9406,12 +9406,12 @@ audiobook B-media-type
 
 -DOCSTART- -X- -X- O
 
-pause U-player-setting
+pause B-player-setting
 resume B-player-setting
 
 -DOCSTART- -X- -X- O
 
-resume U-player-setting
+resume B-player-setting
 my O
 audio O
 book O
@@ -9421,7 +9421,7 @@ pilkington I-audiobook-author
 
 -DOCSTART- -X- -X- O
 
-book U-media-type
+book B-media-type
 please O
 
 -DOCSTART- -X- -X- O
@@ -9457,7 +9457,7 @@ rome I-audiobook-name
 
 -DOCSTART- -X- -X- O
 
-start U-player-setting
+start B-player-setting
 audiobook B-media-type
 the B-audiobook-name
 time I-audiobook-name
@@ -9465,7 +9465,7 @@ traveller I-audiobook-name
 
 -DOCSTART- -X- -X- O
 
-resume U-player-setting
+resume B-player-setting
 animal B-audiobook-name
 farm I-audiobook-name
 
@@ -9478,11 +9478,11 @@ file B-audiobook-name
 
 -DOCSTART- -X- -X- O
 
-audio U-media-type
+audio B-media-type
 
 -DOCSTART- -X- -X- O
 
-start U-player-setting
+start B-player-setting
 from O
 my O
 last O
@@ -9503,7 +9503,7 @@ audiobook B-media-type
 
 -DOCSTART- -X- -X- O
 
-resume U-player-setting
+resume B-player-setting
 my O
 audiobook B-media-type
 where O
@@ -9513,7 +9513,7 @@ last O
 
 -DOCSTART- -X- -X- O
 
-resume U-player-setting
+resume B-player-setting
 the B-audiobook-name
 last I-audiobook-name
 kingdom I-audiobook-name
@@ -10198,7 +10198,7 @@ episode O
 
 -DOCSTART- -X- -X- O
 
-skip U-player-setting
+skip B-player-setting
 this O
 one O
 
