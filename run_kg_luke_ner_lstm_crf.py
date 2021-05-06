@@ -437,16 +437,17 @@ def main():
     begin_ids = []
 
     # Find tagging labels
-    with open(args.train_path, mode="r", encoding="utf-8") as f:
-        for line_id, line in enumerate(f):
-            if line_id == 0:
-                continue
-            labels = line.strip().split("\t")[0].split()
-            for l in labels:
-                if l not in labels_map:
-                    if l.startswith("B") or l.startswith("S"):
-                        begin_ids.append(len(labels_map))
-                    labels_map[l] = len(labels_map)
+    for file in (args.train_path, args.dev_path, args.test_path):
+        with open(file, mode="r", encoding="utf-8") as f:
+            for line_id, line in enumerate(f):
+                if line_id == 0:
+                    continue
+                labels = line.strip().split("\t")[0].split()
+                for l in labels:
+                    if l not in labels_map:
+                        if l.startswith("B") or l.startswith("S"):
+                            begin_ids.append(len(labels_map))
+                        labels_map[l] = len(labels_map)
 
     idx_to_label = {labels_map[key]: key for key in labels_map}
 
