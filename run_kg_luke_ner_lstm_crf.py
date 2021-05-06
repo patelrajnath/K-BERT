@@ -447,13 +447,14 @@ def main():
                     if l not in labels_map:
                         if l.startswith("B") or l.startswith("S"):
                             begin_ids.append(len(labels_map))
+                            # check if I-TAG exists
+                            infix = l[1]
+                            tag = l[2:]
+                            inner_tag = f'I{infix}{tag}'
+                            if inner_tag not in labels_map:
+                                labels_map[inner_tag] = len(labels_map)
+
                         labels_map[l] = len(labels_map)
-                        # check if I-TAG exists
-                        infix = l[1]
-                        tag = l[2:]
-                        inner_tag = f'I{infix}{tag}'
-                        if inner_tag not in labels_map:
-                            labels_map[inner_tag] = len(labels_map)
 
     idx_to_label = {labels_map[key]: key for key in labels_map}
 
