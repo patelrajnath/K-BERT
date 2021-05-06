@@ -204,6 +204,7 @@ class LukeTaggerMLP(nn.Module):
 class LukeTaggerLSTM(nn.Module):
     def __init__(self, args, encoder):
         super(LukeTaggerLSTM, self).__init__()
+        self.args = args
         self.encoder = encoder
         self.labels_num = args.labels_num
         self.lstm = nn.LSTM(args.emb_size, args.hidden_size // 2,
@@ -260,6 +261,7 @@ class LukeTaggerLSTM(nn.Module):
 class LukeTaggerLSTMCRF(nn.Module):
     def __init__(self, args, encoder):
         super(LukeTaggerLSTMCRF, self).__init__()
+        self.args = args
         self.encoder = encoder
         self.labels_num = args.labels_num
         self.lstm = nn.LSTM(args.emb_size, args.hidden_size // 2,
@@ -304,6 +306,7 @@ class LukeTaggerLSTMCRF(nn.Module):
 class LukeTaggerLSTMNCRF(nn.Module):
     def __init__(self, args, encoder):
         super(LukeTaggerLSTMNCRF, self).__init__()
+        self.args = args
         self.encoder = encoder
         self.labels_num = args.labels_num
         self.lstm = nn.LSTM(args.emb_size, args.hidden_size // 2,
