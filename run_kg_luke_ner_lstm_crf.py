@@ -156,6 +156,9 @@ class LukeTaggerMLP(nn.Module):
         self.output_layer = nn.Linear(args.hidden_size, self.labels_num)
         self.softmax = nn.LogSoftmax(dim=-1)
 
+        if self.args.freeze_encoder_weights:
+            self.freeze()
+
     def luke_encode(self, word_ids, word_segment_ids, word_attention_mask, pos, vm):
         # Encoder.
         # print('word ids:', word_ids)
@@ -192,6 +195,11 @@ class LukeTaggerMLP(nn.Module):
         outputs = F.log_softmax(logits, dim=-1)
         return loss_fn(outputs, labels, mask)
 
+    def freeze(self):
+        logger.info('The encoder has been frozen.')
+        for param in self.encoder.parameters():
+            param.requires_grad = False
+
 
 class LukeTaggerLSTM(nn.Module):
     def __init__(self, args, encoder):
@@ -203,6 +211,9 @@ class LukeTaggerLSTM(nn.Module):
         # Classification layer transforms the output to give the final output layer
         self.output_layer = nn.Linear(args.hidden_size, self.labels_num)
         self.softmax = nn.LogSoftmax(dim=-1)
+
+        if self.args.freeze_encoder_weights:
+            self.freeze()
 
     def lstm_output(self, word_ids, word_segment_ids, word_attention_mask, pos, vm):
         # Encoder.
@@ -240,6 +251,11 @@ class LukeTaggerLSTM(nn.Module):
         outputs = F.log_softmax(logits, dim=-1)
         return loss_fn(outputs, labels, mask)
 
+    def freeze(self):
+        logger.info('The encoder has been frozen.')
+        for param in self.encoder.parameters():
+            param.requires_grad = False
+
 
 class LukeTaggerLSTMCRF(nn.Module):
     def __init__(self, args, encoder):
@@ -250,6 +266,9 @@ class LukeTaggerLSTMCRF(nn.Module):
                             batch_first=True, bidirectional=True)
         # CRF layer transforms the output to give the final output layer
         self.crf = CRFDecoder.create(self.labels_num, args.hidden_size, args.device, args.seq_length)
+
+        if self.args.freeze_encoder_weights:
+            self.freeze()
 
     def lstm_output(self, word_ids, word_segment_ids, word_attention_mask, pos, vm):
         # Encoder.
@@ -276,6 +295,11 @@ class LukeTaggerLSTMCRF(nn.Module):
         tensor = self.lstm_output(word_ids, word_segment_ids, word_attention_mask, pos, vm)
         return self.crf.score(tensor, labels_mask, labels)
 
+    def freeze(self):
+        logger.info('The encoder has been frozen.')
+        for param in self.encoder.parameters():
+            param.requires_grad = False
+
 
 class LukeTaggerLSTMNCRF(nn.Module):
     def __init__(self, args, encoder):
@@ -286,6 +310,9 @@ class LukeTaggerLSTMNCRF(nn.Module):
                             batch_first=True, bidirectional=True)
         # CRF layer transforms the output to give the final output layer
         self.ncrf = NCRFDecoder.create(self.labels_num, args.hidden_size, args.device, args.seq_length)
+
+        if self.args.freeze_encoder_weights:
+            self.freeze()
 
     def lstm_output(self, word_ids, word_segment_ids, word_attention_mask, pos, vm):
         # Encoder.
@@ -311,6 +338,11 @@ class LukeTaggerLSTMNCRF(nn.Module):
 
         tensor = self.lstm_output(word_ids, word_segment_ids, word_attention_mask, pos, vm)
         return self.ncrf.score(tensor, labels_mask, labels)
+
+    def freeze(self):
+        logger.info('The encoder has been frozen.')
+        for param in self.encoder.parameters():
+            param.requires_grad = False
 
 
 def main():
@@ -347,6 +379,7 @@ def main():
     parser.add_argument("--classifier", choices=["mlp", "lstm", "lstm_crf", "lstm_ncrf"], default="mlp",
                         help="Classifier type.")
     parser.add_argument("--bidirectional", action="store_true", help="Specific to recurrent model.")
+    parser.add_argument('--freeze_encoder_weights', action='store_true', help="Enable to freeze the encoder weigths.")
 
     # Subword options.
     parser.add_argument("--subword_type", choices=["none", "char"], default="none",
