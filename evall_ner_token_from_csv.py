@@ -13,13 +13,17 @@ from datautils.iob_utils import offset_from_biluo
 # file_in_predictions = 'outputs/evaluation-lstm-crf/kaggle/kaggle_lstm_crf_finetune_from_kaggle_predictions.txt'
 # file_in_predictions = 'outputs/evaluation-lstm-crf/kaggle/kaggle_lstm_crf_freeze_encoder_finetune_from_kaggle_gold.txt'
 
-file_in = 'data/nlu/bio/nlu_test.csv'
+# file_in = 'data/nlu/bio/nlu_test.csv'
 # file_in_predictions = 'outputs/evaluation-lstm-crf/nlu/nlu_baseline_lstm_crf_predictions.txt'
-file_in_predictions = 'outputs/evaluation-lstm-crf/nlu/nlu_lstm_crf_finetune_from_kaggle_predictions.txt'
+# file_in_predictions = 'outputs/evaluation-lstm-crf/nlu/nlu_lstm_crf_finetune_from_kaggle_predictions.txt'
 
 # file_in = 'data/accounts/bio/accounts_test.csv'
 # file_in_predictions = 'outputs/evaluation-lstm-crf/accounts/accounts_lstm_crf_finetune_from_kaggle_predictions.txt'
 # file_in_predictions = 'outputs/evaluation-lstm-crf/accounts/accounts_baseline_lstm_crf_predictions.txt'
+
+file_in = 'data/wallet/bio/wallet_test.csv'
+# file_in_predictions = 'outputs/evaluation-lstm-crf/wallet/wallet_baseline_lstm_crf_predictions.txt'
+file_in_predictions = 'outputs/evaluation-lstm-crf/wallet/wallet_lstm_crf_finetune_from_kaggle_predictions.txt'
 
 with open(file_in, mode="r", encoding="utf-8") as f_test, \
         open(file_in_predictions, mode="r", encoding="utf-8") as fin_predict:
