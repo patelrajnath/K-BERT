@@ -98,3 +98,5 @@ ENV/
 # data
 *_results.tsv
 *.out
+outputs
+data
