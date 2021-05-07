@@ -561,13 +561,22 @@ def main():
                 for i in range(len(tokens)):
                     if tag[i] == 0 and tokens[i] != tokenizer.pad_token:
                         cur_type = labels[j]
-                        new_labels.append(cur_type)
                         if cur_type != 'O':
-                            joiner = cur_type[1]
-                            prev_label = cur_type[2:]
+                            try:
+                                joiner = cur_type[1]
+                                prev_label = cur_type[2:]
+                            except:
+                                logger.info(f'The label:{cur_type} is converted to O')
+                                prev_label = 'O'
+                                j += 1
+                                new_labels.append('O')
+                                continue
                         else:
                             prev_label = cur_type
+
+                        new_labels.append(cur_type)
                         j += 1
+
                     elif tag[i] == 1 and tokens[i] != tokenizer.pad_token:  # 是添加的实体
                         new_labels.append('[ENT]')
                     elif tag[i] == 2:
