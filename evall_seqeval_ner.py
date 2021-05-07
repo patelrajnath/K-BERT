@@ -8,9 +8,10 @@ from eval.myeval import f1_score_span, precision_score_span, recall_score_span
 
 # file_in = 'outputs/evaluation-lstm-crf/conll-2003/eng.testa.dev.csv'
 # file_in_predictions = 'outputs/evaluation-lstm-crf/conll-2003/test_avaluation_code_lstm_crf_predictions.txt'
-# file_in = 'data/combined_3/test_combined_3.csv'
+file_in = 'data/combined_3/test_combined_3.csv'
 # file_in_predictions = 'outputs/evaluation-lstm-crf/kaggle/kaggle_baseline_lstm_crf_predictions.txt'
-# file_in_predictions = 'outputs/evaluation-lstm-crf/kaggle/kaggle_pretrain_lstm_crf_predictions.txt'
+# file_in_predictions = 'outputs/evaluation-lstm-crf/kaggle/kaggle_baseline_lstm_crf_predictions_run2.txt'
+file_in_predictions = 'outputs/evaluation-lstm-crf/kaggle/kaggle_lstm_crf_finetune_from_kaggle_predictions_run2.txt'
 # file_in_predictions = 'outputs/evaluation-lstm-crf/kaggle/kaggle_lstm_crf_finetune_from_kaggle_predictions.txt'
 # file_in_predictions = 'outputs/evaluation-lstm-crf/kaggle/' \
 #                       'kaggle_lstm_crf_freeze_encoder_finetune_from_kaggle_predictions.txt'
@@ -19,10 +20,10 @@ from eval.myeval import f1_score_span, precision_score_span, recall_score_span
 # file_in_predictions = 'outputs/evaluation-lstm-crf/nlu/nlu_baseline_lstm_crf_predictions.txt'
 # file_in_predictions = 'outputs/evaluation-lstm-crf/nlu/nlu_lstm_crf_finetune_from_kaggle_predictions.txt'
 
-file_in = 'data/accounts/bio/accounts_test.csv'
+# file_in = 'data/accounts/bio/accounts_test.csv'
 # file_in_predictions = 'outputs/evaluation-lstm-crf/accounts/accounts_lstm_crf_finetune_from_kaggle_gold.txt'
 # file_in_predictions = 'outputs/evaluation-lstm-crf/accounts/accounts_lstm_crf_finetune_from_kaggle_predictions.txt'
-file_in_predictions = 'outputs/evaluation-lstm-crf/accounts/accounts_baseline_lstm_crf_predictions.txt'
+# file_in_predictions = 'outputs/evaluation-lstm-crf/accounts/accounts_baseline_lstm_crf_predictions.txt'
 
 
 with open(file_in, mode="r", encoding="utf-8") as f_test, \
