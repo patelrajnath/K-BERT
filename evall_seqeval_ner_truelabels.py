@@ -7,7 +7,7 @@ from eval.myeval import f1_score_span, precision_score_span, recall_score_span
 
 file_in = 'data/nlu/bio/nlu_test.csv'
 file_in_predictions = 'outputs/evaluation-lstm-crf/nlu/nlu_lstm_crf_finetune_from_kaggle_predictions_truelabels.txt'
-# file_in_predictions = 'outputs/evaluation-lstm-crf/nlu/luke_lstm_combined_prediction.txt'
+# file_in_predictions = 'outputs/evaluation-lstm-crf/nlu/luke_lstm_combined_prediction_v2.txt'
 
 with open(file_in, mode="r", encoding="utf-8") as f_test, \
         open(file_in_predictions, mode="r", encoding="utf-8") as fin_predict:
