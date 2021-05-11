@@ -33,11 +33,17 @@ from eval.myeval import f1_score_span, precision_score_span, recall_score_span
 # file_in_predictions = 'outputs/evaluation-lstm-crf/conll-2003/conll_lstm_crf_finetune_from_kaggle_predictions.txt'
 
 
-file_in = 'data/corrected_corpus/eng.testb.dev.csv'
+# file_in = 'data/corrected_corpus/eng.testb.dev.csv'
 # file_in_predictions = 'outputs/evaluation-lstm-crf/conll_corrected_corpus/' \
 #                       'conll-2003_corrected_corpus_baseline_lstm_crf_seed-100_predictions.txt'
-file_in_predictions = 'outputs/evaluation-lstm-crf/conll_corrected_corpus/' \
-                      'conll-2003_corrected_corpus_lstm_crf_finetune_from_kaggle_predictions.txt'
+# file_in_predictions = 'outputs/evaluation-lstm-crf/conll_corrected_corpus/' \
+#                       'conll-2003_corrected_corpus_lstm_crf_finetune_from_kaggle_predictions.txt'
+
+file_in = 'data/ubuntu/bio/ubuntu_test.csv'
+# file_in_predictions = 'outputs/evaluation-lstm-crf/ubuntu/' \
+#                       'ubuntu_lstm_crf_finetune_from_kaggle_batch-16_seed-100_predictions.txt'
+file_in_predictions = 'outputs/evaluation-lstm-crf/ubuntu/' \
+                      'ubuntu_baseline_lstm_crf_batch-16_seed-100_predictions.txt'
 
 
 with open(file_in, mode="r", encoding="utf-8") as f_test, \
