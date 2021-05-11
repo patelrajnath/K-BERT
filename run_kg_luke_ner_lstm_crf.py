@@ -397,6 +397,7 @@ def main():
     # Optimizer options.
     parser.add_argument("--learning_rate", type=float, default=2e-5,
                         help="Learning rate.")
+    parser.add_argument("--schedule_lr", action='store_true', help="Enable to use lr scheduler.")
     parser.add_argument("--warmup", type=float, default=0.1,
                         help="Warm up value.")
 
@@ -798,7 +799,10 @@ def main():
                 total_loss = 0.
             loss.backward()
             optimizer.step()
-            scheduler.step()
+
+            if args.schedule_lr:
+                # Update learning rate
+                scheduler.step()
 
         # Evaluation phase.
         logger.info("Start evaluate on dev dataset.")
