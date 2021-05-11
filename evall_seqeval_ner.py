@@ -6,9 +6,6 @@ from create_word_predictions_with_voted_selection import tokenize_word, voting_c
 from datautils.biluo_from_predictions import get_bio
 from eval.myeval import f1_score_span, precision_score_span, recall_score_span
 
-# file_in = 'data/conll_2003/eng.testa.dev.csv'
-# file_in_predictions = 'outputs/evaluation-lstm-crf/conll-2003/conll_baseline_lstm_crf_predictions.txt'
-
 # file_in = 'data/combined_3/test_combined_3.csv'
 # file_in_predictions = 'outputs/evaluation-lstm-crf/kaggle/kaggle_baseline_lstm_crf_predictions.txt'
 # file_in_predictions = 'outputs/evaluation-lstm-crf/kaggle/kaggle_baseline_lstm_crf_predictions_run2.txt'
@@ -29,6 +26,11 @@ from eval.myeval import f1_score_span, precision_score_span, recall_score_span
 # file_in = 'data/wallet/bio/wallet_test.csv'
 # file_in_predictions = 'outputs/evaluation-lstm-crf/wallet/wallet_baseline_lstm_crf_predictions.txt'
 # file_in_predictions = 'outputs/evaluation-lstm-crf/wallet/wallet_lstm_crf_finetune_from_kaggle_predictions.txt'
+
+
+# file_in = 'data/conll_2003/eng.testa.dev.csv'
+# file_in_predictions = 'outputs/evaluation-lstm-crf/conll-2003/conll_baseline_lstm_crf_predictions.txt'
+# file_in_predictions = 'outputs/evaluation-lstm-crf/conll-2003/conll_lstm_crf_finetune_from_kaggle_predictions.txt'
 
 
 file_in = 'data/corrected_corpus/eng.testb.dev.csv'

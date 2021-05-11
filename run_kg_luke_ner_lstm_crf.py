@@ -14,6 +14,7 @@ import torch.nn as nn
 from collections import Counter
 
 from seqeval.metrics import f1_score
+from torch.optim import lr_scheduler
 
 from brain import config
 from brain.knowgraph_english import KnowledgeGraph
@@ -757,7 +758,7 @@ def main():
         {'params': [p for n, p in param_optimizer if any(nd in n for nd in no_decay)], 'weight_decay_rate': 0.0}
     ]
     optimizer = BertAdam(optimizer_grouped_parameters, lr=args.learning_rate, warmup=args.warmup, t_total=train_steps)
-
+    scheduler = lr_scheduler.CosineAnnealingLR(optimizer)
     total_loss = 0.
     best_f1 = 0.0
 
@@ -797,6 +798,7 @@ def main():
                 total_loss = 0.
             loss.backward()
             optimizer.step()
+            scheduler.step()
 
         # Evaluation phase.
         logger.info("Start evaluate on dev dataset.")
