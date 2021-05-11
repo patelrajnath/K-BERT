@@ -758,7 +758,7 @@ def main():
         {'params': [p for n, p in param_optimizer if any(nd in n for nd in no_decay)], 'weight_decay_rate': 0.0}
     ]
     optimizer = BertAdam(optimizer_grouped_parameters, lr=args.learning_rate, warmup=args.warmup, t_total=train_steps)
-    scheduler = lr_scheduler.CosineAnnealingLR(optimizer)
+    scheduler = lr_scheduler.CosineAnnealingLR(optimizer, T_max=args.epochs_num)
     total_loss = 0.
     best_f1 = 0.0
 
