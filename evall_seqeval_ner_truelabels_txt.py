@@ -5,42 +5,23 @@ from seqeval import metrics
 from datautils.biluo_from_predictions import get_bio
 from eval.myeval import f1_score_span, precision_score_span, recall_score_span
 
-# file_in = 'data/nlu/bio/nlu_test.csv'
-# file_in_predictions = 'outputs/evaluation-lstm-crf/nlu/nlu_lstm_crf_finetune_from_kaggle_predictions_truelabels.txt'
-# file_in_predictions = 'outputs/evaluation-lstm-crf/nlu/luke_lstm_combined_prediction_v2.txt'
-
-file_in = 'data/conll_2003/eng.testa.dev.csv'
-# file_in_predictions = 'outputs/evaluation-lstm-crf/conll-2003/' \
-#                       'conll_lstm_crf_finetune_from_kaggle_predictions_truelabels.txt'
-# file_in_predictions = 'outputs/evaluation-lstm-crf/conll-2003/conll_baseline_lstm_crf_predictions_truelabels.txt'
-file_in_predictions = 'outputs/evaluation-lstm-crf/conll-2003/trun_lstm_pred.txt'
+file_in = 'outputs/evaluation-lstm-crf/conll-2003/trun_gt.txt'
+file_in_predictions = 'outputs/evaluation-lstm-crf/conll-2003/trun_base_luke.txt'
+file_in_predictions = 'outputs/evaluation-lstm-crf/conll-2003/trun_lstm.txt'
+file_in_predictions = 'outputs/evaluation-lstm-crf/conll-2003/comb_trun_luke_lstm.txt'
 
 with open(file_in, mode="r", encoding="utf-8") as f_test, \
         open(file_in_predictions, mode="r", encoding="utf-8") as fin_predict:
 
-    f_test.readline()
     labels_predict_all = []
     labels_true_all = []
 
     for line_id, zip_line in enumerate(zip(f_test, fin_predict)):
-        line, predict = zip_line
+        labels, predict = zip_line
 
-        tokens_subword = []
-        fields = line.strip().split("\t")
-        if len(fields) == 2:
-            labels, tokens = fields
-        elif len(fields) == 3:
-            labels, tokens, cls = fields
-        else:
-            print(f'The data is not in accepted format at line no:{line_id}.. Ignored')
-            continue
         labels_predict = predict.split()
+        labels_true = labels.split()
 
-        # Handle the striping of length in case exceed the max seq length
-        len_predict = len(labels_predict)
-        labels_true = labels.split()[:len_predict]
-
-        words = tokens.split()
         labels_predict_all.append(labels_predict)
         labels_true_all.append(labels_true)
 
