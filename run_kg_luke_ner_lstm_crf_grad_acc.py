@@ -8,6 +8,7 @@ import logging
 import os
 import sys
 
+import numpy
 import seqeval
 import torch
 import torch.nn as nn
@@ -149,16 +150,15 @@ def create_scheduler(args, optimizer):
 
 
 class Batcher(object):
-    def __init__(self, batch_size, input_ids, label_ids, mask_ids, pos_ids, vm_ids, tag_ids, segment_ids):
+    def __init__(self, batch_size, instances, token_pad, label_pad, shuffle=False):
         self.batch_size = batch_size
-        self.input_ids = input_ids
-        self.label_ids = label_ids
-        self.mask_ids = mask_ids
-        self.pos_ids = pos_ids
-        self.vm_ids = vm_ids
-        self.tag_ids = tag_ids
-        self.segment_ids = segment_ids
-        self.num_samples = self.input_ids.shape[0]
+        self.shuffle = shuffle
+        self.token_pad = token_pad
+        self.label_pad = label_pad
+        self.data = numpy.asarray(instances, dtype=object)
+        self.num_samples = len(instances)
+        self._indices = numpy.arange(self.num_samples)
+        self.rnd = numpy.random.RandomState(0)
         self.indices = torch.randperm(self.num_samples)
         self.ptr = 0
 
@@ -166,18 +166,52 @@ class Batcher(object):
         return self
 
     def __next__(self):
-        if self.ptr >= self.num_samples:
-            self.indices = torch.randperm(self.num_samples)
+        if self.ptr + self.batch_size > self.num_samples:
+            if self.shuffle:
+                self.rnd.shuffle(self._indices)
             self.ptr = 0
             raise StopIteration
         else:
             batch_indices = self.indices[self.ptr: self.ptr + self.batch_size]
             self.ptr += self.batch_size
+            # input_ids_batch, label_ids_batch, mask_ids_batch, pos_ids_batch, vm_ids_batch, \
+            # tag_ids_batch, segment_ids_batch = self.data[batch_indices]
+            batch = self.data[batch_indices]
 
-            return self.input_ids[batch_indices], self.label_ids[batch_indices], \
-                   self.mask_ids[batch_indices], self.pos_ids[batch_indices], \
-                   self.vm_ids[batch_indices], self.tag_ids[batch_indices], \
-                   self.segment_ids[batch_indices]
+            # compute length of longest sentence in batch
+            max_length = max([len(s[0]) for s in batch])
+
+            labels = self.label_pad * numpy.ones((len(batch), max_length))
+
+            # Dynamic batching
+            for index, example in enumerate(batch):
+                input_ids, label_ids, mask_ids, pos_ids, \
+                vm_ids, tag_ids, segment_ids = example
+                current_length = len(input_ids)
+
+                pad_num = max_length - current_length
+                batch[index][0] += [self.token_pad] * pad_num
+                labels[index][:current_length] = batch[index][1]
+
+                batch[index][1] = labels[index]
+                batch[index][2] = [1] * current_length + [0] * pad_num
+
+                batch[index][3] += [max_length - 1] * pad_num
+                batch[index][4] = numpy.pad(vm_ids, ((0, pad_num), (0, pad_num)), 'constant')  # pad 0
+                batch[index][6] += [3] * pad_num
+
+            batch_input_ids = torch.LongTensor([sample[0] for sample in batch])
+            batch_label_ids = torch.LongTensor([sample[1] for sample in batch])
+            batch_mask_ids = torch.LongTensor([sample[2] for sample in batch])
+            batch_pos_ids = torch.LongTensor([sample[3] for sample in batch])
+            batch_vm_ids = torch.BoolTensor([sample[4] for sample in batch])
+            batch_segment_ids = torch.LongTensor([sample[6] for sample in batch])
+
+            del labels
+            del batch
+
+            return batch_input_ids, batch_label_ids, batch_mask_ids, \
+                   batch_pos_ids, batch_vm_ids, batch_segment_ids
 
 
 class LukeTaggerMLP(nn.Module):
@@ -543,28 +577,6 @@ def main():
         model = nn.DataParallel(model)
     model = model.to(device)
 
-    # Datset loader.
-    def batch_loader(batch_size, input_ids, label_ids, mask_ids, pos_ids, vm_ids, tag_ids, segment_ids):
-        instances_num = input_ids.size()[0]
-        for i in range(instances_num // batch_size):
-            input_ids_batch = input_ids[i * batch_size: (i + 1) * batch_size, :]
-            label_ids_batch = label_ids[i * batch_size: (i + 1) * batch_size, :]
-            mask_ids_batch = mask_ids[i * batch_size: (i + 1) * batch_size, :]
-            pos_ids_batch = pos_ids[i * batch_size: (i + 1) * batch_size, :]
-            vm_ids_batch = vm_ids[i * batch_size: (i + 1) * batch_size, :, :]
-            tag_ids_batch = tag_ids[i * batch_size: (i + 1) * batch_size, :]
-            segment_ids_batch = segment_ids[i * batch_size: (i + 1) * batch_size, :]
-            yield input_ids_batch, label_ids_batch, mask_ids_batch, pos_ids_batch, vm_ids_batch, tag_ids_batch, segment_ids_batch
-        if instances_num > instances_num // batch_size * batch_size:
-            input_ids_batch = input_ids[instances_num // batch_size * batch_size:, :]
-            label_ids_batch = label_ids[instances_num // batch_size * batch_size:, :]
-            mask_ids_batch = mask_ids[instances_num // batch_size * batch_size:, :]
-            pos_ids_batch = pos_ids[instances_num // batch_size * batch_size:, :]
-            vm_ids_batch = vm_ids[instances_num // batch_size * batch_size:, :, :]
-            tag_ids_batch = tag_ids[instances_num // batch_size * batch_size:, :]
-            segment_ids_batch = segment_ids[instances_num // batch_size * batch_size:, :]
-            yield input_ids_batch, label_ids_batch, mask_ids_batch, pos_ids_batch, vm_ids_batch, tag_ids_batch, segment_ids_batch
-
     # Read dataset.
     def read_dataset(path):
         dataset = []
@@ -587,7 +599,8 @@ def main():
                                              use_kg=args.use_kg,
                                              max_length=args.seq_length,
                                              max_entities=args.max_entities,
-                                             reverse_order=args.reverse_order)
+                                             reverse_order=args.reverse_order,
+                                             padding=args.padding)
                 tokens = tokens[0]
                 pos = pos[0]
                 vm = vm[0].astype("bool")
@@ -693,15 +706,7 @@ def main():
         else:
             dataset = read_dataset(args.dev_path)
 
-        input_ids = torch.LongTensor([sample[0] for sample in dataset])
-        label_ids = torch.LongTensor([sample[1] for sample in dataset])
-        mask_ids = torch.LongTensor([sample[2] for sample in dataset])
-        pos_ids = torch.LongTensor([sample[3] for sample in dataset])
-        vm_ids = torch.BoolTensor([sample[4] for sample in dataset])
-        tag_ids = torch.LongTensor([sample[5] for sample in dataset])
-        segment_ids = torch.LongTensor([sample[6] for sample in dataset])
-
-        instances_num = input_ids.size(0)
+        instances_num = len(dataset)
         batch_size = args.batch_size
 
         if is_test:
@@ -713,16 +718,16 @@ def main():
         confusion = torch.zeros(len(labels_map), len(labels_map), dtype=torch.long)
         model.eval()
 
-        for i, (
-                input_ids_batch, label_ids_batch, mask_ids_batch, pos_ids_batch, vm_ids_batch,
-                tag_ids_batch, segment_ids_batch) in enumerate(
-            batch_loader(batch_size, input_ids, label_ids, mask_ids, pos_ids, vm_ids, tag_ids, segment_ids)):
+        test_batcher = Batcher(batch_size, dataset, shuffle=False,
+                               token_pad=tokenizer.pad_token_id, label_pad=labels_map[PAD_TOKEN])
+
+        for i, (input_ids_batch, label_ids_batch, mask_ids_batch, pos_ids_batch,
+                vm_ids_batch, segment_ids_batch) in enumerate(test_batcher):
 
             input_ids_batch = input_ids_batch.to(device)
             label_ids_batch = label_ids_batch.to(device)
             mask_ids_batch = mask_ids_batch.to(device)
             pos_ids_batch = pos_ids_batch.to(device)
-            tag_ids_batch = tag_ids_batch.to(device)
             vm_ids_batch = vm_ids_batch.long().to(device)
             segment_ids_batch = segment_ids_batch.long().to(device)
 
@@ -777,33 +782,16 @@ def main():
     logger.info("Start training.")
     instances = read_dataset(args.train_path)
 
-    input_ids = torch.LongTensor([ins[0] for ins in instances])
-    label_ids = torch.LongTensor([ins[1] for ins in instances])
-    mask_ids = torch.LongTensor([ins[2] for ins in instances])
-    pos_ids = torch.LongTensor([ins[3] for ins in instances])
-    vm_ids = torch.BoolTensor([ins[4] for ins in instances])
-    tag_ids = torch.LongTensor([ins[5] for ins in instances])
-    segment_ids = torch.LongTensor([ins[6] for ins in instances])
-
-    instances_num = input_ids.size(0)
+    instances_num = len(instances)
     batch_size = args.batch_size
     train_steps = int(instances_num * args.epochs_num / batch_size) + 1
     args.num_train_steps = train_steps
 
-    train_batcher = Batcher(batch_size, input_ids, label_ids, mask_ids, pos_ids, vm_ids, tag_ids, segment_ids)
+    train_batcher = Batcher(batch_size, instances, shuffle=True,
+                            token_pad=tokenizer.pad_token_id, label_pad=labels_map[PAD_TOKEN])
 
     logger.info(f"Batch size:{batch_size}")
     logger.info(f"The number of training instances:{instances_num}")
-
-    param_optimizer = list(model.named_parameters())
-    no_decay = ['bias', 'gamma', 'beta']
-    optimizer_grouped_parameters = [
-        {'params': [p for n, p in param_optimizer if not any(nd in n for nd in no_decay)], 'weight_decay_rate': 0.01},
-        {'params': [p for n, p in param_optimizer if any(nd in n for nd in no_decay)], 'weight_decay_rate': 0.0}
-    ]
-
-    # optimizer = BertAdam(optimizer_grouped_parameters, lr=args.learning_rate, warmup=args.warmup, t_total=train_steps)
-    # scheduler = lr_scheduler.CosineAnnealingLR(optimizer, T_max=args.epochs_num)
 
     optimizer = create_optimizer(args, model)
     scheduler = create_scheduler(args, optimizer)
@@ -826,13 +814,12 @@ def main():
         model.train()
         for step, (
                 input_ids_batch, label_ids_batch, mask_ids_batch, pos_ids_batch, vm_ids_batch,
-                tag_ids_batch, segment_ids_batch) in enumerate(train_batcher):
+                segment_ids_batch) in enumerate(train_batcher):
 
             input_ids_batch = input_ids_batch.to(device)
             label_ids_batch = label_ids_batch.to(device)
             mask_ids_batch = mask_ids_batch.to(device)
             pos_ids_batch = pos_ids_batch.to(device)
-            tag_ids_batch = tag_ids_batch.to(device)
             vm_ids_batch = vm_ids_batch.long().to(device)
             segment_ids_batch = segment_ids_batch.long().to(device)
 
@@ -856,8 +843,8 @@ def main():
             total_loss += loss.item()
 
             if (step + 1) % args.report_steps == 0:
-                logger.info("Epoch id: {}, Training steps: {}, Avg loss: {:.3f}".format(epoch, i + 1,
-                                                                                  total_loss / args.report_steps))
+                logger.info("Epoch id: {}, Training steps: {}, Avg loss: "
+                            "{:.3f}".format(epoch, step + 1, total_loss / args.report_steps))
                 total_loss = 0.
 
             if (step + 1) % args.gradient_accumulation_steps == 0:

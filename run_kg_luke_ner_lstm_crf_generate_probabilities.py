@@ -545,7 +545,8 @@ def main():
                                              use_kg=args.use_kg,
                                              max_length=args.seq_length,
                                              max_entities=args.max_entities,
-                                             reverse_order=args.reverse_order)
+                                             reverse_order=args.reverse_order,
+                                             padding=args.padding)
                 tokens = tokens[0]
                 pos = pos[0]
                 vm = vm[0].astype("bool")

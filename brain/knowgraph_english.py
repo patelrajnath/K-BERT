@@ -63,7 +63,7 @@ class KnowledgeGraph(object):
                               use_kg=True,
                               max_length=128,
                               reverse_order=False,
-                              padding=True):
+                              padding=False):
         """
         input: sent_batch - list of sentences, e.g., ["abcd", "efgh"]
         return: know_sent_batch - list of sentences with entites embedding
