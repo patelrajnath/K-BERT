@@ -62,7 +62,8 @@ class KnowledgeGraph(object):
                               max_entities=config.MAX_ENTITIES,
                               use_kg=True,
                               max_length=128,
-                              reverse_order=False):
+                              reverse_order=False,
+                              padding=True):
         """
         input: sent_batch - list of sentences, e.g., ["abcd", "efgh"]
         return: know_sent_batch - list of sentences with entites embedding
@@ -241,18 +242,19 @@ class KnowledgeGraph(object):
             # print(visible_matrix)
             # exit()
 
-            src_length = len(know_sent)
-            if len(know_sent) < max_length:
-                pad_num = max_length - src_length
-                know_sent += [self.tokenizer.pad_token] * pad_num
-                seg += [3] * pad_num
-                pos += [max_length - 1] * pad_num
-                visible_matrix = np.pad(visible_matrix, ((0, pad_num), (0, pad_num)), 'constant')  # pad 0
-            else:
-                know_sent = know_sent[:max_length]
-                seg = seg[:max_length]
-                pos = pos[:max_length]
-                visible_matrix = visible_matrix[:max_length, :max_length]
+            if padding:
+                src_length = len(know_sent)
+                if len(know_sent) < max_length:
+                    pad_num = max_length - src_length
+                    know_sent += [self.tokenizer.pad_token] * pad_num
+                    seg += [3] * pad_num
+                    pos += [max_length - 1] * pad_num
+                    visible_matrix = np.pad(visible_matrix, ((0, pad_num), (0, pad_num)), 'constant')  # pad 0
+                else:
+                    know_sent = know_sent[:max_length]
+                    seg = seg[:max_length]
+                    pos = pos[:max_length]
+                    visible_matrix = visible_matrix[:max_length, :max_length]
 
             # print(know_sent)
             # print(seg)
