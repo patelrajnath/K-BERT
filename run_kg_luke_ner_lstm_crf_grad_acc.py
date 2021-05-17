@@ -16,7 +16,6 @@ import torch.nn as nn
 from collections import Counter
 
 from seqeval.metrics import f1_score
-from torch.optim import lr_scheduler
 from transformers import get_linear_schedule_with_warmup, get_constant_schedule_with_warmup, AdamW
 
 from brain import config
@@ -185,8 +184,7 @@ class Batcher(object):
 
             # Dynamic batching
             for index, example in enumerate(batch):
-                input_ids, label_ids, mask_ids, pos_ids, \
-                vm_ids, tag_ids, segment_ids = example
+                input_ids, _, _, _, vm_ids, _, _ = example
                 current_length = len(input_ids)
 
                 pad_num = max_length - current_length
@@ -198,7 +196,7 @@ class Batcher(object):
 
                 batch[index][3] += [max_length - 1] * pad_num
                 batch[index][4] = numpy.pad(vm_ids, ((0, pad_num), (0, pad_num)), 'constant')  # pad 0
-                batch[index][6] += [3] * pad_num
+                batch[index][6] = [0] * max_length
 
             batch_input_ids = torch.LongTensor([sample[0] for sample in batch])
             batch_label_ids = torch.LongTensor([sample[1] for sample in batch])
@@ -209,6 +207,7 @@ class Batcher(object):
 
             del labels
             del batch
+            del vm_ids
 
             return batch_input_ids, batch_label_ids, batch_mask_ids, \
                    batch_pos_ids, batch_vm_ids, batch_segment_ids
@@ -244,17 +243,17 @@ class LukeTaggerMLP(nn.Module):
         if not use_kg:
             vm = None
         tensor = self.luke_encode(word_ids, word_segment_ids, word_attention_mask, pos, vm)
+        bs, seq_len = word_ids.shape
         logits = self.get_logits(tensor)
         logits = logits.contiguous().view(-1, self.labels_num)
         outputs = F.log_softmax(logits, dim=-1)
-        predict = outputs.argmax(dim=-1).view(-1, self.args.seq_length)
+        predict = outputs.argmax(dim=-1).view(-1, seq_len)
         return predict
 
     def score(self, word_ids, word_segment_ids, word_attention_mask, labels, pos=None, vm=None, use_kg=True):
         if not use_kg:
             vm = None
         tensor = self.luke_encode(word_ids, word_segment_ids, word_attention_mask, pos, vm)
-
         labels = labels.contiguous().view(-1)
         mask = (labels > 0).float().to(torch.device(labels.device))
 
