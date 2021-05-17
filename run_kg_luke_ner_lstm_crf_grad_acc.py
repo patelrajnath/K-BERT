@@ -154,11 +154,11 @@ class Batcher(object):
         self.shuffle = shuffle
         self.token_pad = token_pad
         self.label_pad = label_pad
+
         self.data = numpy.asarray(instances, dtype=object)
         self.num_samples = len(instances)
-        self._indices = numpy.arange(self.num_samples)
+        self.indices = numpy.arange(self.num_samples)
         self.rnd = numpy.random.RandomState(0)
-        self.indices = torch.randperm(self.num_samples)
         self.ptr = 0
 
     def __iter__(self):
@@ -167,7 +167,7 @@ class Batcher(object):
     def __next__(self):
         if self.ptr + self.batch_size > self.num_samples:
             if self.shuffle:
-                self.rnd.shuffle(self._indices)
+                self.rnd.shuffle(self.indices)
             self.ptr = 0
             raise StopIteration
         else:
@@ -180,8 +180,6 @@ class Batcher(object):
             # compute length of longest sentence in batch
             max_length = max([len(s[0]) for s in batch])
 
-            labels = self.label_pad * numpy.ones((len(batch), max_length))
-
             # Dynamic batching
             for index, example in enumerate(batch):
                 input_ids, _, _, _, vm_ids, _, _ = example
@@ -189,9 +187,7 @@ class Batcher(object):
 
                 pad_num = max_length - current_length
                 batch[index][0] += [self.token_pad] * pad_num
-                labels[index][:current_length] = batch[index][1]
-
-                batch[index][1] = labels[index]
+                batch[index][1] += [0] * pad_num
                 batch[index][2] = [1] * current_length + [0] * pad_num
 
                 batch[index][3] += [max_length - 1] * pad_num
@@ -205,7 +201,6 @@ class Batcher(object):
             batch_vm_ids = torch.BoolTensor([sample[4] for sample in batch])
             batch_segment_ids = torch.LongTensor([sample[6] for sample in batch])
 
-            del labels
             del batch
             del vm_ids
 
@@ -651,7 +646,9 @@ def main():
                 # print(tokens)
                 # print(labels)
                 # print(tag)
-
+                if num_pad != 0:
+                    print(num_pad)
+                    exit()
                 mask = [1] * (num_tokens) + [0] * num_pad
                 word_segment_ids = [0] * (len(tokens))
 
@@ -859,6 +856,8 @@ def main():
         logger.info("Start evaluation on test dataset.")
         results_test = evaluate(args, True)
         logger.info(results_test)
+
+        logger.info('Next Epoch...')
 
         if results['f1'] > best_f1:
             best_f1 = results['f1']
