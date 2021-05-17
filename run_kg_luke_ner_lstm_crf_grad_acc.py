@@ -4,9 +4,11 @@
 """
 import argparse
 import contextlib
+import copy
 import logging
 import os
 import sys
+from copy import deepcopy
 
 import numpy
 import seqeval
@@ -180,32 +182,42 @@ class Batcher(object):
             # compute length of longest sentence in batch
             max_length = max([len(s[0]) for s in batch])
 
+            batch_copy = deepcopy(batch)
+
             # Dynamic batching
             for index, example in enumerate(batch):
                 input_ids, _, _, _, vm_ids, _, _ = example
                 current_length = len(input_ids)
 
                 pad_num = max_length - current_length
-                batch[index][0] += [self.token_pad] * pad_num
-                batch[index][1] += [0] * pad_num
-                batch[index][2] = [1] * current_length + [0] * pad_num
 
-                batch[index][3] += [max_length - 1] * pad_num
-                batch[index][4] = numpy.pad(vm_ids, ((0, pad_num), (0, pad_num)), 'constant')  # pad 0
-                batch[index][6] = [0] * max_length
+                # logger.info(f'max len = {max_length}')
+                # logger.info(f'current-len = {current_length}')
+                # logger.info(f'pad num = {pad_num}')
 
-            batch_input_ids = torch.LongTensor([sample[0] for sample in batch])
-            batch_label_ids = torch.LongTensor([sample[1] for sample in batch])
-            batch_mask_ids = torch.LongTensor([sample[2] for sample in batch])
-            batch_pos_ids = torch.LongTensor([sample[3] for sample in batch])
-            batch_vm_ids = torch.BoolTensor([sample[4] for sample in batch])
-            batch_segment_ids = torch.LongTensor([sample[6] for sample in batch])
+                batch_copy[index][0] += [self.token_pad] * pad_num
+                batch_copy[index][1] += [0] * pad_num
+                batch_copy[index][2] = [1] * current_length + [0] * pad_num
 
-            del batch
-            del vm_ids
+                batch_copy[index][3] += [max_length - 1] * pad_num
+                batch_copy[index][4] = numpy.pad(vm_ids, ((0, pad_num), (0, pad_num)), 'constant')  # pad 0
+                batch_copy[index][6] = [0] * max_length
 
-            return batch_input_ids, batch_label_ids, batch_mask_ids, \
-                   batch_pos_ids, batch_vm_ids, batch_segment_ids
+            try:
+                batch_input_ids = torch.LongTensor([sample[0] for sample in batch_copy])
+                batch_label_ids = torch.LongTensor([sample[1] for sample in batch_copy])
+                batch_mask_ids = torch.LongTensor([sample[2] for sample in batch_copy])
+                batch_pos_ids = torch.LongTensor([sample[3] for sample in batch_copy])
+                batch_vm_ids = torch.BoolTensor([sample[4] for sample in batch_copy])
+                batch_segment_ids = torch.LongTensor([sample[6] for sample in batch_copy])
+
+                del batch_copy
+
+                return batch_input_ids, batch_label_ids, batch_mask_ids, \
+                       batch_pos_ids, batch_vm_ids, batch_segment_ids
+            except:
+                print(batch)
+                exit()
 
 
 class LukeTaggerMLP(nn.Module):
@@ -783,9 +795,6 @@ def main():
     train_steps = int(instances_num * args.epochs_num / batch_size) + 1
     args.num_train_steps = train_steps
 
-    train_batcher = Batcher(batch_size, instances, shuffle=True,
-                            token_pad=tokenizer.pad_token_id, label_pad=labels_map[PAD_TOKEN])
-
     logger.info(f"Batch size:{batch_size}")
     logger.info(f"The number of training instances:{instances_num}")
 
@@ -808,6 +817,9 @@ def main():
 
     for epoch in range(1, args.epochs_num + 1):
         model.train()
+        train_batcher = Batcher(batch_size, instances,
+                                token_pad=tokenizer.pad_token_id, label_pad=labels_map[PAD_TOKEN])
+
         for step, (
                 input_ids_batch, label_ids_batch, mask_ids_batch, pos_ids_batch, vm_ids_batch,
                 segment_ids_batch) in enumerate(train_batcher):
