@@ -341,7 +341,7 @@ class LukeTaggerLSTMCRF(nn.Module):
         self.lstm = nn.LSTM(args.emb_size, args.hidden_size // 2,
                             batch_first=True, bidirectional=True)
         # CRF layer transforms the output to give the final output layer
-        self.crf = CRFDecoder.create(self.labels_num, args.hidden_size, args.device, args.seq_length)
+        self.crf = CRFDecoder.create(self.labels_num, args.hidden_size, args.device)
 
         if self.args.freeze_encoder_weights:
             self.freeze()
@@ -386,7 +386,7 @@ class LukeTaggerLSTMNCRF(nn.Module):
         self.lstm = nn.LSTM(args.emb_size, args.hidden_size // 2,
                             batch_first=True, bidirectional=True)
         # CRF layer transforms the output to give the final output layer
-        self.ncrf = NCRFDecoder.create(self.labels_num, args.hidden_size, args.device, args.seq_length)
+        self.ncrf = NCRFDecoder.create(self.labels_num, args.hidden_size, args.device)
 
         if self.args.freeze_encoder_weights:
             self.freeze()

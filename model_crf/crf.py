@@ -32,13 +32,12 @@ class CRF(nn.Module):
     def forward(self, *input_):
         return self.viterbi_decode(*input_)
 
-    def __init__(self, label_size, device, max_len=256):
+    def __init__(self, label_size, device):
         super(CRF, self).__init__()
         self.device = device
         self.label_size = label_size
         self.start = self.label_size - 2
         self.end = self.label_size - 1
-        self.max_len = max_len
         transition = torch.randn(self.label_size, self.label_size)
         self.transition = nn.Parameter(transition)
         self.initialize()
@@ -82,7 +81,7 @@ class CRF(nn.Module):
         trn_scr = torch.gather(trn_row, 2, lbl_lexp)
         trn_scr = trn_scr.squeeze(-1)
 
-        mask = sequence_mask(lens + 1, max_len=self.max_len + 1, device=self.device).float()
+        mask = sequence_mask(lens + 1, device=self.device).float()
         trn_scr = trn_scr * mask
         score = trn_scr
 
@@ -92,7 +91,7 @@ class CRF(nn.Module):
         labels_exp = labels.unsqueeze(-1)
         scores = torch.gather(logits, 2, labels_exp).squeeze(-1)
 
-        mask = sequence_mask(lens, max_len=self.max_len, device=self.device).float()
+        mask = sequence_mask(lens, device=self.device).float()
         scores = scores * mask
         return scores
 
