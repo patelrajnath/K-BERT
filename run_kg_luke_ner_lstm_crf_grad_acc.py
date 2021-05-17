@@ -449,8 +449,6 @@ def main():
     parser.add_argument("--log_file", default='app.log')
 
     # Model options.
-    parser.add_argument("--batch_size", type=int, default=2,
-                        help="Batch_size.")
     parser.add_argument("--seq_length", default=256, type=int,
                         help="Sequence length.")
     parser.add_argument("--classifier", choices=["mlp", "lstm", "lstm_crf", "lstm_ncrf"], default="mlp",
@@ -467,6 +465,24 @@ def main():
                         help="Subencoder type.")
     parser.add_argument("--sub_layers_num", type=int, default=2, help="The number of subencoder layers.")
 
+    # Training options.
+    parser.add_argument("--dropout", type=float, default=0.1,
+                        help="Dropout.")
+    parser.add_argument("--epochs_num", type=int, default=0,
+                        help="Number of epochs.")
+    parser.add_argument("--gradient_accumulation_steps", type=int, default=2,
+                        help="Number of steps to accumulate the gradient.")
+    parser.add_argument("--report_steps", type=int, default=2,
+                        help="Specific steps to print prompt.")
+    parser.add_argument("--seed", type=int, default=35,
+                        help="Random seed.")
+    parser.add_argument("--batch_size", type=int, default=32,
+                        help="Batch_size.")
+    parser.add_argument("--num_train_steps", type=int, default=20000,
+                        help="Max steps to be trained.")
+    parser.add_argument("--patience", type=int, default=8000,
+                        help="Specific steps to wait until stops training.")
+
     # Optimizer options.
     parser.add_argument("--learning_rate", default=1e-5, type=float)
     parser.add_argument("--lr_schedule", default="warmup_linear", type=str,
@@ -480,17 +496,6 @@ def main():
     parser.add_argument("--warmup_proportion", default=0.06, type=float)
     parser.add_argument("--warmup", type=float, default=0.1,
                         help="Warm up value.")
-    # Training options.
-    parser.add_argument("--dropout", type=float, default=0.1,
-                        help="Dropout.")
-    parser.add_argument("--epochs_num", type=int, default=5,
-                        help="Number of epochs.")
-    parser.add_argument("--gradient_accumulation_steps", type=int, default=2,
-                        help="Number of steps to accumulate the gradient.")
-    parser.add_argument("--report_steps", type=int, default=2,
-                        help="Specific steps to print prompt.")
-    parser.add_argument("--seed", type=int, default=35,
-                        help="Random seed.")
 
     # kg
     parser.add_argument("--kg_name", required=True, help="KG name or path")
@@ -792,8 +797,9 @@ def main():
 
     instances_num = len(instances)
     batch_size = args.batch_size
-    train_steps = int(instances_num * args.epochs_num / batch_size) + 1
-    args.num_train_steps = train_steps
+
+    if args.epochs_num:
+        args.num_train_steps = int(instances_num * args.epochs_num / batch_size) + 1
 
     logger.info(f"Batch size:{batch_size}")
     logger.info(f"The number of training instances:{instances_num}")
@@ -818,7 +824,10 @@ def main():
         else:
             return contextlib.ExitStack()
 
-    for epoch in range(1, args.epochs_num + 1):
+    global_steps = 0
+    epoch = 0
+
+    while True:
         model.train()
         for step, (
                 input_ids_batch, label_ids_batch, mask_ids_batch, pos_ids_batch, vm_ids_batch,
@@ -859,6 +868,11 @@ def main():
                 optimizer.step()
                 scheduler.step()
                 model.zero_grad()
+                global_steps += 1
+
+        if global_steps == args.num_train_steps:
+            break
+        epoch += 1
 
         # Evaluation phase.
         logger.info("Start evaluate on dev dataset.")
