@@ -798,6 +798,9 @@ def main():
     logger.info(f"Batch size:{batch_size}")
     logger.info(f"The number of training instances:{instances_num}")
 
+    train_batcher = Batcher(batch_size, instances, shuffle=True,
+                            token_pad=tokenizer.pad_token_id, label_pad=labels_map[PAD_TOKEN])
+
     optimizer = create_optimizer(args, model)
     scheduler = create_scheduler(args, optimizer)
     total_loss = 0.
@@ -817,9 +820,6 @@ def main():
 
     for epoch in range(1, args.epochs_num + 1):
         model.train()
-        train_batcher = Batcher(batch_size, instances,
-                                token_pad=tokenizer.pad_token_id, label_pad=labels_map[PAD_TOKEN])
-
         for step, (
                 input_ids_batch, label_ids_batch, mask_ids_batch, pos_ids_batch, vm_ids_batch,
                 segment_ids_batch) in enumerate(train_batcher):
