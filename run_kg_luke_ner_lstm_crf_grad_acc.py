@@ -916,9 +916,6 @@ def main():
 
                     logger.info('Next Epoch...')
 
-                    # Change back the model for training
-                    model.train()
-
                     if results['f1'] > best_f1:
                         best_f1 = results['f1']
                         early_stop_steps = 0
@@ -926,6 +923,10 @@ def main():
                         save_encoder(args, encoder, suffix=args.suffix_file_encoder)
                     else:
                         early_stop_steps += 1
+
+                    # Change back the model for training
+                    model.train()
+
 
             if model_frozen and global_steps >= unfreeze_steps:
                 # unfreeze the model and start training
