@@ -907,7 +907,7 @@ def main():
             model.unfreeze()
             model_frozen = False
 
-        if global_steps == args.num_train_steps:
+        if global_steps >= args.num_train_steps:
             # Training completed
             logger.info('The training is completed!')
             break
