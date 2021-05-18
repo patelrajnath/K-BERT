@@ -889,17 +889,17 @@ def main():
             total_loss += loss.item()
             global_steps += 1
 
-            if (step + 1) % args.report_steps == 0:
-                logger.info("Epoch id: {}, Global Steps:{}, Training steps: {}, Avg loss: "
-                            "{:.10f}".format(epoch, global_steps, step + 1, total_loss / args.report_steps))
-                total_loss = 0.
-
             if (step + 1) % args.gradient_accumulation_steps == 0:
                 if args.max_grad_norm != 0.0:
                     torch.nn.utils.clip_grad_norm_(model.parameters(), args.max_grad_norm)
                 optimizer.step()
                 scheduler.step()
                 model.zero_grad()
+
+        if (global_steps + 1) % args.report_steps == 0:
+            logger.info("Epoch id: {}, Global Steps:{}, Avg loss: "
+                        "{:.10f}".format(epoch, global_steps + 1, total_loss / args.report_steps))
+            total_loss = 0.
 
         if model_frozen and global_steps >= unfreeze_steps:
             # unfreeze the model and start training
