@@ -858,17 +858,17 @@ def main():
                 loss.backward()
 
             total_loss += loss.item()
+            global_steps += 1
 
             if (step + 1) % args.report_steps == 0:
-                logger.info("Epoch id: {}, Training steps: {}, Avg loss: "
-                            "{:.10f}".format(epoch, step + 1, total_loss / args.report_steps))
+                logger.info("Epoch id: {}, Global Steps:{}, Training steps: {}, Avg loss: "
+                            "{:.10f}".format(epoch, global_steps, step + 1, total_loss / args.report_steps))
                 total_loss = 0.
 
             if (step + 1) % args.gradient_accumulation_steps == 0:
                 optimizer.step()
                 scheduler.step()
                 model.zero_grad()
-                global_steps += 1
 
         if global_steps == args.num_train_steps:
             break
