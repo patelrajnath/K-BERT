@@ -896,30 +896,29 @@ def main():
                 scheduler.step()
                 model.zero_grad()
 
-        if (global_steps + 1) % args.report_steps == 0:
-            logger.info("Epoch id: {}, Global Steps:{}, Avg loss: "
-                        "{:.10f}".format(epoch, global_steps + 1, total_loss / args.report_steps))
-            total_loss = 0.
+            if (global_steps + 1) % args.report_steps == 0:
+                logger.info("Epoch id: {}, Global Steps:{}, Avg loss: "
+                            "{:.10f}".format(epoch, global_steps + 1, total_loss / args.report_steps))
+                total_loss = 0.
 
-            # Evaluation phase.
-            logger.info("Start evaluate on dev dataset.")
-            results = evaluate(args, False)
-            logger.info(results)
+                # Evaluation phase.
+                logger.info("Start evaluate on dev dataset.")
+                results = evaluate(args, False)
+                logger.info(results)
 
-            logger.info("Start evaluation on test dataset.")
-            results_test = evaluate(args, True)
-            logger.info(results_test)
+                logger.info("Start evaluation on test dataset.")
+                results_test = evaluate(args, True)
+                logger.info(results_test)
 
-            logger.info('Next Epoch...')
+                logger.info('Next Epoch...')
 
-            if results['f1'] > best_f1:
-                best_f1 = results['f1']
-                early_stop_steps = 0
-                save_model(model, args.output_model_path)
-                save_encoder(args, encoder, suffix=args.suffix_file_encoder)
-            else:
-                early_stop_steps += 1
-                continue
+                if results['f1'] > best_f1:
+                    best_f1 = results['f1']
+                    early_stop_steps = 0
+                    save_model(model, args.output_model_path)
+                    save_encoder(args, encoder, suffix=args.suffix_file_encoder)
+                else:
+                    early_stop_steps += 1
 
         if model_frozen and global_steps >= unfreeze_steps:
             # unfreeze the model and start training
