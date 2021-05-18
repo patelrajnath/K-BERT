@@ -22,8 +22,10 @@ file_in = 'data/accounts/bio/accounts_test.csv'
 # file_in_predictions = 'outputs/evaluation-lstm-crf/accounts/accounts_lstm_crf_finetune_from_kaggle_gold.txt'
 # file_in_predictions = 'outputs/evaluation-lstm-crf/accounts/accounts_lstm_crf_finetune_from_kaggle_predictions.txt'
 # file_in_predictions = 'outputs/evaluation-lstm-crf/accounts/accounts_baseline_lstm_crf_predictions.txt'
+# file_in_predictions = 'outputs/evaluation-lstm-crf/accounts/' \
+#                       'accounts_lstm_crf_finetune_from_kaggle_grad_accumulate_predictions.txt'
 file_in_predictions = 'outputs/evaluation-lstm-crf/accounts/' \
-                      'accounts_lstm_crf_finetune_from_kaggle_grad_accumulate_predictions.txt'
+                      'accounts_lstm_crf_finetune_from_kaggle_grad_accumulate_corrected-data_predictions.txt'
 
 # file_in = 'data/wallet/bio/wallet_test.csv'
 # file_in_predictions = 'outputs/evaluation-lstm-crf/wallet/wallet_baseline_lstm_crf_predictions.txt'
