@@ -927,7 +927,6 @@ def main():
                     # Change back the model for training
                     model.train()
 
-
             if model_frozen and global_steps >= unfreeze_steps:
                 # unfreeze the model and start training
                 logger.info('The encoder is unfrozen for training.')
