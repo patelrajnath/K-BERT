@@ -513,7 +513,7 @@ def main():
     parser.add_argument("--adam_b2", default=0.999, type=float)
     parser.add_argument("--adam_eps", default=1e-8, type=float)
     parser.add_argument("--adam_correct_bias", action='store_true')
-    parser.add_argument("--warmup_proportion", default=0.06, type=float)
+    parser.add_argument("--warmup_proportion", default=0.006, type=float)
     parser.add_argument("--freeze_proportions", default=0.0, type=float)
 
     # kg
