@@ -274,6 +274,11 @@ class LukeTaggerMLP(nn.Module):
         for param in self.encoder.parameters():
             param.requires_grad = False
 
+    def unfreeze(self):
+        logger.info('The encoder has been unfrozen.')
+        for param in self.encoder.parameters():
+            param.requires_grad = True
+
 
 class LukeTaggerLSTM(nn.Module):
     def __init__(self, args, encoder):
@@ -331,6 +336,11 @@ class LukeTaggerLSTM(nn.Module):
         for param in self.encoder.parameters():
             param.requires_grad = False
 
+    def unfreeze(self):
+        logger.info('The encoder has been unfrozen.')
+        for param in self.encoder.parameters():
+            param.requires_grad = True
+
 
 class LukeTaggerLSTMCRF(nn.Module):
     def __init__(self, args, encoder):
@@ -376,6 +386,11 @@ class LukeTaggerLSTMCRF(nn.Module):
         for param in self.encoder.parameters():
             param.requires_grad = False
 
+    def unfreeze(self):
+        logger.info('The encoder has been unfrozen.')
+        for param in self.encoder.parameters():
+            param.requires_grad = True
+
 
 class LukeTaggerLSTMNCRF(nn.Module):
     def __init__(self, args, encoder):
@@ -420,6 +435,11 @@ class LukeTaggerLSTMNCRF(nn.Module):
         logger.info('The encoder has been frozen.')
         for param in self.encoder.parameters():
             param.requires_grad = False
+
+    def unfreeze(self):
+        logger.info('The encoder has been unfrozen.')
+        for param in self.encoder.parameters():
+            param.requires_grad = True
 
 
 def main():
@@ -494,8 +514,7 @@ def main():
     parser.add_argument("--adam_eps", default=1e-6, type=float)
     parser.add_argument("--adam_correct_bias", action='store_true')
     parser.add_argument("--warmup_proportion", default=0.06, type=float)
-    parser.add_argument("--warmup", type=float, default=0.1,
-                        help="Warm up value.")
+    parser.add_argument("--freeze_proportions", default=0.0, type=float)
 
     # kg
     parser.add_argument("--kg_name", required=True, help="KG name or path")
@@ -801,6 +820,13 @@ def main():
     if args.epochs_num:
         args.num_train_steps = int(instances_num * args.epochs_num / batch_size) + 1
 
+    unfreeze_steps = 0
+    if args.freeze_proportions != 0.0:
+        unfreeze_steps = int(args.num_train_steps * args.freeze_proportions) + 1
+        logger.info(f'Two phase training is enabled with model unfreeze at:{unfreeze_steps}')
+        # freeze the model
+        model.freeze()
+
     logger.info(f"Batch size:{batch_size}")
     logger.info(f"The number of training instances:{instances_num}")
 
@@ -825,6 +851,7 @@ def main():
             return contextlib.ExitStack()
 
     global_steps = 0
+    early_stop_steps = 0
     epoch = 0
 
     while True:
@@ -872,8 +899,21 @@ def main():
                 scheduler.step()
                 model.zero_grad()
 
+        if args.freeze_proportions != 0.0 and global_steps >= unfreeze_steps:
+            # unfreeze the model and start training
+            logger.info('The encoder is unfrozen for training.')
+            model.freeze()
+
         if global_steps == args.num_train_steps:
+            # Training completed
+            logger.info('The training is completed!')
             break
+
+        if early_stop_steps >= args.patience:
+            # Early stopping
+            logger.info('The early stopping is triggered!')
+            break
+
         epoch += 1
 
         # Evaluation phase.
@@ -889,9 +929,11 @@ def main():
 
         if results['f1'] > best_f1:
             best_f1 = results['f1']
+            early_stop_steps = 0
             save_model(model, args.output_model_path)
             save_encoder(args, encoder, suffix=args.suffix_file_encoder)
         else:
+            early_stop_steps += 1
             continue
 
     # Evaluation phase.
