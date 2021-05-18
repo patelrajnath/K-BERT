@@ -900,7 +900,7 @@ def main():
                     pbar.update()
                     global_steps += 1
 
-                if (global_steps + 1) % args.report_steps == 0:
+                if (global_steps + args.gradient_accumulation_steps) % args.report_steps == 0:
                     logger.info("Epoch id: {}, Global Steps:{}, Avg loss: "
                                 "{:.10f}".format(epoch, global_steps + 1, total_loss / args.report_steps))
                     total_loss = 0.
