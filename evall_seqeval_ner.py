@@ -14,11 +14,13 @@ from eval.myeval import f1_score_span, precision_score_span, recall_score_span
 # file_in_predictions = 'outputs/evaluation-lstm-crf/kaggle/' \
 #                       'kaggle_lstm_crf_freeze_encoder_finetune_from_kaggle_predictions.txt'
 
-# file_in = 'data/nlu/bio/nlu_test.csv'
+file_in = 'data/nlu/bio/nlu_test.csv'
 # file_in_predictions = 'outputs/evaluation-lstm-crf/nlu/nlu_baseline_lstm_crf_predictions.txt'
 # file_in_predictions = 'outputs/evaluation-lstm-crf/nlu/nlu_lstm_crf_finetune_from_kaggle_predictions.txt'
+file_in_predictions = 'outputs/evaluation-lstm-crf/nlu/' \
+                      'nlu_lstm_crf_finetune_from_kaggle_grad_accumulate_predictions.txt'
 
-file_in = 'data/accounts/bio/accounts_test.csv'
+# file_in = 'data/accounts/bio/accounts_test.csv'
 # file_in_predictions = 'outputs/evaluation-lstm-crf/accounts/accounts_lstm_crf_finetune_from_kaggle_gold.txt'
 # file_in_predictions = 'outputs/evaluation-lstm-crf/accounts/accounts_lstm_crf_finetune_from_kaggle_predictions.txt'
 # file_in_predictions = 'outputs/evaluation-lstm-crf/accounts/accounts_baseline_lstm_crf_predictions.txt'
@@ -26,8 +28,8 @@ file_in = 'data/accounts/bio/accounts_test.csv'
 #                       'accounts_lstm_crf_finetune_from_kaggle_grad_accumulate_predictions.txt'
 # file_in_predictions = 'outputs/evaluation-lstm-crf/accounts/' \
 #                       'accounts_lstm_crf_finetune_from_kaggle_grad_accumulate_corrected-data_predictions.txt'
-file_in_predictions = 'outputs/evaluation-lstm-crf/accounts/' \
-                      'accounts_lstm_crf_finetune_from_kaggle_grad_accumulate_clip_corrected-data_predictions.txt'
+# file_in_predictions = 'outputs/evaluation-lstm-crf/accounts/' \
+#                       'accounts_lstm_crf_finetune_from_kaggle_grad_accumulate_clip_corrected-data_predictions.txt'
 
 # file_in = 'data/wallet/bio/wallet_test.csv'
 # file_in_predictions = 'outputs/evaluation-lstm-crf/wallet/wallet_baseline_lstm_crf_predictions.txt'
