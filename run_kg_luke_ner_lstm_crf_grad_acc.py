@@ -17,6 +17,7 @@ import torch.nn as nn
 
 from collections import Counter
 
+from tqdm import tqdm
 from seqeval.metrics import f1_score
 from transformers import get_linear_schedule_with_warmup, get_constant_schedule_with_warmup, AdamW
 
@@ -492,7 +493,7 @@ def main():
                         help="Number of epochs.")
     parser.add_argument("--gradient_accumulation_steps", type=int, default=2,
                         help="Number of steps to accumulate the gradient.")
-    parser.add_argument("--report_steps", type=int, default=2,
+    parser.add_argument("--report_steps", type=int, default=200,
                         help="Specific steps to print prompt.")
     parser.add_argument("--seed", type=int, default=35,
                         help="Random seed.")
@@ -856,97 +857,100 @@ def main():
     early_stop_steps = 0
     epoch = 0
 
-    while True:
-        model.train()
-        for step, (
-                input_ids_batch, label_ids_batch, mask_ids_batch, pos_ids_batch, vm_ids_batch,
-                segment_ids_batch) in enumerate(train_batcher):
+    with tqdm(total=args.num_train_steps) as pbar:
+        while True:
+            model.train()
+            for step, (
+                    input_ids_batch, label_ids_batch, mask_ids_batch, pos_ids_batch, vm_ids_batch,
+                    segment_ids_batch) in enumerate(train_batcher):
 
-            input_ids_batch = input_ids_batch.to(device)
-            label_ids_batch = label_ids_batch.to(device)
-            mask_ids_batch = mask_ids_batch.to(device)
-            pos_ids_batch = pos_ids_batch.to(device)
-            vm_ids_batch = vm_ids_batch.long().to(device)
-            segment_ids_batch = segment_ids_batch.long().to(device)
+                input_ids_batch = input_ids_batch.to(device)
+                label_ids_batch = label_ids_batch.to(device)
+                mask_ids_batch = mask_ids_batch.to(device)
+                pos_ids_batch = pos_ids_batch.to(device)
+                vm_ids_batch = vm_ids_batch.long().to(device)
+                segment_ids_batch = segment_ids_batch.long().to(device)
 
-            loss = model.score(input_ids_batch,
-                               segment_ids_batch,
-                               mask_ids_batch,
-                               label_ids_batch,
-                               pos_ids_batch,
-                               vm_ids_batch,
-                               use_kg=args.use_kg)
+                loss = model.score(input_ids_batch,
+                                   segment_ids_batch,
+                                   mask_ids_batch,
+                                   label_ids_batch,
+                                   pos_ids_batch,
+                                   vm_ids_batch,
+                                   use_kg=args.use_kg)
 
-            if torch.cuda.device_count() > 1:
-                loss = torch.mean(loss)
+                if torch.cuda.device_count() > 1:
+                    loss = torch.mean(loss)
 
-            if args.gradient_accumulation_steps > 1:
-                loss = loss / args.gradient_accumulation_steps
+                if args.gradient_accumulation_steps > 1:
+                    loss = loss / args.gradient_accumulation_steps
 
-            with maybe_no_sync(step):
-                loss.backward()
+                with maybe_no_sync(step):
+                    loss.backward()
 
-            total_loss += loss.item()
-            global_steps += 1
+                total_loss += loss.item()
+                global_steps += 1
 
-            if (step + 1) % args.gradient_accumulation_steps == 0:
-                if args.max_grad_norm != 0.0:
-                    torch.nn.utils.clip_grad_norm_(model.parameters(), args.max_grad_norm)
-                optimizer.step()
-                scheduler.step()
-                model.zero_grad()
+                if (step + 1) % args.gradient_accumulation_steps == 0:
+                    if args.max_grad_norm != 0.0:
+                        torch.nn.utils.clip_grad_norm_(model.parameters(), args.max_grad_norm)
+                    optimizer.step()
+                    scheduler.step()
+                    model.zero_grad()
 
-            if (global_steps + 1) % args.report_steps == 0:
-                logger.info("Epoch id: {}, Global Steps:{}, Avg loss: "
-                            "{:.10f}".format(epoch, global_steps + 1, total_loss / args.report_steps))
-                total_loss = 0.
+                    pbar.set_description("epoch: %d loss: %.7f" % (epoch, loss.item()))
+                    pbar.update()
 
-                # Evaluation phase.
-                logger.info("Start evaluate on dev dataset.")
-                results = evaluate(args, False)
-                logger.info(results)
+                if (global_steps + 1) % args.report_steps == 0:
+                    logger.info("Epoch id: {}, Global Steps:{}, Avg loss: "
+                                "{:.10f}".format(epoch, global_steps + 1, total_loss / args.report_steps))
+                    total_loss = 0.
 
-                logger.info("Start evaluation on test dataset.")
-                results_test = evaluate(args, True)
-                logger.info(results_test)
+                    # Evaluation phase.
+                    logger.info("Start evaluate on dev dataset.")
+                    results = evaluate(args, False)
+                    logger.info(results)
 
-                logger.info('Next Epoch...')
+                    logger.info("Start evaluation on test dataset.")
+                    results_test = evaluate(args, True)
+                    logger.info(results_test)
 
-                if results['f1'] > best_f1:
-                    best_f1 = results['f1']
-                    early_stop_steps = 0
-                    save_model(model, args.output_model_path)
-                    save_encoder(args, encoder, suffix=args.suffix_file_encoder)
-                else:
-                    early_stop_steps += 1
+                    logger.info('Next Epoch...')
 
-        if model_frozen and global_steps >= unfreeze_steps:
-            # unfreeze the model and start training
-            logger.info('The encoder is unfrozen for training.')
-            model.unfreeze()
-            model_frozen = False
+                    if results['f1'] > best_f1:
+                        best_f1 = results['f1']
+                        early_stop_steps = 0
+                        save_model(model, args.output_model_path)
+                        save_encoder(args, encoder, suffix=args.suffix_file_encoder)
+                    else:
+                        early_stop_steps += 1
 
-        if global_steps >= args.num_train_steps:
-            # Training completed
-            logger.info('The training is completed!')
-            break
+            if model_frozen and global_steps >= unfreeze_steps:
+                # unfreeze the model and start training
+                logger.info('The encoder is unfrozen for training.')
+                model.unfreeze()
+                model_frozen = False
 
-        if early_stop_steps >= args.patience:
-            # Early stopping
-            logger.info('The early stopping is triggered!')
-            break
+            if global_steps >= args.num_train_steps:
+                # Training completed
+                logger.info('The training is completed!')
+                break
 
-        epoch += 1
+            if early_stop_steps >= args.patience:
+                # Early stopping
+                logger.info('The early stopping is triggered!')
+                break
 
+            epoch += 1
 
-    # Evaluation phase.
-    logger.info("Final evaluation on test dataset.")
-    if torch.cuda.device_count() > 1:
-        model.module.load_state_dict(torch.load(args.output_model_path))
-    else:
-        model.load_state_dict(torch.load(args.output_model_path))
-    results_final = evaluate(args, True, final=True)
-    logger.info(results_final)
+        # Evaluation phase.
+        logger.info("Final evaluation on test dataset.")
+        if torch.cuda.device_count() > 1:
+            model.module.load_state_dict(torch.load(args.output_model_path))
+        else:
+            model.load_state_dict(torch.load(args.output_model_path))
+        results_final = evaluate(args, True, final=True)
+        logger.info(results_final)
 
 
 if __name__ == "__main__":
