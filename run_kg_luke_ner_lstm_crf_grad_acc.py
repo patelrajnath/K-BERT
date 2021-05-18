@@ -821,11 +821,13 @@ def main():
         args.num_train_steps = int(instances_num * args.epochs_num / batch_size) + 1
 
     unfreeze_steps = 0
+    model_frozen = False
     if args.freeze_proportions != 0.0:
         unfreeze_steps = int(args.num_train_steps * args.freeze_proportions) + 1
         logger.info(f'Two phase training is enabled with model unfreeze at:{unfreeze_steps}')
         # freeze the model
         model.freeze()
+        model_frozen = True
 
     logger.info(f"Batch size:{batch_size}")
     logger.info(f"The number of training instances:{instances_num}")
@@ -899,10 +901,11 @@ def main():
                 scheduler.step()
                 model.zero_grad()
 
-        if args.freeze_proportions != 0.0 and global_steps >= unfreeze_steps:
+        if model_frozen and global_steps >= unfreeze_steps:
             # unfreeze the model and start training
             logger.info('The encoder is unfrozen for training.')
             model.unfreeze()
+            model_frozen = False
 
         if global_steps == args.num_train_steps:
             # Training completed
