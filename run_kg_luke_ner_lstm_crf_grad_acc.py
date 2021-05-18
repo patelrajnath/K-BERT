@@ -861,7 +861,7 @@ def main():
 
             if (step + 1) % args.report_steps == 0:
                 logger.info("Epoch id: {}, Training steps: {}, Avg loss: "
-                            "{:.3f}".format(epoch, step + 1, total_loss / args.report_steps))
+                            "{:.10f}".format(epoch, step + 1, total_loss / args.report_steps))
                 total_loss = 0.
 
             if (step + 1) % args.gradient_accumulation_steps == 0:
