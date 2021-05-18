@@ -902,7 +902,7 @@ def main():
         if args.freeze_proportions != 0.0 and global_steps >= unfreeze_steps:
             # unfreeze the model and start training
             logger.info('The encoder is unfrozen for training.')
-            model.freeze()
+            model.unfreeze()
 
         if global_steps == args.num_train_steps:
             # Training completed
