@@ -889,8 +889,6 @@ def main():
                     loss.backward()
 
                 total_loss += loss.item()
-                global_steps += 1
-
                 if (step + 1) % args.gradient_accumulation_steps == 0:
                     if args.max_grad_norm != 0.0:
                         torch.nn.utils.clip_grad_norm_(model.parameters(), args.max_grad_norm)
@@ -900,6 +898,7 @@ def main():
 
                     pbar.set_description("epoch: %d loss: %.7f" % (epoch, loss.item()))
                     pbar.update()
+                    global_steps += 1
 
                 if (global_steps + 1) % args.report_steps == 0:
                     logger.info("Epoch id: {}, Global Steps:{}, Avg loss: "
@@ -916,6 +915,9 @@ def main():
                     logger.info(results_test)
 
                     logger.info('Next Epoch...')
+
+                    # Change the model for training
+                    model.train()
 
                     if results['f1'] > best_f1:
                         best_f1 = results['f1']
