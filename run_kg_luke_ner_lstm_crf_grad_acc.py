@@ -916,7 +916,7 @@ def main():
 
                     logger.info('Next Epoch...')
 
-                    # Change the model for training
+                    # Change back the model for training
                     model.train()
 
                     if results['f1'] > best_f1:
