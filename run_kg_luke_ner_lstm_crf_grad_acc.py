@@ -253,10 +253,10 @@ class LukeTaggerMLP(nn.Module):
         tensor = self.luke_encode(word_ids, word_segment_ids, word_attention_mask, pos, vm)
         bs, seq_len = word_ids.shape
         logits = self.get_logits(tensor)
-        logits = logits.contiguous().view(-1, self.labels_num)
-        outputs = F.log_softmax(logits, dim=-1)
+        logits_flat = logits.contiguous().view(-1, self.labels_num)
+        outputs = F.log_softmax(logits_flat, dim=-1)
         predict = outputs.argmax(dim=-1).view(-1, seq_len)
-        return predict
+        return predict, logits, outputs
 
     def score(self, word_ids, word_segment_ids, word_attention_mask, labels, pos=None, vm=None, use_kg=True):
         if not use_kg:
@@ -266,9 +266,9 @@ class LukeTaggerMLP(nn.Module):
         mask = (labels > 0).float().to(torch.device(labels.device))
 
         logits = self.get_logits(tensor)
-        logits = logits.contiguous().view(-1, self.labels_num)
-        outputs = F.log_softmax(logits, dim=-1)
-        return loss_fn(outputs, labels, mask)
+        logits_flat = logits.contiguous().view(-1, self.labels_num)
+        outputs = F.log_softmax(logits_flat, dim=-1)
+        return loss_fn(outputs, labels, mask), logits
 
     def freeze(self):
         logger.info('The encoder has been frozen.')
@@ -315,10 +315,10 @@ class LukeTaggerLSTM(nn.Module):
             vm = None
         tensor = self.lstm_output(word_ids, word_segment_ids, word_attention_mask, pos, vm)
         logits = self.get_logits(tensor)
-        logits = logits.contiguous().view(-1, self.labels_num)
-        outputs = F.log_softmax(logits, dim=-1)
+        logits_flat = logits.contiguous().view(-1, self.labels_num)
+        outputs = F.log_softmax(logits_flat, dim=-1)
         predict = outputs.argmax(dim=-1).view(-1, self.args.seq_length)
-        return predict
+        return predict, logits, outputs
 
     def score(self, word_ids, word_segment_ids, word_attention_mask, labels, pos=None, vm=None, use_kg=True):
         if not use_kg:
@@ -328,9 +328,9 @@ class LukeTaggerLSTM(nn.Module):
 
         tensor = self.lstm_output(word_ids, word_segment_ids, word_attention_mask, pos, vm)
         logits = self.get_logits(tensor)
-        logits = logits.contiguous().view(-1, self.labels_num)
-        outputs = F.log_softmax(logits, dim=-1)
-        return loss_fn(outputs, labels, mask)
+        logits_flat = logits.contiguous().view(-1, self.labels_num)
+        outputs = F.log_softmax(logits_flat, dim=-1)
+        return loss_fn(outputs, labels, mask), logits
 
     def freeze(self):
         logger.info('The encoder has been frozen.')
@@ -764,7 +764,7 @@ def main():
             vm_ids_batch = vm_ids_batch.long().to(device)
             segment_ids_batch = segment_ids_batch.long().to(device)
 
-            pred = model(input_ids_batch, segment_ids_batch, mask_ids_batch, label_ids_batch, pos_ids_batch,
+            pred, logits, scores = model(input_ids_batch, segment_ids_batch, mask_ids_batch, label_ids_batch, pos_ids_batch,
                          vm_ids_batch, use_kg=args.use_kg)
 
             for pred_sample, gold_sample, mask in zip(pred, label_ids_batch, mask_ids_batch):
@@ -871,7 +871,7 @@ def main():
                 vm_ids_batch = vm_ids_batch.long().to(device)
                 segment_ids_batch = segment_ids_batch.long().to(device)
 
-                loss = model.score(input_ids_batch,
+                loss, logits = model.score(input_ids_batch,
                                    segment_ids_batch,
                                    mask_ids_batch,
                                    label_ids_batch,

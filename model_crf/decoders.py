@@ -33,7 +33,7 @@ class CRFDecoder(nn.Module):
         logits = self.forward_model(inputs)
         logits = self.crf.pad_logits(logits)
         scores, preds = self.crf.viterbi_decode(logits, lens)
-        return preds
+        return preds, logits, scores
 
     def score(self, inputs, labels_mask, labels):
         lens = labels_mask.sum(-1)
@@ -42,7 +42,7 @@ class CRFDecoder(nn.Module):
         norm_score = self.crf.calc_norm_score(logits, lens)
         gold_score = self.crf.calc_gold_score(logits, labels, lens)
         loglik = gold_score - norm_score
-        return -loglik.mean()
+        return -loglik.mean(), logits
 
     @classmethod
     def create(cls, label_size, input_dim, device, input_dropout=0.5):
