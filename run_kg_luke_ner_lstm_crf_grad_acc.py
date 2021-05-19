@@ -200,6 +200,8 @@ class Batcher(object):
                 batch_copy[index][6] = [0] * max_length
 
                 if max_length >= 256:
+
+                    max_length = 256
                     logger.info(f'max len = {max_length}')
                     logger.info(f'current-len = {current_length}')
                     logger.info(f'pad num = {pad_num}')
