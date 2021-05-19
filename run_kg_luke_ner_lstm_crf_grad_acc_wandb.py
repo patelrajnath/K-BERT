@@ -822,7 +822,7 @@ def main():
             return contextlib.ExitStack()
 
     def train():
-        print(wandb)
+        wandb.init()
         # update learning rate
         args.learning_rate = wandb.config.learning_rate
 
