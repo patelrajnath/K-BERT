@@ -201,17 +201,17 @@ class Batcher(object):
 
                 if max_length >= 256:
 
-                    max_length = 256
+                    trim_length = 256
                     logger.info(f'max len = {max_length}')
                     logger.info(f'current-len = {current_length}')
                     logger.info(f'pad num = {pad_num}')
 
-                    batch_copy[index][0] = batch_copy[index][0][:max_length]
-                    batch_copy[index][1] = batch_copy[index][1][:max_length]
-                    batch_copy[index][2] = batch_copy[index][2][:max_length]
-                    batch_copy[index][3] = batch_copy[index][3][:max_length]
-                    batch_copy[index][4] = batch_copy[index][4][:max_length, :max_length]
-                    batch_copy[index][6] = batch_copy[index][6][:max_length]
+                    batch_copy[index][0] = batch_copy[index][0][:trim_length]
+                    batch_copy[index][1] = batch_copy[index][1][:trim_length]
+                    batch_copy[index][2] = batch_copy[index][2][:trim_length]
+                    batch_copy[index][3] = batch_copy[index][3][:trim_length]
+                    batch_copy[index][4] = batch_copy[index][4][:trim_length, :trim_length]
+                    batch_copy[index][6] = batch_copy[index][6][:trim_length]
 
             try:
                 batch_input_ids = torch.LongTensor([sample[0] for sample in batch_copy])
