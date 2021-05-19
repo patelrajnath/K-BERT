@@ -367,6 +367,10 @@ class LukeTaggerLSTMCRF(nn.Module):
                                                            position_ids=pos, vm=vm)
         # run the LSTM along the sentences of length batch_max_len
         tensor, _ = self.lstm(word_sequence_output)  # dim: batch_size x batch_max_len x lstm_hidden_dim
+
+        del word_sequence_output
+        del pooled_output
+
         return tensor
 
     def forward(self, word_ids, word_segment_ids, word_attention_mask, labels, pos=None, vm=None, use_kg=True):
