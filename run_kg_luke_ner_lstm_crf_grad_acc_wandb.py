@@ -998,7 +998,7 @@ def main():
     sweep_config = {
         'method': 'grid',  # grid, random
         'metric': {
-            'name': 'valid_acc_pearson',
+            'name': 'valid_acc',
             'goal': 'maximize'
         },
         'parameters': {
@@ -1023,7 +1023,7 @@ def main():
 
     sweep_id = wandb.sweep(sweep_config, project="kbert_nlu")
     # Call the wandb agent
-    wandb.agent(sweep_id, function=lambda: train)
+    wandb.agent(sweep_id, function=lambda: train())
 
 
 if __name__ == "__main__":
