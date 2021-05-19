@@ -895,6 +895,7 @@ def main():
                     optimizer.step()
                     scheduler.step()
                     model.zero_grad()
+                    optimizer.zero_grad()
 
                     pbar.set_description("epoch: %d loss: %.7f" % (epoch, loss.item()))
                     pbar.update()
@@ -924,6 +925,22 @@ def main():
 
                         # Change back the model for training
                         model.train()
+
+                if model_frozen and global_steps >= unfreeze_steps:
+                    # unfreeze the model and start training
+                    logger.info('The encoder is unfrozen for training.')
+                    model.unfreeze()
+                    model_frozen = False
+
+                if global_steps >= args.num_train_steps:
+                    # Training completed
+                    logger.info('The training is completed!')
+                    break
+
+                if early_stop_steps >= args.patience:
+                    # Early stopping
+                    logger.info('The early stopping is triggered!')
+                    break
 
             if model_frozen and global_steps >= unfreeze_steps:
                 # unfreeze the model and start training
