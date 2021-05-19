@@ -213,6 +213,7 @@ class Batcher(object):
                 batch_segment_ids = torch.LongTensor([sample[6] for sample in batch_copy])
 
                 del batch_copy
+                del vm_ids
 
                 return batch_input_ids, batch_label_ids, batch_mask_ids, \
                        batch_pos_ids, batch_vm_ids, batch_segment_ids
