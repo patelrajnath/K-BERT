@@ -914,15 +914,13 @@ def main():
                         results_test = evaluate(args, True)
                         logger.info(results_test)
 
-                        logger.info('Next Epoch...')
-
                         if results['f1'] > best_f1:
                             best_f1 = results['f1']
                             early_stop_steps = 0
                             save_model(model, args.output_model_path)
                             save_encoder(args, encoder, suffix=args.suffix_file_encoder)
                         else:
-                            early_stop_steps += 1
+                            early_stop_steps += args.report_steps
 
                         # Change back the model for training
                         model.train()
