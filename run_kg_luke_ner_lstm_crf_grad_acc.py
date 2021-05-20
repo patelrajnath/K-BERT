@@ -524,6 +524,7 @@ def main():
     parser.add_argument("--use_kg", action='store_true', help="Enable the use of KG.")
     parser.add_argument("--padding", action='store_true', help="Enable padding.")
     parser.add_argument("--truncate", action='store_true', help="Enable truncation if length is more than seq length.")
+    parser.add_argument("--shuffle", action='store_true', help="Enable shuffling during training.")
     parser.add_argument("--dry_run", action='store_true', help="Dry run to test the implementation.")
     parser.add_argument("--voting_choicer", action='store_true',
                         help="Enable the Voting choicer to select the entity type.")
