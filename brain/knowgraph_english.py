@@ -63,7 +63,8 @@ class KnowledgeGraph(object):
                               use_kg=True,
                               max_length=128,
                               reverse_order=False,
-                              padding=False):
+                              padding=False,
+                              truncate=False):
         """
         input: sent_batch - list of sentences, e.g., ["abcd", "efgh"]
         return: know_sent_batch - list of sentences with entites embedding
@@ -241,9 +242,8 @@ class KnowledgeGraph(object):
             # print(pos)
             # print(visible_matrix)
             # exit()
-
+            src_length = len(know_sent)
             if padding:
-                src_length = len(know_sent)
                 if len(know_sent) < max_length:
                     pad_num = max_length - src_length
                     know_sent += [self.tokenizer.pad_token] * pad_num
@@ -255,6 +255,12 @@ class KnowledgeGraph(object):
                     seg = seg[:max_length]
                     pos = pos[:max_length]
                     visible_matrix = visible_matrix[:max_length, :max_length]
+
+            if truncate and src_length > max_length:
+                know_sent = know_sent[:max_length]
+                seg = seg[:max_length]
+                pos = pos[:max_length]
+                visible_matrix = visible_matrix[:max_length, :max_length]
 
             # print(know_sent)
             # print(seg)

@@ -152,9 +152,10 @@ def create_scheduler(args, optimizer):
 
 
 class Batcher(object):
-    def __init__(self, batch_size, instances, token_pad, label_pad, shuffle=False):
-        self.batch_size = batch_size
-        self.shuffle = shuffle
+    def __init__(self, args, instances, token_pad, label_pad):
+        self.seq_len = args.seq_len
+        self.batch_size = args.batch_size
+        self.shuffle = args.shuffle
         self.token_pad = token_pad
         self.label_pad = label_pad
 
@@ -198,20 +199,6 @@ class Batcher(object):
                 batch_copy[index][3] += [max_length - 1] * pad_num
                 batch_copy[index][4] = numpy.pad(vm_ids, ((0, pad_num), (0, pad_num)), 'constant')  # pad 0
                 batch_copy[index][6] = [0] * max_length
-
-                if max_length >= 256:
-
-                    trim_length = 256
-                    logger.info(f'max len = {max_length}')
-                    logger.info(f'current-len = {current_length}')
-                    logger.info(f'pad num = {pad_num}')
-
-                    batch_copy[index][0] = batch_copy[index][0][:trim_length]
-                    batch_copy[index][1] = batch_copy[index][1][:trim_length]
-                    batch_copy[index][2] = batch_copy[index][2][:trim_length]
-                    batch_copy[index][3] = batch_copy[index][3][:trim_length]
-                    batch_copy[index][4] = batch_copy[index][4][:trim_length, :trim_length]
-                    batch_copy[index][6] = batch_copy[index][6][:trim_length]
 
             try:
                 batch_input_ids = torch.LongTensor([sample[0] for sample in batch_copy])
@@ -536,6 +523,7 @@ def main():
     parser.add_argument("--kg_name", required=True, help="KG name or path")
     parser.add_argument("--use_kg", action='store_true', help="Enable the use of KG.")
     parser.add_argument("--padding", action='store_true', help="Enable padding.")
+    parser.add_argument("--truncate", action='store_true', help="Enable truncation if length is more than seq length.")
     parser.add_argument("--dry_run", action='store_true', help="Dry run to test the implementation.")
     parser.add_argument("--voting_choicer", action='store_true',
                         help="Enable the Voting choicer to select the entity type.")
@@ -766,8 +754,7 @@ def main():
         confusion = torch.zeros(len(labels_map), len(labels_map), dtype=torch.long)
         model.eval()
 
-        test_batcher = Batcher(batch_size, dataset, shuffle=False,
-                               token_pad=tokenizer.pad_token_id, label_pad=labels_map[PAD_TOKEN])
+        test_batcher = Batcher(args, dataset, token_pad=tokenizer.pad_token_id, label_pad=labels_map[PAD_TOKEN])
 
         for i, (input_ids_batch, label_ids_batch, mask_ids_batch, pos_ids_batch,
                 vm_ids_batch, segment_ids_batch) in enumerate(test_batcher):
@@ -848,8 +835,7 @@ def main():
     logger.info(f"Batch size:{batch_size}")
     logger.info(f"The number of training instances:{instances_num}")
 
-    train_batcher = Batcher(batch_size, instances, shuffle=True,
-                            token_pad=tokenizer.pad_token_id, label_pad=labels_map[PAD_TOKEN])
+    train_batcher = Batcher(args, instances, token_pad=tokenizer.pad_token_id, label_pad=labels_map[PAD_TOKEN])
 
     optimizer = create_optimizer(args, model)
     scheduler = create_scheduler(args, optimizer)
