@@ -58,13 +58,7 @@ class KnowledgeGraph(object):
             return True
         return False
 
-    def add_knowledge_with_vm(self, sent_batch, label_batch,
-                              max_entities=config.MAX_ENTITIES,
-                              use_kg=True,
-                              max_length=128,
-                              reverse_order=False,
-                              padding=False,
-                              truncate=False):
+    def add_knowledge_with_vm(self, args, sent_batch, label_batch):
         """
         input: sent_batch - list of sentences, e.g., ["abcd", "efgh"]
         return: know_sent_batch - list of sentences with entites embedding
@@ -118,16 +112,16 @@ class KnowledgeGraph(object):
             num_chunks = len(split_sent)
             for idx, token_original in enumerate(split_sent):
                 know_entities = []
-                if use_kg:
+                if args.use_kg:
                     all_entities = list(self.lookup_table.get(token_original.lower(), []))
                     # Select entities from least frequent
-                    if reverse_order:
+                    if args.reverse_order:
                         all_entities_len = len(all_entities)
-                        start_index = all_entities_len - max_entities
+                        start_index = all_entities_len - args.max_entities
                         know_entities = all_entities[start_index: None]
                     else:
                         # Select entities from frequent features
-                        know_entities = all_entities[:max_entities]
+                        know_entities = all_entities[:args.max_entities]
                     know_entities = [ent.replace('_', ' ') for ent in know_entities]
 
                 # print(entities, token_original)
@@ -243,24 +237,24 @@ class KnowledgeGraph(object):
             # print(visible_matrix)
             # exit()
             src_length = len(know_sent)
-            if padding:
-                if len(know_sent) < max_length:
-                    pad_num = max_length - src_length
+            if args.padding:
+                if len(know_sent) < args.seq_length:
+                    pad_num = args.seq_length - src_length
                     know_sent += [self.tokenizer.pad_token] * pad_num
                     seg += [3] * pad_num
-                    pos += [max_length - 1] * pad_num
+                    pos += [args.seq_length - 1] * pad_num
                     visible_matrix = np.pad(visible_matrix, ((0, pad_num), (0, pad_num)), 'constant')  # pad 0
                 else:
-                    know_sent = know_sent[:max_length]
-                    seg = seg[:max_length]
-                    pos = pos[:max_length]
-                    visible_matrix = visible_matrix[:max_length, :max_length]
+                    know_sent = know_sent[:args.seq_length]
+                    seg = seg[:args.seq_length]
+                    pos = pos[:args.seq_length]
+                    visible_matrix = visible_matrix[:args.seq_length, :args.seq_length]
 
-            if truncate and src_length > max_length:
-                know_sent = know_sent[:max_length]
-                seg = seg[:max_length]
-                pos = pos[:max_length]
-                visible_matrix = visible_matrix[:max_length, :max_length]
+            if args.truncate and src_length > args.seq_length:
+                know_sent = know_sent[:args.seq_length]
+                seg = seg[:args.seq_length]
+                pos = pos[:args.seq_length]
+                visible_matrix = visible_matrix[:args.seq_length, :args.seq_length]
 
             # print(know_sent)
             # print(seg)

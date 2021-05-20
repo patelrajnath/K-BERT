@@ -153,7 +153,7 @@ def create_scheduler(args, optimizer):
 
 class Batcher(object):
     def __init__(self, args, instances, token_pad, label_pad):
-        self.seq_len = args.seq_len
+        self.seq_length = args.seq_length
         self.batch_size = args.batch_size
         self.shuffle = args.shuffle
         self.token_pad = token_pad
@@ -628,13 +628,7 @@ def main():
                     print(f'The data is not in accepted format at line no:{line_id}.. Ignored')
                     continue
 
-                tokens, pos, vm, tag = \
-                    kg.add_knowledge_with_vm([tokens], [labels],
-                                             use_kg=args.use_kg,
-                                             max_length=args.seq_length,
-                                             max_entities=args.max_entities,
-                                             reverse_order=args.reverse_order,
-                                             padding=args.padding)
+                tokens, pos, vm, tag = kg.add_knowledge_with_vm(args, [tokens], [labels])
                 tokens = tokens[0]
                 pos = pos[0]
                 vm = vm[0].astype("bool")
