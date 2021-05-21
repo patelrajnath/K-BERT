@@ -6,21 +6,23 @@ from create_word_predictions_with_voted_selection import tokenize_word, voting_c
 from datautils.biluo_from_predictions import get_bio
 from eval.myeval import f1_score_span, precision_score_span, recall_score_span
 
-# file_in = 'data/combined_3/test_combined_3.csv'
+file_in = 'data/combined_3/test_combined_3.csv'
 # file_in_predictions = 'outputs/evaluation-lstm-crf/kaggle/kaggle_baseline_lstm_crf_predictions.txt'
 # file_in_predictions = 'outputs/evaluation-lstm-crf/kaggle/kaggle_baseline_lstm_crf_predictions_run2.txt'
 # file_in_predictions = 'outputs/evaluation-lstm-crf/kaggle/kaggle_lstm_crf_finetune_from_kaggle_predictions_run2.txt'
 # file_in_predictions = 'outputs/evaluation-lstm-crf/kaggle/kaggle_lstm_crf_finetune_from_kaggle_predictions.txt'
 # file_in_predictions = 'outputs/evaluation-lstm-crf/kaggle/' \
 #                       'kaggle_lstm_crf_freeze_encoder_finetune_from_kaggle_predictions.txt'
+file_in_predictions = 'outputs/evaluation-lstm-crf/kaggle/' \
+                      'kaggle_pretrain_lstm_crf_optimized_training_lr1e-05_predictions.txt'
 
-file_in = 'data/nlu/bio/nlu_test.csv'
+# file_in = 'data/nlu/bio/nlu_test.csv'
 # file_in_predictions = 'outputs/evaluation-lstm-crf/nlu/nlu_baseline_lstm_crf_predictions.txt'
 # file_in_predictions = 'outputs/evaluation-lstm-crf/nlu/nlu_lstm_crf_finetune_from_kaggle_predictions.txt'
 # file_in_predictions = 'outputs/evaluation-lstm-crf/nlu/' \
 #                       'nlu_lstm_crf_finetune_from_kaggle_grad_accumulate_predictions.txt'
-file_in_predictions = 'outputs/evaluation-lstm-crf/nlu/' \
-                      'nlu_lstm_crf_finetune_from_kaggle_grad_accumulate_lr_2e5_predictions.txt'
+# file_in_predictions = 'outputs/evaluation-lstm-crf/nlu/' \
+#                       'nlu_lstm_crf_finetune_from_kaggle_grad_accumulate_lr_2e5_predictions.txt'
 
 
 # file_in = 'data/accounts/bio/accounts_test.csv'

@@ -4,7 +4,6 @@
 """
 import argparse
 import contextlib
-import copy
 import logging
 import os
 import sys
@@ -17,6 +16,7 @@ import torch.nn as nn
 
 from collections import Counter
 
+import wandb
 from tqdm import tqdm
 from seqeval.metrics import f1_score
 from transformers import get_linear_schedule_with_warmup, get_constant_schedule_with_warmup, AdamW
@@ -518,9 +518,10 @@ def main():
     parser.add_argument("--adam_correct_bias", action='store_true')
     parser.add_argument("--warmup_proportion", default=0.006, type=float)
     parser.add_argument("--freeze_proportions", default=0.0, type=float)
+    parser.add_argument("--wandb", action='store_true', help="Enable wandb logging")
 
     # kg
-    parser.add_argument("--kg_name", required=True, help="KG name or path")
+    parser.add_argument("--kg_name", type=str, help="KG name or path")
     parser.add_argument("--use_kg", action='store_true', help="Enable the use of KG.")
     parser.add_argument("--padding", action='store_true', help="Enable padding.")
     parser.add_argument("--truncate", action='store_true', help="Enable truncation if length is more than seq length.")
@@ -849,6 +850,15 @@ def main():
         else:
             return contextlib.ExitStack()
 
+    # YOU MUST LOG INTO WANDB WITH YOUR OWN ACCOUNT
+    if args['wandb'] is True:
+        import wandb
+        wandb.init(project="kbert", config={**args})
+        # args.update(wandb.config)
+        print(f'new args{args}')
+    else:
+        wandb = None
+
     global_steps = 0
     early_stop_steps = 0
     epoch = 0
@@ -900,7 +910,6 @@ def main():
                     if global_steps % args.report_steps == 0:
                         logger.info("Epoch id: {}, Global Steps:{}, Avg loss: "
                                     "{:.10f}".format(epoch, global_steps + 1, total_loss / args.report_steps))
-                        total_loss = 0.
 
                         # Evaluation phase.
                         logger.info("Start evaluate on dev dataset.")
@@ -910,6 +919,20 @@ def main():
                         logger.info("Start evaluation on test dataset.")
                         results_test = evaluate(args, True)
                         logger.info(results_test)
+
+                        avg_loss = total_loss / args.report_stepsloss
+
+                        # Log the loss and accuracy values at the end of each epoch
+                        wandb.log({
+                            "steps": global_steps,
+                            "train Loss": avg_loss,
+                            "valid_acc": results['f1'],
+                            "learning_rate": wandb.config.learning_rate,
+                            "batch_size": wandb.config.batch_size,
+                            "lr_schedule": wandb.config.lr_schedule,
+                            "weight_decay": wandb.config.weight_decay,
+                            "max_grad_norm": wandb.config.max_grad_norm,
+                        })
 
                         if results['f1'] > best_f1:
                             best_f1 = results['f1']
@@ -921,6 +944,7 @@ def main():
 
                         # Change back the model for training
                         model.train()
+                        total_loss = 0.
 
                 if model_frozen and global_steps >= unfreeze_steps:
                     # unfreeze the model and start training
