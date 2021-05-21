@@ -851,9 +851,9 @@ def main():
             return contextlib.ExitStack()
 
     # YOU MUST LOG INTO WANDB WITH YOUR OWN ACCOUNT
-    if args['wandb'] is True:
+    if args.wandb:
         import wandb
-        wandb.init(project="kbert", config={**args})
+        wandb.init(project="kbert_pretrain", config={**args})
         # args.update(wandb.config)
         print(f'new args{args}')
     else:
@@ -922,17 +922,18 @@ def main():
 
                         avg_loss = total_loss / args.report_stepsloss
 
-                        # Log the loss and accuracy values at the end of each epoch
-                        wandb.log({
-                            "steps": global_steps,
-                            "train Loss": avg_loss,
-                            "valid_acc": results['f1'],
-                            "learning_rate": wandb.config.learning_rate,
-                            "batch_size": wandb.config.batch_size,
-                            "lr_schedule": wandb.config.lr_schedule,
-                            "weight_decay": wandb.config.weight_decay,
-                            "max_grad_norm": wandb.config.max_grad_norm,
-                        })
+                        if args.wandb:
+                            # Log the loss and accuracy values at the end of each epoch
+                            wandb.log({
+                                "steps": global_steps,
+                                "train Loss": avg_loss,
+                                "valid_acc": results['f1'],
+                                "learning_rate": wandb.config.learning_rate,
+                                "batch_size": wandb.config.batch_size,
+                                "lr_schedule": wandb.config.lr_schedule,
+                                "weight_decay": wandb.config.weight_decay,
+                                "max_grad_norm": wandb.config.max_grad_norm,
+                            })
 
                         if results['f1'] > best_f1:
                             best_f1 = results['f1']
