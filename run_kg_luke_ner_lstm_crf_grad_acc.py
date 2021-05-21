@@ -853,7 +853,7 @@ def main():
     # YOU MUST LOG INTO WANDB WITH YOUR OWN ACCOUNT
     if args.wandb:
         import wandb
-        wandb.init(project="kbert_pretrain", config={**args})
+        wandb.init(project="kbert_pretrain")
         # args.update(wandb.config)
         print(f'new args{args}')
     else:
@@ -920,7 +920,7 @@ def main():
                         results_test = evaluate(args, True)
                         logger.info(results_test)
 
-                        avg_loss = total_loss / args.report_stepsloss
+                        avg_loss = total_loss / args.report_steps
 
                         if args.wandb:
                             # Log the loss and accuracy values at the end of each epoch
@@ -928,11 +928,12 @@ def main():
                                 "steps": global_steps,
                                 "train Loss": avg_loss,
                                 "valid_acc": results['f1'],
-                                "learning_rate": wandb.config.learning_rate,
-                                "batch_size": wandb.config.batch_size,
-                                "lr_schedule": wandb.config.lr_schedule,
-                                "weight_decay": wandb.config.weight_decay,
-                                "max_grad_norm": wandb.config.max_grad_norm,
+                                "test_acc": results_test['f1'],
+                                "learning_rate": args.learning_rate,
+                                "batch_size": args.batch_size,
+                                "lr_schedule": args.lr_schedule,
+                                "weight_decay": args.weight_decay,
+                                "max_grad_norm": args.max_grad_norm,
                             })
 
                         if results['f1'] > best_f1:
